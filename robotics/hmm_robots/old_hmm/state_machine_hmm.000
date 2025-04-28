@@ -1,0 +1,281 @@
+/********************************************************
+ *                                                      *
+ *                                                      *
+ *      state_machine_hmm.h                             *
+ *                                                      *
+ *		Jesus Savage				*
+ *		FI-UNAM					*
+ *		5-5-2013                                *
+ *                                                      *
+ ********************************************************/
+
+
+#define NUM_MAX_SENSORS 16
+#define HMM_FSM "hmm_fsm"
+#include "hmm_lib.h"
+
+#define NUM_INPUTS_DESTINATION 4
+#define NUM_MAX_SENSORS 4097
+
+
+
+
+// it converts a binary output to a robot's output
+Behavior hmm_symbol_output(int out){
+
+  Behavior output;
+  float angle=(float) (PI/(4.0*15.0));
+  float advance;
+  int bits_mag,mag,bits_dir,dir;
+  float mag_angle;
+  
+
+  //advance= Mag_Advance/1.00; // mag = {0 ... 15} 
+  advance= Mag_Advance*1.00; // mag = {0 ... 15} 
+  mag=1;
+  mag_angle=8.0;
+
+
+  switch(out){
+
+	case 0: // Stop
+                output.xc=0.0f;
+                output.yc=0.0f;
+                printf("STOP\n");
+                break;
+
+        case 1: // Forward
+                output.xc=advance*mag;
+                output.yc=0.0f;
+                printf("FORWARD\n");
+                break;
+
+        case 2: // backward
+                output.xc=-advance*mag;
+                output.yc=0.0f;
+                Num_backward++;
+                printf("BACKWARD\n");
+                break;
+
+        case 3:// Turn left
+                output.xc=0.0f;
+                output.yc=angle*mag_angle;
+                printf("LEFT\n");
+                break;
+
+        case 4: // Turn right
+                output.xc=0.0f;
+                output.yc=-angle*mag_angle;
+                printf("RIGHT\n");
+                break;
+
+        default:printf("Output %d not defined used STOP\n", out);
+                output.xc=0;
+                output.yc=0;
+                break;
+  }
+
+  return(output);
+
+}
+                             
+
+ // It quantizes the destination this later 2-1-11
+int quantize_destination(coord coord_robot,coord coor_destination){
+
+ coord dif;
+ int value=0;
+
+ dif=dif_vectors(coord_robot,coor_destination);
+ printf("origen x %f y %f dest x %f y %f ",coord_robot.xc,coord_robot.yc,coor_destination.xc,coor_destination.yc);
+ printf("diff. x %f y %f \n",dif.xc,dif.yc);
+
+ dif.xc = -1 * dif.xc;
+ dif.yc = -1 * dif.yc;
+
+ if(dif.xc < 0){
+	if(dif.yc < 0) value = 0;
+	else value = 1;
+ }
+ else{
+	if(dif.yc < 0) value = 2;
+        else value = 3;
+ }
+
+
+ return value;
+}
+
+
+
+// Engine to execute probabilistic state machines 
+Behavior  state_machine_hmm(char *sensor, int num_sensors, int *num_obs, Raw observations, int reset, char *individual, int num_ind,
+					char *path,coord coor_destination){
+ Behavior gen_vector;
+ static int state[NUM_MAX_BEHAVIORS*4];
+ float angle=(float) (1.5708/2.0);
+ static int num_steps=0;
+ static float left,right;
+ float theta;
+ int **state_memory;
+ centroid centroids[NUM_MAX_CENTROIDS];
+ //static memory_state_machine memory[NUM_MAX_BEHAVIORS][NUM_MAX_MEMORY];
+ float sensors[NUM_MAX_SENSORS];
+ int quantized_value;
+ int next_state;
+ Behavior output;
+ static int num_bits_input=2;
+ static int num_bits_output[NUM_MAX_BEHAVIORS];
+ int i,j;
+ static int start[NUM_MAX_BEHAVIORS][16],end[NUM_MAX_BEHAVIORS][16];
+ static int flg=0;
+ int range=NUM_LASERS; // #define NUM_LASERS 682
+ coord coord_robot,unit_vector;
+ coord repulsion_vector,attraction_vector;
+ float mag;
+ struct vector_quantizer vq;
+ static struct hmm_database hmm;
+ float average = 0;
+ static int flg_read=1;
+ int num_indi=1;
+ int quantize_inputs(float *, int );
+ static int Time;
+ int out_symbol;
+ static int flg_old=1;
+ static int previous_state=1;
+ int flag_destination=1;
+ int quantized_atraction;
+ int quantized_total;
+ static int num_states,num_inputs,num_outputs;
+ static int num_bits_inputs;
+
+
+
+ printf("\n\n *********************state machine HMM**********\n");
+
+ //printf("individual %s\n",individual);
+
+ 
+ if(reset==1){
+        state[1]=previous_state;
+        num_steps=0;
+ }
+ 
+
+
+
+ if(flg_read==1){
+
+	//It initializes the VQ, fix this later
+	vq_initialize(&vq);
+	strcpy(vq.path,path);
+
+
+        /* It reads the number of states, num. obs. symbols and nun. out symbols of the hmm */
+	strcpy(hmm.objects_file,individual);
+        printf("HMM file %s\n", hmm.objects_file);
+        read_hmms(&hmm,0,path);
+
+	//It creates the HMM
+        hmm_initialize(&hmm);
+
+        /* It reads the complete hmm */
+        read_hmms(&hmm,1,path);
+	num_bits_inputs=hmm.num_bits_inputs;
+	num_states=hmm.num_states;
+        num_inputs=hmm.num_obs_symbols;
+	//num_inputs=num_inputs-NUM_INPUTS_DESTINATION;
+
+   	num_outputs=hmm.num_out_symbols;
+	
+	if(num_bits_inputs > 0) range=NUM_LASERS/(num_bits_inputs*2);
+	printf("\nnum_bits_inputs %d range %d \n",num_bits_inputs,range);
+
+	for(i=num_bits_inputs/2+1,j=1;i<=num_bits_inputs;i++,j++){
+                start[num_ind][j]=num_sensors/2 + (j-1)*range;
+                //end[num_ind][j]=num_sensors/2+ START_LASER +j*NUM_RANGE_LASER_32;
+                end[num_ind][j]=start[num_ind][j]+ j*range -1;
+		printf("%d range laser %d %d\n",j,start[num_ind][j],end[num_ind][j]);
+        }  
+
+	for(i=1;i<=num_bits_inputs/2;i++,j++){
+		end[num_ind][j]=num_sensors/2 - 1 - (i-1)*range;
+		start[num_ind][j]=end[num_ind][j] - i*range -1;
+		//start[num_ind][j]=num_sensors/2 - START_LASER - (i-1)*range;
+		//end[num_ind][j]=num_sensors/2 - START_LASER - (i-1)*NUM_RANGE_LASER_32;
+		//end[num_ind][j]=start[num_ind][j] - i*range -1;
+		printf("%d range laser %d %d\n",j,start[num_ind][j],end[num_ind][j]);
+	}  
+
+	flg_read=0;
+	
+	// Initializes the random generator
+        srandom((int)time((time_t *)NULL));
+
+	Time=1;
+	state[Time]=calculate_hmm_first_state(hmm);
+
+
+ }
+
+ printf("\n\nHMM State[%d] %d \n",Time, state[Time]);
+
+ for(i=1; i <= num_bits_inputs;i++){
+		get_average_laser(observations,start[num_ind][i],end[num_ind][i],&average);
+		sensors[i]=average;
+		//printf("%d range laser %d %d\n",i,start[i],end[i]);
+ 		printf("sensors[%d] %f \n",i,sensors[i]);
+ }
+
+ // It quantizes the inputs
+ if(num_bits_inputs > 0) quantized_value=quantize_inputs(sensors,num_bits_inputs);
+ else quantized_value=0;
+
+
+ // it senses the destination
+ if(flag_destination > 0){
+        // it gets the robot's position
+        coordinates_robot("Ryu",&coord_robot);
+	quantized_atraction=quantize_destination(coord_robot,coor_destination);
+ 	printf("quantized destination %d \n",quantized_atraction); 
+ }
+
+
+
+ //FIX THIS LATER
+ quantized_total= (quantized_value << 2) + quantized_atraction;
+ if (quantized_total >= num_inputs)quantized_total=num_inputs;
+
+ printf("quantized inputs %d %d %d\n",quantized_value,quantized_atraction,quantized_total); 
+ quantized_value = quantized_total;
+ 
+
+
+ // it calculates the output
+ out_symbol=calculate_hmm_output(hmm,state[Time]);
+ output=hmm_symbol_output(out_symbol);
+
+ gen_vector.xc=output.xc;
+ gen_vector.yc=output.yc;
+ gen_vector.status=1.00;
+ gen_vector.flg_vector=0;
+ //printf("output.xc  %f output.yc %f\n",gen_vector.xc,gen_vector.yc);
+
+ // it calculates the next state
+ next_state=get_next_state_hmm_viterbi(quantized_value,flg_old, hmm,state[Time]);
+ printf("Viterbi  State %d \n",next_state);
+ //next_state=get_next_state_hmm(quantized_value,flg_old, hmm,state[Time]);
+ //printf("Calculate  State %d \n",next_state);
+
+ flg_old=0;
+ Time++;
+ //next_state=calculate_hmm_next_state(hmm,state[Time],quantized_value);
+
+ state[Time]=next_state;
+ previous_state=state[Time];
+ return gen_vector;
+
+}
+
+
+

@@ -1,0 +1,1 @@
+gcc mdp.h mdp.c dstruct.h dstruct.c mdpnav.h mdpnav.c -o mdpnav.out

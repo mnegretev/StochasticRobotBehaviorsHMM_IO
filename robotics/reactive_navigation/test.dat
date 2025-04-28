@@ -1,0 +1,2429 @@
+Largest value 0.180000
+../motion_planner/GoTo_State_Machine -x 0.824801 -y 0.850252 -a 5.777100 -v 1.800000 -z 0.885000 -s laser -n 16 -t -2.356100 -r 4.712200 -p ../test_data_13/ -e random_8 -advance 0.040000 -MaxAngle 0.785400 -selection 8 -largest 0.180000 -noise 1 -omni 1 -vq 1 -size_vq 8 -pr_out 0
+World environment ../test_data_13/random_8.wrl 
+
+observations file: ../test_data_13/random_8.raw
+
+training file: ../test_data_13/training.dat
+
+ Radio robot 0.030000 
+( origen 0.824801 0.850252 5.777100 )
+Num.bits.vq 3
+( destination 1.800000 0.885000 )
+
+
+ ************************************************************
+distance destination 0.975818 threshold 0.040800
+1 Pose robot 0.824801 0.850252 5.777100 
+intensity 1.000000 angle light 0.000000 
+Random settings file ../test_data_13/random_settings_advance_angle_sensors.dat
+Intensity lmin -5.000000 lmax 5.000000
+Angle Light lmin -0.062832 lmax 0.062832
+with noise intensity -0.153064 angle light -0.061234 
+
+ *** Centroid ../test_data_13/vq_images_laser_8.dat
+centroids[1].sensors[1] 0.176845
+centroids[1].sensors[2] 0.174970
+centroids[1].sensors[3] 0.153640
+centroids[1].sensors[4] 0.096928
+centroids[1].sensors[5] 0.045408
+centroids[1].sensors[6] 0.028742
+centroids[1].sensors[7] 0.024670
+centroids[1].sensors[8] 0.025603
+centroids[1].sensors[9] 0.031503
+centroids[1].sensors[10] 0.063683
+centroids[1].sensors[11] 0.126236
+centroids[1].sensors[12] 0.167388
+centroids[1].sensors[13] 0.178056
+centroids[1].sensors[14] 0.176908
+centroids[1].sensors[15] 0.176717
+centroids[1].sensors[16] 0.178431
+centroids[2].sensors[1] 0.173338
+centroids[2].sensors[2] 0.174884
+centroids[2].sensors[3] 0.175261
+centroids[2].sensors[4] 0.176026
+centroids[2].sensors[5] 0.175245
+centroids[2].sensors[6] 0.174141
+centroids[2].sensors[7] 0.172802
+centroids[2].sensors[8] 0.172972
+centroids[2].sensors[9] 0.173724
+centroids[2].sensors[10] 0.172924
+centroids[2].sensors[11] 0.174412
+centroids[2].sensors[12] 0.174609
+centroids[2].sensors[13] 0.176604
+centroids[2].sensors[14] 0.176946
+centroids[2].sensors[15] 0.174556
+centroids[2].sensors[16] 0.174523
+centroids[3].sensors[1] 0.064993
+centroids[3].sensors[2] 0.057538
+centroids[3].sensors[3] 0.053351
+centroids[3].sensors[4] 0.051721
+centroids[3].sensors[5] 0.048532
+centroids[3].sensors[6] 0.050067
+centroids[3].sensors[7] 0.048277
+centroids[3].sensors[8] 0.048735
+centroids[3].sensors[9] 0.048523
+centroids[3].sensors[10] 0.048362
+centroids[3].sensors[11] 0.049114
+centroids[3].sensors[12] 0.048074
+centroids[3].sensors[13] 0.048604
+centroids[3].sensors[14] 0.052521
+centroids[3].sensors[15] 0.057282
+centroids[3].sensors[16] 0.063151
+centroids[4].sensors[1] 0.177329
+centroids[4].sensors[2] 0.176171
+centroids[4].sensors[3] 0.175721
+centroids[4].sensors[4] 0.175082
+centroids[4].sensors[5] 0.164157
+centroids[4].sensors[6] 0.109303
+centroids[4].sensors[7] 0.055343
+centroids[4].sensors[8] 0.030654
+centroids[4].sensors[9] 0.025698
+centroids[4].sensors[10] 0.024390
+centroids[4].sensors[11] 0.029127
+centroids[4].sensors[12] 0.052971
+centroids[4].sensors[13] 0.105623
+centroids[4].sensors[14] 0.159894
+centroids[4].sensors[15] 0.176143
+centroids[4].sensors[16] 0.177384
+centroids[5].sensors[1] 0.173809
+centroids[5].sensors[2] 0.174360
+centroids[5].sensors[3] 0.172763
+centroids[5].sensors[4] 0.173486
+centroids[5].sensors[5] 0.172880
+centroids[5].sensors[6] 0.173075
+centroids[5].sensors[7] 0.174894
+centroids[5].sensors[8] 0.178761
+centroids[5].sensors[9] 0.180225
+centroids[5].sensors[10] 0.176056
+centroids[5].sensors[11] 0.151307
+centroids[5].sensors[12] 0.117072
+centroids[5].sensors[13] 0.087345
+centroids[5].sensors[14] 0.068379
+centroids[5].sensors[15] 0.076401
+centroids[5].sensors[16] 0.102567
+centroids[6].sensors[1] 0.132090
+centroids[6].sensors[2] 0.098953
+centroids[6].sensors[3] 0.053954
+centroids[6].sensors[4] 0.035321
+centroids[6].sensors[5] 0.029910
+centroids[6].sensors[6] 0.030661
+centroids[6].sensors[7] 0.037500
+centroids[6].sensors[8] 0.075671
+centroids[6].sensors[9] 0.122294
+centroids[6].sensors[10] 0.165356
+centroids[6].sensors[11] 0.178667
+centroids[6].sensors[12] 0.176525
+centroids[6].sensors[13] 0.176775
+centroids[6].sensors[14] 0.174583
+centroids[6].sensors[15] 0.175092
+centroids[6].sensors[16] 0.175890
+centroids[7].sensors[1] 0.097055
+centroids[7].sensors[2] 0.073791
+centroids[7].sensors[3] 0.065216
+centroids[7].sensors[4] 0.085178
+centroids[7].sensors[5] 0.115110
+centroids[7].sensors[6] 0.148890
+centroids[7].sensors[7] 0.176369
+centroids[7].sensors[8] 0.178285
+centroids[7].sensors[9] 0.176679
+centroids[7].sensors[10] 0.174155
+centroids[7].sensors[11] 0.173851
+centroids[7].sensors[12] 0.172466
+centroids[7].sensors[13] 0.173284
+centroids[7].sensors[14] 0.173563
+centroids[7].sensors[15] 0.173756
+centroids[7].sensors[16] 0.175209
+centroids[8].sensors[1] 0.173270
+centroids[8].sensors[2] 0.172554
+centroids[8].sensors[3] 0.170882
+centroids[8].sensors[4] 0.171713
+centroids[8].sensors[5] 0.174503
+centroids[8].sensors[6] 0.177173
+centroids[8].sensors[7] 0.163408
+centroids[8].sensors[8] 0.129660
+centroids[8].sensors[9] 0.081954
+centroids[8].sensors[10] 0.039431
+centroids[8].sensors[11] 0.031357
+centroids[8].sensors[12] 0.029209
+centroids[8].sensors[13] 0.033791
+centroids[8].sensors[14] 0.052402
+centroids[8].sensors[15] 0.087978
+centroids[8].sensors[16] 0.127833
+light source angle 0.541702
+intensity 1.050177 quantized intensity 0 
+deterministic selection 0
+File ../test_data_13/reactive_table_vq.txt
+ Num. bits output 3 num_inputs 8 
+memory[1] output 3
+memory[2] output 3
+memory[3] output 3
+memory[4] output 7
+memory[5] output 3
+memory[6] output 2
+memory[7] output 2
+memory[8] output 3
+memory[9] output 1
+memory[10] output 3
+memory[11] output 4
+memory[12] output 2
+memory[13] output 4
+memory[14] output 5
+memory[15] output 5
+memory[16] output 5
+memory[17] output 2
+memory[18] output 3
+memory[19] output 4
+memory[20] output 5
+memory[21] output 5
+memory[22] output 0
+memory[23] output 4
+memory[24] output 1
+memory[25] output 4
+memory[26] output 3
+memory[27] output 7
+memory[28] output 3
+memory[29] output 5
+memory[30] output 5
+memory[31] output 5
+memory[32] output 4
+memory[33] output 1
+memory[34] output 1
+memory[35] output 4
+memory[36] output 4
+memory[37] output 4
+memory[38] output 4
+memory[39] output 5
+memory[40] output 5
+memory[41] output 6
+memory[42] output 3
+memory[43] output 3
+memory[44] output 6
+memory[45] output 6
+memory[46] output 6
+memory[47] output 6
+memory[48] output 6
+memory[49] output 6
+memory[50] output 6
+memory[51] output 4
+memory[52] output 5
+memory[53] output 5
+memory[54] output 1
+memory[55] output 5
+memory[56] output 1
+memory[57] output 5
+memory[58] output 4
+memory[59] output 3
+memory[60] output 4
+memory[61] output 3
+memory[62] output 5
+memory[63] output 5
+memory[64] output 5
+memory[65] output 6
+memory[66] output 2
+memory[67] output 1
+memory[68] output 3
+memory[69] output 6
+memory[70] output 3
+memory[71] output 6
+memory[72] output 5
+memory[73] output 1
+memory[74] output 6
+memory[75] output 3
+memory[76] output 6
+memory[77] output 3
+memory[78] output 4
+memory[79] output 5
+memory[80] output 3
+memory[81] output 7
+memory[82] output 1
+memory[83] output 5
+memory[84] output 4
+memory[85] output 2
+memory[86] output 1
+memory[87] output 6
+memory[88] output 2
+memory[89] output 4
+memory[90] output 2
+memory[91] output 1
+memory[92] output 0
+memory[93] output 1
+memory[94] output 7
+memory[95] output 7
+memory[96] output 7
+memory[97] output 1
+memory[98] output 3
+memory[99] output 4
+memory[100] output 0
+memory[101] output 7
+memory[102] output 0
+memory[103] output 2
+memory[104] output 4
+memory[105] output 3
+memory[106] output 6
+memory[107] output 5
+memory[108] output 3
+memory[109] output 0
+memory[110] output 3
+memory[111] output 0
+memory[112] output 4
+memory[113] output 1
+memory[114] output 3
+memory[115] output 2
+memory[116] output 3
+memory[117] output 7
+memory[118] output 3
+memory[119] output 7
+memory[120] output 1
+memory[121] output 7
+memory[122] output 0
+memory[123] output 1
+memory[124] output 7
+memory[125] output 7
+memory[126] output 1
+memory[127] output 2
+memory[128] output 4
+memory[129] output 1
+memory[130] output 2
+memory[131] output 3
+memory[132] output 7
+memory[133] output 6
+memory[134] output 0
+memory[135] output 2
+memory[136] output 5
+memory[137] output 1
+memory[138] output 6
+memory[139] output 6
+memory[140] output 5
+memory[141] output 0
+memory[142] output 0
+memory[143] output 4
+memory[144] output 5
+memory[145] output 4
+memory[146] output 5
+memory[147] output 4
+memory[148] output 0
+memory[149] output 3
+memory[150] output 6
+memory[151] output 2
+memory[152] output 0
+memory[153] output 3
+memory[154] output 4
+memory[155] output 7
+memory[156] output 0
+memory[157] output 3
+memory[158] output 0
+memory[159] output 6
+memory[160] output 2
+memory[161] output 1
+memory[162] output 3
+memory[163] output 2
+memory[164] output 2
+memory[165] output 3
+memory[166] output 4
+memory[167] output 4
+memory[168] output 1
+memory[169] output 7
+memory[170] output 6
+memory[171] output 3
+memory[172] output 0
+memory[173] output 7
+memory[174] output 6
+memory[175] output 4
+memory[176] output 6
+memory[177] output 4
+memory[178] output 6
+memory[179] output 4
+memory[180] output 6
+memory[181] output 0
+memory[182] output 1
+memory[183] output 7
+memory[184] output 1
+memory[185] output 5
+memory[186] output 3
+memory[187] output 1
+memory[188] output 7
+memory[189] output 6
+memory[190] output 7
+memory[191] output 3
+memory[192] output 0
+memory[193] output 4
+memory[194] output 4
+memory[195] output 5
+memory[196] output 6
+memory[197] output 1
+memory[198] output 5
+memory[199] output 2
+memory[200] output 2
+memory[201] output 1
+memory[202] output 3
+memory[203] output 5
+memory[204] output 4
+memory[205] output 7
+memory[206] output 7
+memory[207] output 5
+memory[208] output 5
+memory[209] output 1
+memory[210] output 4
+memory[211] output 3
+memory[212] output 1
+memory[213] output 3
+memory[214] output 5
+memory[215] output 0
+memory[216] output 6
+memory[217] output 3
+memory[218] output 2
+memory[219] output 4
+memory[220] output 3
+memory[221] output 6
+memory[222] output 4
+memory[223] output 7
+memory[224] output 2
+memory[225] output 1
+memory[226] output 6
+memory[227] output 6
+memory[228] output 7
+memory[229] output 7
+memory[230] output 4
+memory[231] output 0
+memory[232] output 1
+memory[233] output 7
+memory[234] output 6
+memory[235] output 7
+memory[236] output 7
+memory[237] output 5
+memory[238] output 7
+memory[239] output 4
+memory[240] output 5
+memory[241] output 6
+memory[242] output 6
+memory[243] output 1
+memory[244] output 4
+memory[245] output 0
+memory[246] output 5
+memory[247] output 1
+memory[248] output 7
+memory[249] output 1
+memory[250] output 1
+memory[251] output 0
+memory[252] output 2
+memory[253] output 5
+memory[254] output 1
+memory[255] output 7
+memory[256] output 6
+memory[257] output 0
+Num. memory locations 256
+Num. total memory 256
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+Random settings file ../test_data_13/random_settings_advance_angle_sensors.dat
+movement: angle  0.012425 distance 0.043484
+before x:0.824801, y:0.850252,  rad:5.777100
+ before angle1 0.012425
+ after angle1 0.012425
+new_thetamv 5.789525
+after x:0.863093, y:0.829647,  rad:5.789525
+
+
+ ************************************************************
+distance destination 0.938540 threshold 0.040800
+2 Pose robot 0.863093 0.829647 5.789525 
+intensity 1.050177 angle light 0.541702 
+with noise intensity 0.565159 angle light 0.522950 
+light source angle 0.552673
+intensity 1.135257 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.032124 distance 0.039481
+before x:0.863093, y:0.829647,  rad:5.789525
+ before angle1 0.032124
+ after angle1 0.032124
+new_thetamv 5.821649
+after x:0.898443, y:0.812065,  rad:5.821649
+
+
+ ************************************************************
+distance destination 0.904502 threshold 0.040800
+3 Pose robot 0.898443 0.812065 5.821649 
+intensity 1.135257 angle light 0.552673 
+with noise intensity 1.848169 angle light 0.494174 
+light source angle 0.542260
+intensity 1.222308 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.013342 distance 0.037684
+before x:0.898443, y:0.812065,  rad:5.821649
+ before angle1 -0.013342
+ after angle1 -0.013342
+new_thetamv 5.808306
+after x:0.931957, y:0.794835,  rad:5.808306
+
+
+ ************************************************************
+distance destination 0.872713 threshold 0.040800
+4 Pose robot 0.931957 0.794835 5.808306 
+intensity 1.222308 angle light 0.542260 
+with noise intensity 1.594940 angle light 0.586402 
+light source angle 0.578380
+intensity 1.312978 quantized intensity 0 
+obs intensity 0 obstacles 3 dest 0
+quantized intensity 0 laser 3 angle_dest 0
+state 24 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.753816 distance 0.003013
+before x:0.931957, y:0.794835,  rad:5.808306
+ before angle1 -0.753816
+ after angle1 -0.753816
+new_thetamv 5.054490
+after x:0.932968, y:0.791996,  rad:5.054490
+
+
+ ************************************************************
+distance destination 0.872005 threshold 0.040800
+5 Pose robot 0.932968 0.791996 5.054490 
+intensity 1.312978 angle light 0.578380 
+with noise intensity -2.643169 angle light 0.601709 
+light source angle 1.335554
+intensity 1.315109 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 1
+quantized intensity 0 laser 4 angle_dest 1
+state 33 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.039151 distance 0.041757
+before x:0.932968, y:0.791996,  rad:5.054490
+ before angle1 0.039151
+ after angle1 0.039151
+new_thetamv 5.093641
+after x:0.948505, y:0.753237,  rad:5.093641
+
+
+ ************************************************************
+distance destination 0.861629 threshold 0.040800
+6 Pose robot 0.948505 0.753237 5.093641 
+intensity 1.315109 angle light 1.335554 
+with noise intensity 1.734635 angle light 1.333519 
+light source angle 1.343070
+intensity 1.346975 quantized intensity 0 
+obs intensity 0 obstacles 7 dest 1
+quantized intensity 0 laser 7 angle_dest 1
+state 57 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.750453 distance -0.001015
+before x:0.948505, y:0.753237,  rad:5.093641
+ before angle1 -0.750453
+ after angle1 -0.750453
+new_thetamv 4.343189
+after x:0.948872, y:0.754184,  rad:4.343189
+
+
+ ************************************************************
+distance destination 0.861123 threshold 0.040800
+7 Pose robot 0.948872 0.754184 4.343189 
+intensity 1.346975 angle light 1.343070 
+with noise intensity -1.460284 angle light 1.317104 
+light source angle 2.092501
+intensity 1.348559 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 2
+quantized intensity 0 laser 4 angle_dest 2
+state 34 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.771399 distance 0.001554
+before x:0.948872, y:0.754184,  rad:4.343189
+ before angle1 -0.771399
+ after angle1 -0.771399
+new_thetamv 3.571790
+after x:0.947459, y:0.753536,  rad:3.571790
+
+
+ ************************************************************
+distance destination 0.862617 threshold 0.040800
+8 Pose robot 0.947459 0.753536 3.571790 
+intensity 1.348559 angle light 2.092501 
+with noise intensity 0.068153 angle light 2.069431 
+light source angle 2.864394
+intensity 1.343890 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 3
+quantized intensity 0 laser 4 angle_dest 3
+state 35 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.799798 distance 0.002994
+before x:0.947459, y:0.753536,  rad:3.571790
+ before angle1 -0.799798
+ after angle1 -0.799798
+new_thetamv 2.771991
+after x:0.944668, y:0.754617,  rad:2.771991
+
+
+ ************************************************************
+distance destination 0.865213 threshold 0.040800
+9 Pose robot 0.944668 0.754617 2.771991 
+intensity 1.343890 angle light 2.864394 
+with noise intensity -0.469224 angle light 2.815567 
+light source angle 3.662465
+intensity 1.335839 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 4
+quantized intensity 0 laser 6 angle_dest 4
+state 52 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.787509 distance 0.043801
+before x:0.944668, y:0.754617,  rad:2.771991
+ before angle1 -0.787509
+ after angle1 -0.787509
+new_thetamv 1.984482
+after x:0.927060, y:0.794723,  rad:1.984482
+
+
+ ************************************************************
+distance destination 0.877595 threshold 0.040800
+10 Pose robot 0.927060 0.794723 1.984482 
+intensity 1.335839 angle light 3.662465 
+with noise intensity 5.063295 angle light 3.693197 
+light source angle 4.401754
+intensity 1.298408 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.016993 distance 0.037609
+before x:0.927060, y:0.794723,  rad:1.984482
+ before angle1 -0.016993
+ after angle1 -0.016993
+new_thetamv 1.967489
+after x:0.912529, y:0.829412,  rad:1.967489
+
+
+ ************************************************************
+distance destination 0.889210 threshold 0.040800
+11 Pose robot 0.912529 0.829412 1.967489 
+intensity 1.298408 angle light 4.401754 
+with noise intensity -0.215756 angle light 4.348114 
+light source angle 4.378252
+intensity 1.264711 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.022678 distance 0.039372
+before x:0.912529, y:0.829412,  rad:1.967489
+ before angle1 -0.022678
+ after angle1 -0.022678
+new_thetamv 1.944812
+after x:0.898144, y:0.866062,  rad:1.944812
+
+
+ ************************************************************
+distance destination 0.902054 threshold 0.040800
+12 Pose robot 0.898144 0.866062 1.944812 
+intensity 1.264711 angle light 4.378252 
+with noise intensity -3.731565 angle light 4.429908 
+light source angle 4.359370
+intensity 1.228951 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.021891 distance 0.038154
+before x:0.898144, y:0.866062,  rad:1.944812
+ before angle1 -0.021891
+ after angle1 -0.021891
+new_thetamv 1.922920
+after x:0.884985, y:0.901875,  rad:1.922920
+
+
+ ************************************************************
+distance destination 0.915170 threshold 0.040800
+13 Pose robot 0.884985 0.901875 1.922920 
+intensity 1.228951 angle light 4.359370 
+with noise intensity 2.754454 angle light 4.351876 
+light source angle 4.341825
+intensity 1.193978 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 5
+quantized intensity 0 laser 1 angle_dest 5
+state 13 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.758850 distance 0.041275
+before x:0.884985, y:0.901875,  rad:1.922920
+ before angle1 -0.758850
+ after angle1 -0.758850
+new_thetamv 1.164071
+after x:0.901314, y:0.939783,  rad:1.164071
+
+
+ ************************************************************
+distance destination 0.900354 threshold 0.040800
+14 Pose robot 0.901314 0.939783 1.164071 
+intensity 1.193978 angle light 4.341825 
+with noise intensity -0.951826 angle light 4.351573 
+light source angle 5.058230
+intensity 1.233597 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 6
+quantized intensity 0 laser 1 angle_dest 6
+state 14 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.784348 distance 0.042164
+before x:0.901314, y:0.939783,  rad:1.164071
+ before angle1 -0.784348
+ after angle1 -0.784348
+new_thetamv 0.379723
+after x:0.940474, y:0.955412,  rad:0.379723
+
+
+ ************************************************************
+distance destination 0.862405 threshold 0.040800
+15 Pose robot 0.940474 0.955412 0.379723 
+intensity 1.233597 angle light 5.058230 
+with noise intensity -0.788727 angle light 5.063601 
+light source angle 5.821726
+intensity 1.344552 quantized intensity 0 
+obs intensity 0 obstacles 0 dest 7
+quantized intensity 0 laser 0 angle_dest 7
+state 7 out 3
+LEFT
+movement fsm_engine: angle  0.785400 distance 0.000000
+movement: angle  0.778863 distance 0.002024
+before x:0.940474, y:0.955412,  rad:0.379723
+ before angle1 0.778863
+ after angle1 0.778863
+new_thetamv 1.158585
+after x:0.941285, y:0.957266,  rad:1.158585
+
+
+ ************************************************************
+distance destination 0.861750 threshold 0.040800
+16 Pose robot 0.941285 0.957266 1.158585 
+intensity 1.344552 angle light 5.821726 
+with noise intensity 1.369072 angle light 5.834084 
+light source angle 5.040642
+intensity 1.346595 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 6
+quantized intensity 0 laser 5 angle_dest 6
+state 46 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.746701 distance 0.040276
+before x:0.941285, y:0.957266,  rad:1.158585
+ before angle1 0.746701
+ after angle1 0.746701
+new_thetamv 1.905286
+after x:0.928063, y:0.995310,  rad:1.905286
+
+
+ ************************************************************
+distance destination 0.878887 threshold 0.040800
+17 Pose robot 0.928063 0.995310 1.905286 
+intensity 1.346595 angle light 5.040642 
+with noise intensity 4.235937 angle light 4.994429 
+light source angle 4.252057
+intensity 1.294595 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.010074 distance 0.037064
+before x:0.928063, y:0.995310,  rad:1.905286
+ before angle1 0.010074
+ after angle1 0.010074
+new_thetamv 1.915360
+after x:0.915543, y:1.030195,  rad:1.915360
+
+
+ ************************************************************
+distance destination 0.896295 threshold 0.040800
+18 Pose robot 0.915543 1.030195 1.915360 
+intensity 1.294595 angle light 4.252057 
+with noise intensity 2.131813 angle light 4.242506 
+light source angle 4.205113
+intensity 1.244795 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.021174 distance 0.039487
+before x:0.915543, y:1.030195,  rad:1.915360
+ before angle1 0.021174
+ after angle1 0.021174
+new_thetamv 1.936534
+after x:0.901421, y:1.067071,  rad:1.936534
+
+
+ ************************************************************
+distance destination 0.916839 threshold 0.040800
+19 Pose robot 0.901421 1.067071 1.936534 
+intensity 1.244795 angle light 4.205113 
+with noise intensity -0.667686 angle light 4.228063 
+light source angle 4.146737
+intensity 1.189636 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.001013 distance 0.042997
+before x:0.901421, y:1.067071,  rad:1.936534
+ before angle1 -0.001013
+ after angle1 -0.001013
+new_thetamv 1.935521
+after x:0.886085, y:1.107239,  rad:1.935521
+
+
+ ************************************************************
+distance destination 0.940548 threshold 0.040800
+20 Pose robot 0.886085 1.107239 1.935521 
+intensity 1.189636 angle light 4.146737 
+with noise intensity 5.215431 angle light 4.101463 
+light source angle 4.109122
+intensity 1.130414 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.034790 distance 0.037196
+before x:0.886085, y:1.107239,  rad:1.935521
+ before angle1 0.034790
+ after angle1 0.034790
+new_thetamv 1.970311
+after x:0.871616, y:1.141506,  rad:1.970311
+
+
+ ************************************************************
+distance destination 0.963167 threshold 0.040800
+21 Pose robot 0.871616 1.141506 1.970311 
+intensity 1.130414 angle light 4.109122 
+with noise intensity -2.921345 angle light 4.106180 
+light source angle 4.043307
+intensity 1.077945 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 5
+quantized intensity 0 laser 1 angle_dest 5
+state 13 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.756883 distance 0.042072
+before x:0.871616, y:1.141506,  rad:1.970311
+ before angle1 -0.756883
+ after angle1 -0.756883
+new_thetamv 1.213428
+after x:0.886334, y:1.180920,  rad:1.213428
+
+
+ ************************************************************
+distance destination 0.960393 threshold 0.040800
+22 Pose robot 0.886334 1.180920 1.213428 
+intensity 1.077945 angle light 4.043307 
+with noise intensity 4.620938 angle light 4.102706 
+light source angle 4.756537
+intensity 1.084182 quantized intensity 0 
+obs intensity 0 obstacles 3 dest 6
+quantized intensity 0 laser 3 angle_dest 6
+state 30 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.800868 distance 0.038734
+before x:0.886334, y:1.180920,  rad:1.213428
+ before angle1 -0.800868
+ after angle1 -0.800868
+new_thetamv 0.412560
+after x:0.921818, y:1.196451,  rad:0.412560
+
+
+ ************************************************************
+distance destination 0.931775 threshold 0.040800
+23 Pose robot 0.921818 1.196451 0.412560 
+intensity 1.084182 angle light 4.756537 
+with noise intensity -3.323118 angle light 4.795631 
+light source angle 5.529810
+intensity 1.151802 quantized intensity 0 
+obs intensity 0 obstacles 7 dest 7
+quantized intensity 0 laser 7 angle_dest 7
+state 63 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.765803 distance 0.041681
+before x:0.921818, y:1.196451,  rad:0.412560
+ before angle1 -0.765803
+ after angle1 -0.765803
+new_thetamv -0.353242
+after x:0.960926, y:1.182032,  rad:5.929957
+
+
+ ************************************************************
+distance destination 0.890097 threshold 0.040800
+24 Pose robot 0.960926 1.182032 5.929957 
+intensity 1.151802 angle light 5.529810 
+with noise intensity 2.402241 angle light 5.512495 
+light source angle 0.012994
+intensity 1.262192 quantized intensity 0 
+obs intensity 0 obstacles 7 dest 0
+quantized intensity 0 laser 7 angle_dest 0
+state 56 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.812387 distance 0.039238
+before x:0.960926, y:1.182032,  rad:5.929957
+ before angle1 -0.812387
+ after angle1 -0.812387
+new_thetamv 5.117571
+after x:0.976394, y:1.145971,  rad:5.117571
+
+
+ ************************************************************
+distance destination 0.863964 threshold 0.040800
+25 Pose robot 0.976394 1.145971 5.117571 
+intensity 1.262192 angle light 0.012994 
+with noise intensity 0.726398 angle light 0.000616 
+light source angle 0.858759
+intensity 1.339705 quantized intensity 0 
+obs intensity 0 obstacles 7 dest 1
+quantized intensity 0 laser 7 angle_dest 1
+state 57 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.805674 distance 0.003788
+before x:0.976394, y:1.145971,  rad:5.117571
+ before angle1 -0.805674
+ after angle1 -0.805674
+new_thetamv 4.311897
+after x:0.974917, y:1.142483,  rad:4.311897
+
+
+ ************************************************************
+distance destination 0.864326 threshold 0.040800
+26 Pose robot 0.974917 1.142483 4.311897 
+intensity 1.339705 angle light 0.858759 
+with noise intensity -2.664118 angle light 0.872103 
+light source angle 1.668797
+intensity 1.338581 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 2
+quantized intensity 0 laser 4 angle_dest 2
+state 34 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.764695 distance -0.001989
+before x:0.974917, y:1.142483,  rad:4.311897
+ before angle1 -0.764695
+ after angle1 -0.764695
+new_thetamv 3.547203
+after x:0.976745, y:1.143268,  rad:3.547203
+
+
+ ************************************************************
+distance destination 0.862816 threshold 0.040800
+27 Pose robot 0.976745 1.143268 3.547203 
+intensity 1.338581 angle light 1.668797 
+with noise intensity 2.637995 angle light 1.627283 
+light source angle 2.431992
+intensity 1.343271 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 3
+quantized intensity 0 laser 4 angle_dest 3
+state 35 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.776701 distance -0.000955
+before x:0.976745, y:1.143268,  rad:3.547203
+ before angle1 -0.776701
+ after angle1 -0.776701
+new_thetamv 2.770501
+after x:0.977635, y:1.142921,  rad:2.770501
+
+
+ ************************************************************
+distance destination 0.861863 threshold 0.040800
+28 Pose robot 0.977635 1.142921 2.770501 
+intensity 1.343271 angle light 2.431992 
+with noise intensity 2.005278 angle light 2.445589 
+light source angle 3.208767
+intensity 1.346242 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 4
+quantized intensity 0 laser 6 angle_dest 4
+state 52 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.785066 distance 0.036011
+before x:0.977635, y:1.142921,  rad:2.770501
+ before angle1 -0.785066
+ after angle1 -0.785066
+new_thetamv 1.985435
+after x:0.963127, y:1.175881,  rad:1.985435
+
+
+ ************************************************************
+distance destination 0.885984 threshold 0.040800
+29 Pose robot 0.963127 1.175881 1.985435 
+intensity 1.346242 angle light 3.208767 
+with noise intensity 0.705369 angle light 3.228515 
+light source angle 3.963233
+intensity 1.273938 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 5
+quantized intensity 0 laser 5 angle_dest 5
+state 45 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.774728 distance 0.043405
+before x:0.963127, y:1.175881,  rad:1.985435
+ before angle1 0.774728
+ after angle1 0.774728
+new_thetamv 2.760163
+after x:0.922842, y:1.192038,  rad:2.760163
+
+
+ ************************************************************
+distance destination 0.929343 threshold 0.040800
+30 Pose robot 0.922842 1.192038 2.760163 
+intensity 1.273938 angle light 3.963233 
+with noise intensity 1.515609 angle light 3.927281 
+light source angle 3.186314
+intensity 1.157838 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 4
+quantized intensity 0 laser 5 angle_dest 4
+state 44 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.777962 distance 0.041818
+before x:0.922842, y:1.192038,  rad:2.760163
+ before angle1 0.777962
+ after angle1 0.777962
+new_thetamv 3.538125
+after x:0.884269, y:1.175887,  rad:3.538125
+
+
+ ************************************************************
+distance destination 0.960822 threshold 0.040800
+31 Pose robot 0.884269 1.175887 3.538125 
+intensity 1.157838 angle light 3.186314 
+with noise intensity 4.978996 angle light 3.172504 
+light source angle 2.437486
+intensity 1.083214 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 3
+quantized intensity 0 laser 6 angle_dest 3
+state 51 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.764668 distance 0.037601
+before x:0.884269, y:1.175887,  rad:3.538125
+ before angle1 -0.764668
+ after angle1 -0.764668
+new_thetamv 2.773458
+after x:0.849187, y:1.189419,  rad:2.773458
+
+
+ ************************************************************
+distance destination 0.998356 threshold 0.040800
+32 Pose robot 0.849187 1.189419 2.773458 
+intensity 1.083214 angle light 2.437486 
+with noise intensity 1.737182 angle light 2.428580 
+light source angle 3.199873
+intensity 1.003295 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 4
+quantized intensity 0 laser 6 angle_dest 4
+state 52 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.769618 distance 0.039458
+before x:0.849187, y:1.189419,  rad:2.773458
+ before angle1 -0.769618
+ after angle1 -0.769618
+new_thetamv 2.003839
+after x:0.832629, y:1.225235,  rad:2.003839
+
+
+ ************************************************************
+distance destination 1.025459 threshold 0.040800
+33 Pose robot 0.832629 1.225235 2.003839 
+intensity 1.003295 angle light 3.199873 
+with noise intensity -0.701595 angle light 3.145260 
+light source angle 3.941148
+intensity 0.950963 quantized intensity 0 
+obs intensity 0 obstacles 0 dest 5
+quantized intensity 0 laser 0 angle_dest 5
+state 5 out 2
+BACKWARD
+movement fsm_engine: angle  0.000000 distance -0.040000
+movement: angle  -0.034053 distance -0.037143
+before x:0.832629, y:1.225235,  rad:2.003839
+ before angle1 -0.034053
+ after angle1 -0.034053
+new_thetamv 1.969786
+after x:0.847059, y:1.191009,  rad:1.969786
+
+
+ ************************************************************
+distance destination 1.000869 threshold 0.040800
+34 Pose robot 0.847059 1.191009 1.969786 
+intensity 0.950963 angle light 3.941148 
+with noise intensity 4.835872 angle light 3.959924 
+light source angle 4.002681
+intensity 0.998265 quantized intensity 0 
+obs intensity 0 obstacles 0 dest 5
+quantized intensity 0 laser 0 angle_dest 5
+state 5 out 2
+BACKWARD
+movement fsm_engine: angle  0.000000 distance -0.040000
+movement: angle  0.015340 distance -0.040786
+before x:0.847059, y:1.191009,  rad:1.969786
+ before angle1 0.015340
+ after angle1 0.015340
+new_thetamv 1.985126
+after x:0.863478, y:1.153674,  rad:1.985126
+
+
+ ************************************************************
+distance destination 0.974299 threshold 0.040800
+35 Pose robot 0.863478 1.153674 1.985126 
+intensity 0.998265 angle light 4.002681 
+with noise intensity 1.763495 angle light 4.009335 
+light source angle 4.018678
+intensity 1.053453 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 5
+quantized intensity 0 laser 1 angle_dest 5
+state 13 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.775312 distance 0.038540
+before x:0.863478, y:1.153674,  rad:1.985126
+ before angle1 -0.775312
+ after angle1 -0.775312
+new_thetamv 1.209814
+after x:0.877090, y:1.189731,  rad:1.209814
+
+
+ ************************************************************
+distance destination 0.971917 threshold 0.040800
+36 Pose robot 0.877090 1.189731 1.209814 
+intensity 1.053453 angle light 4.018678 
+with noise intensity -2.036788 angle light 3.973239 
+light source angle 4.754457
+intensity 1.058624 quantized intensity 0 
+obs intensity 0 obstacles 3 dest 6
+quantized intensity 0 laser 3 angle_dest 6
+state 30 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.793167 distance 0.041658
+before x:0.877090, y:1.189731,  rad:1.209814
+ before angle1 -0.793167
+ after angle1 -0.793167
+new_thetamv 0.416647
+after x:0.915185, y:1.206590,  rad:0.416647
+
+
+ ************************************************************
+distance destination 0.941444 threshold 0.040800
+37 Pose robot 0.915185 1.206590 0.416647 
+intensity 1.058624 angle light 4.754457 
+with noise intensity 1.791202 angle light 4.799123 
+light source angle 5.517929
+intensity 1.128264 quantized intensity 0 
+obs intensity 0 obstacles 7 dest 7
+quantized intensity 0 laser 7 angle_dest 7
+state 63 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.805845 distance 0.039852
+before x:0.915185, y:1.206590,  rad:0.416647
+ before angle1 -0.805845
+ after angle1 -0.805845
+new_thetamv -0.389199
+after x:0.952057, y:1.191468,  rad:5.894001
+
+
+ ************************************************************
+distance destination 0.901626 threshold 0.040800
+38 Pose robot 0.952057 1.191468 5.894001 
+intensity 1.128264 angle light 5.517929 
+with noise intensity -2.691948 angle light 5.536618 
+light source angle 0.042367
+intensity 1.230118 quantized intensity 0 
+obs intensity 0 obstacles 7 dest 0
+quantized intensity 0 laser 7 angle_dest 0
+state 56 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.804673 distance 0.043861
+before x:0.952057, y:1.191468,  rad:5.894001
+ before angle1 -0.804673
+ after angle1 -0.804673
+new_thetamv 5.089328
+after x:0.968201, y:1.150687,  rad:5.089328
+
+
+ ************************************************************
+distance destination 0.873200 threshold 0.040800
+39 Pose robot 0.968201 1.150687 5.089328 
+intensity 1.230118 angle light 0.042367 
+with noise intensity 1.278791 angle light -0.001988 
+light source angle 0.884687
+intensity 1.311511 quantized intensity 0 
+obs intensity 0 obstacles 7 dest 1
+quantized intensity 0 laser 7 angle_dest 1
+state 57 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.764857 distance -0.001584
+before x:0.968201, y:1.150687,  rad:5.089328
+ before angle1 -0.764857
+ after angle1 -0.764857
+new_thetamv 4.324471
+after x:0.968800, y:1.152153,  rad:4.324471
+
+
+ ************************************************************
+distance destination 0.873077 threshold 0.040800
+40 Pose robot 0.968800 1.152153 4.324471 
+intensity 1.311511 angle light 0.884687 
+with noise intensity -0.926226 angle light 0.933551 
+light source angle 1.647736
+intensity 1.311882 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 2
+quantized intensity 0 laser 4 angle_dest 2
+state 34 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.790196 distance -0.001933
+before x:0.968800, y:1.152153,  rad:4.324471
+ before angle1 -0.790196
+ after angle1 -0.790196
+new_thetamv 3.534275
+after x:0.970586, y:1.152893,  rad:3.534275
+
+
+ ************************************************************
+distance destination 0.871604 threshold 0.040800
+41 Pose robot 0.970586 1.152893 3.534275 
+intensity 1.311882 angle light 1.647736 
+with noise intensity 0.320591 angle light 1.587560 
+light source angle 2.436497
+intensity 1.316320 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 3
+quantized intensity 0 laser 4 angle_dest 3
+state 35 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.800555 distance 0.002995
+before x:0.970586, y:1.152893,  rad:3.534275
+ before angle1 -0.800555
+ after angle1 -0.800555
+new_thetamv 2.733720
+after x:0.967837, y:1.154081,  rad:2.733720
+
+
+ ************************************************************
+distance destination 0.874585 threshold 0.040800
+42 Pose robot 0.967837 1.154081 2.733720 
+intensity 1.316320 angle light 2.436497 
+with noise intensity 1.040893 angle light 2.439885 
+light source angle 3.236725
+intensity 1.307361 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 4
+quantized intensity 0 laser 6 angle_dest 4
+state 52 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.803331 distance 0.037692
+before x:0.967837, y:1.154081,  rad:2.733720
+ before angle1 -0.803331
+ after angle1 -0.803331
+new_thetamv 1.930389
+after x:0.954574, y:1.189362,  rad:1.930389
+
+
+ ************************************************************
+distance destination 0.898544 threshold 0.040800
+43 Pose robot 0.954574 1.189362 1.930389 
+intensity 1.307361 angle light 3.236725 
+with noise intensity 1.418413 angle light 3.257101 
+light source angle 4.007232
+intensity 1.238572 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 5
+quantized intensity 0 laser 5 angle_dest 5
+state 45 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.790595 distance 0.040608
+before x:0.954574, y:1.189362,  rad:1.930389
+ before angle1 0.790595
+ after angle1 0.790595
+new_thetamv 2.720984
+after x:0.917505, y:1.205943,  rad:2.720984
+
+
+ ************************************************************
+distance destination 0.939043 threshold 0.040800
+44 Pose robot 0.917505 1.205943 2.720984 
+intensity 1.238572 angle light 4.007232 
+with noise intensity 2.326180 angle light 3.948339 
+light source angle 3.213395
+intensity 1.134042 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 4
+quantized intensity 0 laser 5 angle_dest 4
+state 44 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.807566 distance 0.040427
+before x:0.917505, y:1.205943,  rad:2.720984
+ before angle1 0.807566
+ after angle1 0.807566
+new_thetamv 3.528550
+after x:0.880067, y:1.190687,  rad:3.528550
+
+
+ ************************************************************
+distance destination 0.969392 threshold 0.040800
+45 Pose robot 0.880067 1.190687 3.528550 
+intensity 1.134042 angle light 3.213395 
+with noise intensity 4.293326 angle light 3.260212 
+light source angle 2.433822
+intensity 1.064145 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 3
+quantized intensity 0 laser 6 angle_dest 3
+state 51 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.750885 distance 0.040477
+before x:0.880067, y:1.190687,  rad:3.528550
+ before angle1 -0.750885
+ after angle1 -0.750885
+new_thetamv 2.777664
+after x:0.842241, y:1.205095,  rad:2.777664
+
+
+ ************************************************************
+distance destination 1.009834 threshold 0.040800
+46 Pose robot 0.842241 1.205095 2.777664 
+intensity 1.064145 angle light 2.433822 
+with noise intensity 1.175469 angle light 2.440671 
+light source angle 3.182980
+intensity 0.980619 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 4
+quantized intensity 0 laser 5 angle_dest 4
+state 44 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.759768 distance 0.037807
+before x:0.842241, y:1.205095,  rad:2.777664
+ before angle1 0.759768
+ after angle1 0.759768
+new_thetamv 3.537433
+after x:0.807357, y:1.190517,  rad:3.537433
+
+
+ ************************************************************
+distance destination 1.038596 threshold 0.040800
+47 Pose robot 0.807357 1.190517 3.537433 
+intensity 0.980619 angle light 3.182980 
+with noise intensity 2.241865 angle light 3.183777 
+light source angle 2.447173
+intensity 0.927058 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 3
+quantized intensity 0 laser 6 angle_dest 3
+state 51 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.765849 distance 0.037270
+before x:0.807357, y:1.190517,  rad:3.537433
+ before angle1 -0.765849
+ after angle1 -0.765849
+new_thetamv 2.771583
+after x:0.772609, y:1.203995,  rad:2.771583
+
+
+ ************************************************************
+distance destination 1.075774 threshold 0.040800
+48 Pose robot 0.772609 1.203995 2.771583 
+intensity 0.927058 angle light 2.447173 
+with noise intensity 5.261411 angle light 2.401061 
+light source angle 3.210549
+intensity 0.864087 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 4
+quantized intensity 0 laser 5 angle_dest 4
+state 44 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.777071 distance 0.042199
+before x:0.772609, y:1.203995,  rad:2.771583
+ before angle1 0.777071
+ after angle1 0.777071
+new_thetamv 3.548654
+after x:0.733858, y:1.187288,  rad:3.548654
+
+
+ ************************************************************
+distance destination 1.108168 threshold 0.040800
+49 Pose robot 0.733858 1.187288 3.548654 
+intensity 0.864087 angle light 3.210549 
+with noise intensity -1.722589 angle light 3.187829 
+light source angle 2.458249
+intensity 0.814307 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 3
+quantized intensity 0 laser 6 angle_dest 3
+state 51 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.777173 distance 0.041572
+before x:0.733858, y:1.187288,  rad:3.548654
+ before angle1 -0.777173
+ after angle1 -0.777173
+new_thetamv 2.771481
+after x:0.695101, y:1.202325,  rad:2.771481
+
+
+ ************************************************************
+distance destination 1.149564 threshold 0.040800
+50 Pose robot 0.695101 1.202325 2.771481 
+intensity 0.814307 angle light 2.458249 
+with noise intensity -1.620073 angle light 2.427547 
+light source angle 3.232033
+intensity 0.756717 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 4
+quantized intensity 0 laser 5 angle_dest 4
+state 44 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.749491 distance 0.036656
+before x:0.695101, y:1.202325,  rad:2.771481
+ before angle1 0.749491
+ after angle1 0.749491
+new_thetamv 3.520972
+after x:0.661051, y:1.188750,  rad:3.520972
+
+
+ ************************************************************
+distance destination 1.178757 threshold 0.040800
+51 Pose robot 0.661051 1.188750 3.520972 
+intensity 0.756717 angle light 3.232033 
+with noise intensity 1.842465 angle light 3.227717 
+light source angle 2.501587
+intensity 0.719700 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 3
+quantized intensity 0 laser 6 angle_dest 3
+state 51 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.774783 distance 0.040612
+before x:0.661051, y:1.188750,  rad:3.520972
+ before angle1 -0.774783
+ after angle1 -0.774783
+new_thetamv 2.746189
+after x:0.623573, y:1.204393,  rad:2.746189
+
+
+ ************************************************************
+distance destination 1.219013 threshold 0.040800
+52 Pose robot 0.623573 1.204393 2.746189 
+intensity 0.719700 angle light 2.501587 
+with noise intensity 5.568954 angle light 2.524795 
+light source angle 3.271893
+intensity 0.672951 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 4
+quantized intensity 0 laser 6 angle_dest 4
+state 52 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.748156 distance 0.037195
+before x:0.623573, y:1.204393,  rad:2.746189
+ before angle1 -0.748156
+ after angle1 -0.748156
+new_thetamv 1.998033
+after x:0.608160, y:1.238245,  rad:1.998033
+
+
+ ************************************************************
+distance destination 1.243086 threshold 0.040800
+53 Pose robot 0.608160 1.238245 1.998033 
+intensity 0.672951 angle light 3.271893 
+with noise intensity 4.214183 angle light 3.234703 
+light source angle 3.997015
+intensity 0.647139 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 5
+quantized intensity 0 laser 5 angle_dest 5
+state 45 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.748015 distance 0.039245
+before x:0.608160, y:1.238245,  rad:1.998033
+ before angle1 0.748015
+ after angle1 0.748015
+new_thetamv 2.746048
+after x:0.571945, y:1.253366,  rad:2.746048
+
+
+ ************************************************************
+distance destination 1.282112 threshold 0.040800
+54 Pose robot 0.571945 1.253366 2.746048 
+intensity 0.647139 angle light 3.997015 
+with noise intensity -1.708498 angle light 3.967581 
+light source angle 3.245718
+intensity 0.608342 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 4
+quantized intensity 0 laser 6 angle_dest 4
+state 52 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.790600 distance 0.039491
+before x:0.571945, y:1.253366,  rad:2.746048
+ before angle1 -0.790600
+ after angle1 -0.790600
+new_thetamv 1.955448
+after x:0.557127, y:1.289972,  rad:1.955448
+
+
+ ************************************************************
+distance destination 1.307186 threshold 0.040800
+55 Pose robot 0.557127 1.289972 1.955448 
+intensity 0.608342 angle light 3.245718 
+with noise intensity -3.436052 angle light 3.235743 
+light source angle 4.012751
+intensity 0.585228 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.019709 distance 0.038212
+before x:0.557127, y:1.289972,  rad:1.955448
+ before angle1 0.019709
+ after angle1 0.019709
+new_thetamv 1.975157
+after x:0.542093, y:1.325102,  rad:1.975157
+
+
+ ************************************************************
+distance destination 1.332674 threshold 0.040800
+56 Pose robot 0.542093 1.325102 1.975157 
+intensity 0.585228 angle light 4.012751 
+with noise intensity -2.683081 angle light 4.053402 
+light source angle 3.971471
+intensity 0.563057 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.013623 distance 0.040935
+before x:0.542093, y:1.325102,  rad:1.975157
+ before angle1 0.013623
+ after angle1 0.013623
+new_thetamv 1.988780
+after x:0.525477, y:1.362514,  rad:1.988780
+
+
+ ************************************************************
+distance destination 1.361040 threshold 0.040800
+57 Pose robot 0.525477 1.362514 1.988780 
+intensity 0.563057 angle light 3.971471 
+with noise intensity -3.285450 angle light 4.006650 
+light source angle 3.935932
+intensity 0.539832 quantized intensity 0 
+obs intensity 0 obstacles 4 dest 5
+quantized intensity 0 laser 4 angle_dest 5
+state 37 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+movement: angle  -0.756531 distance -0.000948
+before x:0.525477, y:1.362514,  rad:1.988780
+ before angle1 -0.756531
+ after angle1 -0.756531
+new_thetamv 1.232249
+after x:0.525162, y:1.361619,  rad:1.232249
+
+
+ ************************************************************
+distance destination 1.361021 threshold 0.040800
+58 Pose robot 0.525162 1.361619 1.232249 
+intensity 0.539832 angle light 3.935932 
+with noise intensity -1.832525 angle light 3.935183 
+light source angle 4.693160
+intensity 0.539847 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 5
+quantized intensity 0 laser 6 angle_dest 5
+state 53 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.028867 distance 0.043016
+before x:0.525162, y:1.361619,  rad:1.232249
+ before angle1 0.028867
+ after angle1 0.028867
+new_thetamv 1.261116
+after x:0.538271, y:1.402589,  rad:1.261116
+
+
+ ************************************************************
+distance destination 1.363766 threshold 0.040800
+59 Pose robot 0.538271 1.402589 1.261116 
+intensity 0.539847 angle light 4.693160 
+with noise intensity -3.136600 angle light 4.713078 
+light source angle 4.632783
+intensity 0.537675 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 5
+quantized intensity 0 laser 1 angle_dest 5
+state 13 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.770611 distance 0.039675
+before x:0.538271, y:1.402589,  rad:1.261116
+ before angle1 -0.770611
+ after angle1 -0.770611
+new_thetamv 0.490505
+after x:0.573268, y:1.421278,  rad:0.490505
+
+
+ ************************************************************
+distance destination 1.338830 threshold 0.040800
+60 Pose robot 0.573268 1.421278 0.490505 
+intensity 0.537675 angle light 4.632783 
+with noise intensity -1.316532 angle light 4.616107 
+light source angle 5.380555
+intensity 0.557891 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 6
+quantized intensity 0 laser 6 angle_dest 6
+state 54 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.759878 distance 0.037977
+before x:0.573268, y:1.421278,  rad:0.490505
+ before angle1 -0.759878
+ after angle1 -0.759878
+new_thetamv -0.269374
+after x:0.609876, y:1.411172,  rad:6.013826
+
+
+ ************************************************************
+distance destination 1.301251 threshold 0.040800
+61 Pose robot 0.609876 1.411172 6.013826 
+intensity 0.557891 angle light 5.380555 
+with noise intensity -2.564201 angle light 5.398801 
+light source angle 6.136267
+intensity 0.590579 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 7
+quantized intensity 0 laser 1 angle_dest 7
+state 15 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.823054 distance 0.039599
+before x:0.609876, y:1.411172,  rad:6.013826
+ before angle1 -0.823054
+ after angle1 -0.823054
+new_thetamv 5.190772
+after x:0.628104, y:1.376019,  rad:5.190772
+
+
+ ************************************************************
+distance destination 1.270606 threshold 0.040800
+62 Pose robot 0.628104 1.376019 5.190772 
+intensity 0.590579 angle light 6.136267 
+with noise intensity 3.223504 angle light 6.191437 
+light source angle 0.695640
+intensity 0.619410 quantized intensity 0 
+obs intensity 0 obstacles 0 dest 0
+quantized intensity 0 laser 0 angle_dest 0
+state 0 out 3
+LEFT
+movement fsm_engine: angle  0.785400 distance 0.000000
+movement: angle  0.814546 distance -0.002899
+before x:0.628104, y:1.376019,  rad:5.190772
+ before angle1 0.814546
+ after angle1 0.814546
+new_thetamv 6.005318
+after x:0.625317, y:1.376814,  rad:6.005318
+
+
+ ************************************************************
+distance destination 1.273484 threshold 0.040800
+63 Pose robot 0.625317 1.376814 6.005318 
+intensity 0.619410 angle light 0.695640 
+with noise intensity -3.901946 angle light 0.684952 
+light source angle 6.164549
+intensity 0.616613 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 7
+quantized intensity 0 laser 5 angle_dest 7
+state 47 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.804883 distance 0.041222
+before x:0.625317, y:1.376814,  rad:6.005318
+ before angle1 0.804883
+ after angle1 0.804883
+new_thetamv 6.810201
+after x:0.660946, y:1.397547,  rad:0.527001
+
+
+ ************************************************************
+distance destination 1.249059 threshold 0.040800
+64 Pose robot 0.660946 1.397547 0.527001 
+intensity 0.616613 angle light 6.164549 
+with noise intensity 2.282738 angle light 6.139262 
+light source angle 5.333350
+intensity 0.640965 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 6
+quantized intensity 0 laser 6 angle_dest 6
+state 54 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.796753 distance 0.036930
+before x:0.660946, y:1.397547,  rad:0.527001
+ before angle1 -0.796753
+ after angle1 -0.796753
+new_thetamv -0.269752
+after x:0.696540, y:1.387706,  rad:6.013448
+
+
+ ************************************************************
+distance destination 1.212574 threshold 0.040800
+65 Pose robot 0.696540 1.387706 6.013448 
+intensity 0.640965 angle light 5.333350 
+with noise intensity 0.848012 angle light 5.324403 
+light source angle 6.125444
+intensity 0.680116 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 7
+quantized intensity 0 laser 5 angle_dest 7
+state 47 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.792950 distance 0.041755
+before x:0.696540, y:1.387706,  rad:6.013448
+ before angle1 0.792950
+ after angle1 0.792950
+new_thetamv 6.806398
+after x:0.732709, y:1.408569,  rad:0.523199
+
+
+ ************************************************************
+distance destination 1.188795 threshold 0.040800
+66 Pose robot 0.732709 1.408569 0.523199 
+intensity 0.680116 angle light 6.125444 
+with noise intensity 5.069920 angle light 6.187558 
+light source angle 5.303921
+intensity 0.707597 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 6
+quantized intensity 0 laser 6 angle_dest 6
+state 54 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.810688 distance 0.036223
+before x:0.732709, y:1.408569,  rad:0.523199
+ before angle1 -0.810688
+ after angle1 -0.810688
+new_thetamv -0.287489
+after x:0.767446, y:1.398299,  rad:5.995710
+
+
+ ************************************************************
+distance destination 1.153102 threshold 0.040800
+67 Pose robot 0.767446 1.398299 5.995710 
+intensity 0.707597 angle light 5.303921 
+with noise intensity -4.101517 angle light 5.359509 
+light source angle 6.109324
+intensity 0.752081 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 7
+quantized intensity 0 laser 5 angle_dest 7
+state 47 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.763001 distance 0.041955
+before x:0.767446, y:1.398299,  rad:5.995710
+ before angle1 0.763001
+ after angle1 0.763001
+new_thetamv 6.758712
+after x:0.804746, y:1.417505,  rad:0.475512
+
+
+ ************************************************************
+distance destination 1.128757 threshold 0.040800
+68 Pose robot 0.804746 1.417505 0.475512 
+intensity 0.752081 angle light 6.109324 
+with noise intensity 0.517254 angle light 6.154011 
+light source angle 5.316385
+intensity 0.784872 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 6
+quantized intensity 0 laser 6 angle_dest 6
+state 54 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.784704 distance 0.042356
+before x:0.804746, y:1.417505,  rad:0.475512
+ before angle1 -0.784704
+ after angle1 -0.784704
+new_thetamv -0.309192
+after x:0.845093, y:1.404617,  rad:5.974008
+
+
+ ************************************************************
+distance destination 1.087129 threshold 0.040800
+69 Pose robot 0.845093 1.404617 5.974008 
+intensity 0.784872 angle light 5.316385 
+with noise intensity -2.475660 angle light 5.292885 
+light source angle 6.094018
+intensity 0.846132 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 7
+quantized intensity 0 laser 5 angle_dest 7
+state 47 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.800019 distance 0.038219
+before x:0.845093, y:1.404617,  rad:5.974008
+ before angle1 0.800019
+ after angle1 0.800019
+new_thetamv 6.774027
+after x:0.878800, y:1.422632,  rad:0.490828
+
+
+ ************************************************************
+distance destination 1.066610 threshold 0.040800
+70 Pose robot 0.878800 1.422632 0.490828 
+intensity 0.846132 angle light 6.094018 
+with noise intensity 5.263472 angle light 6.115346 
+light source angle 5.264069
+intensity 0.878999 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 6
+quantized intensity 0 laser 6 angle_dest 6
+state 54 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.757017 distance 0.042767
+before x:0.878800, y:1.422632,  rad:0.490828
+ before angle1 -0.757017
+ after angle1 -0.757017
+new_thetamv -0.266189
+after x:0.920061, y:1.411382,  rad:6.017010
+
+
+ ************************************************************
+distance destination 1.025364 threshold 0.040800
+71 Pose robot 0.920061 1.411382 6.017010 
+intensity 0.878999 angle light 5.264069 
+with noise intensity 2.037180 angle light 5.252251 
+light source angle 6.010263
+intensity 0.951139 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 7
+quantized intensity 0 laser 5 angle_dest 7
+state 47 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.804301 distance 0.038415
+before x:0.920061, y:1.411382,  rad:6.017010
+ before angle1 0.804301
+ after angle1 0.804301
+new_thetamv 6.821311
+after x:0.953047, y:1.431071,  rad:0.538112
+
+
+ ************************************************************
+distance destination 1.007731 threshold 0.040800
+72 Pose robot 0.953047 1.431071 0.538112 
+intensity 0.951139 angle light 6.010263 
+with noise intensity 0.355590 angle light 6.053439 
+light source angle 5.172400
+intensity 0.984715 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 6
+quantized intensity 0 laser 6 angle_dest 6
+state 54 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.799785 distance 0.043705
+before x:0.953047, y:1.431071,  rad:0.538112
+ before angle1 -0.799785
+ after angle1 -0.799785
+new_thetamv -0.261674
+after x:0.995265, y:1.419765,  rad:6.021526
+
+
+ ************************************************************
+distance destination 0.966216 threshold 0.040800
+73 Pose robot 0.995265 1.419765 6.021526 
+intensity 0.984715 angle light 5.172400 
+with noise intensity 2.672011 angle light 5.143394 
+light source angle 5.958328
+intensity 1.071154 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 7
+quantized intensity 0 laser 6 angle_dest 7
+state 55 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.018604 distance 0.037208
+before x:0.995265, y:1.419765,  rad:6.021526
+ before angle1 0.018604
+ after angle1 0.018604
+new_thetamv 6.040130
+after x:1.031379, y:1.410810,  rad:6.040130
+
+
+ ************************************************************
+distance destination 0.931265 threshold 0.040800
+74 Pose robot 1.031379 1.410810 6.040130 
+intensity 1.071154 angle light 5.958328 
+with noise intensity 3.560949 angle light 5.926798 
+light source angle 5.926269
+intensity 1.153064 quantized intensity 0 
+obs intensity 0 obstacles 5 dest 7
+quantized intensity 0 laser 5 angle_dest 7
+state 47 out 6
+LEFT_ADVANCE
+movement fsm_engine: angle  0.785400 distance 0.040000
+movement: angle  0.818200 distance 0.042382
+before x:1.031379, y:1.410810,  rad:6.040130
+ before angle1 0.818200
+ after angle1 0.818200
+new_thetamv 6.858331
+after x:1.066943, y:1.433864,  rad:0.575131
+
+
+ ************************************************************
+distance destination 0.915764 threshold 0.040800
+75 Pose robot 1.066943 1.433864 0.575131 
+intensity 1.153064 angle light 5.926269 
+with noise intensity 3.706917 angle light 5.988622 
+light source angle 5.065365
+intensity 1.192429 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 6
+quantized intensity 0 laser 6 angle_dest 6
+state 54 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.786006 distance 0.037501
+before x:1.066943, y:1.433864,  rad:0.575131
+ before angle1 -0.786006
+ after angle1 -0.786006
+new_thetamv -0.210875
+after x:1.103614, y:1.426015,  rad:6.072325
+
+
+ ************************************************************
+distance destination 0.881845 threshold 0.040800
+76 Pose robot 1.103614 1.426015 6.072325 
+intensity 1.192429 angle light 5.065365 
+with noise intensity 2.987156 angle light 5.082779 
+light source angle 5.833557
+intensity 1.285924 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 7
+quantized intensity 0 laser 6 angle_dest 7
+state 55 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.012838 distance 0.037483
+before x:1.103614, y:1.426015,  rad:6.072325
+ before angle1 0.012838
+ after angle1 0.012838
+new_thetamv 6.085163
+after x:1.140364, y:1.418641,  rad:6.085163
+
+
+ ************************************************************
+distance destination 0.848465 threshold 0.040800
+77 Pose robot 1.140364 1.418641 6.085163 
+intensity 1.285924 angle light 5.833557 
+with noise intensity 0.595039 angle light 5.896149 
+light source angle 5.801008
+intensity 1.389096 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 7
+quantized intensity 0 laser 6 angle_dest 7
+state 55 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.007897 distance 0.036077
+before x:1.140364, y:1.418641,  rad:6.085163
+ before angle1 -0.007897
+ after angle1 -0.007897
+new_thetamv 6.077266
+after x:1.175678, y:1.411264,  rad:6.077266
+
+
+ ************************************************************
+distance destination 0.816536 threshold 0.040800
+78 Pose robot 1.175678 1.411264 6.077266 
+intensity 1.389096 angle light 5.801008 
+with noise intensity 4.477571 angle light 5.839739 
+light source angle 5.788725
+intensity 1.499854 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 7
+quantized intensity 0 laser 6 angle_dest 7
+state 55 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.037020 distance 0.036842
+before x:1.175678, y:1.411264,  rad:6.077266
+ before angle1 -0.037020
+ after angle1 -0.037020
+new_thetamv 6.040245
+after x:1.211438, y:1.402402,  rad:6.040245
+
+
+ ************************************************************
+distance destination 0.783652 threshold 0.040800
+79 Pose robot 1.211438 1.402402 6.040245 
+intensity 1.499854 angle light 5.788725 
+with noise intensity -1.133283 angle light 5.807380 
+light source angle 5.804982
+intensity 1.628374 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 7
+quantized intensity 0 laser 6 angle_dest 7
+state 55 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.033935 distance 0.036019
+before x:1.211438, y:1.402402,  rad:6.040245
+ before angle1 0.033935
+ after angle1 0.033935
+new_thetamv 6.074181
+after x:1.246673, y:1.394928,  rad:6.074181
+
+
+ ************************************************************
+distance destination 0.752461 threshold 0.040800
+80 Pose robot 1.246673 1.394928 6.074181 
+intensity 1.628374 angle light 5.804982 
+with noise intensity 3.515619 angle light 5.772598 
+light source angle 5.747586
+intensity 1.766167 quantized intensity 0 
+obs intensity 0 obstacles 6 dest 7
+quantized intensity 0 laser 6 angle_dest 7
+state 55 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.015341 distance 0.039356
+before x:1.246673, y:1.394928,  rad:6.074181
+ before angle1 0.015341
+ after angle1 0.015341
+new_thetamv 6.089522
+after x:1.285293, y:1.387354,  rad:6.089522
+
+
+ ************************************************************
+distance destination 0.719224 threshold 0.040800
+81 Pose robot 1.285293 1.387354 6.089522 
+intensity 1.766167 angle light 5.747586 
+with noise intensity -0.092465 angle light 5.714224 
+light source angle 5.703596
+intensity 1.933177 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 7
+quantized intensity 0 laser 1 angle_dest 7
+state 15 out 5
+RIGHT_ADVANCE
+movement fsm_engine: angle  -0.785400 distance 0.040000
+movement: angle  -0.752340 distance 0.039664
+before x:1.285293, y:1.387354,  rad:6.089522
+ before angle1 -0.752340
+ after angle1 -0.752340
+new_thetamv 5.337182
+after x:1.308493, y:1.355183,  rad:5.337182
+
+
+ ************************************************************
+distance destination 0.680185 threshold 0.040800
+82 Pose robot 1.308493 1.355183 5.337182 
+intensity 1.933177 angle light 5.703596 
+with noise intensity 3.557162 angle light 5.662424 
+light source angle 0.182775
+intensity 2.161455 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.011617 distance 0.036120
+before x:1.308493, y:1.355183,  rad:5.337182
+ before angle1 0.011617
+ after angle1 0.011617
+new_thetamv 5.348798
+after x:1.329960, y:1.326134,  rad:5.348798
+
+
+ ************************************************************
+distance destination 0.644621 threshold 0.040800
+83 Pose robot 1.329960 1.326134 5.348798 
+intensity 2.161455 angle light 0.182775 
+with noise intensity 2.474520 angle light 0.217289 
+light source angle 0.180702
+intensity 2.406526 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.009127 distance 0.042617
+before x:1.329960, y:1.326134,  rad:5.348798
+ before angle1 -0.009127
+ after angle1 -0.009127
+new_thetamv 5.339672
+after x:1.354974, y:1.291630,  rad:5.339672
+
+
+ ************************************************************
+distance destination 0.602823 threshold 0.040800
+84 Pose robot 1.354974 1.291630 5.339672 
+intensity 2.406526 angle light 0.180702 
+with noise intensity -2.285634 angle light 0.149064 
+light source angle 0.203169
+intensity 2.751819 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.007719 distance 0.039418
+before x:1.354974, y:1.291630,  rad:5.339672
+ before angle1 -0.007719
+ after angle1 -0.007719
+new_thetamv 5.331953
+after x:1.377864, y:1.259539,  rad:5.331953
+
+
+ ************************************************************
+distance destination 0.564339 threshold 0.040800
+85 Pose robot 1.377864 1.259539 5.331953 
+intensity 2.751819 angle light 0.203169 
+with noise intensity 0.429825 angle light 0.186965 
+light source angle 0.225509
+intensity 3.139931 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.013185 distance 0.040766
+before x:1.377864, y:1.259539,  rad:5.331953
+ before angle1 -0.013185
+ after angle1 -0.013185
+new_thetamv 5.318769
+after x:1.401096, y:1.226041,  rad:5.318769
+
+
+ ************************************************************
+distance destination 0.524818 threshold 0.040800
+86 Pose robot 1.401096 1.226041 5.318769 
+intensity 3.139931 angle light 0.225509 
+with noise intensity 3.777253 angle light 0.245416 
+light source angle 0.257060
+intensity 3.630640 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.034490 distance 0.037101
+before x:1.401096, y:1.226041,  rad:5.318769
+ before angle1 -0.034490
+ after angle1 -0.034490
+new_thetamv 5.284279
+after x:1.421176, y:1.194843,  rad:5.284279
+
+
+ ************************************************************
+distance destination 0.489398 threshold 0.040800
+87 Pose robot 1.421176 1.194843 5.284279 
+intensity 3.630640 angle light 0.257060 
+with noise intensity 4.359392 angle light 0.210548 
+light source angle 0.313342
+intensity 4.175183 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.028739 distance 0.039758
+before x:1.421176, y:1.194843,  rad:5.284279
+ before angle1 0.028739
+ after angle1 0.028739
+new_thetamv 5.313018
+after x:1.443645, y:1.162044,  rad:5.313018
+
+
+ ************************************************************
+distance destination 0.451378 threshold 0.040800
+88 Pose robot 1.443645 1.162044 5.313018 
+intensity 4.175183 angle light 0.313342 
+with noise intensity 7.302940 angle light 0.347088 
+light source angle 0.309336
+intensity 4.908173 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.026620 distance 0.040909
+before x:1.443645, y:1.162044,  rad:5.313018
+ before angle1 0.026620
+ after angle1 0.026620
+new_thetamv 5.339638
+after x:1.467655, y:1.128922,  rad:5.339638
+
+
+ ************************************************************
+distance destination 0.412251 threshold 0.040800
+89 Pose robot 1.467655 1.128922 5.339638 
+intensity 4.908173 angle light 0.309336 
+with noise intensity 1.218360 angle light 0.288346 
+light source angle 0.310403
+intensity 5.884052 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.014076 distance 0.039951
+before x:1.467655, y:1.128922,  rad:5.339638
+ before angle1 -0.014076
+ after angle1 -0.014076
+new_thetamv 5.325562
+after x:1.490646, y:1.096249,  rad:5.325562
+
+
+ ************************************************************
+distance destination 0.374602 threshold 0.040800
+90 Pose robot 1.490646 1.096249 5.325562 
+intensity 5.884052 angle light 0.310403 
+with noise intensity 9.081353 angle light 0.290584 
+light source angle 0.358486
+intensity 7.126242 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.006206 distance 0.039623
+before x:1.490646, y:1.096249,  rad:5.325562
+ before angle1 -0.006206
+ after angle1 -0.006206
+new_thetamv 5.319356
+after x:1.513245, y:1.063704,  rad:5.319356
+
+
+ ************************************************************
+distance destination 0.337880 threshold 0.040800
+91 Pose robot 1.513245 1.063704 5.319356 
+intensity 7.126242 angle light 0.358486 
+with noise intensity 4.810961 angle light 0.382386 
+light source angle 0.406529
+intensity 8.759388 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.017051 distance 0.040200
+before x:1.513245, y:1.063704,  rad:5.319356
+ before angle1 0.017051
+ after angle1 0.017051
+new_thetamv 5.336407
+after x:1.536735, y:1.031080,  rad:5.336407
+
+
+ ************************************************************
+distance destination 0.301078 threshold 0.040800
+92 Pose robot 1.536735 1.031080 5.336407 
+intensity 8.759388 angle light 0.406529 
+with noise intensity 12.379210 angle light 0.462119 
+light source angle 0.440199
+intensity 11.031688 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.025550 distance 0.036102
+before x:1.536735, y:1.031080,  rad:5.336407
+ before angle1 -0.025550
+ after angle1 -0.025550
+new_thetamv 5.310856
+after x:1.557073, y:1.001253,  rad:5.310856
+
+
+ ************************************************************
+distance destination 0.269310 threshold 0.040800
+93 Pose robot 1.557073 1.001253 5.310856 
+intensity 11.031688 angle light 0.440199 
+with noise intensity 14.826231 angle light 0.483817 
+light source angle 0.525988
+intensity 13.787775 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.028883 distance 0.040994
+before x:1.557073, y:1.001253,  rad:5.310856
+ before angle1 0.028883
+ after angle1 0.028883
+new_thetamv 5.339739
+after x:1.581137, y:0.968064,  rad:5.339739
+
+
+ ************************************************************
+distance destination 0.234096 threshold 0.040800
+94 Pose robot 1.581137 0.968064 5.339739 
+intensity 13.787775 angle light 0.525988 
+with noise intensity 10.790758 angle light 0.535359 
+light source angle 0.580713
+intensity 18.247915 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.021146 distance 0.037648
+before x:1.581137, y:0.968064,  rad:5.339739
+ before angle1 0.021146
+ after angle1 0.021146
+new_thetamv 5.360885
+after x:1.603876, y:0.938059,  rad:5.360885
+
+
+ ************************************************************
+distance destination 0.203174 threshold 0.040800
+95 Pose robot 1.603876 0.938059 5.360885 
+intensity 18.247915 angle light 0.580713 
+with noise intensity 21.825560 angle light 0.624304 
+light source angle 0.658087
+intensity 24.224916 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.016225 distance 0.037127
+before x:1.603876, y:0.938059,  rad:5.360885
+ before angle1 -0.016225
+ after angle1 -0.016225
+new_thetamv 5.344661
+after x:1.625817, y:0.908109,  rad:5.344661
+
+
+ ************************************************************
+distance destination 0.175709 threshold 0.040800
+96 Pose robot 1.625817 0.908109 5.344661 
+intensity 24.224916 angle light 0.658087 
+with noise intensity 28.673435 angle light 0.637484 
+light source angle 0.806624
+intensity 32.390156 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 1
+quantized intensity 0 laser 1 angle_dest 1
+state 9 out 3
+LEFT
+movement fsm_engine: angle  0.785400 distance 0.000000
+movement: angle  0.776976 distance 0.001726
+before x:1.625817, y:0.908109,  rad:5.344661
+ before angle1 0.776976
+ after angle1 0.776976
+new_thetamv 6.121637
+after x:1.627521, y:0.907831,  rad:6.121637
+
+
+ ************************************************************
+distance destination 0.173983 threshold 0.040800
+97 Pose robot 1.627521 0.907831 6.121637 
+intensity 32.390156 angle light 0.806624 
+with noise intensity 29.359921 angle light 0.860922 
+light source angle 0.029942
+intensity 33.035881 quantized intensity 0 
+obs intensity 0 obstacles 1 dest 0
+quantized intensity 0 laser 1 angle_dest 0
+state 8 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.006023 distance 0.042846
+before x:1.627521, y:0.907831,  rad:6.121637
+ before angle1 -0.006023
+ after angle1 -0.006023
+new_thetamv 6.115614
+after x:1.669767, y:0.900685,  rad:6.115614
+
+
+ ************************************************************
+distance destination 0.131174 threshold 0.040800
+98 Pose robot 1.669767 0.900685 6.115614 
+intensity 33.035881 angle light 0.029942 
+with noise intensity 35.187393 angle light 0.022939 
+light source angle 0.047710
+intensity 58.116882 quantized intensity 1 
+obs intensity 1 obstacles 1 dest 0
+quantized intensity 1 laser 1 angle_dest 0
+state 72 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.033641 distance 0.042567
+before x:1.669767, y:0.900685,  rad:6.115614
+ before angle1 -0.033641
+ after angle1 -0.033641
+new_thetamv 6.081973
+after x:1.711475, y:0.892178,  rad:6.081973
+
+
+ ************************************************************
+distance destination 0.088815 threshold 0.040800
+99 Pose robot 1.711475 0.892178 6.081973 
+intensity 58.116882 angle light 0.047710 
+with noise intensity 62.853947 angle light 0.006446 
+light source angle 0.120308
+intensity 126.772881 quantized intensity 2 
+obs intensity 2 obstacles 1 dest 0
+quantized intensity 2 laser 1 angle_dest 0
+state 136 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  0.036550 distance 0.041062
+before x:1.711475, y:0.892178,  rad:6.081973
+ before angle1 0.036550
+ after angle1 0.036550
+new_thetamv 6.118522
+after x:1.751982, y:0.885447,  rad:6.118522
+
+
+ ************************************************************
+distance destination 0.048020 threshold 0.040800
+100 Pose robot 1.751982 0.885447 6.118522 
+intensity 126.772881 angle light 0.120308 
+with noise intensity 127.387314 angle light 0.110917 
+light source angle 0.155359
+intensity 433.665283 quantized intensity 3 
+obs intensity 3 obstacles 1 dest 0
+quantized intensity 3 laser 1 angle_dest 0
+state 200 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+movement: angle  -0.022234 distance 0.039755
+before x:1.751982, y:0.885447,  rad:6.118522
+ before angle1 -0.022234
+ after angle1 -0.022234
+new_thetamv 6.096288
+after x:1.791044, y:0.878060,  rad:6.096288
+
+
+ ************************************************************
+ reached distance destination 0.011330
+distance destination 0.011330 threshold 0.040800
+101 Pose robot 1.791044 0.878060 6.096288 
+intensity 433.665283 angle light 0.155359 
+with noise intensity 428.987183 angle light 0.160407 
+light source angle 0.846171
+intensity 7790.148438 quantized intensity 3 
+obs intensity 3 obstacles 1 dest 1
+quantized intensity 3 laser 1 angle_dest 1
+state 201 out 3
+LEFT
+movement fsm_engine: angle  0.785400 distance 0.000000
+movement: angle  0.755036 distance -0.000710
+before x:1.791044, y:0.878060,  rad:6.096288
+ before angle1 0.755036
+ after angle1 0.755036
+new_thetamv 6.851324
+after x:1.790446, y:0.877678,  rad:0.568124

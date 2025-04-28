@@ -1,0 +1,4 @@
+dot -Tpng archivo.gv > archivo.png
+dot -Teps archivo.gv > archivo.eps
+
+

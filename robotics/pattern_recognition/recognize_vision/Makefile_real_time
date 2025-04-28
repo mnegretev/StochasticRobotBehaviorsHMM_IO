@@ -1,0 +1,36 @@
+CC = gcc 
+CPP = g++
+
+CFLAGS  = -g
+
+INC_DIR = .
+
+INCL    = -I$(INC_DIR) `pkg-config --cflags opencv`\
+          `pkg-config --cflags gtk+-2.0`
+
+LIBS    = -L$(LIB_DIR) `pkg-config --libs opencv`\
+          `pkg-config --libs gtk+-2.0` -lm
+
+
+LIB_HEADERS=-I/usr/local/include/opencv  -L/usr/local/lib -lcxcore -lcv -lhighgui -lcvaux -lml
+
+
+
+PRG_OBJS= recognize_vision_real_time.cpp 
+
+OBJS= recognize_vision_real_time.o
+
+recognize_vision_real_time: $(OBJS)
+	  $(CPP) $(CFLAGS) $(INCL) -o $@ $(OBJS) $(LIBS)
+
+$(OBJS): $(PRG_OBJS)
+	$(CPP) $(CFLAGS) $(INCL) -c $*.cpp 
+
+clean:
+	rm recognize_vision_real_time.o
+	rm recognize_vision_real_time
+	
+	
+	
+	
+	

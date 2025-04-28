@@ -1,0 +1,5 @@
+echo touch vq_vision.cpp
+touch vq_vision.cpp
+echo make
+make
+

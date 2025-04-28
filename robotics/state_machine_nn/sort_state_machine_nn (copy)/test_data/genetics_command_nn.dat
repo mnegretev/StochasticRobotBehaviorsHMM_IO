@@ -1,0 +1,1545 @@
+Generate  offspring using the Vasconcelos algorithm 
+PATH test_data/ 
+num_individuals 50 num_bits_individuals 3112
+Mutation 0.700000
+Cross 0.950000 
+Num_best factor 0.900000 num_best 45 
+
+
+Read population test_data/sort.dat
+0 fitness 0.002612
+1 fitness 0.002573
+2 fitness 0.002561
+3 fitness 0.002561
+4 fitness 0.002520
+5 fitness 0.002520
+6 fitness 0.002520
+7 fitness 0.002520
+8 fitness 0.002520
+9 fitness 0.002520
+10 fitness 0.002520
+11 fitness 0.002520
+12 fitness 0.002520
+13 fitness 0.002520
+14 fitness 0.002520
+15 fitness 0.002520
+16 fitness 0.002520
+17 fitness 0.002520
+18 fitness 0.002520
+19 fitness 0.002520
+20 fitness 0.002520
+21 fitness 0.002520
+22 fitness 0.002520
+23 fitness 0.002520
+24 fitness 0.002520
+25 fitness 0.002520
+26 fitness 0.002520
+27 fitness 0.002520
+28 fitness 0.002520
+29 fitness 0.002520
+30 fitness 0.002520
+31 fitness 0.002520
+32 fitness 0.002520
+33 fitness 0.002520
+34 fitness 0.002520
+35 fitness 0.002520
+36 fitness 0.002520
+37 fitness 0.002520
+38 fitness 0.002520
+39 fitness 0.002520
+40 fitness 0.002520
+41 fitness 0.002520
+42 fitness 0.002520
+43 fitness 0.002520
+44 fitness 0.002520
+45 fitness 0.002520
+46 fitness 0.002520
+47 fitness 0.002520
+48 fitness 0.002520
+49 fitness 0.002520
+50 fitness 0.002520
+51 fitness 0.002520
+52 fitness 0.002520
+53 fitness 0.002520
+54 fitness 0.002520
+55 fitness 0.002520
+56 fitness 0.002520
+57 fitness 0.002520
+58 fitness 0.002520
+59 fitness 0.002520
+60 fitness 0.002520
+61 fitness 0.002520
+62 fitness 0.002490
+63 fitness 0.002482
+64 fitness 0.002482
+65 fitness 0.002382
+66 fitness 0.002342
+67 fitness 0.002257
+68 fitness 0.002123
+69 fitness 0.001973
+70 fitness 0.001857
+71 fitness 0.001801
+72 fitness 0.001766
+73 fitness 0.001542
+74 fitness 0.001528
+75 fitness 0.001475
+76 fitness 0.001457
+77 fitness 0.001423
+78 fitness 0.001354
+79 fitness 0.001350
+80 fitness 0.001287
+81 fitness 0.001230
+82 fitness 0.001192
+83 fitness 0.001126
+84 fitness 0.001108
+85 fitness 0.001046
+86 fitness 0.001029
+87 fitness 0.000991
+88 fitness 0.000926
+89 fitness 0.000887
+90 fitness 0.000644
+91 fitness 0.000635
+92 fitness 0.000623
+93 fitness 0.000622
+94 fitness 0.000575
+95 fitness 0.000514
+96 fitness 0.000511
+97 fitness 0.000495
+98 fitness 0.000427
+99 fitness 0.000288
+It leaves the same individual 0
+It leaves the same individual 1
+It leaves the same individual 2
+It leaves the same individual 3
+It leaves the same individual 4
+It leaves the same individual 5
+It leaves the same individual 6
+It leaves the same individual 7
+It leaves the same individual 8
+It leaves the same individual 9
+It leaves the same individual 10
+It leaves the same individual 11
+It leaves the same individual 12
+It leaves the same individual 13
+It leaves the same individual 14
+It leaves the same individual 15
+It leaves the same individual 16
+It leaves the same individual 17
+It leaves the same individual 18
+It leaves the same individual 19
+It leaves the same individual 20
+It leaves the same individual 21
+It leaves the same individual 22
+It leaves the same individual 23
+It leaves the same individual 24
+It leaves the same individual 25
+It leaves the same individual 26
+It leaves the same individual 27
+It leaves the same individual 28
+It leaves the same individual 29
+It leaves the same individual 30
+It leaves the same individual 31
+It leaves the same individual 32
+It leaves the same individual 33
+It leaves the same individual 34
+It leaves the same individual 35
+It leaves the same individual 36
+It leaves the same individual 37
+It leaves the same individual 38
+It leaves the same individual 39
+It leaves the same individual 40
+It leaves the same individual 41
+It leaves the same individual 42
+It leaves the same individual 43
+It leaves the same individual 44
+It leaves the same individual 45
+It leaves the same individual 46
+It leaves the same individual 47
+It leaves the same individual 48
+It leaves the same individual 49
+
+Generating individuals 50 51
+0 it selects the individuals 0 49
+it crosses individuals 0 49
+it cross bits from 1539 to 1639 of individuals 51 to 50
+it cross bits from 821 to 983 of individuals 50 to 51
+Mut. individual 49 m_mut 0.700000 num 0.585219 
+mutation individual 51 num.mut 0 bit 1293
+mutation individual 51 num.mut 1 bit 1752
+mutation individual 51 num.mut 2 bit 360
+mutation individual 51 num.mut 3 bit 878
+mutation individual 51 num.mut 4 bit 1309
+mutation individual 51 num.mut 5 bit 140
+mutation individual 51 num.mut 6 bit 1066
+mutation individual 51 num.mut 7 bit 3040
+mutation individual 51 num.mut 8 bit 1883
+mutation individual 51 num.mut 9 bit 2209
+mutation individual 51 num.mut 10 bit 913
+mutation individual 51 num.mut 11 bit 2925
+mutation individual 51 num.mut 12 bit 2452
+mutation individual 51 num.mut 13 bit 906
+mutation individual 51 num.mut 14 bit 1995
+mutation individual 51 num.mut 15 bit 110
+mutation individual 51 num.mut 16 bit 2880
+mutation individual 51 num.mut 17 bit 1427
+mutation individual 51 num.mut 18 bit 2525
+mutation individual 51 num.mut 19 bit 378
+mutation individual 51 num.mut 20 bit 8
+mutation individual 51 num.mut 21 bit 413
+mutation individual 51 num.mut 22 bit 2843
+mutation individual 51 num.mut 23 bit 2617
+mutation individual 51 num.mut 24 bit 1953
+mutation individual 51 num.mut 25 bit 739
+mutation individual 51 num.mut 26 bit 328
+mutation individual 51 num.mut 27 bit 474
+mutation individual 51 num.mut 28 bit 236
+mutation individual 51 num.mut 29 bit 2149
+mutation individual 51 num.mut 30 bit 240
+mutation individual 51 num.mut 31 bit 1529
+mutation individual 51 num.mut 32 bit 791
+mutation individual 51 num.mut 33 bit 600
+mutation individual 51 num.mut 34 bit 2408
+mutation individual 51 num.mut 35 bit 2100
+mutation individual 51 num.mut 36 bit 741
+mutation individual 51 num.mut 37 bit 364
+mutation individual 51 num.mut 38 bit 2029
+mutation individual 51 num.mut 39 bit 2624
+mutation individual 51 num.mut 40 bit 2573
+mutation individual 51 num.mut 41 bit 2942
+mutation individual 51 num.mut 42 bit 2438
+mutation individual 51 num.mut 43 bit 1914
+mutation individual 51 num.mut 44 bit 738
+mutation individual 51 num.mut 45 bit 1322
+mutation individual 51 num.mut 46 bit 2024
+mutation individual 51 num.mut 47 bit 508
+mutation individual 51 num.mut 48 bit 2750
+mutation individual 51 num.mut 49 bit 1438
+mutation individual 51 num.mut 50 bit 886
+mutation individual 51 num.mut 51 bit 2758
+mutation individual 51 num.mut 52 bit 1852
+mutation individual 51 num.mut 53 bit 619
+mutation individual 51 num.mut 54 bit 2265
+mutation individual 51 num.mut 55 bit 695
+mutation individual 51 num.mut 56 bit 1359
+
+Generating individuals 52 53
+1 it selects the individuals 1 48
+it crosses individuals 1 48
+it cross bits from 1169 to 1327 of individuals 53 to 52
+it cross bits from 1632 to 1772 of individuals 52 to 53
+Mut. individual 52 m_mut 0.700000 num 0.004525 
+mutation individual 52 num.mut 0 bit 2009
+mutation individual 52 num.mut 1 bit 2422
+mutation individual 52 num.mut 2 bit 1412
+mutation individual 52 num.mut 3 bit 2750
+mutation individual 52 num.mut 4 bit 2786
+mutation individual 52 num.mut 5 bit 330
+mutation individual 52 num.mut 6 bit 2264
+mutation individual 52 num.mut 7 bit 2248
+mutation individual 52 num.mut 8 bit 162
+mutation individual 52 num.mut 9 bit 1591
+mutation individual 52 num.mut 10 bit 1052
+mutation individual 52 num.mut 11 bit 900
+mutation individual 52 num.mut 12 bit 2914
+mutation individual 52 num.mut 13 bit 3077
+mutation individual 52 num.mut 14 bit 1408
+mutation individual 52 num.mut 15 bit 2554
+mutation individual 52 num.mut 16 bit 1404
+mutation individual 52 num.mut 17 bit 2295
+mutation individual 52 num.mut 18 bit 2202
+mutation individual 52 num.mut 19 bit 146
+mutation individual 52 num.mut 20 bit 2914
+mutation individual 52 num.mut 21 bit 1356
+mutation individual 52 num.mut 22 bit 841
+mutation individual 52 num.mut 23 bit 1163
+mutation individual 52 num.mut 24 bit 840
+mutation individual 52 num.mut 25 bit 2010
+mutation individual 52 num.mut 26 bit 2758
+mutation individual 52 num.mut 27 bit 2472
+mutation individual 52 num.mut 28 bit 308
+mutation individual 52 num.mut 29 bit 2773
+mutation individual 52 num.mut 30 bit 1784
+mutation individual 52 num.mut 31 bit 2318
+mutation individual 52 num.mut 32 bit 2084
+mutation individual 52 num.mut 33 bit 86
+mutation individual 52 num.mut 34 bit 1958
+mutation individual 52 num.mut 35 bit 1759
+mutation individual 52 num.mut 36 bit 416
+mutation individual 52 num.mut 37 bit 1111
+mutation individual 52 num.mut 38 bit 897
+mutation individual 52 num.mut 39 bit 578
+mutation individual 52 num.mut 40 bit 2703
+mutation individual 52 num.mut 41 bit 1949
+mutation individual 52 num.mut 42 bit 1478
+mutation individual 52 num.mut 43 bit 2507
+mutation individual 52 num.mut 44 bit 1915
+mutation individual 52 num.mut 45 bit 2886
+mutation individual 52 num.mut 46 bit 1951
+mutation individual 52 num.mut 47 bit 209
+Mut. individual 51 m_mut 0.700000 num 0.665716 
+mutation individual 53 num.mut 0 bit 356
+mutation individual 53 num.mut 1 bit 1874
+mutation individual 53 num.mut 2 bit 2399
+mutation individual 53 num.mut 3 bit 1197
+mutation individual 53 num.mut 4 bit 3038
+mutation individual 53 num.mut 5 bit 128
+mutation individual 53 num.mut 6 bit 97
+mutation individual 53 num.mut 7 bit 2686
+mutation individual 53 num.mut 8 bit 2600
+mutation individual 53 num.mut 9 bit 406
+mutation individual 53 num.mut 10 bit 2348
+mutation individual 53 num.mut 11 bit 1274
+mutation individual 53 num.mut 12 bit 2725
+mutation individual 53 num.mut 13 bit 1321
+mutation individual 53 num.mut 14 bit 1360
+mutation individual 53 num.mut 15 bit 1572
+mutation individual 53 num.mut 16 bit 3081
+mutation individual 53 num.mut 17 bit 1777
+mutation individual 53 num.mut 18 bit 2684
+mutation individual 53 num.mut 19 bit 868
+mutation individual 53 num.mut 20 bit 2356
+
+Generating individuals 54 55
+2 it selects the individuals 2 47
+it crosses individuals 2 47
+it cross bits from 2817 to 2889 of individuals 55 to 54
+it cross bits from 1673 to 1834 of individuals 54 to 55
+Mut. individual 54 m_mut 0.700000 num 0.160773 
+mutation individual 54 num.mut 0 bit 1831
+mutation individual 54 num.mut 1 bit 2571
+mutation individual 54 num.mut 2 bit 1556
+mutation individual 54 num.mut 3 bit 2188
+mutation individual 54 num.mut 4 bit 1335
+mutation individual 54 num.mut 5 bit 844
+mutation individual 54 num.mut 6 bit 274
+mutation individual 54 num.mut 7 bit 1262
+mutation individual 54 num.mut 8 bit 972
+mutation individual 54 num.mut 9 bit 372
+mutation individual 54 num.mut 10 bit 837
+Mut. individual 53 m_mut 0.700000 num 0.148701 
+mutation individual 55 num.mut 0 bit 75
+mutation individual 55 num.mut 1 bit 1737
+mutation individual 55 num.mut 2 bit 393
+mutation individual 55 num.mut 3 bit 1396
+mutation individual 55 num.mut 4 bit 3097
+mutation individual 55 num.mut 5 bit 1966
+mutation individual 55 num.mut 6 bit 1367
+mutation individual 55 num.mut 7 bit 1764
+mutation individual 55 num.mut 8 bit 1539
+mutation individual 55 num.mut 9 bit 2235
+mutation individual 55 num.mut 10 bit 1009
+mutation individual 55 num.mut 11 bit 705
+mutation individual 55 num.mut 12 bit 1942
+mutation individual 55 num.mut 13 bit 1734
+mutation individual 55 num.mut 14 bit 2379
+mutation individual 55 num.mut 15 bit 453
+
+Generating individuals 56 57
+3 it selects the individuals 3 46
+it crosses individuals 3 46
+it cross bits from 2893 to 3112 of individuals 57 to 56
+it cross bits from 1694 to 1827 of individuals 56 to 57
+Mut. individual 56 m_mut 0.700000 num 0.437975 
+mutation individual 56 num.mut 0 bit 2183
+mutation individual 56 num.mut 1 bit 1637
+mutation individual 56 num.mut 2 bit 1181
+mutation individual 56 num.mut 3 bit 45
+mutation individual 56 num.mut 4 bit 2009
+mutation individual 56 num.mut 5 bit 2018
+mutation individual 56 num.mut 6 bit 508
+mutation individual 56 num.mut 7 bit 2788
+mutation individual 56 num.mut 8 bit 2094
+mutation individual 56 num.mut 9 bit 2245
+mutation individual 56 num.mut 10 bit 71
+mutation individual 56 num.mut 11 bit 380
+mutation individual 56 num.mut 12 bit 2232
+mutation individual 56 num.mut 13 bit 2037
+mutation individual 56 num.mut 14 bit 1747
+mutation individual 56 num.mut 15 bit 885
+mutation individual 56 num.mut 16 bit 465
+mutation individual 56 num.mut 17 bit 872
+mutation individual 56 num.mut 18 bit 1895
+mutation individual 56 num.mut 19 bit 1171
+mutation individual 56 num.mut 20 bit 2814
+mutation individual 56 num.mut 21 bit 518
+mutation individual 56 num.mut 22 bit 440
+mutation individual 56 num.mut 23 bit 157
+mutation individual 56 num.mut 24 bit 2752
+mutation individual 56 num.mut 25 bit 223
+mutation individual 56 num.mut 26 bit 2442
+mutation individual 56 num.mut 27 bit 1336
+mutation individual 56 num.mut 28 bit 1562
+mutation individual 56 num.mut 29 bit 694
+mutation individual 56 num.mut 30 bit 1254
+mutation individual 56 num.mut 31 bit 634
+mutation individual 56 num.mut 32 bit 2331
+mutation individual 56 num.mut 33 bit 2435
+mutation individual 56 num.mut 34 bit 680
+mutation individual 56 num.mut 35 bit 1230
+mutation individual 56 num.mut 36 bit 1343
+mutation individual 56 num.mut 37 bit 1188
+mutation individual 56 num.mut 38 bit 908
+mutation individual 56 num.mut 39 bit 326
+mutation individual 56 num.mut 40 bit 322
+mutation individual 56 num.mut 41 bit 979
+mutation individual 56 num.mut 42 bit 706
+mutation individual 56 num.mut 43 bit 2554
+mutation individual 56 num.mut 44 bit 3016
+mutation individual 56 num.mut 45 bit 2454
+mutation individual 56 num.mut 46 bit 329
+mutation individual 56 num.mut 47 bit 371
+mutation individual 56 num.mut 48 bit 215
+mutation individual 56 num.mut 49 bit 2225
+mutation individual 56 num.mut 50 bit 1542
+mutation individual 56 num.mut 51 bit 3030
+mutation individual 56 num.mut 52 bit 2743
+mutation individual 56 num.mut 53 bit 1983
+mutation individual 56 num.mut 54 bit 76
+mutation individual 56 num.mut 55 bit 2385
+mutation individual 56 num.mut 56 bit 2206
+mutation individual 56 num.mut 57 bit 2518
+mutation individual 56 num.mut 58 bit 611
+mutation individual 56 num.mut 59 bit 657
+Mut. individual 55 m_mut 0.700000 num 0.032734 
+mutation individual 57 num.mut 0 bit 1292
+mutation individual 57 num.mut 1 bit 2433
+mutation individual 57 num.mut 2 bit 1191
+mutation individual 57 num.mut 3 bit 1972
+mutation individual 57 num.mut 4 bit 552
+mutation individual 57 num.mut 5 bit 2534
+mutation individual 57 num.mut 6 bit 49
+mutation individual 57 num.mut 7 bit 1460
+mutation individual 57 num.mut 8 bit 2861
+mutation individual 57 num.mut 9 bit 372
+mutation individual 57 num.mut 10 bit 2439
+mutation individual 57 num.mut 11 bit 457
+mutation individual 57 num.mut 12 bit 2926
+mutation individual 57 num.mut 13 bit 2345
+mutation individual 57 num.mut 14 bit 2912
+mutation individual 57 num.mut 15 bit 145
+mutation individual 57 num.mut 16 bit 2716
+mutation individual 57 num.mut 17 bit 17
+mutation individual 57 num.mut 18 bit 2370
+mutation individual 57 num.mut 19 bit 1148
+mutation individual 57 num.mut 20 bit 3047
+mutation individual 57 num.mut 21 bit 2003
+mutation individual 57 num.mut 22 bit 20
+mutation individual 57 num.mut 23 bit 12
+mutation individual 57 num.mut 24 bit 1278
+mutation individual 57 num.mut 25 bit 2226
+mutation individual 57 num.mut 26 bit 2531
+mutation individual 57 num.mut 27 bit 1889
+mutation individual 57 num.mut 28 bit 2884
+mutation individual 57 num.mut 29 bit 2633
+mutation individual 57 num.mut 30 bit 644
+mutation individual 57 num.mut 31 bit 1066
+mutation individual 57 num.mut 32 bit 1955
+mutation individual 57 num.mut 33 bit 1835
+mutation individual 57 num.mut 34 bit 3038
+mutation individual 57 num.mut 35 bit 2508
+mutation individual 57 num.mut 36 bit 1259
+
+Generating individuals 58 59
+4 it selects the individuals 4 45
+Mut. individual 58 m_mut 0.700000 num 0.275800 
+mutation individual 58 num.mut 0 bit 349
+mutation individual 58 num.mut 1 bit 186
+mutation individual 58 num.mut 2 bit 1468
+mutation individual 58 num.mut 3 bit 165
+mutation individual 58 num.mut 4 bit 2531
+mutation individual 58 num.mut 5 bit 1269
+mutation individual 58 num.mut 6 bit 311
+mutation individual 58 num.mut 7 bit 2137
+mutation individual 58 num.mut 8 bit 1286
+mutation individual 58 num.mut 9 bit 2681
+mutation individual 58 num.mut 10 bit 174
+mutation individual 58 num.mut 11 bit 1223
+mutation individual 58 num.mut 12 bit 1574
+mutation individual 58 num.mut 13 bit 194
+mutation individual 58 num.mut 14 bit 1236
+mutation individual 58 num.mut 15 bit 2852
+mutation individual 58 num.mut 16 bit 2421
+mutation individual 58 num.mut 17 bit 657
+mutation individual 58 num.mut 18 bit 1631
+mutation individual 58 num.mut 19 bit 2195
+Mut. individual 57 m_mut 0.700000 num 0.057760 
+mutation individual 59 num.mut 0 bit 150
+mutation individual 59 num.mut 1 bit 2135
+mutation individual 59 num.mut 2 bit 1000
+mutation individual 59 num.mut 3 bit 77
+mutation individual 59 num.mut 4 bit 1532
+mutation individual 59 num.mut 5 bit 2260
+mutation individual 59 num.mut 6 bit 55
+mutation individual 59 num.mut 7 bit 2391
+mutation individual 59 num.mut 8 bit 159
+mutation individual 59 num.mut 9 bit 404
+mutation individual 59 num.mut 10 bit 2577
+mutation individual 59 num.mut 11 bit 1627
+mutation individual 59 num.mut 12 bit 570
+mutation individual 59 num.mut 13 bit 1998
+mutation individual 59 num.mut 14 bit 2896
+mutation individual 59 num.mut 15 bit 881
+mutation individual 59 num.mut 16 bit 1024
+mutation individual 59 num.mut 17 bit 1072
+mutation individual 59 num.mut 18 bit 452
+mutation individual 59 num.mut 19 bit 1199
+mutation individual 59 num.mut 20 bit 2295
+mutation individual 59 num.mut 21 bit 2026
+mutation individual 59 num.mut 22 bit 1393
+mutation individual 59 num.mut 23 bit 421
+mutation individual 59 num.mut 24 bit 1768
+mutation individual 59 num.mut 25 bit 704
+mutation individual 59 num.mut 26 bit 1078
+mutation individual 59 num.mut 27 bit 289
+mutation individual 59 num.mut 28 bit 2900
+mutation individual 59 num.mut 29 bit 1257
+mutation individual 59 num.mut 30 bit 2565
+mutation individual 59 num.mut 31 bit 3050
+mutation individual 59 num.mut 32 bit 282
+mutation individual 59 num.mut 33 bit 454
+mutation individual 59 num.mut 34 bit 17
+mutation individual 59 num.mut 35 bit 1815
+mutation individual 59 num.mut 36 bit 2714
+mutation individual 59 num.mut 37 bit 72
+mutation individual 59 num.mut 38 bit 1095
+mutation individual 59 num.mut 39 bit 2874
+mutation individual 59 num.mut 40 bit 477
+mutation individual 59 num.mut 41 bit 562
+mutation individual 59 num.mut 42 bit 1390
+mutation individual 59 num.mut 43 bit 1048
+mutation individual 59 num.mut 44 bit 2560
+
+Generating individuals 60 61
+5 it selects the individuals 5 44
+it crosses individuals 5 44
+it cross bits from 1930 to 1977 of individuals 61 to 60
+it cross bits from 2249 to 2486 of individuals 60 to 61
+Mut. individual 60 m_mut 0.700000 num 0.538036 
+mutation individual 60 num.mut 0 bit 1298
+mutation individual 60 num.mut 1 bit 3067
+mutation individual 60 num.mut 2 bit 1855
+mutation individual 60 num.mut 3 bit 3067
+mutation individual 60 num.mut 4 bit 661
+mutation individual 60 num.mut 5 bit 2933
+mutation individual 60 num.mut 6 bit 245
+mutation individual 60 num.mut 7 bit 450
+mutation individual 60 num.mut 8 bit 1080
+mutation individual 60 num.mut 9 bit 2810
+mutation individual 60 num.mut 10 bit 390
+mutation individual 60 num.mut 11 bit 1362
+mutation individual 60 num.mut 12 bit 153
+mutation individual 60 num.mut 13 bit 407
+mutation individual 60 num.mut 14 bit 67
+mutation individual 60 num.mut 15 bit 2868
+mutation individual 60 num.mut 16 bit 480
+mutation individual 60 num.mut 17 bit 1162
+mutation individual 60 num.mut 18 bit 2631
+mutation individual 60 num.mut 19 bit 958
+mutation individual 60 num.mut 20 bit 1724
+mutation individual 60 num.mut 21 bit 911
+mutation individual 60 num.mut 22 bit 2006
+mutation individual 60 num.mut 23 bit 1174
+mutation individual 60 num.mut 24 bit 2088
+mutation individual 60 num.mut 25 bit 825
+mutation individual 60 num.mut 26 bit 1649
+mutation individual 60 num.mut 27 bit 1226
+mutation individual 60 num.mut 28 bit 97
+Mut. individual 59 m_mut 0.700000 num 0.068178 
+mutation individual 61 num.mut 0 bit 1395
+mutation individual 61 num.mut 1 bit 168
+mutation individual 61 num.mut 2 bit 1405
+mutation individual 61 num.mut 3 bit 1351
+mutation individual 61 num.mut 4 bit 830
+mutation individual 61 num.mut 5 bit 1227
+mutation individual 61 num.mut 6 bit 1596
+mutation individual 61 num.mut 7 bit 1280
+mutation individual 61 num.mut 8 bit 2307
+mutation individual 61 num.mut 9 bit 1295
+mutation individual 61 num.mut 10 bit 1670
+mutation individual 61 num.mut 11 bit 559
+mutation individual 61 num.mut 12 bit 1449
+mutation individual 61 num.mut 13 bit 2078
+mutation individual 61 num.mut 14 bit 626
+mutation individual 61 num.mut 15 bit 1207
+mutation individual 61 num.mut 16 bit 2558
+mutation individual 61 num.mut 17 bit 1788
+mutation individual 61 num.mut 18 bit 728
+mutation individual 61 num.mut 19 bit 406
+mutation individual 61 num.mut 20 bit 402
+mutation individual 61 num.mut 21 bit 1640
+mutation individual 61 num.mut 22 bit 2412
+mutation individual 61 num.mut 23 bit 1577
+mutation individual 61 num.mut 24 bit 617
+mutation individual 61 num.mut 25 bit 127
+mutation individual 61 num.mut 26 bit 115
+mutation individual 61 num.mut 27 bit 1844
+mutation individual 61 num.mut 28 bit 224
+mutation individual 61 num.mut 29 bit 327
+mutation individual 61 num.mut 30 bit 1394
+mutation individual 61 num.mut 31 bit 1620
+mutation individual 61 num.mut 32 bit 496
+mutation individual 61 num.mut 33 bit 2799
+mutation individual 61 num.mut 34 bit 2971
+mutation individual 61 num.mut 35 bit 1326
+mutation individual 61 num.mut 36 bit 916
+mutation individual 61 num.mut 37 bit 1457
+mutation individual 61 num.mut 38 bit 2607
+mutation individual 61 num.mut 39 bit 112
+mutation individual 61 num.mut 40 bit 2753
+mutation individual 61 num.mut 41 bit 1167
+mutation individual 61 num.mut 42 bit 672
+mutation individual 61 num.mut 43 bit 1092
+mutation individual 61 num.mut 44 bit 134
+mutation individual 61 num.mut 45 bit 1298
+mutation individual 61 num.mut 46 bit 2299
+mutation individual 61 num.mut 47 bit 2693
+mutation individual 61 num.mut 48 bit 3087
+mutation individual 61 num.mut 49 bit 3027
+mutation individual 61 num.mut 50 bit 3100
+mutation individual 61 num.mut 51 bit 379
+mutation individual 61 num.mut 52 bit 1556
+
+Generating individuals 62 63
+6 it selects the individuals 6 43
+it crosses individuals 6 43
+it cross bits from 1956 to 2172 of individuals 63 to 62
+it cross bits from 2529 to 2735 of individuals 62 to 63
+Mut. individual 62 m_mut 0.700000 num 0.291858 
+mutation individual 62 num.mut 0 bit 2399
+mutation individual 62 num.mut 1 bit 2302
+mutation individual 62 num.mut 2 bit 1263
+mutation individual 62 num.mut 3 bit 2896
+mutation individual 62 num.mut 4 bit 1990
+mutation individual 62 num.mut 5 bit 1123
+mutation individual 62 num.mut 6 bit 1111
+mutation individual 62 num.mut 7 bit 2906
+mutation individual 62 num.mut 8 bit 2581
+mutation individual 62 num.mut 9 bit 608
+mutation individual 62 num.mut 10 bit 3019
+mutation individual 62 num.mut 11 bit 2223
+mutation individual 62 num.mut 12 bit 1775
+mutation individual 62 num.mut 13 bit 581
+mutation individual 62 num.mut 14 bit 204
+mutation individual 62 num.mut 15 bit 1910
+mutation individual 62 num.mut 16 bit 1879
+mutation individual 62 num.mut 17 bit 2504
+mutation individual 62 num.mut 18 bit 1493
+mutation individual 62 num.mut 19 bit 1856
+mutation individual 62 num.mut 20 bit 2421
+mutation individual 62 num.mut 21 bit 1482
+mutation individual 62 num.mut 22 bit 2236
+mutation individual 62 num.mut 23 bit 867
+mutation individual 62 num.mut 24 bit 773
+mutation individual 62 num.mut 25 bit 1081
+mutation individual 62 num.mut 26 bit 3041
+mutation individual 62 num.mut 27 bit 191
+mutation individual 62 num.mut 28 bit 43
+mutation individual 62 num.mut 29 bit 838
+mutation individual 62 num.mut 30 bit 2945
+mutation individual 62 num.mut 31 bit 2442
+mutation individual 62 num.mut 32 bit 29
+mutation individual 62 num.mut 33 bit 1097
+mutation individual 62 num.mut 34 bit 2228
+mutation individual 62 num.mut 35 bit 2020
+mutation individual 62 num.mut 36 bit 2221
+mutation individual 62 num.mut 37 bit 228
+mutation individual 62 num.mut 38 bit 1816
+mutation individual 62 num.mut 39 bit 1691
+mutation individual 62 num.mut 40 bit 837
+mutation individual 62 num.mut 41 bit 1725
+mutation individual 62 num.mut 42 bit 804
+mutation individual 62 num.mut 43 bit 2612
+mutation individual 62 num.mut 44 bit 2306
+mutation individual 62 num.mut 45 bit 1009
+mutation individual 62 num.mut 46 bit 1412
+mutation individual 62 num.mut 47 bit 1075
+mutation individual 62 num.mut 48 bit 402
+mutation individual 62 num.mut 49 bit 2905
+mutation individual 62 num.mut 50 bit 2932
+mutation individual 62 num.mut 51 bit 2823
+mutation individual 62 num.mut 52 bit 1276
+mutation individual 62 num.mut 53 bit 2057
+mutation individual 62 num.mut 54 bit 579
+Mut. individual 61 m_mut 0.700000 num 0.658966 
+mutation individual 63 num.mut 0 bit 510
+
+Generating individuals 64 65
+7 it selects the individuals 7 42
+it crosses individuals 7 42
+it cross bits from 71 to 205 of individuals 65 to 64
+it cross bits from 2076 to 2326 of individuals 64 to 65
+Mut. individual 64 m_mut 0.700000 num 0.443245 
+mutation individual 64 num.mut 0 bit 1631
+mutation individual 64 num.mut 1 bit 288
+
+Generating individuals 66 67
+8 it selects the individuals 8 41
+it crosses individuals 8 41
+it cross bits from 2105 to 2191 of individuals 67 to 66
+it cross bits from 2697 to 2768 of individuals 66 to 67
+Mut. individual 66 m_mut 0.700000 num 0.536754 
+mutation individual 66 num.mut 0 bit 3026
+mutation individual 66 num.mut 1 bit 2679
+mutation individual 66 num.mut 2 bit 500
+mutation individual 66 num.mut 3 bit 990
+mutation individual 66 num.mut 4 bit 3081
+mutation individual 66 num.mut 5 bit 295
+mutation individual 66 num.mut 6 bit 812
+mutation individual 66 num.mut 7 bit 2793
+mutation individual 66 num.mut 8 bit 1571
+mutation individual 66 num.mut 9 bit 2870
+mutation individual 66 num.mut 10 bit 262
+mutation individual 66 num.mut 11 bit 511
+mutation individual 66 num.mut 12 bit 2898
+mutation individual 66 num.mut 13 bit 772
+mutation individual 66 num.mut 14 bit 2752
+mutation individual 66 num.mut 15 bit 2970
+mutation individual 66 num.mut 16 bit 2121
+mutation individual 66 num.mut 17 bit 1717
+mutation individual 66 num.mut 18 bit 2374
+mutation individual 66 num.mut 19 bit 389
+mutation individual 66 num.mut 20 bit 1781
+mutation individual 66 num.mut 21 bit 894
+mutation individual 66 num.mut 22 bit 678
+mutation individual 66 num.mut 23 bit 954
+mutation individual 66 num.mut 24 bit 2755
+mutation individual 66 num.mut 25 bit 2783
+mutation individual 66 num.mut 26 bit 1820
+mutation individual 66 num.mut 27 bit 2342
+mutation individual 66 num.mut 28 bit 392
+mutation individual 66 num.mut 29 bit 378
+mutation individual 66 num.mut 30 bit 1430
+mutation individual 66 num.mut 31 bit 307
+mutation individual 66 num.mut 32 bit 3057
+mutation individual 66 num.mut 33 bit 1931
+mutation individual 66 num.mut 34 bit 1298
+mutation individual 66 num.mut 35 bit 3028
+mutation individual 66 num.mut 36 bit 2226
+mutation individual 66 num.mut 37 bit 2111
+mutation individual 66 num.mut 38 bit 2711
+mutation individual 66 num.mut 39 bit 687
+mutation individual 66 num.mut 40 bit 1870
+mutation individual 66 num.mut 41 bit 2973
+mutation individual 66 num.mut 42 bit 1198
+mutation individual 66 num.mut 43 bit 1658
+Mut. individual 65 m_mut 0.700000 num 0.204286 
+mutation individual 67 num.mut 0 bit 1517
+mutation individual 67 num.mut 1 bit 2757
+mutation individual 67 num.mut 2 bit 2557
+mutation individual 67 num.mut 3 bit 780
+mutation individual 67 num.mut 4 bit 36
+mutation individual 67 num.mut 5 bit 1227
+mutation individual 67 num.mut 6 bit 1675
+mutation individual 67 num.mut 7 bit 714
+mutation individual 67 num.mut 8 bit 2182
+mutation individual 67 num.mut 9 bit 1320
+mutation individual 67 num.mut 10 bit 387
+mutation individual 67 num.mut 11 bit 891
+mutation individual 67 num.mut 12 bit 551
+mutation individual 67 num.mut 13 bit 779
+mutation individual 67 num.mut 14 bit 1270
+mutation individual 67 num.mut 15 bit 1981
+mutation individual 67 num.mut 16 bit 1087
+
+Generating individuals 68 69
+9 it selects the individuals 9 40
+it crosses individuals 9 40
+it cross bits from 801 to 1038 of individuals 69 to 68
+it cross bits from 1134 to 1435 of individuals 68 to 69
+Mut. individual 68 m_mut 0.700000 num 0.445876 
+mutation individual 68 num.mut 0 bit 604
+mutation individual 68 num.mut 1 bit 146
+mutation individual 68 num.mut 2 bit 597
+mutation individual 68 num.mut 3 bit 1802
+mutation individual 68 num.mut 4 bit 1804
+mutation individual 68 num.mut 5 bit 1232
+mutation individual 68 num.mut 6 bit 2642
+mutation individual 68 num.mut 7 bit 211
+mutation individual 68 num.mut 8 bit 879
+mutation individual 68 num.mut 9 bit 2089
+mutation individual 68 num.mut 10 bit 992
+mutation individual 68 num.mut 11 bit 915
+mutation individual 68 num.mut 12 bit 205
+mutation individual 68 num.mut 13 bit 2667
+mutation individual 68 num.mut 14 bit 1629
+
+Generating individuals 70 71
+10 it selects the individuals 10 39
+it crosses individuals 10 39
+it cross bits from 2017 to 2033 of individuals 71 to 70
+it cross bits from 1428 to 1706 of individuals 70 to 71
+Mut. individual 70 m_mut 0.700000 num 0.462648 
+mutation individual 70 num.mut 0 bit 774
+mutation individual 70 num.mut 1 bit 2656
+mutation individual 70 num.mut 2 bit 1100
+mutation individual 70 num.mut 3 bit 49
+mutation individual 70 num.mut 4 bit 679
+mutation individual 70 num.mut 5 bit 1017
+Mut. individual 69 m_mut 0.700000 num 0.461898 
+mutation individual 71 num.mut 0 bit 1621
+mutation individual 71 num.mut 1 bit 1583
+mutation individual 71 num.mut 2 bit 2011
+mutation individual 71 num.mut 3 bit 312
+mutation individual 71 num.mut 4 bit 277
+mutation individual 71 num.mut 5 bit 133
+mutation individual 71 num.mut 6 bit 2954
+mutation individual 71 num.mut 7 bit 488
+mutation individual 71 num.mut 8 bit 1012
+mutation individual 71 num.mut 9 bit 1932
+mutation individual 71 num.mut 10 bit 1480
+mutation individual 71 num.mut 11 bit 1928
+mutation individual 71 num.mut 12 bit 2138
+mutation individual 71 num.mut 13 bit 1037
+mutation individual 71 num.mut 14 bit 446
+mutation individual 71 num.mut 15 bit 1415
+mutation individual 71 num.mut 16 bit 1914
+mutation individual 71 num.mut 17 bit 2464
+mutation individual 71 num.mut 18 bit 1584
+mutation individual 71 num.mut 19 bit 231
+mutation individual 71 num.mut 20 bit 2150
+mutation individual 71 num.mut 21 bit 3024
+mutation individual 71 num.mut 22 bit 530
+mutation individual 71 num.mut 23 bit 2924
+mutation individual 71 num.mut 24 bit 2569
+mutation individual 71 num.mut 25 bit 1630
+mutation individual 71 num.mut 26 bit 2974
+mutation individual 71 num.mut 27 bit 138
+
+Generating individuals 72 73
+11 it selects the individuals 11 38
+it crosses individuals 11 38
+it cross bits from 1300 to 1454 of individuals 73 to 72
+it cross bits from 1157 to 1444 of individuals 72 to 73
+Mut. individual 72 m_mut 0.700000 num 0.145912 
+mutation individual 72 num.mut 0 bit 49
+mutation individual 72 num.mut 1 bit 587
+mutation individual 72 num.mut 2 bit 1312
+mutation individual 72 num.mut 3 bit 538
+mutation individual 72 num.mut 4 bit 1600
+mutation individual 72 num.mut 5 bit 134
+mutation individual 72 num.mut 6 bit 2018
+mutation individual 72 num.mut 7 bit 417
+mutation individual 72 num.mut 8 bit 2272
+mutation individual 72 num.mut 9 bit 3055
+mutation individual 72 num.mut 10 bit 864
+mutation individual 72 num.mut 11 bit 577
+mutation individual 72 num.mut 12 bit 1859
+mutation individual 72 num.mut 13 bit 217
+mutation individual 72 num.mut 14 bit 2162
+mutation individual 72 num.mut 15 bit 2090
+mutation individual 72 num.mut 16 bit 2367
+mutation individual 72 num.mut 17 bit 2075
+mutation individual 72 num.mut 18 bit 2620
+mutation individual 72 num.mut 19 bit 2181
+mutation individual 72 num.mut 20 bit 1534
+mutation individual 72 num.mut 21 bit 1140
+mutation individual 72 num.mut 22 bit 2044
+mutation individual 72 num.mut 23 bit 1673
+mutation individual 72 num.mut 24 bit 676
+mutation individual 72 num.mut 25 bit 233
+mutation individual 72 num.mut 26 bit 115
+mutation individual 72 num.mut 27 bit 1833
+mutation individual 72 num.mut 28 bit 5
+Mut. individual 71 m_mut 0.700000 num 0.182992 
+mutation individual 73 num.mut 0 bit 55
+mutation individual 73 num.mut 1 bit 1156
+mutation individual 73 num.mut 2 bit 1504
+mutation individual 73 num.mut 3 bit 593
+
+Generating individuals 74 75
+12 it selects the individuals 12 37
+it crosses individuals 12 37
+it cross bits from 1639 to 1899 of individuals 75 to 74
+it cross bits from 63 to 142 of individuals 74 to 75
+Mut. individual 73 m_mut 0.700000 num 0.298362 
+mutation individual 75 num.mut 0 bit 1305
+mutation individual 75 num.mut 1 bit 1145
+mutation individual 75 num.mut 2 bit 431
+mutation individual 75 num.mut 3 bit 285
+mutation individual 75 num.mut 4 bit 402
+mutation individual 75 num.mut 5 bit 2507
+mutation individual 75 num.mut 6 bit 2905
+mutation individual 75 num.mut 7 bit 2583
+mutation individual 75 num.mut 8 bit 930
+mutation individual 75 num.mut 9 bit 935
+mutation individual 75 num.mut 10 bit 1517
+mutation individual 75 num.mut 11 bit 2604
+mutation individual 75 num.mut 12 bit 1611
+mutation individual 75 num.mut 13 bit 1750
+mutation individual 75 num.mut 14 bit 2719
+mutation individual 75 num.mut 15 bit 333
+mutation individual 75 num.mut 16 bit 1756
+mutation individual 75 num.mut 17 bit 177
+mutation individual 75 num.mut 18 bit 525
+mutation individual 75 num.mut 19 bit 1811
+mutation individual 75 num.mut 20 bit 1334
+mutation individual 75 num.mut 21 bit 2030
+mutation individual 75 num.mut 22 bit 2405
+mutation individual 75 num.mut 23 bit 980
+mutation individual 75 num.mut 24 bit 559
+mutation individual 75 num.mut 25 bit 1906
+mutation individual 75 num.mut 26 bit 1044
+mutation individual 75 num.mut 27 bit 1360
+
+Generating individuals 76 77
+13 it selects the individuals 13 36
+it crosses individuals 13 36
+it cross bits from 1972 to 2245 of individuals 77 to 76
+it cross bits from 2657 to 2657 of individuals 76 to 77
+Mut. individual 76 m_mut 0.700000 num 0.019385 
+mutation individual 76 num.mut 0 bit 410
+mutation individual 76 num.mut 1 bit 2567
+mutation individual 76 num.mut 2 bit 2738
+mutation individual 76 num.mut 3 bit 2993
+mutation individual 76 num.mut 4 bit 387
+mutation individual 76 num.mut 5 bit 562
+mutation individual 76 num.mut 6 bit 1400
+mutation individual 76 num.mut 7 bit 2991
+mutation individual 76 num.mut 8 bit 2173
+mutation individual 76 num.mut 9 bit 39
+mutation individual 76 num.mut 10 bit 2599
+mutation individual 76 num.mut 11 bit 2507
+mutation individual 76 num.mut 12 bit 1795
+mutation individual 76 num.mut 13 bit 2777
+mutation individual 76 num.mut 14 bit 3032
+mutation individual 76 num.mut 15 bit 496
+mutation individual 76 num.mut 16 bit 1001
+mutation individual 76 num.mut 17 bit 1952
+mutation individual 76 num.mut 18 bit 2901
+mutation individual 76 num.mut 19 bit 1981
+mutation individual 76 num.mut 20 bit 2511
+mutation individual 76 num.mut 21 bit 1697
+mutation individual 76 num.mut 22 bit 3026
+mutation individual 76 num.mut 23 bit 761
+mutation individual 76 num.mut 24 bit 3049
+mutation individual 76 num.mut 25 bit 1888
+mutation individual 76 num.mut 26 bit 390
+mutation individual 76 num.mut 27 bit 2596
+mutation individual 76 num.mut 28 bit 1895
+mutation individual 76 num.mut 29 bit 450
+mutation individual 76 num.mut 30 bit 2428
+mutation individual 76 num.mut 31 bit 2305
+mutation individual 76 num.mut 32 bit 3018
+mutation individual 76 num.mut 33 bit 2055
+mutation individual 76 num.mut 34 bit 2188
+mutation individual 76 num.mut 35 bit 294
+mutation individual 76 num.mut 36 bit 2617
+mutation individual 76 num.mut 37 bit 477
+mutation individual 76 num.mut 38 bit 174
+mutation individual 76 num.mut 39 bit 1680
+mutation individual 76 num.mut 40 bit 517
+mutation individual 76 num.mut 41 bit 2774
+mutation individual 76 num.mut 42 bit 1076
+mutation individual 76 num.mut 43 bit 2313
+mutation individual 76 num.mut 44 bit 2441
+mutation individual 76 num.mut 45 bit 997
+mutation individual 76 num.mut 46 bit 2809
+mutation individual 76 num.mut 47 bit 331
+mutation individual 76 num.mut 48 bit 2950
+mutation individual 76 num.mut 49 bit 2600
+mutation individual 76 num.mut 50 bit 2312
+mutation individual 76 num.mut 51 bit 2350
+mutation individual 76 num.mut 52 bit 1186
+mutation individual 76 num.mut 53 bit 2228
+mutation individual 76 num.mut 54 bit 1
+mutation individual 76 num.mut 55 bit 1125
+mutation individual 76 num.mut 56 bit 1005
+mutation individual 76 num.mut 57 bit 391
+Mut. individual 75 m_mut 0.700000 num 0.196463 
+mutation individual 77 num.mut 0 bit 842
+mutation individual 77 num.mut 1 bit 3039
+mutation individual 77 num.mut 2 bit 2096
+mutation individual 77 num.mut 3 bit 749
+mutation individual 77 num.mut 4 bit 1984
+mutation individual 77 num.mut 5 bit 1174
+mutation individual 77 num.mut 6 bit 1044
+mutation individual 77 num.mut 7 bit 1491
+mutation individual 77 num.mut 8 bit 1652
+mutation individual 77 num.mut 9 bit 1219
+mutation individual 77 num.mut 10 bit 60
+mutation individual 77 num.mut 11 bit 2169
+mutation individual 77 num.mut 12 bit 882
+mutation individual 77 num.mut 13 bit 1136
+mutation individual 77 num.mut 14 bit 1371
+mutation individual 77 num.mut 15 bit 212
+mutation individual 77 num.mut 16 bit 2134
+mutation individual 77 num.mut 17 bit 1070
+mutation individual 77 num.mut 18 bit 544
+mutation individual 77 num.mut 19 bit 1973
+mutation individual 77 num.mut 20 bit 559
+mutation individual 77 num.mut 21 bit 2856
+mutation individual 77 num.mut 22 bit 1213
+mutation individual 77 num.mut 23 bit 1746
+mutation individual 77 num.mut 24 bit 1974
+mutation individual 77 num.mut 25 bit 1214
+mutation individual 77 num.mut 26 bit 2871
+mutation individual 77 num.mut 27 bit 2979
+mutation individual 77 num.mut 28 bit 1606
+mutation individual 77 num.mut 29 bit 372
+mutation individual 77 num.mut 30 bit 2770
+mutation individual 77 num.mut 31 bit 2449
+mutation individual 77 num.mut 32 bit 301
+mutation individual 77 num.mut 33 bit 1755
+mutation individual 77 num.mut 34 bit 87
+mutation individual 77 num.mut 35 bit 2285
+mutation individual 77 num.mut 36 bit 2929
+mutation individual 77 num.mut 37 bit 1132
+mutation individual 77 num.mut 38 bit 666
+mutation individual 77 num.mut 39 bit 1471
+mutation individual 77 num.mut 40 bit 2351
+mutation individual 77 num.mut 41 bit 726
+mutation individual 77 num.mut 42 bit 529
+mutation individual 77 num.mut 43 bit 123
+mutation individual 77 num.mut 44 bit 1863
+mutation individual 77 num.mut 45 bit 1901
+mutation individual 77 num.mut 46 bit 336
+mutation individual 77 num.mut 47 bit 886
+mutation individual 77 num.mut 48 bit 2971
+mutation individual 77 num.mut 49 bit 880
+mutation individual 77 num.mut 50 bit 2860
+mutation individual 77 num.mut 51 bit 420
+mutation individual 77 num.mut 52 bit 626
+mutation individual 77 num.mut 53 bit 962
+mutation individual 77 num.mut 54 bit 2166
+mutation individual 77 num.mut 55 bit 2600
+mutation individual 77 num.mut 56 bit 2177
+
+Generating individuals 78 79
+14 it selects the individuals 14 35
+it crosses individuals 14 35
+it cross bits from 2469 to 2536 of individuals 79 to 78
+it cross bits from 2300 to 2512 of individuals 78 to 79
+Mut. individual 78 m_mut 0.700000 num 0.003582 
+mutation individual 78 num.mut 0 bit 773
+mutation individual 78 num.mut 1 bit 98
+mutation individual 78 num.mut 2 bit 1775
+mutation individual 78 num.mut 3 bit 591
+mutation individual 78 num.mut 4 bit 1231
+mutation individual 78 num.mut 5 bit 2441
+mutation individual 78 num.mut 6 bit 2062
+mutation individual 78 num.mut 7 bit 471
+mutation individual 78 num.mut 8 bit 57
+mutation individual 78 num.mut 9 bit 2592
+mutation individual 78 num.mut 10 bit 594
+mutation individual 78 num.mut 11 bit 1920
+mutation individual 78 num.mut 12 bit 1382
+mutation individual 78 num.mut 13 bit 930
+mutation individual 78 num.mut 14 bit 2807
+mutation individual 78 num.mut 15 bit 1243
+mutation individual 78 num.mut 16 bit 1811
+mutation individual 78 num.mut 17 bit 2556
+mutation individual 78 num.mut 18 bit 1663
+mutation individual 78 num.mut 19 bit 2437
+mutation individual 78 num.mut 20 bit 408
+mutation individual 78 num.mut 21 bit 719
+mutation individual 78 num.mut 22 bit 1926
+mutation individual 78 num.mut 23 bit 2586
+mutation individual 78 num.mut 24 bit 2647
+mutation individual 78 num.mut 25 bit 1285
+mutation individual 78 num.mut 26 bit 148
+mutation individual 78 num.mut 27 bit 1836
+mutation individual 78 num.mut 28 bit 302
+mutation individual 78 num.mut 29 bit 159
+mutation individual 78 num.mut 30 bit 1326
+mutation individual 78 num.mut 31 bit 1075
+mutation individual 78 num.mut 32 bit 258
+mutation individual 78 num.mut 33 bit 3102
+mutation individual 78 num.mut 34 bit 1667
+mutation individual 78 num.mut 35 bit 1489
+mutation individual 78 num.mut 36 bit 2433
+mutation individual 78 num.mut 37 bit 619
+mutation individual 78 num.mut 38 bit 1961
+mutation individual 78 num.mut 39 bit 2491
+mutation individual 78 num.mut 40 bit 100
+mutation individual 78 num.mut 41 bit 2555
+mutation individual 78 num.mut 42 bit 1301
+mutation individual 78 num.mut 43 bit 1483
+mutation individual 78 num.mut 44 bit 375
+mutation individual 78 num.mut 45 bit 997
+mutation individual 78 num.mut 46 bit 2727
+mutation individual 78 num.mut 47 bit 2187
+mutation individual 78 num.mut 48 bit 443
+mutation individual 78 num.mut 49 bit 1280
+mutation individual 78 num.mut 50 bit 1513
+mutation individual 78 num.mut 51 bit 852
+Mut. individual 77 m_mut 0.700000 num 0.642943 
+mutation individual 79 num.mut 0 bit 327
+mutation individual 79 num.mut 1 bit 1536
+mutation individual 79 num.mut 2 bit 1614
+mutation individual 79 num.mut 3 bit 475
+mutation individual 79 num.mut 4 bit 262
+mutation individual 79 num.mut 5 bit 1917
+mutation individual 79 num.mut 6 bit 635
+
+Generating individuals 80 81
+15 it selects the individuals 15 34
+it crosses individuals 15 34
+it cross bits from 2993 to 3082 of individuals 81 to 80
+it cross bits from 1581 to 1735 of individuals 80 to 81
+Mut. individual 79 m_mut 0.700000 num 0.290492 
+mutation individual 81 num.mut 0 bit 1233
+mutation individual 81 num.mut 1 bit 284
+mutation individual 81 num.mut 2 bit 2270
+mutation individual 81 num.mut 3 bit 678
+mutation individual 81 num.mut 4 bit 1585
+mutation individual 81 num.mut 5 bit 642
+mutation individual 81 num.mut 6 bit 1054
+mutation individual 81 num.mut 7 bit 2583
+mutation individual 81 num.mut 8 bit 259
+mutation individual 81 num.mut 9 bit 130
+mutation individual 81 num.mut 10 bit 3026
+mutation individual 81 num.mut 11 bit 1539
+mutation individual 81 num.mut 12 bit 1644
+mutation individual 81 num.mut 13 bit 768
+mutation individual 81 num.mut 14 bit 428
+mutation individual 81 num.mut 15 bit 1973
+mutation individual 81 num.mut 16 bit 1095
+mutation individual 81 num.mut 17 bit 1965
+mutation individual 81 num.mut 18 bit 477
+mutation individual 81 num.mut 19 bit 1571
+mutation individual 81 num.mut 20 bit 2228
+mutation individual 81 num.mut 21 bit 2394
+mutation individual 81 num.mut 22 bit 2207
+mutation individual 81 num.mut 23 bit 706
+mutation individual 81 num.mut 24 bit 2276
+mutation individual 81 num.mut 25 bit 3101
+mutation individual 81 num.mut 26 bit 2287
+mutation individual 81 num.mut 27 bit 715
+mutation individual 81 num.mut 28 bit 2373
+mutation individual 81 num.mut 29 bit 80
+mutation individual 81 num.mut 30 bit 2884
+mutation individual 81 num.mut 31 bit 496
+mutation individual 81 num.mut 32 bit 364
+mutation individual 81 num.mut 33 bit 2043
+mutation individual 81 num.mut 34 bit 1174
+mutation individual 81 num.mut 35 bit 1949
+mutation individual 81 num.mut 36 bit 2686
+mutation individual 81 num.mut 37 bit 2229
+mutation individual 81 num.mut 38 bit 1421
+mutation individual 81 num.mut 39 bit 2945
+mutation individual 81 num.mut 40 bit 2360
+mutation individual 81 num.mut 41 bit 1337
+mutation individual 81 num.mut 42 bit 1374
+
+Generating individuals 82 83
+16 it selects the individuals 16 33
+it crosses individuals 16 33
+it cross bits from 2105 to 2284 of individuals 83 to 82
+it cross bits from 2866 to 2874 of individuals 82 to 83
+Mut. individual 82 m_mut 0.700000 num 0.211385 
+mutation individual 82 num.mut 0 bit 1661
+mutation individual 82 num.mut 1 bit 2885
+mutation individual 82 num.mut 2 bit 2627
+mutation individual 82 num.mut 3 bit 757
+mutation individual 82 num.mut 4 bit 481
+Mut. individual 81 m_mut 0.700000 num 0.576277 
+mutation individual 83 num.mut 0 bit 2769
+mutation individual 83 num.mut 1 bit 2508
+mutation individual 83 num.mut 2 bit 10
+mutation individual 83 num.mut 3 bit 2849
+mutation individual 83 num.mut 4 bit 2281
+mutation individual 83 num.mut 5 bit 506
+mutation individual 83 num.mut 6 bit 103
+mutation individual 83 num.mut 7 bit 1214
+mutation individual 83 num.mut 8 bit 1681
+mutation individual 83 num.mut 9 bit 2052
+mutation individual 83 num.mut 10 bit 790
+mutation individual 83 num.mut 11 bit 800
+mutation individual 83 num.mut 12 bit 363
+mutation individual 83 num.mut 13 bit 625
+mutation individual 83 num.mut 14 bit 49
+
+Generating individuals 84 85
+17 it selects the individuals 17 32
+it crosses individuals 17 32
+it cross bits from 1999 to 2092 of individuals 85 to 84
+it cross bits from 695 to 763 of individuals 84 to 85
+Mut. individual 84 m_mut 0.700000 num 0.224388 
+mutation individual 84 num.mut 0 bit 1349
+mutation individual 84 num.mut 1 bit 930
+mutation individual 84 num.mut 2 bit 2447
+mutation individual 84 num.mut 3 bit 1123
+mutation individual 84 num.mut 4 bit 446
+mutation individual 84 num.mut 5 bit 93
+mutation individual 84 num.mut 6 bit 1605
+mutation individual 84 num.mut 7 bit 2239
+mutation individual 84 num.mut 8 bit 841
+mutation individual 84 num.mut 9 bit 1263
+mutation individual 84 num.mut 10 bit 1636
+mutation individual 84 num.mut 11 bit 851
+mutation individual 84 num.mut 12 bit 1002
+mutation individual 84 num.mut 13 bit 807
+mutation individual 84 num.mut 14 bit 1358
+mutation individual 84 num.mut 15 bit 1105
+Mut. individual 83 m_mut 0.700000 num 0.650178 
+mutation individual 85 num.mut 0 bit 47
+mutation individual 85 num.mut 1 bit 2813
+mutation individual 85 num.mut 2 bit 729
+mutation individual 85 num.mut 3 bit 411
+mutation individual 85 num.mut 4 bit 327
+mutation individual 85 num.mut 5 bit 778
+mutation individual 85 num.mut 6 bit 2112
+mutation individual 85 num.mut 7 bit 2326
+mutation individual 85 num.mut 8 bit 1721
+mutation individual 85 num.mut 9 bit 2807
+mutation individual 85 num.mut 10 bit 3018
+mutation individual 85 num.mut 11 bit 2419
+mutation individual 85 num.mut 12 bit 482
+mutation individual 85 num.mut 13 bit 1256
+mutation individual 85 num.mut 14 bit 238
+mutation individual 85 num.mut 15 bit 2929
+mutation individual 85 num.mut 16 bit 2380
+mutation individual 85 num.mut 17 bit 685
+mutation individual 85 num.mut 18 bit 3023
+mutation individual 85 num.mut 19 bit 874
+mutation individual 85 num.mut 20 bit 2925
+mutation individual 85 num.mut 21 bit 753
+mutation individual 85 num.mut 22 bit 2138
+mutation individual 85 num.mut 23 bit 1451
+mutation individual 85 num.mut 24 bit 1605
+mutation individual 85 num.mut 25 bit 29
+mutation individual 85 num.mut 26 bit 2259
+mutation individual 85 num.mut 27 bit 2964
+mutation individual 85 num.mut 28 bit 1135
+mutation individual 85 num.mut 29 bit 1170
+mutation individual 85 num.mut 30 bit 2893
+mutation individual 85 num.mut 31 bit 1183
+mutation individual 85 num.mut 32 bit 873
+mutation individual 85 num.mut 33 bit 512
+mutation individual 85 num.mut 34 bit 1594
+mutation individual 85 num.mut 35 bit 1200
+mutation individual 85 num.mut 36 bit 1290
+mutation individual 85 num.mut 37 bit 595
+mutation individual 85 num.mut 38 bit 415
+mutation individual 85 num.mut 39 bit 3011
+mutation individual 85 num.mut 40 bit 292
+mutation individual 85 num.mut 41 bit 323
+mutation individual 85 num.mut 42 bit 2319
+mutation individual 85 num.mut 43 bit 774
+mutation individual 85 num.mut 44 bit 1579
+mutation individual 85 num.mut 45 bit 2558
+mutation individual 85 num.mut 46 bit 592
+mutation individual 85 num.mut 47 bit 848
+mutation individual 85 num.mut 48 bit 133
+mutation individual 85 num.mut 49 bit 505
+mutation individual 85 num.mut 50 bit 1723
+mutation individual 85 num.mut 51 bit 3058
+mutation individual 85 num.mut 52 bit 1259
+mutation individual 85 num.mut 53 bit 750
+mutation individual 85 num.mut 54 bit 1399
+mutation individual 85 num.mut 55 bit 2865
+mutation individual 85 num.mut 56 bit 780
+mutation individual 85 num.mut 57 bit 547
+mutation individual 85 num.mut 58 bit 2718
+mutation individual 85 num.mut 59 bit 1916
+
+Generating individuals 86 87
+18 it selects the individuals 18 31
+it crosses individuals 18 31
+it cross bits from 2501 to 2809 of individuals 87 to 86
+it cross bits from 2591 to 2891 of individuals 86 to 87
+Mut. individual 86 m_mut 0.700000 num 0.508725 
+mutation individual 86 num.mut 0 bit 1193
+mutation individual 86 num.mut 1 bit 2178
+mutation individual 86 num.mut 2 bit 1096
+mutation individual 86 num.mut 3 bit 1094
+mutation individual 86 num.mut 4 bit 2470
+mutation individual 86 num.mut 5 bit 1419
+mutation individual 86 num.mut 6 bit 302
+mutation individual 86 num.mut 7 bit 134
+mutation individual 86 num.mut 8 bit 2999
+mutation individual 86 num.mut 9 bit 2861
+mutation individual 86 num.mut 10 bit 727
+mutation individual 86 num.mut 11 bit 736
+mutation individual 86 num.mut 12 bit 2995
+mutation individual 86 num.mut 13 bit 1232
+
+Generating individuals 88 89
+19 it selects the individuals 19 30
+it crosses individuals 19 30
+it cross bits from 2491 to 2501 of individuals 89 to 88
+it cross bits from 1230 to 1453 of individuals 88 to 89
+Mut. individual 88 m_mut 0.700000 num 0.283243 
+mutation individual 88 num.mut 0 bit 1853
+mutation individual 88 num.mut 1 bit 2797
+mutation individual 88 num.mut 2 bit 385
+mutation individual 88 num.mut 3 bit 1244
+mutation individual 88 num.mut 4 bit 2785
+mutation individual 88 num.mut 5 bit 2976
+mutation individual 88 num.mut 6 bit 1146
+mutation individual 88 num.mut 7 bit 1257
+mutation individual 88 num.mut 8 bit 546
+mutation individual 88 num.mut 9 bit 2340
+mutation individual 88 num.mut 10 bit 324
+mutation individual 88 num.mut 11 bit 1642
+mutation individual 88 num.mut 12 bit 323
+mutation individual 88 num.mut 13 bit 2795
+mutation individual 88 num.mut 14 bit 3062
+mutation individual 88 num.mut 15 bit 626
+mutation individual 88 num.mut 16 bit 2929
+mutation individual 88 num.mut 17 bit 2950
+mutation individual 88 num.mut 18 bit 376
+mutation individual 88 num.mut 19 bit 545
+mutation individual 88 num.mut 20 bit 576
+mutation individual 88 num.mut 21 bit 261
+mutation individual 88 num.mut 22 bit 1777
+mutation individual 88 num.mut 23 bit 3037
+mutation individual 88 num.mut 24 bit 92
+mutation individual 88 num.mut 25 bit 1158
+mutation individual 88 num.mut 26 bit 26
+mutation individual 88 num.mut 27 bit 1323
+mutation individual 88 num.mut 28 bit 292
+mutation individual 88 num.mut 29 bit 907
+mutation individual 88 num.mut 30 bit 3102
+mutation individual 88 num.mut 31 bit 2146
+mutation individual 88 num.mut 32 bit 594
+mutation individual 88 num.mut 33 bit 376
+mutation individual 88 num.mut 34 bit 279
+Mut. individual 87 m_mut 0.700000 num 0.086433 
+mutation individual 89 num.mut 0 bit 1426
+mutation individual 89 num.mut 1 bit 1526
+mutation individual 89 num.mut 2 bit 788
+mutation individual 89 num.mut 3 bit 655
+mutation individual 89 num.mut 4 bit 1850
+
+Generating individuals 90 91
+20 it selects the individuals 20 29
+it crosses individuals 20 29
+it cross bits from 978 to 1130 of individuals 91 to 90
+it cross bits from 2382 to 2541 of individuals 90 to 91
+Mut. individual 90 m_mut 0.700000 num 0.434980 
+mutation individual 90 num.mut 0 bit 1981
+mutation individual 90 num.mut 1 bit 1898
+mutation individual 90 num.mut 2 bit 2798
+mutation individual 90 num.mut 3 bit 2242
+mutation individual 90 num.mut 4 bit 564
+mutation individual 90 num.mut 5 bit 2725
+mutation individual 90 num.mut 6 bit 2335
+mutation individual 90 num.mut 7 bit 1723
+mutation individual 90 num.mut 8 bit 2751
+mutation individual 90 num.mut 9 bit 548
+mutation individual 90 num.mut 10 bit 2016
+mutation individual 90 num.mut 11 bit 548
+mutation individual 90 num.mut 12 bit 539
+mutation individual 90 num.mut 13 bit 1051
+mutation individual 90 num.mut 14 bit 1142
+mutation individual 90 num.mut 15 bit 916
+mutation individual 90 num.mut 16 bit 1331
+mutation individual 90 num.mut 17 bit 1411
+mutation individual 90 num.mut 18 bit 1159
+mutation individual 90 num.mut 19 bit 2757
+mutation individual 90 num.mut 20 bit 2937
+mutation individual 90 num.mut 21 bit 1947
+mutation individual 90 num.mut 22 bit 302
+mutation individual 90 num.mut 23 bit 1677
+mutation individual 90 num.mut 24 bit 1268
+mutation individual 90 num.mut 25 bit 1281
+mutation individual 90 num.mut 26 bit 101
+mutation individual 90 num.mut 27 bit 539
+mutation individual 90 num.mut 28 bit 2886
+mutation individual 90 num.mut 29 bit 1454
+mutation individual 90 num.mut 30 bit 2762
+mutation individual 90 num.mut 31 bit 1757
+mutation individual 90 num.mut 32 bit 242
+mutation individual 90 num.mut 33 bit 2450
+mutation individual 90 num.mut 34 bit 889
+mutation individual 90 num.mut 35 bit 807
+mutation individual 90 num.mut 36 bit 2064
+mutation individual 90 num.mut 37 bit 113
+mutation individual 90 num.mut 38 bit 2530
+mutation individual 90 num.mut 39 bit 1704
+mutation individual 90 num.mut 40 bit 662
+mutation individual 90 num.mut 41 bit 1435
+mutation individual 90 num.mut 42 bit 2252
+mutation individual 90 num.mut 43 bit 1202
+
+Generating individuals 92 93
+21 it selects the individuals 21 28
+it crosses individuals 21 28
+it cross bits from 2119 to 2189 of individuals 93 to 92
+it cross bits from 1695 to 1711 of individuals 92 to 93
+Mut. individual 92 m_mut 0.700000 num 0.113754 
+mutation individual 92 num.mut 0 bit 2115
+mutation individual 92 num.mut 1 bit 656
+mutation individual 92 num.mut 2 bit 88
+mutation individual 92 num.mut 3 bit 272
+mutation individual 92 num.mut 4 bit 1937
+mutation individual 92 num.mut 5 bit 189
+mutation individual 92 num.mut 6 bit 811
+mutation individual 92 num.mut 7 bit 1712
+mutation individual 92 num.mut 8 bit 1644
+mutation individual 92 num.mut 9 bit 463
+mutation individual 92 num.mut 10 bit 359
+mutation individual 92 num.mut 11 bit 1886
+mutation individual 92 num.mut 12 bit 2913
+mutation individual 92 num.mut 13 bit 1248
+mutation individual 92 num.mut 14 bit 2693
+mutation individual 92 num.mut 15 bit 1866
+mutation individual 92 num.mut 16 bit 1362
+mutation individual 92 num.mut 17 bit 2112
+mutation individual 92 num.mut 18 bit 460
+mutation individual 92 num.mut 19 bit 2024
+mutation individual 92 num.mut 20 bit 436
+mutation individual 92 num.mut 21 bit 2712
+mutation individual 92 num.mut 22 bit 116
+mutation individual 92 num.mut 23 bit 2923
+mutation individual 92 num.mut 24 bit 2996
+mutation individual 92 num.mut 25 bit 2235
+mutation individual 92 num.mut 26 bit 519
+mutation individual 92 num.mut 27 bit 1581
+mutation individual 92 num.mut 28 bit 2403
+mutation individual 92 num.mut 29 bit 873
+
+Generating individuals 94 95
+22 it selects the individuals 22 27
+it crosses individuals 22 27
+it cross bits from 1529 to 1536 of individuals 95 to 94
+it cross bits from 1679 to 1714 of individuals 94 to 95
+Mut. individual 94 m_mut 0.700000 num 0.086628 
+mutation individual 94 num.mut 0 bit 2069
+mutation individual 94 num.mut 1 bit 1913
+mutation individual 94 num.mut 2 bit 2954
+mutation individual 94 num.mut 3 bit 2428
+mutation individual 94 num.mut 4 bit 689
+mutation individual 94 num.mut 5 bit 2756
+mutation individual 94 num.mut 6 bit 565
+mutation individual 94 num.mut 7 bit 271
+mutation individual 94 num.mut 8 bit 1511
+mutation individual 94 num.mut 9 bit 1927
+mutation individual 94 num.mut 10 bit 2384
+mutation individual 94 num.mut 11 bit 1971
+mutation individual 94 num.mut 12 bit 840
+mutation individual 94 num.mut 13 bit 2821
+mutation individual 94 num.mut 14 bit 1573
+mutation individual 94 num.mut 15 bit 957
+mutation individual 94 num.mut 16 bit 2633
+mutation individual 94 num.mut 17 bit 1459
+mutation individual 94 num.mut 18 bit 82
+mutation individual 94 num.mut 19 bit 41
+mutation individual 94 num.mut 20 bit 3040
+mutation individual 94 num.mut 21 bit 2485
+mutation individual 94 num.mut 22 bit 914
+mutation individual 94 num.mut 23 bit 3032
+mutation individual 94 num.mut 24 bit 781
+mutation individual 94 num.mut 25 bit 2444
+mutation individual 94 num.mut 26 bit 1
+mutation individual 94 num.mut 27 bit 2460
+mutation individual 94 num.mut 28 bit 2800
+mutation individual 94 num.mut 29 bit 270
+mutation individual 94 num.mut 30 bit 1840
+mutation individual 94 num.mut 31 bit 1758
+mutation individual 94 num.mut 32 bit 2184
+mutation individual 94 num.mut 33 bit 1684
+mutation individual 94 num.mut 34 bit 1075
+mutation individual 94 num.mut 35 bit 2874
+mutation individual 94 num.mut 36 bit 1329
+mutation individual 94 num.mut 37 bit 1640
+mutation individual 94 num.mut 38 bit 35
+mutation individual 94 num.mut 39 bit 2841
+mutation individual 94 num.mut 40 bit 457
+mutation individual 94 num.mut 41 bit 2419
+mutation individual 94 num.mut 42 bit 1702
+mutation individual 94 num.mut 43 bit 1298
+mutation individual 94 num.mut 44 bit 2129
+mutation individual 94 num.mut 45 bit 165
+mutation individual 94 num.mut 46 bit 2255
+mutation individual 94 num.mut 47 bit 1651
+mutation individual 94 num.mut 48 bit 1625
+
+Generating individuals 96 97
+23 it selects the individuals 23 26
+it crosses individuals 23 26
+it cross bits from 1554 to 1724 of individuals 97 to 96
+it cross bits from 2608 to 2755 of individuals 96 to 97
+Mut. individual 95 m_mut 0.700000 num 0.624079 
+mutation individual 97 num.mut 0 bit 1842
+mutation individual 97 num.mut 1 bit 1630
+mutation individual 97 num.mut 2 bit 1748
+mutation individual 97 num.mut 3 bit 571
+mutation individual 97 num.mut 4 bit 278
+mutation individual 97 num.mut 5 bit 822
+mutation individual 97 num.mut 6 bit 2256
+mutation individual 97 num.mut 7 bit 1353
+mutation individual 97 num.mut 8 bit 585
+mutation individual 97 num.mut 9 bit 474
+mutation individual 97 num.mut 10 bit 2994
+mutation individual 97 num.mut 11 bit 620
+mutation individual 97 num.mut 12 bit 205
+mutation individual 97 num.mut 13 bit 340
+mutation individual 97 num.mut 14 bit 3040
+mutation individual 97 num.mut 15 bit 1908
+mutation individual 97 num.mut 16 bit 1638
+mutation individual 97 num.mut 17 bit 2058
+mutation individual 97 num.mut 18 bit 2073
+mutation individual 97 num.mut 19 bit 783
+mutation individual 97 num.mut 20 bit 599
+mutation individual 97 num.mut 21 bit 587
+mutation individual 97 num.mut 22 bit 9
+mutation individual 97 num.mut 23 bit 2293
+mutation individual 97 num.mut 24 bit 2142
+mutation individual 97 num.mut 25 bit 1721
+mutation individual 97 num.mut 26 bit 1790
+mutation individual 97 num.mut 27 bit 508
+mutation individual 97 num.mut 28 bit 1103
+
+Generating individuals 98 99
+24 it selects the individuals 24 25
+it crosses individuals 24 25
+it cross bits from 1986 to 2279 of individuals 99 to 98
+it cross bits from 2251 to 2313 of individuals 98 to 99
+Mut. individual 98 m_mut 0.700000 num 0.130576 
+mutation individual 98 num.mut 0 bit 1445
+mutation individual 98 num.mut 1 bit 2662
+mutation individual 98 num.mut 2 bit 773
+mutation individual 98 num.mut 3 bit 2031
+mutation individual 98 num.mut 4 bit 26
+mutation individual 98 num.mut 5 bit 656
+mutation individual 98 num.mut 6 bit 2651
+mutation individual 98 num.mut 7 bit 231
+mutation individual 98 num.mut 8 bit 997
+mutation individual 98 num.mut 9 bit 2581
+mutation individual 98 num.mut 10 bit 2139
+mutation individual 98 num.mut 11 bit 2636
+mutation individual 98 num.mut 12 bit 1528
+mutation individual 98 num.mut 13 bit 1102
+mutation individual 98 num.mut 14 bit 309
+mutation individual 98 num.mut 15 bit 2128
+mutation individual 98 num.mut 16 bit 1690
+mutation individual 98 num.mut 17 bit 318
+mutation individual 98 num.mut 18 bit 1310
+mutation individual 98 num.mut 19 bit 722
+mutation individual 98 num.mut 20 bit 2040
+mutation individual 98 num.mut 21 bit 3100
+mutation individual 98 num.mut 22 bit 1230
+mutation individual 98 num.mut 23 bit 32
+mutation individual 98 num.mut 24 bit 610
+mutation individual 98 num.mut 25 bit 105
+mutation individual 98 num.mut 26 bit 2977
+mutation individual 98 num.mut 27 bit 2862
+mutation individual 98 num.mut 28 bit 729
+mutation individual 98 num.mut 29 bit 272
+mutation individual 98 num.mut 30 bit 2281
+mutation individual 98 num.mut 31 bit 2175
+mutation individual 98 num.mut 32 bit 2935
+mutation individual 98 num.mut 33 bit 3054
+mutation individual 98 num.mut 34 bit 1095
+mutation individual 98 num.mut 35 bit 2961
+mutation individual 98 num.mut 36 bit 600
+mutation individual 98 num.mut 37 bit 636
+mutation individual 98 num.mut 38 bit 81
+mutation individual 98 num.mut 39 bit 1598
+mutation individual 98 num.mut 40 bit 106
+mutation individual 98 num.mut 41 bit 2221
+mutation individual 98 num.mut 42 bit 1124
+mutation individual 98 num.mut 43 bit 1635
+mutation individual 98 num.mut 44 bit 213
+mutation individual 98 num.mut 45 bit 1433
+mutation individual 98 num.mut 46 bit 653
+mutation individual 98 num.mut 47 bit 1904
+mutation individual 98 num.mut 48 bit 1752
+mutation individual 98 num.mut 49 bit 1963
+
+Generating last individual 99
+Old population test_data/old_sort.dat
+New population test_data/sort.dat
+Fitness file test_data/fitness_generation.dat

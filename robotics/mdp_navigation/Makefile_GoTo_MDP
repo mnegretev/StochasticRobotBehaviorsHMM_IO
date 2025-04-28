@@ -1,0 +1,17 @@
+CC = g++ 
+TOUCH = touch
+LIBS = -lm -lpthread
+
+OBJS= GoTo_MDP.o 
+PRG_OBJS= GoTo_MDP.cpp
+
+
+GoTo_MDP: $(OBJS)
+	  $(CC)  -o $@ $(OBJS) $(LIBS) $(SOCKET_LIBS) $(OBJS_LASER)
+
+
+$(OBJS):$(PRG_OBJS)
+	$(CC) $(CFLAGS) -c $*.cpp 
+	
+	
+	 #$(TOUCH) GoTo_MDP.cpp

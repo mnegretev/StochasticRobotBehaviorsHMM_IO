@@ -1,0 +1,15 @@
+recognize_vision -f vision_objects -s images_test_floor_8 -m 4 -p /home/savage/observations/cmucam/training_hsi/ 
+Objects FILE: /home/savage/observations/cmucam/training_hsi/vision_objects.txt
+objects hub
+objects top
+objects nxt
+objects floor
+/home/savage/observations/cmucam/training_hsi/images_test_floor_8.raw num. vectors 280 size vectors 3
+Num. vectors 280 size vectors 3
+
+
+ ****** Winner object floor 8711.595895 ***** 
+object hub distance 9431.583444
+object top distance 12530.852277
+object nxt distance 9336.184478
+object floor distance 8711.595895

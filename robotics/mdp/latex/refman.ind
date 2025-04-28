@@ -1,0 +1,98 @@
+\begin{theindex}
+
+  \item {a}
+    \subitem {M\+DP}, \hyperpage{7}
+  \item {allocate\+\_\+\+M\+DP}
+    \subitem {mdp.\+h}, \hyperpage{10}
+
+  \indexspace
+
+  \item {best\+\_\+expected\+\_\+action}
+    \subitem {mdp.\+h}, \hyperpage{10}
+  \item {best\+\_\+expected\+\_\+u}
+    \subitem {mdp.\+h}, \hyperpage{10}
+
+  \indexspace
+
+  \item {compute\+\_\+optimal\+\_\+policy}
+    \subitem {mdp.\+h}, \hyperpage{11}
+
+  \indexspace
+
+  \item {error}
+    \subitem {mdp.\+h}, \hyperpage{11}
+  \item {expected\+\_\+u}
+    \subitem {mdp.\+h}, \hyperpage{11}
+
+  \indexspace
+
+  \item {gamma}
+    \subitem {M\+DP}, \hyperpage{7}
+
+  \indexspace
+
+  \item {M\+DP}, \hyperpage{7}
+    \subitem {a}, \hyperpage{7}
+    \subitem {gamma}, \hyperpage{7}
+    \subitem {P}, \hyperpage{7}
+    \subitem {pi}, \hyperpage{8}
+    \subitem {r}, \hyperpage{8}
+    \subitem {s}, \hyperpage{8}
+    \subitem {t}, \hyperpage{8}
+    \subitem {v}, \hyperpage{8}
+  \item {main}
+    \subitem {random\+\_\+example.\+c}, \hyperpage{13}
+    \subitem {ryn\+\_\+chapter\+\_\+17.\+c}, \hyperpage{14}
+  \item {mdp.\+c}, \hyperpage{9}
+  \item {mdp.\+h}, \hyperpage{9}
+    \subitem {allocate\+\_\+\+M\+DP}, \hyperpage{10}
+    \subitem {best\+\_\+expected\+\_\+action}, \hyperpage{10}
+    \subitem {best\+\_\+expected\+\_\+u}, \hyperpage{10}
+    \subitem {compute\+\_\+optimal\+\_\+policy}, \hyperpage{11}
+    \subitem {error}, \hyperpage{11}
+    \subitem {expected\+\_\+u}, \hyperpage{11}
+    \subitem {print\+\_\+\+M\+DP}, \hyperpage{11}
+    \subitem {random\+\_\+\+M\+DP}, \hyperpage{12}
+    \subitem {release\+\_\+\+M\+DP}, \hyperpage{12}
+    \subitem {v\+\_\+iteration\+\_\+compute}, \hyperpage{12}
+
+  \indexspace
+
+  \item {P}
+    \subitem {M\+DP}, \hyperpage{7}
+  \item {pi}
+    \subitem {M\+DP}, \hyperpage{8}
+  \item {print\+\_\+\+M\+DP}
+    \subitem {mdp.\+h}, \hyperpage{11}
+
+  \indexspace
+
+  \item {r}
+    \subitem {M\+DP}, \hyperpage{8}
+  \item {random\+\_\+\+M\+DP}
+    \subitem {mdp.\+h}, \hyperpage{12}
+  \item {random\+\_\+example.\+c}, \hyperpage{12}
+    \subitem {main}, \hyperpage{13}
+  \item {release\+\_\+\+M\+DP}
+    \subitem {mdp.\+h}, \hyperpage{12}
+  \item {ryn\+\_\+chapter\+\_\+17.\+c}, \hyperpage{13}
+    \subitem {main}, \hyperpage{14}
+
+  \indexspace
+
+  \item {s}
+    \subitem {M\+DP}, \hyperpage{8}
+
+  \indexspace
+
+  \item {t}
+    \subitem {M\+DP}, \hyperpage{8}
+
+  \indexspace
+
+  \item {v}
+    \subitem {M\+DP}, \hyperpage{8}
+  \item {v\+\_\+iteration\+\_\+compute}
+    \subitem {mdp.\+h}, \hyperpage{12}
+
+\end{theindex}

@@ -1,0 +1,268 @@
+//
+// rec_hmm_vision.cpp
+//
+// This program recognizes an image pattern using HMM 
+// represent images' readings
+//
+// make -f Makefile_rec_hmm_vision
+//
+//  J. Savage, 4-22-2009
+//      FI- UNAM
+//
+
+
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+#include <pthread.h>
+
+
+
+
+#include "/home/savage/vision/pattern_recognition/include_vision/basics_vqs_vision.h"
+#include "/home/savage/vision/pattern_recognition/vq_vision/new_allocate.h"
+#include "hmm_vision_lib.h"
+
+
+
+
+/* it gets line inputs */
+
+int get_inputs(int argc, char **argv, char *objects_file,char *in_file,int *size_vq, char *path, char *vq_file, int *num_states)
+{
+ int i;
+
+ /* It sets default values */
+ strcpy(objects_file,"vision_objects");
+ strcpy(in_file,"test_image");
+ *size_vq=64;
+ strcpy(path,"/home/savage/observations/cmucam/training_hsi/");
+ strcpy(vq_file,"all");
+ *num_states=NUM_STATES;
+
+
+  /* reads input parameters */
+  if (argc>1) {
+        for(i=1;i<argc;i++){
+          if (!strcmp(argv[i],"-h")){
+			  printf("rec_hmm_vision -h\n");
+			  printf("-f specifies the objects' file\n");
+			  printf("-s specifies the image's file\n");
+			  printf("-q specifies the VQ's file\n");
+			  printf("-m specifies the size of the quantizer\n");
+			  printf("-n specifies the number of states of the HMM\n");
+			  printf("-p specifies the path\n");
+			  printf("-h shows this message\n");
+			  printf("example:\n rec_hmm_vision -f vision_objects -s images_test_top_5 -m 64 -n 9 -p /home/savage/observations/cmucam/training_hsi/\n");
+			
+			  exit(1);  
+          }
+          if (!strcmp(argv[i],"-p")){
+                strcpy(path,argv[i+1]);
+          }
+          if (!strcmp(argv[i],"-s")){
+                strcpy(in_file,argv[i+1]);
+          }
+          if (!strcmp(argv[i],"-f")){
+                strcpy(objects_file,argv[i+1]);
+          }
+	  if (!strcmp(argv[i],"-q")){
+                strcpy(vq_file,argv[i+1]);
+          }
+	  if(!strcmp(argv[i],"-m")){
+                *size_vq=atoi(argv[i+1]);
+          }
+	  if(!strcmp(argv[i],"-n")){
+                *num_states=atoi(argv[i+1]);
+          }
+       }
+  }
+  else{
+	  printf("Using default values \n");  
+  }
+
+ printf("recognize_vision -f %s -s %s -m %d -p %s -q %s -n %d\n",objects_file,in_file,*size_vq,path,vq_file,*num_states);
+ 
+ return(0);
+
+}
+
+
+
+int main(int argc, char *argv[])
+{
+
+ char objects_file[300],in_file[300],**objects_name;
+ int num_vectors;
+ Centroid *centroids;
+ double bigger,prob[NUM_MAX_CENTROIDS],p;
+ double vit_prob[NUM_MAX_CENTROIDS];
+ int index=1,i;
+ int index_vit;
+ double bigger_vit;
+ int num_objects;
+ int size_vectors=3;
+ Raw *vectors;
+ char path[300];
+ char data_file[300];
+ int size_vq;
+ int num_centroids_vision;
+ char vq_file[300];
+ Centroid *centroids_vision;
+ float ***ais,**pis,***bis;
+ int num_states;
+ int j,k;
+ int *observations,*seq_states[10];
+ float average=0;
+
+
+ 
+ 
+ /* it gets line inputs */
+ get_inputs(argc,argv,objects_file,data_file,&size_vq,path,vq_file,&num_states);
+
+
+  // it reads the centroids
+ // it allocates centroids space
+ if((centroids_vision = (Centroid *)
+                malloc( (size_vq+1) * sizeof(Centroid))) == NULL){
+                fprintf(stdout,"Allocation error: centroids");
+                exit(0);
+ }
+ num_centroids_vision= read_vision_centroids(vq_file,centroids_vision,size_vectors,size_vq,path);
+
+ 
+
+ // it reads the names of the objects to be recognized
+ if( (objects_name = (char **) alloc_matrix_char(30, 300)) == 0){
+         printf("\n Memory allocation error ");
+         exit(0);
+ }
+
+ num_objects=read_objects_name(objects_file,objects_name,path);
+
+ for(i=1;i<=num_objects;i++){
+	 printf("objects %s\n",objects_name[i]);
+ }
+
+
+
+ //it reads each the objects' HMMs
+ // It allocates the matrices used for the hmm evaluation 
+
+ ais = (float ***)  malloc( (unsigned) (num_objects+1)*sizeof(float *));
+ bis = (float ***) malloc( (unsigned) (num_objects+1)*sizeof(float *));
+ pis = (float **)   malloc( (unsigned) (num_objects+1)*sizeof(float *));
+
+
+ for(j=1;j<=num_objects;j++){
+
+
+  if((ais[j] =(float **)alloc_matrix(num_states+1, num_states+1 )) == 0){
+         printf("\n Memory allocation error ");
+         exit(1);
+  }
+
+
+  if((bis[j] =(float **)alloc_matrix(num_states+1,size_vq+1)) == 0){
+         printf("\n Memory allocation error ");
+         exit(1);
+  }
+
+  if((pis[j] =(float *)alloc_vector(num_states+1)) == 0){
+         printf("\n Memory allocation error ");
+         exit(1);
+  }
+
+ }
+
+
+
+ /* It reads the hmm of each of the symbols */
+ read_hmms(objects_name,num_objects,ais,bis,pis,num_states,size_vq,path);
+
+
+
+// it reads the image vectors 
+// it gets the number of vectors and their size
+ sprintf(in_file,"%s%s.raw",path,data_file);
+ num_vectors=get_size_image_vectors(in_file,&size_vectors);
+ printf("%s num. vectors %d size vectors %d\n",in_file,num_vectors, size_vectors);
+
+/* it allocates raw vectors space */
+ if((vectors = (Raw *) malloc( (num_vectors+1) * sizeof(Raw))) == NULL){
+ 	     	fprintf(stdout,"Allocation error: Raw vectors");
+      		return(0);
+ }
+
+// it reads the input image vectors 
+ read_image_vectors(in_file,vectors);
+
+
+ // it allocates the observations vectors //
+ if((observations = (int *) alloc_vector_int((num_vectors+1)) ) == 0){
+         printf("\n Memory allocation error: observations ");
+         exit(0);
+ }
+
+ // it allocates the states vectors
+ for(i=1;i<=num_objects;i++)
+ if((seq_states[i] = (int *) alloc_vector_int((num_vectors+1))) == 0){
+                printf("\n Memory allocation error: observations ");
+                exit(0);
+ }
+
+
+ // It quantizes the data
+ quantize_vectors(centroids_vision,num_vectors,vectors,observations,num_centroids_vision,size_vectors);
+
+
+
+ bigger=0;
+ bigger_vit=0;
+
+ for(i=1;i<=num_objects;i++){
+
+     	// It calculates the probabilities of each of the hmms 
+     	prob[i]=get_hmm_prob(observations,ais[i],bis[i],pis[i],num_vectors,num_states);
+	// The result is divided by 100 in order that the result fits the variable size
+	prob[i]=exp(prob[i]/100.);
+	//printf("object %s probability %e\n",objects_name[i],prob[i]);
+
+	if(prob[i]>bigger){
+          bigger=prob[i];
+          index=i;
+										
+	}
+
+	/* It calculates the best sequence of states using the Viterbi algorithm
+	 * and the probability of a hmm given a symbol vector */
+	vit_prob[i]=viterbi(observations,ais[i],bis[i],pis[i],num_vectors,num_states,seq_states[i]);
+	vit_prob[i]=exp(vit_prob[i]/100.);
+	//printf("object %s Viterbi probability %e\n",objects_name[i],vit_prob[i]);
+
+	if(vit_prob[i]>bigger_vit){
+          bigger_vit=vit_prob[i];
+          index_vit=i;
+
+        }
+
+
+ }
+
+
+ for(i=1;i<=num_objects;i++){
+	 printf("\nobject %s Total probability %e\n",objects_name[i],prob[i]);
+	 printf("object %s Viterbi probability %e\n",objects_name[i],vit_prob[i]);
+ }
+
+
+ printf("\n\n ****** Winner object %s %e ***** \n",objects_name[index],prob[index]);
+ printf("****** Winner Vitterbi object %s %e ***** \n",objects_name[index_vit],vit_prob[index_vit]);
+
+
+}
+
+
+

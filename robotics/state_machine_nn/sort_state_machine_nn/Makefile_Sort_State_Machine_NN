@@ -1,0 +1,14 @@
+CC = g++ 
+
+LIBS = -lm -lpthread
+
+OBJS= Sort_State_Machine_NN.o 
+PRG_OBJS= Sort_State_Machine_NN.cpp
+
+Sort_State_Machine_NN: $(OBJS)
+	  $(CC)  -o $@ $(OBJS) $(LIBS) $(SOCKET_LIBS) $(OBJS_LASER)
+
+$(OBJS): $(PRG_OBJS)
+	$(CC) $(CFLAGS) -c $*.cpp 
+	
+	

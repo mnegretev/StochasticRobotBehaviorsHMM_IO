@@ -1,0 +1,1439 @@
+GoTo_State_Machine -x 0.507500 -y 0.530000 -a 0.000000 -v 0.207500 -z 0.247500 -s laser -n 2 -t -0.200000 -r 0.400000 -p ../data/ -e empty -advance 0.040000 -MaxAngle 0.785400 -selection 4 -largest 0.300000 -noise 1
+World environment ../data/empty.wrl 
+
+observations file: ../data/empty.raw
+
+ Radio robot 0.030000 
+( origen 0.507500 0.530000 0.000000 )
+( destination 0.207500 0.247500 )
+
+
+ ************************************************************
+distance destination 0.412076 threshold 0.060000
+1 Pose robot 0.507500 0.530000 0.000000 
+Random settings file ../data/random_settings_advance_angle_sensors.dat
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.035691
+noise+sensor(0) = 0.264309 
+sensor(1) = 0.300000 
+noise 0.000263
+noise+sensor(1) = 0.300263 
+quantized inputs 0
+quantized destination 0 
+mag 0.412076 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 0
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 0
+FORWARD
+Present State: 0 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+File ../data/state_machine_mem.txt
+ Num. bits state 4 num. bits output 3 num_inputs 5 
+memory[1] state 1 output 0
+memory[2] state 1 output 0
+memory[3] state 1 output 0
+memory[4] state 1 output 0
+memory[5] state 1 output 0
+memory[6] state 1 output 0
+memory[7] state 1 output 0
+memory[8] state 1 output 0
+memory[9] state 1 output 0
+memory[10] state 1 output 0
+memory[11] state 1 output 0
+memory[12] state 1 output 0
+memory[13] state 1 output 0
+memory[14] state 1 output 0
+memory[15] state 1 output 0
+memory[16] state 1 output 0
+memory[17] state 1 output 0
+memory[18] state 1 output 0
+memory[19] state 1 output 0
+memory[20] state 1 output 0
+memory[21] state 1 output 0
+memory[22] state 1 output 0
+memory[23] state 1 output 0
+memory[24] state 1 output 0
+memory[25] state 1 output 0
+memory[26] state 1 output 0
+memory[27] state 1 output 0
+memory[28] state 1 output 0
+memory[29] state 1 output 0
+memory[30] state 1 output 0
+memory[31] state 1 output 0
+memory[32] state 1 output 0
+memory[33] state 2 output 1
+memory[34] state 2 output 1
+memory[35] state 2 output 1
+memory[36] state 2 output 1
+memory[37] state 2 output 1
+memory[38] state 2 output 1
+memory[39] state 2 output 1
+memory[40] state 2 output 1
+memory[41] state 2 output 1
+memory[42] state 2 output 1
+memory[43] state 2 output 1
+memory[44] state 2 output 1
+memory[45] state 2 output 1
+memory[46] state 2 output 1
+memory[47] state 2 output 1
+memory[48] state 2 output 1
+memory[49] state 1 output 0
+memory[50] state 1 output 0
+memory[51] state 1 output 0
+memory[52] state 1 output 0
+memory[53] state 1 output 0
+memory[54] state 1 output 0
+memory[55] state 1 output 0
+memory[56] state 1 output 0
+memory[57] state 1 output 0
+memory[58] state 1 output 0
+memory[59] state 1 output 0
+memory[60] state 1 output 0
+memory[61] state 1 output 0
+memory[62] state 1 output 0
+memory[63] state 1 output 0
+memory[64] state 1 output 0
+memory[65] state 14 output 1
+memory[66] state 14 output 1
+memory[67] state 14 output 1
+memory[68] state 14 output 1
+memory[69] state 3 output 0
+memory[70] state 3 output 0
+memory[71] state 3 output 0
+memory[72] state 3 output 0
+memory[73] state 5 output 0
+memory[74] state 5 output 0
+memory[75] state 5 output 0
+memory[76] state 5 output 0
+memory[77] state 7 output 0
+memory[78] state 7 output 0
+memory[79] state 7 output 0
+memory[80] state 7 output 0
+memory[81] state 14 output 1
+memory[82] state 14 output 1
+memory[83] state 14 output 1
+memory[84] state 14 output 1
+memory[85] state 3 output 0
+memory[86] state 3 output 0
+memory[87] state 3 output 0
+memory[88] state 3 output 0
+memory[89] state 5 output 0
+memory[90] state 5 output 0
+memory[91] state 5 output 0
+memory[92] state 5 output 0
+memory[93] state 7 output 0
+memory[94] state 7 output 0
+memory[95] state 7 output 0
+memory[96] state 7 output 0
+memory[97] state 4 output 2
+memory[98] state 4 output 2
+memory[99] state 4 output 2
+memory[100] state 4 output 2
+memory[101] state 4 output 2
+memory[102] state 4 output 2
+memory[103] state 4 output 2
+memory[104] state 4 output 2
+memory[105] state 4 output 2
+memory[106] state 4 output 2
+memory[107] state 4 output 2
+memory[108] state 4 output 2
+memory[109] state 4 output 2
+memory[110] state 4 output 2
+memory[111] state 4 output 2
+memory[112] state 4 output 2
+memory[113] state 4 output 2
+memory[114] state 4 output 2
+memory[115] state 4 output 2
+memory[116] state 4 output 2
+memory[117] state 4 output 2
+memory[118] state 4 output 2
+memory[119] state 4 output 2
+memory[120] state 4 output 2
+memory[121] state 4 output 2
+memory[122] state 4 output 2
+memory[123] state 4 output 2
+memory[124] state 4 output 2
+memory[125] state 4 output 2
+memory[126] state 4 output 2
+memory[127] state 4 output 2
+memory[128] state 4 output 2
+memory[129] state 1 output 3
+memory[130] state 1 output 3
+memory[131] state 1 output 3
+memory[132] state 1 output 3
+memory[133] state 1 output 3
+memory[134] state 1 output 3
+memory[135] state 1 output 3
+memory[136] state 1 output 3
+memory[137] state 1 output 3
+memory[138] state 1 output 3
+memory[139] state 1 output 3
+memory[140] state 1 output 3
+memory[141] state 1 output 3
+memory[142] state 1 output 3
+memory[143] state 1 output 3
+memory[144] state 1 output 3
+memory[145] state 1 output 3
+memory[146] state 1 output 3
+memory[147] state 1 output 3
+memory[148] state 1 output 3
+memory[149] state 1 output 3
+memory[150] state 1 output 3
+memory[151] state 1 output 3
+memory[152] state 1 output 3
+memory[153] state 1 output 3
+memory[154] state 1 output 3
+memory[155] state 1 output 3
+memory[156] state 1 output 3
+memory[157] state 1 output 3
+memory[158] state 1 output 3
+memory[159] state 1 output 3
+memory[160] state 1 output 3
+memory[161] state 6 output 2
+memory[162] state 6 output 2
+memory[163] state 6 output 2
+memory[164] state 6 output 2
+memory[165] state 6 output 2
+memory[166] state 6 output 2
+memory[167] state 6 output 2
+memory[168] state 6 output 2
+memory[169] state 6 output 2
+memory[170] state 6 output 2
+memory[171] state 6 output 2
+memory[172] state 6 output 2
+memory[173] state 6 output 2
+memory[174] state 6 output 2
+memory[175] state 6 output 2
+memory[176] state 6 output 2
+memory[177] state 6 output 2
+memory[178] state 6 output 2
+memory[179] state 6 output 2
+memory[180] state 6 output 2
+memory[181] state 6 output 2
+memory[182] state 6 output 2
+memory[183] state 6 output 2
+memory[184] state 6 output 2
+memory[185] state 6 output 2
+memory[186] state 6 output 2
+memory[187] state 6 output 2
+memory[188] state 6 output 2
+memory[189] state 6 output 2
+memory[190] state 6 output 2
+memory[191] state 6 output 2
+memory[192] state 6 output 2
+memory[193] state 1 output 4
+memory[194] state 1 output 4
+memory[195] state 1 output 4
+memory[196] state 1 output 4
+memory[197] state 1 output 4
+memory[198] state 1 output 4
+memory[199] state 1 output 4
+memory[200] state 1 output 4
+memory[201] state 1 output 4
+memory[202] state 1 output 4
+memory[203] state 1 output 4
+memory[204] state 1 output 4
+memory[205] state 1 output 4
+memory[206] state 1 output 4
+memory[207] state 1 output 4
+memory[208] state 1 output 4
+memory[209] state 1 output 4
+memory[210] state 1 output 4
+memory[211] state 1 output 4
+memory[212] state 1 output 4
+memory[213] state 1 output 4
+memory[214] state 1 output 4
+memory[215] state 1 output 4
+memory[216] state 1 output 4
+memory[217] state 1 output 4
+memory[218] state 1 output 4
+memory[219] state 1 output 4
+memory[220] state 1 output 4
+memory[221] state 1 output 4
+memory[222] state 1 output 4
+memory[223] state 1 output 4
+memory[224] state 1 output 4
+memory[225] state 8 output 2
+memory[226] state 8 output 2
+memory[227] state 8 output 2
+memory[228] state 8 output 2
+memory[229] state 8 output 2
+memory[230] state 8 output 2
+memory[231] state 8 output 2
+memory[232] state 8 output 2
+memory[233] state 8 output 2
+memory[234] state 8 output 2
+memory[235] state 8 output 2
+memory[236] state 8 output 2
+memory[237] state 8 output 2
+memory[238] state 8 output 2
+memory[239] state 8 output 2
+memory[240] state 8 output 2
+memory[241] state 8 output 2
+memory[242] state 8 output 2
+memory[243] state 8 output 2
+memory[244] state 8 output 2
+memory[245] state 8 output 2
+memory[246] state 8 output 2
+memory[247] state 8 output 2
+memory[248] state 8 output 2
+memory[249] state 8 output 2
+memory[250] state 8 output 2
+memory[251] state 8 output 2
+memory[252] state 8 output 2
+memory[253] state 8 output 2
+memory[254] state 8 output 2
+memory[255] state 8 output 2
+memory[256] state 8 output 2
+memory[257] state 9 output 3
+memory[258] state 9 output 3
+memory[259] state 9 output 3
+memory[260] state 9 output 3
+memory[261] state 9 output 3
+memory[262] state 9 output 3
+memory[263] state 9 output 3
+memory[264] state 9 output 3
+memory[265] state 9 output 3
+memory[266] state 9 output 3
+memory[267] state 9 output 3
+memory[268] state 9 output 3
+memory[269] state 9 output 3
+memory[270] state 9 output 3
+memory[271] state 9 output 3
+memory[272] state 9 output 3
+memory[273] state 9 output 3
+memory[274] state 9 output 3
+memory[275] state 9 output 3
+memory[276] state 9 output 3
+memory[277] state 9 output 3
+memory[278] state 9 output 3
+memory[279] state 9 output 3
+memory[280] state 9 output 3
+memory[281] state 9 output 3
+memory[282] state 9 output 3
+memory[283] state 9 output 3
+memory[284] state 9 output 3
+memory[285] state 9 output 3
+memory[286] state 9 output 3
+memory[287] state 9 output 3
+memory[288] state 9 output 3
+memory[289] state 10 output 3
+memory[290] state 10 output 3
+memory[291] state 10 output 3
+memory[292] state 10 output 3
+memory[293] state 10 output 3
+memory[294] state 10 output 3
+memory[295] state 10 output 3
+memory[296] state 10 output 3
+memory[297] state 10 output 3
+memory[298] state 10 output 3
+memory[299] state 10 output 3
+memory[300] state 10 output 3
+memory[301] state 10 output 3
+memory[302] state 10 output 3
+memory[303] state 10 output 3
+memory[304] state 10 output 3
+memory[305] state 10 output 3
+memory[306] state 10 output 3
+memory[307] state 10 output 3
+memory[308] state 10 output 3
+memory[309] state 10 output 3
+memory[310] state 10 output 3
+memory[311] state 10 output 3
+memory[312] state 10 output 3
+memory[313] state 10 output 3
+memory[314] state 10 output 3
+memory[315] state 10 output 3
+memory[316] state 10 output 3
+memory[317] state 10 output 3
+memory[318] state 10 output 3
+memory[319] state 10 output 3
+memory[320] state 10 output 3
+memory[321] state 11 output 1
+memory[322] state 11 output 1
+memory[323] state 11 output 1
+memory[324] state 11 output 1
+memory[325] state 11 output 1
+memory[326] state 11 output 1
+memory[327] state 11 output 1
+memory[328] state 11 output 1
+memory[329] state 11 output 1
+memory[330] state 11 output 1
+memory[331] state 11 output 1
+memory[332] state 11 output 1
+memory[333] state 11 output 1
+memory[334] state 11 output 1
+memory[335] state 11 output 1
+memory[336] state 11 output 1
+memory[337] state 11 output 1
+memory[338] state 11 output 1
+memory[339] state 11 output 1
+memory[340] state 11 output 1
+memory[341] state 11 output 1
+memory[342] state 11 output 1
+memory[343] state 11 output 1
+memory[344] state 11 output 1
+memory[345] state 11 output 1
+memory[346] state 11 output 1
+memory[347] state 11 output 1
+memory[348] state 11 output 1
+memory[349] state 11 output 1
+memory[350] state 11 output 1
+memory[351] state 11 output 1
+memory[352] state 11 output 1
+memory[353] state 12 output 1
+memory[354] state 12 output 1
+memory[355] state 12 output 1
+memory[356] state 12 output 1
+memory[357] state 12 output 1
+memory[358] state 12 output 1
+memory[359] state 12 output 1
+memory[360] state 12 output 1
+memory[361] state 12 output 1
+memory[362] state 12 output 1
+memory[363] state 12 output 1
+memory[364] state 12 output 1
+memory[365] state 12 output 1
+memory[366] state 12 output 1
+memory[367] state 12 output 1
+memory[368] state 12 output 1
+memory[369] state 12 output 1
+memory[370] state 12 output 1
+memory[371] state 12 output 1
+memory[372] state 12 output 1
+memory[373] state 12 output 1
+memory[374] state 12 output 1
+memory[375] state 12 output 1
+memory[376] state 12 output 1
+memory[377] state 12 output 1
+memory[378] state 12 output 1
+memory[379] state 12 output 1
+memory[380] state 12 output 1
+memory[381] state 12 output 1
+memory[382] state 12 output 1
+memory[383] state 12 output 1
+memory[384] state 12 output 1
+memory[385] state 13 output 4
+memory[386] state 13 output 4
+memory[387] state 13 output 4
+memory[388] state 13 output 4
+memory[389] state 13 output 4
+memory[390] state 13 output 4
+memory[391] state 13 output 4
+memory[392] state 13 output 4
+memory[393] state 13 output 4
+memory[394] state 13 output 4
+memory[395] state 13 output 4
+memory[396] state 13 output 4
+memory[397] state 13 output 4
+memory[398] state 13 output 4
+memory[399] state 13 output 4
+memory[400] state 13 output 4
+memory[401] state 13 output 4
+memory[402] state 13 output 4
+memory[403] state 13 output 4
+memory[404] state 13 output 4
+memory[405] state 13 output 4
+memory[406] state 13 output 4
+memory[407] state 13 output 4
+memory[408] state 13 output 4
+memory[409] state 13 output 4
+memory[410] state 13 output 4
+memory[411] state 13 output 4
+memory[412] state 13 output 4
+memory[413] state 13 output 4
+memory[414] state 13 output 4
+memory[415] state 13 output 4
+memory[416] state 13 output 4
+memory[417] state 1 output 4
+memory[418] state 1 output 4
+memory[419] state 1 output 4
+memory[420] state 1 output 4
+memory[421] state 1 output 4
+memory[422] state 1 output 4
+memory[423] state 1 output 4
+memory[424] state 1 output 4
+memory[425] state 1 output 4
+memory[426] state 1 output 4
+memory[427] state 1 output 4
+memory[428] state 1 output 4
+memory[429] state 1 output 4
+memory[430] state 1 output 4
+memory[431] state 1 output 4
+memory[432] state 1 output 4
+memory[433] state 1 output 4
+memory[434] state 1 output 4
+memory[435] state 1 output 4
+memory[436] state 1 output 4
+memory[437] state 1 output 4
+memory[438] state 1 output 4
+memory[439] state 1 output 4
+memory[440] state 1 output 4
+memory[441] state 1 output 4
+memory[442] state 1 output 4
+memory[443] state 1 output 4
+memory[444] state 1 output 4
+memory[445] state 1 output 4
+memory[446] state 1 output 4
+memory[447] state 1 output 4
+memory[448] state 1 output 4
+memory[449] state 6 output 4
+memory[450] state 4 output 3
+memory[451] state 6 output 1
+memory[452] state 4 output 1
+memory[453] state 6 output 4
+memory[454] state 4 output 3
+memory[455] state 6 output 1
+memory[456] state 4 output 1
+memory[457] state 6 output 4
+memory[458] state 4 output 3
+memory[459] state 6 output 1
+memory[460] state 4 output 1
+memory[461] state 6 output 4
+memory[462] state 4 output 3
+memory[463] state 6 output 1
+memory[464] state 4 output 1
+memory[465] state 6 output 4
+memory[466] state 4 output 3
+memory[467] state 6 output 1
+memory[468] state 4 output 1
+memory[469] state 6 output 4
+memory[470] state 4 output 3
+memory[471] state 6 output 1
+memory[472] state 4 output 1
+memory[473] state 6 output 4
+memory[474] state 4 output 3
+memory[475] state 6 output 1
+memory[476] state 4 output 1
+memory[477] state 6 output 4
+memory[478] state 4 output 3
+memory[479] state 6 output 1
+memory[480] state 4 output 1
+memory[481] state 0 output 0
+Num. memory locations 480
+Num. total memory 512
+memory[481] state 0 output 0
+memory[482] state 0 output 0
+memory[483] state 0 output 0
+memory[484] state 0 output 0
+memory[485] state 0 output 0
+memory[486] state 0 output 0
+memory[487] state 0 output 0
+memory[488] state 0 output 0
+memory[489] state 0 output 0
+memory[490] state 0 output 0
+memory[491] state 0 output 0
+memory[492] state 0 output 0
+memory[493] state 0 output 0
+memory[494] state 0 output 0
+memory[495] state 0 output 0
+memory[496] state 0 output 0
+memory[497] state 0 output 0
+memory[498] state 0 output 0
+memory[499] state 0 output 0
+memory[500] state 0 output 0
+memory[501] state 0 output 0
+memory[502] state 0 output 0
+memory[503] state 0 output 0
+memory[504] state 0 output 0
+memory[505] state 0 output 0
+memory[506] state 0 output 0
+memory[507] state 0 output 0
+memory[508] state 0 output 0
+memory[509] state 0 output 0
+memory[510] state 0 output 0
+memory[511] state 0 output 0
+obs intensity 0 obstacles 0 dest 0
+present state 1 input 0
+index 33 next_state 2 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+Random settings file ../data/random_settings_advance_angle_sensors.dat
+random noise advance -0.001147 angle 0.019458
+angle 0.000000
+angle + noise 0.019458
+distance 0.040000
+distance + noise 0.038853
+movement destination: angle  0.019458 distance 0.038853
+
+
+ ************************************************************
+distance destination 0.441645 threshold 0.060000
+2 Pose robot 0.546346 0.530756 0.019458 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.000263
+noise+sensor(0) = 0.300263 
+sensor(1) = 0.300000 
+noise 0.007814
+noise+sensor(1) = 0.307814 
+quantized inputs 0
+quantized destination 0 
+mag 0.441645 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 0
+RIGHT
+Present State: 1 RIGHT
+movement destination: angle  -0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 0
+FORWARD
+Present State: 1 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 0
+present state 2 input 0
+index 65 next_state 14 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance 0.003267 angle 0.008714
+angle 0.000000
+angle + noise 0.008714
+distance 0.040000
+distance + noise 0.043267
+movement destination: angle  0.008714 distance 0.043267
+
+
+ ************************************************************
+distance destination 0.476364 threshold 0.060000
+3 Pose robot 0.589596 0.531975 0.028172 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.027423
+noise+sensor(0) = 0.272577 
+sensor(1) = 0.300000 
+noise -0.008274
+noise+sensor(1) = 0.291726 
+quantized inputs 0
+quantized destination 0 
+mag 0.476364 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 0
+RIGHT
+Present State: 2 TURN RIGHT
+movement destination: angle  -0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 0
+RIGHT
+Present State: 13 RIGHT
+movement avoidance destination: angle  -0.785400 distance 0.000000
+obs intensity 0 obstacles 0 dest 0
+present state 14 input 0
+index 449 next_state 6 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+random noise advance -0.000095 angle 0.028512
+angle -0.785400
+angle + noise -0.756888
+distance 0.000000
+distance + noise -0.000095
+movement destination: angle  -0.756888 distance -0.000095
+
+
+ ************************************************************
+distance destination 0.476345 threshold 0.060000
+4 Pose robot 0.589524 0.532038 5.554484 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.027515
+noise+sensor(0) = 0.327515 
+sensor(1) = 0.300000 
+noise 0.007176
+noise+sensor(1) = 0.307176 
+quantized inputs 0
+quantized destination 0 
+mag 0.476345 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 0
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 0
+RIGHT
+Present State: 5 TURN RIGTH
+movement avoidance destination: angle  -0.785400 distance 0.000000
+obs intensity 0 obstacles 0 dest 0
+present state 6 input 0
+index 193 next_state 1 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+random noise advance -0.003130 angle 0.032141
+angle -0.785400
+angle + noise -0.753259
+distance 0.000000
+distance + noise -0.003130
+movement destination: angle  -0.753259 distance -0.003130
+
+
+ ************************************************************
+distance destination 0.477992 threshold 0.060000
+5 Pose robot 0.589247 0.535156 4.801225 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.041702
+noise+sensor(0) = 0.258298 
+sensor(1) = 0.300000 
+noise 0.021655
+noise+sensor(1) = 0.321655 
+quantized inputs 0
+quantized destination 2 
+mag 0.477992 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 1 RIGHT
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 1 input 2
+index 35 next_state 2 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.001512 angle 0.002871
+angle 0.000000
+angle + noise 0.002871
+distance 0.040000
+distance + noise 0.038488
+movement destination: angle  0.002871 distance 0.038488
+
+
+ ************************************************************
+distance destination 0.458911 threshold 0.060000
+6 Pose robot 0.592771 0.496830 4.804095 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.011165
+noise+sensor(0) = 0.288835 
+sensor(1) = 0.300000 
+noise 0.006363
+noise+sensor(1) = 0.306363 
+quantized inputs 0
+quantized destination 2 
+mag 0.458911 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+RIGHT
+Present State: 2 TURN RIGHT
+movement destination: angle  -0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 1 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 2 input 2
+index 67 next_state 14 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.003049 angle 0.025600
+angle 0.000000
+angle + noise 0.025600
+distance 0.040000
+distance + noise 0.036951
+movement destination: angle  0.025600 distance 0.036951
+
+
+ ************************************************************
+distance destination 0.443844 threshold 0.060000
+7 Pose robot 0.597096 0.460133 4.829695 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.020944
+noise+sensor(0) = 0.279056 
+sensor(1) = 0.300000 
+noise -0.018062
+noise+sensor(1) = 0.281938 
+quantized inputs 0
+quantized destination 2 
+mag 0.443844 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 13 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 14 input 2
+index 451 next_state 6 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance 0.002380 angle 0.025305
+angle 0.000000
+angle + noise 0.025305
+distance 0.040000
+distance + noise 0.042380
+movement destination: angle  0.025305 distance 0.042380
+
+
+ ************************************************************
+distance destination 0.430868 threshold 0.060000
+8 Pose robot 0.603119 0.418183 4.855000 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.018334
+noise+sensor(0) = 0.281666 
+sensor(1) = 0.300000 
+noise -0.010389
+noise+sensor(1) = 0.289611 
+quantized inputs 0
+quantized destination 2 
+mag 0.430868 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 1 RIGHT
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+RIGHT
+Present State: 5 TURN RIGTH
+movement avoidance destination: angle  -0.785400 distance 0.000000
+obs intensity 0 obstacles 0 dest 2
+present state 6 input 2
+index 195 next_state 1 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+random noise advance 0.000397 angle 0.014136
+angle -0.785400
+angle + noise -0.771263
+distance 0.000000
+distance + noise 0.000397
+movement destination: angle  -0.771263 distance 0.000397
+
+
+ ************************************************************
+distance destination 0.430527 threshold 0.060000
+9 Pose robot 0.602886 0.417862 4.083736 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.012586
+noise+sensor(0) = 0.312586 
+sensor(1) = 0.300000 
+noise 0.018143
+noise+sensor(1) = 0.318143 
+quantized inputs 0
+quantized destination 2 
+mag 0.430527 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+RIGHT
+Present State: 2 TURN RIGHT
+movement destination: angle  -0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 1 input 2
+index 35 next_state 2 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.002200 angle 0.019785
+angle 0.000000
+angle + noise 0.019785
+distance 0.040000
+distance + noise 0.037800
+movement destination: angle  0.019785 distance 0.037800
+
+
+ ************************************************************
+distance destination 0.398900 threshold 0.060000
+10 Pose robot 0.581267 0.386855 4.103521 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.011277
+noise+sensor(0) = 0.311277 
+sensor(1) = 0.300000 
+noise 0.007725
+noise+sensor(1) = 0.307725 
+quantized inputs 0
+quantized destination 2 
+mag 0.398900 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 1 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 2 input 2
+index 67 next_state 14 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.001856 angle 0.028988
+angle 0.000000
+angle + noise 0.028988
+distance 0.040000
+distance + noise 0.038144
+movement destination: angle  0.028988 distance 0.038144
+
+
+ ************************************************************
+distance destination 0.368863 threshold 0.060000
+11 Pose robot 0.560367 0.354946 4.132510 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.011287
+noise+sensor(0) = 0.311287 
+sensor(1) = 0.300000 
+noise 0.008240
+noise+sensor(1) = 0.308240 
+quantized inputs 0
+quantized destination 2 
+mag 0.368863 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 1 RIGHT
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 13 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 14 input 2
+index 451 next_state 6 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance 0.000544 angle 0.028048
+angle 0.000000
+angle + noise 0.028048
+distance 0.040000
+distance + noise 0.040544
+movement destination: angle  0.028048 distance 0.040544
+
+
+ ************************************************************
+distance destination 0.339535 threshold 0.060000
+12 Pose robot 0.539112 0.320421 4.160557 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.027670
+noise+sensor(0) = 0.327670 
+sensor(1) = 0.300000 
+noise -0.001984
+noise+sensor(1) = 0.298016 
+quantized inputs 0
+quantized destination 2 
+mag 0.339535 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+RIGHT
+Present State: 2 TURN RIGHT
+movement destination: angle  -0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 2
+RIGHT
+Present State: 5 TURN RIGTH
+movement avoidance destination: angle  -0.785400 distance 0.000000
+obs intensity 0 obstacles 0 dest 2
+present state 6 input 2
+index 195 next_state 1 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+random noise advance 0.001981 angle 0.023950
+angle -0.785400
+angle + noise -0.761450
+distance 0.000000
+distance + noise 0.001981
+movement destination: angle  -0.761450 distance 0.001981
+
+
+ ************************************************************
+distance destination 0.337556 threshold 0.060000
+13 Pose robot 0.537196 0.319916 3.399107 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.020359
+noise+sensor(0) = 0.320359 
+sensor(1) = 0.300000 
+noise 0.012238
+noise+sensor(1) = 0.312238 
+quantized inputs 0
+quantized destination 2 
+mag 0.337556 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 1 input 2
+index 35 next_state 2 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.002021 angle 0.013676
+angle 0.000000
+angle + noise 0.013676
+distance 0.040000
+distance + noise 0.037979
+movement destination: angle  0.013676 distance 0.037979
+
+
+ ************************************************************
+distance destination 0.299641 threshold 0.060000
+14 Pose robot 0.500606 0.309742 3.412783 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.047340
+noise+sensor(0) = 0.347340 
+sensor(1) = 0.300000 
+noise 0.023188
+noise+sensor(1) = 0.323188 
+quantized inputs 0
+quantized destination 2 
+mag 0.299641 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 1 RIGHT
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 1 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 2 input 2
+index 67 next_state 14 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.003933 angle 0.016847
+angle 0.000000
+angle + noise 0.016847
+distance 0.040000
+distance + noise 0.036067
+movement destination: angle  0.016847 distance 0.036067
+
+
+ ************************************************************
+distance destination 0.263702 threshold 0.060000
+15 Pose robot 0.466025 0.299497 3.429630 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.019541
+noise+sensor(0) = 0.319541 
+sensor(1) = 0.300000 
+noise -0.007811
+noise+sensor(1) = 0.292189 
+quantized inputs 0
+quantized destination 2 
+mag 0.263702 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+RIGHT
+Present State: 2 TURN RIGHT
+movement destination: angle  -0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 13 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 2
+present state 14 input 2
+index 451 next_state 6 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.002541 angle 0.038289
+angle 0.000000
+angle + noise 0.038289
+distance 0.040000
+distance + noise 0.037459
+movement destination: angle  0.038289 distance 0.037459
+
+
+ ************************************************************
+distance destination 0.226599 threshold 0.060000
+16 Pose robot 0.430543 0.287489 3.467919 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.021287
+noise+sensor(0) = 0.278713 
+sensor(1) = 0.300000 
+noise 0.000997
+noise+sensor(1) = 0.300997 
+quantized inputs 0
+quantized destination 2 
+mag 0.226599 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 2
+RIGHT
+Present State: 5 TURN RIGTH
+movement avoidance destination: angle  -0.785400 distance 0.000000
+obs intensity 0 obstacles 0 dest 2
+present state 6 input 2
+index 195 next_state 1 out 4
+RIGHT
+movement fsm_engine: angle  -0.785400 distance 0.000000
+random noise advance 0.003039 angle 0.031930
+angle -0.785400
+angle + noise -0.753470
+distance 0.000000
+distance + noise 0.003039
+movement destination: angle  -0.753470 distance 0.003039
+
+
+ ************************************************************
+distance destination 0.224106 threshold 0.060000
+17 Pose robot 0.427777 0.288748 2.714450 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.024928
+noise+sensor(0) = 0.324928 
+sensor(1) = 0.300000 
+noise -0.031540
+noise+sensor(1) = 0.268460 
+quantized inputs 0
+quantized destination 3 
+mag 0.224106 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 3
+FORWARD
+Present State: 1 LEFT
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 3
+FORWARD
+Present State: 0 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 3
+present state 1 input 3
+index 36 next_state 2 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance 0.003397 angle 0.015426
+angle 0.000000
+angle + noise 0.015426
+distance 0.040000
+distance + noise 0.043397
+movement destination: angle  0.015426 distance 0.043397
+
+
+ ************************************************************
+distance destination 0.189785 threshold 0.060000
+18 Pose robot 0.388007 0.306115 2.729876 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.037856
+noise+sensor(0) = 0.337856 
+sensor(1) = 0.300000 
+noise 0.006642
+noise+sensor(1) = 0.306642 
+quantized inputs 0
+quantized destination 3 
+mag 0.189785 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 3
+LEFT
+Present State: 3 TURN LEFT
+movement destination: angle  0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 3
+FORWARD
+Present State: 1 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 3
+present state 2 input 3
+index 68 next_state 14 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance 0.002670 angle 0.010209
+angle 0.000000
+angle + noise 0.010209
+distance 0.040000
+distance + noise 0.042670
+movement destination: angle  0.010209 distance 0.042670
+
+
+ ************************************************************
+distance destination 0.160045 threshold 0.060000
+19 Pose robot 0.348730 0.322790 2.740085 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise -0.012281
+noise+sensor(0) = 0.287719 
+sensor(1) = 0.300000 
+noise 0.025564
+noise+sensor(1) = 0.325564 
+quantized inputs 0
+quantized destination 3 
+mag 0.160045 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 3
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 3
+FORWARD
+Present State: 13 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 3
+present state 14 input 3
+index 452 next_state 4 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.003081 angle 0.019851
+angle 0.000000
+angle + noise 0.019851
+distance 0.040000
+distance + noise 0.036919
+movement destination: angle  0.019851 distance 0.036919
+
+
+ ************************************************************
+distance destination 0.139177 threshold 0.060000
+20 Pose robot 0.314467 0.336541 2.759936 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.019748
+noise+sensor(0) = 0.319748 
+sensor(1) = 0.300000 
+noise -0.004010
+noise+sensor(1) = 0.295990 
+quantized inputs 0
+quantized destination 3 
+mag 0.139177 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 3
+FORWARD
+Present State: 1 LEFT
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 3
+LEFT
+Present State: 3 TURN LEFT
+movement avoidance destination: angle  0.785400 distance 0.000000
+obs intensity 0 obstacles 0 dest 3
+present state 4 input 3
+index 132 next_state 1 out 3
+LEFT
+movement fsm_engine: angle  0.785400 distance 0.000000
+random noise advance -0.001943 angle 0.008566
+angle 0.785400
+angle + noise 0.793966
+distance 0.000000
+distance + noise -0.001943
+movement destination: angle  0.793966 distance -0.001943
+
+
+ ************************************************************
+distance destination 0.141045 threshold 0.060000
+21 Pose robot 0.316248 0.337320 3.553901 
+random num_sensors 2
+sensor(0) = 0.300000 
+noise 0.041053
+noise+sensor(0) = 0.341053 
+sensor(1) = 0.300000 
+noise 0.004367
+noise+sensor(1) = 0.304367 
+quantized inputs 0
+quantized destination 3 
+mag 0.141045 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 3
+LEFT
+Present State: 3 TURN LEFT
+movement destination: angle  0.785400 distance 0.000000
+ obs intensity 0 obstacles 0 dest 3
+FORWARD
+Present State: 0 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 3
+present state 1 input 3
+index 36 next_state 2 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance -0.001280 angle 0.024045
+angle 0.000000
+angle + noise 0.024045
+distance 0.040000
+distance + noise 0.038720
+movement destination: angle  0.024045 distance 0.038720
+
+
+ ************************************************************
+distance destination 0.104023 threshold 0.060000
+22 Pose robot 0.281156 0.320955 3.577947 
+random num_sensors 2
+sensor(0) = 0.278902 
+noise -0.014632
+noise+sensor(0) = 0.264270 
+sensor(1) = 0.300000 
+noise 0.006745
+noise+sensor(1) = 0.306745 
+quantized inputs 0
+quantized destination 3 
+mag 0.104023 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 3
+FORWARD
+Present State: 0 FORWARD
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 3
+FORWARD
+Present State: 1 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 3
+present state 2 input 3
+index 68 next_state 14 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance 0.001522 angle 0.009403
+angle 0.000000
+angle + noise 0.009403
+distance 0.040000
+distance + noise 0.041522
+movement destination: angle  0.009403 distance 0.041522
+
+
+ ************************************************************
+distance destination 0.066302 threshold 0.060000
+23 Pose robot 0.243691 0.303054 3.587349 
+random num_sensors 2
+sensor(0) = 0.240922 
+noise 0.029499
+noise+sensor(0) = 0.270421 
+sensor(1) = 0.292599 
+noise -0.019002
+noise+sensor(1) = 0.273597 
+quantized inputs 0
+quantized destination 3 
+mag 0.066302 k_INTENSITY 0.060000
+quantized intensity 0 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 0 dest 3
+FORWARD
+Present State: 1 LEFT
+movement destination: angle  0.000000 distance 0.040000
+ obs intensity 0 obstacles 0 dest 3
+FORWARD
+Present State: 13 FORWARD
+movement avoidance destination: angle  0.000000 distance 0.040000
+obs intensity 0 obstacles 0 dest 3
+present state 14 input 3
+index 452 next_state 4 out 1
+FORWARD
+movement fsm_engine: angle  0.000000 distance 0.040000
+random noise advance 0.001122 angle 0.022239
+angle 0.000000
+angle + noise 0.022239
+distance 0.040000
+distance + noise 0.041122
+movement destination: angle  0.022239 distance 0.041122
+
+
+ ************************************************************
+ reached distance destination 0.037007
+distance destination 0.037007 threshold 0.060000
+24 Pose robot 0.206990 0.284503 3.609588 
+random num_sensors 2
+sensor(0) = 0.204275 
+noise -0.018521
+noise+sensor(0) = 0.185753 
+sensor(1) = 0.250911 
+noise 0.010595
+noise+sensor(1) = 0.261507 
+quantized inputs 0
+quantized destination 3 
+mag 0.037007 k_INTENSITY 0.060000
+quantized intensity 1 
+FORWARD
+Present State: 0 FORWARD
+movement avoidance: angle  0.000000 distance 0.000000
+ obs intensity 1 dest 3
+LEFT
+Present State: 3 TURN LEFT
+movement destination: angle  0.785400 distance 0.000000
+ obs intensity 1 obstacles 0 dest 3
+LEFT
+Present State: 3 TURN LEFT
+movement avoidance destination: angle  0.785400 distance 0.000000
+obs intensity 1 obstacles 0 dest 3
+present state 4 input 19
+index 148 next_state 1 out 3
+LEFT
+movement fsm_engine: angle  0.785400 distance 0.000000
+random noise advance 0.000532 angle 0.008564
+angle 0.785400
+angle + noise 0.793964
+distance 0.000000
+distance + noise 0.000532
+movement destination: angle  0.793964 distance 0.000532

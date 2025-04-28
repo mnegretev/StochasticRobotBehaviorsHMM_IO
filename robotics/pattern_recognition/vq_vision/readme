@@ -1,0 +1,324 @@
+./vq_vision -f all -m 32 -e 0.0001 -p /home/savage/observations/cmucam/training_hsi/ -g vision_objects
+./vq_vision -f all -m 256 -e 0.0001 -p /home/savage/observations/cmucam/training_hsi/ -g vision_objects
+./vq_vision -f floor -m 4 -e 0.0001 -p /home/savage/observations/cmucam/training_hsi/
+
+
+ Input 'floor' output '/home/savage/observations/cmucam/training_hsi/vq_images_floor_4.dat' num_regions 4 epsilon 0.000100 path /home/savage/observations/cmucam/training_hsi/ objects_file NULL
+
+objects floor
+/home/savage/observations/cmucam/training_hsi/images_training_floor_1.raw num. vectors 280 size vectors 3
+/home/savage/observations/cmucam/training_hsi/images_training_floor_2.raw num. vectors 280 size vectors 3
+/home/savage/observations/cmucam/training_hsi/images_training_floor_3.raw num. vectors 280 size vectors 3
+/home/savage/observations/cmucam/training_hsi/images_training_floor_4.raw num. vectors 280 size vectors 3
+/home/savage/observations/cmucam/training_hsi/images_training_floor_5.raw num. vectors 280 size vectors 3
+/home/savage/observations/cmucam/training_hsi/images_training_floor_6.raw num. vectors 280 size vectors 3
+/home/savage/observations/cmucam/training_hsi/images_training_floor_7.raw num. vectors 280 size vectors 3
+
+ Can not open /home/savage/observations/cmucam/training_hsi/images_training_floor_8.raw 
+/home/savage/observations/cmucam/training_hsi/images_training_floor_8.raw num. vectors 0 size vectors 3
+
+total num_vectors 1960
+/home/savage/observations/cmucam/training_hsi/images_training_floor_1.raw num. vectors 280
+/home/savage/observations/cmucam/training_hsi/images_training_floor_2.raw num. vectors 280
+/home/savage/observations/cmucam/training_hsi/images_training_floor_3.raw num. vectors 280
+/home/savage/observations/cmucam/training_hsi/images_training_floor_4.raw num. vectors 280
+/home/savage/observations/cmucam/training_hsi/images_training_floor_5.raw num. vectors 280
+/home/savage/observations/cmucam/training_hsi/images_training_floor_6.raw num. vectors 280
+/home/savage/observations/cmucam/training_hsi/images_training_floor_7.raw num. vectors 280
+
+ Number of vectors 1960 
+
+
+ Epsilon 0.000100 Iteration 0
+
+ Iteration 0
+ Space 1 num.vect 977
+ Space 2 num.vect 982
+ dist. 7.741116e+03 previous dist. 0.000000e+00
+ difference 7.741116e+03 prev_difference 0.000000e+00
+
+
+ Epsilon 0.000100 Iteration 1
+
+ Iteration 1
+ Space 1 num.vect 702
+ Space 2 num.vect 1257
+ dist. 7.172246e+03 previous dist. 7.741116e+03
+ difference 5.688701e+02 prev_difference 7.741116e+03
+
+
+ Epsilon 0.000100 Iteration 2
+
+ Iteration 2
+ Space 1 num.vect 660
+ Space 2 num.vect 1299
+ dist. 6.748364e+03 previous dist. 7.172246e+03
+ difference 4.238821e+02 prev_difference 5.688701e+02
+
+
+ Epsilon 0.000100 Iteration 3
+
+ Iteration 3
+ Space 1 num.vect 649
+ Space 2 num.vect 1310
+ dist. 6.739362e+03 previous dist. 6.748364e+03
+ difference 9.001480e+00 prev_difference 4.238821e+02
+
+
+ Epsilon 0.000100 Iteration 4
+
+ Iteration 4
+ Space 1 num.vect 644
+ Space 2 num.vect 1315
+ dist. 6.740234e+03 previous dist. 6.739362e+03
+ difference 8.716989e-01 prev_difference 9.001480e+00
+
+
+ Epsilon 0.000100 Iteration 5
+
+ Iteration 5
+ Space 1 num.vect 643
+ Space 2 num.vect 1316
+ dist. 6.740963e+03 previous dist. 6.740234e+03
+ difference 7.292972e-01 prev_difference 8.716989e-01
+
+
+ Epsilon 0.000100 Iteration 6
+
+ Iteration 6
+ Space 1 num.vect 642
+ Space 2 num.vect 1317
+ dist. 6.741147e+03 previous dist. 6.740963e+03
+ difference 1.835704e-01 prev_difference 7.292972e-01
+
+
+ Epsilon 0.000100 Iteration 7
+
+ Iteration 7
+ Space 1 num.vect 642
+ Space 2 num.vect 1317
+ dist. 6.741321e+03 previous dist. 6.741147e+03
+ difference 1.744166e-01 prev_difference 1.835704e-01
+
+
+ Epsilon 0.000100 Iteration 8
+
+ Iteration 8
+ Space 1 num.vect 642
+ Space 2 num.vect 1317
+ dist. 6.741321e+03 previous dist. 6.741321e+03
+ difference 0.000000e+00 prev_difference 1.744166e-01
+
+
+ Epsilon 0.000100 Iteration 1
+
+ Iteration 1
+ Space 1 num.vect 977
+ Space 2 num.vect 982
+ Space 3 num.vect 0
+ Space 4 num.vect 0
+ dist. 7.741116e+03 previous dist. 0.000000e+00
+ difference 7.741116e+03 prev_difference 0.000000e+00
+
+ '3'is a partition without vectors
+ '4'is a partition without vectors
+
+ Epsilon 0.000100 Iteration 2
+
+ Iteration 2
+ Space 1 num.vect 702
+ Space 2 num.vect 456
+ Space 3 num.vect 799
+ Space 4 num.vect 2
+ dist. 7.172240e+03 previous dist. 7.741116e+03
+ difference 5.688757e+02 prev_difference 7.741116e+03
+
+
+ Epsilon 0.000100 Iteration 3
+
+ Iteration 3
+ Space 1 num.vect 552
+ Space 2 num.vect 408
+ Space 3 num.vect 645
+ Space 4 num.vect 354
+ dist. 6.290395e+03 previous dist. 7.172240e+03
+ difference 8.818455e+02 prev_difference 5.688757e+02
+
+
+ Epsilon 0.000100 Iteration 4
+
+ Iteration 4
+ Space 1 num.vect 467
+ Space 2 num.vect 439
+ Space 3 num.vect 586
+ Space 4 num.vect 467
+ dist. 6.169705e+03 previous dist. 6.290395e+03
+ difference 1.206899e+02 prev_difference 8.818455e+02
+
+
+ Epsilon 0.000100 Iteration 5
+
+ Iteration 5
+ Space 1 num.vect 426
+ Space 2 num.vect 462
+ Space 3 num.vect 581
+ Space 4 num.vect 490
+ dist. 6.172825e+03 previous dist. 6.169705e+03
+ difference 3.120699e+00 prev_difference 1.206899e+02
+
+
+ Epsilon 0.000100 Iteration 6
+
+ Iteration 6
+ Space 1 num.vect 402
+ Space 2 num.vect 479
+ Space 3 num.vect 576
+ Space 4 num.vect 502
+ dist. 6.183531e+03 previous dist. 6.172825e+03
+ difference 1.070598e+01 prev_difference 3.120699e+00
+
+
+ Epsilon 0.000100 Iteration 7
+
+ Iteration 7
+ Space 1 num.vect 390
+ Space 2 num.vect 486
+ Space 3 num.vect 575
+ Space 4 num.vect 508
+ dist. 6.193683e+03 previous dist. 6.183531e+03
+ difference 1.015173e+01 prev_difference 1.070598e+01
+
+
+ Epsilon 0.000100 Iteration 8
+
+ Iteration 8
+ Space 1 num.vect 377
+ Space 2 num.vect 489
+ Space 3 num.vect 575
+ Space 4 num.vect 518
+ dist. 6.198793e+03 previous dist. 6.193683e+03
+ difference 5.109787e+00 prev_difference 1.015173e+01
+
+
+ Epsilon 0.000100 Iteration 9
+
+ Iteration 9
+ Space 1 num.vect 371
+ Space 2 num.vect 492
+ Space 3 num.vect 574
+ Space 4 num.vect 522
+ dist. 6.203436e+03 previous dist. 6.198793e+03
+ difference 4.642809e+00 prev_difference 5.109787e+00
+
+
+ Epsilon 0.000100 Iteration 10
+
+ Iteration 10
+ Space 1 num.vect 370
+ Space 2 num.vect 496
+ Space 3 num.vect 572
+ Space 4 num.vect 521
+ dist. 6.206257e+03 previous dist. 6.203436e+03
+ difference 2.821088e+00 prev_difference 4.642809e+00
+
+
+ Epsilon 0.000100 Iteration 11
+
+ Iteration 11
+ Space 1 num.vect 368
+ Space 2 num.vect 498
+ Space 3 num.vect 570
+ Space 4 num.vect 523
+ dist. 6.207031e+03 previous dist. 6.206257e+03
+ difference 7.743602e-01 prev_difference 2.821088e+00
+
+
+ Epsilon 0.000100 Iteration 12
+
+ Iteration 12
+ Space 1 num.vect 366
+ Space 2 num.vect 503
+ Space 3 num.vect 569
+ Space 4 num.vect 521
+ dist. 6.208000e+03 previous dist. 6.207031e+03
+ difference 9.688292e-01 prev_difference 7.743602e-01
+
+
+ Epsilon 0.000100 Iteration 13
+
+ Iteration 13
+ Space 1 num.vect 363
+ Space 2 num.vect 505
+ Space 3 num.vect 568
+ Space 4 num.vect 523
+ dist. 6.209096e+03 previous dist. 6.208000e+03
+ difference 1.096385e+00 prev_difference 9.688292e-01
+
+
+ Epsilon 0.000100 Iteration 14
+
+ Iteration 14
+ Space 1 num.vect 357
+ Space 2 num.vect 510
+ Space 3 num.vect 566
+ Space 4 num.vect 526
+ dist. 6.210084e+03 previous dist. 6.209096e+03
+ difference 9.879728e-01 prev_difference 1.096385e+00
+
+
+ Epsilon 0.000100 Iteration 15
+
+ Iteration 15
+ Space 1 num.vect 357
+ Space 2 num.vect 512
+ Space 3 num.vect 565
+ Space 4 num.vect 525
+ dist. 6.212621e+03 previous dist. 6.210084e+03
+ difference 2.536942e+00 prev_difference 9.879728e-01
+
+
+ Epsilon 0.000100 Iteration 16
+
+ Iteration 16
+ Space 1 num.vect 356
+ Space 2 num.vect 515
+ Space 3 num.vect 563
+ Space 4 num.vect 525
+ dist. 6.213035e+03 previous dist. 6.212621e+03
+ difference 4.142600e-01 prev_difference 2.536942e+00
+
+
+ Epsilon 0.000100 Iteration 17
+
+ Iteration 17
+ Space 1 num.vect 355
+ Space 2 num.vect 516
+ Space 3 num.vect 562
+ Space 4 num.vect 526
+ dist. 6.213764e+03 previous dist. 6.213035e+03
+ difference 7.283432e-01 prev_difference 4.142600e-01
+
+
+ Epsilon 0.000100 Iteration 18
+
+ Iteration 18
+ Space 1 num.vect 355
+ Space 2 num.vect 516
+ Space 3 num.vect 562
+ Space 4 num.vect 526
+ dist. 6.214231e+03 previous dist. 6.213764e+03
+ difference 4.674114e-01 prev_difference 7.283432e-01
+
+
+ Epsilon 0.000100 Iteration 19
+
+ Iteration 19
+ Space 1 num.vect 355
+ Space 2 num.vect 516
+ Space 3 num.vect 562
+ Space 4 num.vect 526
+ dist. 6.214231e+03 previous dist. 6.214231e+03
+ difference 0.000000e+00 prev_difference 4.674114e-01
+
+*** output /home/savage/observations/cmucam/training_hsi/vq_images_floor_4.dat ***
+

@@ -1,0 +1,67 @@
+\hypertarget{structMDP}{}\section{M\+DP Struct Reference}
+\label{structMDP}\index{M\+DP@{M\+DP}}
+
+
+A Markov Decision Process.  
+
+
+
+
+{\ttfamily \#include $<$mdp.\+h$>$}
+
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structMDP_aa735fb802768fb82ff8e05eb9d99ef51}{s}
+\item 
+int \hyperlink{structMDP_ae25a44e2b3d9f22a4f3fd6296b3602c5}{a}
+\item 
+float \hyperlink{structMDP_a313e7a8dc1cb9a04af91936c9daf2c62}{gamma}
+\item 
+float $\ast$$\ast$$\ast$ \hyperlink{structMDP_a395623fbc3e1cc9190c5acbfe4471462}{P}
+\item 
+unsigned char $\ast$ \hyperlink{structMDP_a70ae114113478796bd398bca88f32aa1}{t}
+\item 
+float $\ast$ \hyperlink{structMDP_a8335e6f1093b7551784a41cc902ef9c8}{r}
+\item 
+float $\ast$ \hyperlink{structMDP_ade484756ff98adafbc4c5ebbd2668b2d}{v}
+\item 
+int $\ast$ \hyperlink{structMDP_aeba26ff8087d7dc83fda5bd779965928}{pi}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Markov Decision Process. 
+
+Structure containing all parameters, infinite horizon expected rewards and optimal policy. 
+
+\subsection{Member Data Documentation}
+\index{M\+DP@{M\+DP}!a@{a}}
+\index{a@{a}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{a}{a}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+D\+P\+::a}\hypertarget{structMDP_ae25a44e2b3d9f22a4f3fd6296b3602c5}{}\label{structMDP_ae25a44e2b3d9f22a4f3fd6296b3602c5}
+number of actions \index{M\+DP@{M\+DP}!gamma@{gamma}}
+\index{gamma@{gamma}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{gamma}{gamma}}]{\setlength{\rightskip}{0pt plus 5cm}float M\+D\+P\+::gamma}\hypertarget{structMDP_a313e7a8dc1cb9a04af91936c9daf2c62}{}\label{structMDP_a313e7a8dc1cb9a04af91936c9daf2c62}
+discount factor \index{M\+DP@{M\+DP}!P@{P}}
+\index{P@{P}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{P}{P}}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$$\ast$$\ast$ M\+D\+P\+::P}\hypertarget{structMDP_a395623fbc3e1cc9190c5acbfe4471462}{}\label{structMDP_a395623fbc3e1cc9190c5acbfe4471462}
+transition probabilities, P(s\textquotesingle{}$\vert$s,a)(access\+: P\mbox{[}s\textquotesingle{}\mbox{]}\mbox{[}s\mbox{]}\mbox{[}a\mbox{]}) \index{M\+DP@{M\+DP}!pi@{pi}}
+\index{pi@{pi}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{pi}{pi}}]{\setlength{\rightskip}{0pt plus 5cm}int$\ast$ M\+D\+P\+::pi}\hypertarget{structMDP_aeba26ff8087d7dc83fda5bd779965928}{}\label{structMDP_aeba26ff8087d7dc83fda5bd779965928}
+the optimal policy \index{M\+DP@{M\+DP}!r@{r}}
+\index{r@{r}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{r}{r}}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ M\+D\+P\+::r}\hypertarget{structMDP_a8335e6f1093b7551784a41cc902ef9c8}{}\label{structMDP_a8335e6f1093b7551784a41cc902ef9c8}
+the reward r(s) \index{M\+DP@{M\+DP}!s@{s}}
+\index{s@{s}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{s}{s}}]{\setlength{\rightskip}{0pt plus 5cm}int M\+D\+P\+::s}\hypertarget{structMDP_aa735fb802768fb82ff8e05eb9d99ef51}{}\label{structMDP_aa735fb802768fb82ff8e05eb9d99ef51}
+number of states \index{M\+DP@{M\+DP}!t@{t}}
+\index{t@{t}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{t}{t}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char$\ast$ M\+D\+P\+::t}\hypertarget{structMDP_a70ae114113478796bd398bca88f32aa1}{}\label{structMDP_a70ae114113478796bd398bca88f32aa1}
+terminal states \index{M\+DP@{M\+DP}!v@{v}}
+\index{v@{v}!M\+DP@{M\+DP}}
+\subsubsection[{\texorpdfstring{v}{v}}]{\setlength{\rightskip}{0pt plus 5cm}float$\ast$ M\+D\+P\+::v}\hypertarget{structMDP_ade484756ff98adafbc4c5ebbd2668b2d}{}\label{structMDP_ade484756ff98adafbc4c5ebbd2668b2d}
+the infinite horizon expected rewards 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mdp_8h}{mdp.\+h}\end{DoxyCompactItemize}

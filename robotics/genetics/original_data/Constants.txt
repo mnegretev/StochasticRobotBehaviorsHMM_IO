@@ -1,0 +1,10 @@
+# evaluation = K1*(dif_o) + K2/(dif_d) + K3*dif_o_d/num_steps + 
+#             K4*num_steps/num_backwards + K5*num_steps/num_turns + 
+#             K6*num_steps/num_stops + K7*num_advance/num_steps
+K1 0.0
+K2 0.0
+K3 10000.0
+K4 1.0
+K5 0.0
+K6 0.0
+K7 0.0

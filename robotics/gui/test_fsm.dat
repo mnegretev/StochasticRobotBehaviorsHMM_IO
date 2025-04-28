@@ -1,0 +1,1007 @@
+Largest value 0.100000
+/home/biorobotica/robotics/motion_planner/GoTo_State_Machine -x 1.075000 -y 1.150000 -a 3.141600 -v 1.420000 -z 1.510000 -s laser -n 16 -t -2.356100 -r 4.712200 -p /home/biorobotica/data/data_1/ -e random_1 -advance 0.040000 -MaxAngle 0.785400 -selection 12 -largest 0.100000 -noise 1 -omni 1 -vq 1 -size_vq 8 -pr_out 0 -out_file random_1
+ -nn_rec 1World environment /home/biorobotica/data/data_1/random_1.wrl 
+
+observations file: /home/biorobotica/data/data_1/random_1.raw
+
+training file: /home/biorobotica/data/data_1/training.dat
+
+ Radio robot 0.030000 
+( origen 1.075000 1.150000 3.141600 )
+Num.bits.vq 3
+( destination 1.420000 1.510000 )
+
+
+ ************************************************************
+distance destination 0.498623 threshold 0.100800
+1 Pose robot 1.075000 1.150000 3.141600 
+intensity 1.000000 angle light 0.000000 
+Random settings file /home/biorobotica/data/data_1/random_settings_advance_angle_sensors.dat
+Intensity lmin -5.000000 lmax 5.000000
+Angle Light lmin -0.062832 lmax 0.062832
+with noise intensity -2.501493 angle light 0.018719 
+
+ *** Centroid /home/biorobotica/data/data_1/vq_images_laser_8.dat
+centroids[1].sensors[1] 0.176845
+centroids[1].sensors[2] 0.174970
+centroids[1].sensors[3] 0.153640
+centroids[1].sensors[4] 0.096928
+centroids[1].sensors[5] 0.045408
+centroids[1].sensors[6] 0.028742
+centroids[1].sensors[7] 0.024670
+centroids[1].sensors[8] 0.025603
+centroids[1].sensors[9] 0.031503
+centroids[1].sensors[10] 0.063683
+centroids[1].sensors[11] 0.126236
+centroids[1].sensors[12] 0.167388
+centroids[1].sensors[13] 0.178056
+centroids[1].sensors[14] 0.176908
+centroids[1].sensors[15] 0.176717
+centroids[1].sensors[16] 0.178431
+centroids[2].sensors[1] 0.173338
+centroids[2].sensors[2] 0.174884
+centroids[2].sensors[3] 0.175261
+centroids[2].sensors[4] 0.176026
+centroids[2].sensors[5] 0.175245
+centroids[2].sensors[6] 0.174141
+centroids[2].sensors[7] 0.172802
+centroids[2].sensors[8] 0.172972
+centroids[2].sensors[9] 0.173724
+centroids[2].sensors[10] 0.172924
+centroids[2].sensors[11] 0.174412
+centroids[2].sensors[12] 0.174609
+centroids[2].sensors[13] 0.176604
+centroids[2].sensors[14] 0.176946
+centroids[2].sensors[15] 0.174556
+centroids[2].sensors[16] 0.174523
+centroids[3].sensors[1] 0.064993
+centroids[3].sensors[2] 0.057538
+centroids[3].sensors[3] 0.053351
+centroids[3].sensors[4] 0.051721
+centroids[3].sensors[5] 0.048532
+centroids[3].sensors[6] 0.050067
+centroids[3].sensors[7] 0.048277
+centroids[3].sensors[8] 0.048735
+centroids[3].sensors[9] 0.048523
+centroids[3].sensors[10] 0.048362
+centroids[3].sensors[11] 0.049114
+centroids[3].sensors[12] 0.048074
+centroids[3].sensors[13] 0.048604
+centroids[3].sensors[14] 0.052521
+centroids[3].sensors[15] 0.057282
+centroids[3].sensors[16] 0.063151
+centroids[4].sensors[1] 0.177329
+centroids[4].sensors[2] 0.176171
+centroids[4].sensors[3] 0.175721
+centroids[4].sensors[4] 0.175082
+centroids[4].sensors[5] 0.164157
+centroids[4].sensors[6] 0.109303
+centroids[4].sensors[7] 0.055343
+centroids[4].sensors[8] 0.030654
+centroids[4].sensors[9] 0.025698
+centroids[4].sensors[10] 0.024390
+centroids[4].sensors[11] 0.029127
+centroids[4].sensors[12] 0.052971
+centroids[4].sensors[13] 0.105623
+centroids[4].sensors[14] 0.159894
+centroids[4].sensors[15] 0.176143
+centroids[4].sensors[16] 0.177384
+centroids[5].sensors[1] 0.173809
+centroids[5].sensors[2] 0.174360
+centroids[5].sensors[3] 0.172763
+centroids[5].sensors[4] 0.173486
+centroids[5].sensors[5] 0.172880
+centroids[5].sensors[6] 0.173075
+centroids[5].sensors[7] 0.174894
+centroids[5].sensors[8] 0.178761
+centroids[5].sensors[9] 0.180225
+centroids[5].sensors[10] 0.176056
+centroids[5].sensors[11] 0.151307
+centroids[5].sensors[12] 0.117072
+centroids[5].sensors[13] 0.087345
+centroids[5].sensors[14] 0.068379
+centroids[5].sensors[15] 0.076401
+centroids[5].sensors[16] 0.102567
+centroids[6].sensors[1] 0.132090
+centroids[6].sensors[2] 0.098953
+centroids[6].sensors[3] 0.053954
+centroids[6].sensors[4] 0.035321
+centroids[6].sensors[5] 0.029910
+centroids[6].sensors[6] 0.030661
+centroids[6].sensors[7] 0.037500
+centroids[6].sensors[8] 0.075671
+centroids[6].sensors[9] 0.122294
+centroids[6].sensors[10] 0.165356
+centroids[6].sensors[11] 0.178667
+centroids[6].sensors[12] 0.176525
+centroids[6].sensors[13] 0.176775
+centroids[6].sensors[14] 0.174583
+centroids[6].sensors[15] 0.175092
+centroids[6].sensors[16] 0.175890
+centroids[7].sensors[1] 0.097055
+centroids[7].sensors[2] 0.073791
+centroids[7].sensors[3] 0.065216
+centroids[7].sensors[4] 0.085178
+centroids[7].sensors[5] 0.115110
+centroids[7].sensors[6] 0.148890
+centroids[7].sensors[7] 0.176369
+centroids[7].sensors[8] 0.178285
+centroids[7].sensors[9] 0.176679
+centroids[7].sensors[10] 0.174155
+centroids[7].sensors[11] 0.173851
+centroids[7].sensors[12] 0.172466
+centroids[7].sensors[13] 0.173284
+centroids[7].sensors[14] 0.173563
+centroids[7].sensors[15] 0.173756
+centroids[7].sensors[16] 0.175209
+centroids[8].sensors[1] 0.173270
+centroids[8].sensors[2] 0.172554
+centroids[8].sensors[3] 0.170882
+centroids[8].sensors[4] 0.171713
+centroids[8].sensors[5] 0.174503
+centroids[8].sensors[6] 0.177173
+centroids[8].sensors[7] 0.163408
+centroids[8].sensors[8] 0.129660
+centroids[8].sensors[9] 0.081954
+centroids[8].sensors[10] 0.039431
+centroids[8].sensors[11] 0.031357
+centroids[8].sensors[12] 0.029209
+centroids[8].sensors[13] 0.033791
+centroids[8].sensors[14] 0.052402
+centroids[8].sensors[15] 0.087978
+centroids[8].sensors[16] 0.127833
+light source angle 3.948257
+intensity 4.022123 quantized intensity 0 
+MDPfile mdp_environment
+Reading MDP FILE: /home/biorobotica/data/data_1/mdp_environment.mdp
+Num.rows 6 Num.columns 6 
+north[1][1] 0.100000
+north[1][2] 0.700000
+north[1][3] 0.100000
+north[2][1] 0.050000
+north[2][2] 0.000000
+north[2][3] 0.050000
+north[3][1] 0.000000
+north[3][2] 0.000000
+north[3][3] 0.000000
+average north 1.000000
+north_east[1][1] 0.050000
+north_east[1][2] 0.100000
+north_east[1][3] 0.700000
+north_east[2][1] 0.000000
+north_east[2][2] 0.000000
+north_east[2][3] 0.100000
+north_east[3][1] 0.000000
+north_east[3][2] 0.000000
+north_east[3][3] 0.050000
+average north_east 1.000000
+east[1][1] 0.000000
+east[1][2] 0.050000
+east[1][3] 0.100000
+east[2][1] 0.000000
+east[2][2] 0.000000
+east[2][3] 0.700000
+east[3][1] 0.000000
+east[3][2] 0.050000
+east[3][3] 0.100000
+average east 1.000000
+south-east[1][1] 0.000000
+south-east[1][2] 0.000000
+south-east[1][3] 0.050000
+south-east[2][1] 0.000000
+south-east[2][2] 0.000000
+south-east[2][3] 0.100000
+south-east[3][1] 0.050000
+south-east[3][2] 0.100000
+south-east[3][3] 0.700000
+average south-east 1.000000
+south[1][1] 0.000000
+south[1][2] 0.000000
+south[1][3] 0.000000
+south[2][1] 0.050000
+south[2][2] 0.000000
+south[2][3] 0.050000
+south[3][1] 0.100000
+south[3][2] 0.700000
+south[3][3] 0.100000
+average south 1.000000
+south-west[1][1] 0.050000
+south-west[1][2] 0.000000
+south-west[1][3] 0.000000
+south-west[2][1] 0.100000
+south-west[2][2] 0.000000
+south-west[2][3] 0.000000
+south-west[3][1] 0.700000
+south-west[3][2] 0.100000
+south-west[3][3] 0.050000
+average south-west 1.000000
+west[1][1] 0.100000
+west[1][2] 0.050000
+west[1][3] 0.000000
+west[2][1] 0.700000
+west[2][2] 0.000000
+west[2][3] 0.000000
+west[3][1] 0.100000
+west[3][2] 0.050000
+west[3][3] 0.000000
+average west 1.000000
+north-west[1][1] 0.700000
+north-west[1][2] 0.100000
+north-west[1][3] 0.050000
+north-west[2][1] 0.100000
+north-west[2][2] 0.000000
+north-west[2][3] 0.000000
+north-west[3][1] 0.050000
+north-west[3][2] 0.000000
+north-west[3][3] 0.000000
+average west 1.000000
+0 0.105066
+1 0.108886
+2 0.090941
+3 0.109810
+4 0.091868
+5 0.088474
+6 0.096763
+7 0.096928
+8 0.108588
+9 0.090169
+10 0.099959
+11 0.105208
+12 0.097799
+13 0.111520
+14 0.101476
+15 0.104410
+range sensor 0.100000
+obs[2] 0.090941
+obstacle type[5][3] 0
+reward[5][3] -1.000000
+obs[4] 0.091868
+obstacle type[3][1] 0
+reward[3][1] -1.000000
+obs[5] 0.088474
+obstacle type[1][1] 0
+reward[1][1] -1.000000
+obs[6] 0.096763
+obstacle type[1][3] 0
+reward[1][3] -1.000000
+obs[7] 0.096928
+obstacle type[1][5] 0
+reward[1][5] -1.000000
+Quadrant attractor 5
+x 0.000000 y 0.000000
+quantized destination 5 
+type[7][5] 2
+reward[7][5] 2.040000
+writting MDP FILE: /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+COMMAND: ../mdp_stalin/mdpnav -g 1 -e 0.0008 -f /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+Done.
+COMMAND CP: cp policy.txt /home/biorobotica/data/data_1/policy.txt
+Done.
+Reading Policy file: /home/biorobotica/data/data_1/policy.txt
+policy_table[1][1] Z
+policy_table[1][2] A
+policy_table[1][3] Z
+policy_table[1][4] N
+policy_table[1][5] Z
+policy_table[1][6] U
+policy_table[2][1] A
+policy_table[2][2] A
+policy_table[2][3] A
+policy_table[2][4] A
+policy_table[2][5] N
+policy_table[2][6] U
+policy_table[3][1] A
+policy_table[3][2] A
+policy_table[3][3] A
+policy_table[3][4] A
+policy_table[3][5] A
+policy_table[3][6] Z
+policy_table[4][1] A
+policy_table[4][2] E
+policy_table[4][3] A
+policy_table[4][4] E
+policy_table[4][5] A
+policy_table[4][6] A
+policy_table[5][1] A
+policy_table[5][2] A
+policy_table[5][3] Z
+policy_table[5][4] A
+policy_table[5][5] Z
+policy_table[5][6] N
+policy_table[6][1] E
+policy_table[6][2] E
+policy_table[6][3] E
+policy_table[6][4] E
+policy_table[6][5] E
+policy_table[6][6] X
+
+ ***** 1 State 3 3 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION A
+Executed action A
+Most Probable Action North-East
+movement destination: angle  0.785400 distance 0.040000
+Random settings file /home/biorobotica/data/data_1/random_settings_advance_angle_sensors.dat
+movement: angle  0.796712 distance 0.039700
+after x:1.047248, y:1.121612,  rad:3.938312
+It keeps the angle
+after x:1.047248, y:1.121612,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.538321 threshold 0.100800
+2 Pose robot 1.047248 1.121612 3.141600 
+intensity 4.022123 angle light 3.948257 
+with noise intensity 2.284236 angle light 3.907547 
+light source angle 3.947523
+intensity 3.450782 quantized intensity 0 
+
+ ***** 2 State 4 4 *****
+Possible ACTION E
+Possible Action East
+Most probable ACTION A
+Executed action A
+Most Probable Action North-East
+movement destination: angle  0.785400 distance 0.040000
+movement: angle  0.792805 distance 0.040380
+after x:1.018907, y:1.092848,  rad:3.934404
+It keeps the angle
+after x:1.018907, y:1.092848,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.578698 threshold 0.100800
+3 Pose robot 1.018907 1.092848 3.141600 
+intensity 3.450782 angle light 3.947523 
+with noise intensity 5.038469 angle light 3.989552 
+light source angle 3.946608
+intensity 2.986047 quantized intensity 0 
+
+ ***** 3 State 5 5 *****
+Possible ACTION Z
+Possible Action Output Z not defined used STOP
+Most probable ACTION N
+Executed action N
+Most Probable Action North
+movement destination: angle  1.570800 distance 0.040000
+movement: angle  1.564528 distance 0.043338
+after x:1.018636, y:1.049511,  rad:4.706128
+It keeps the angle
+after x:1.018636, y:1.049511,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.610854 threshold 0.100800
+4 Pose robot 1.018636 1.049511 3.141600 
+intensity 2.986047 angle light 3.946608 
+with noise intensity 6.370478 angle light 3.930614 
+light source angle 3.995478
+intensity 2.679940 quantized intensity 0 
+
+ ***** 4 State 6 5 *****
+Possible ACTION E
+Possible Action East
+Most probable ACTION E
+Executed action E
+Most Probable Action East
+movement destination: angle  0.000000 distance 0.040000
+movement: angle  -0.038019 distance 0.037830
+after x:0.980833, y:1.050949,  rad:3.103581
+It keeps the angle
+after x:0.980833, y:1.050949,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.635291 threshold 0.100800
+5 Pose robot 0.980833 1.050949 3.141600 
+intensity 2.679940 angle light 3.995478 
+with noise intensity 0.448553 angle light 4.048470 
+light source angle 3.949118
+intensity 2.477731 quantized intensity 0 
+
+ ***** 5 State 6 6 *****
+Possible ACTION X
+Possible Action Terminal
+Most probable ACTION X
+Executed action X
+Most Probable Terminal
+movement destination: angle  0.000000 distance 0.000000
+movement: angle  0.026933 distance 0.003724
+after x:0.977111, y:1.050849,  rad:3.168533
+It keeps the angle
+after x:0.977111, y:1.050849,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.637942 threshold 0.100800
+6 Pose robot 0.977111 1.050849 3.141600 
+intensity 2.477731 angle light 3.949118 
+with noise intensity -1.545180 angle light 3.908100 
+light source angle 3.945010
+intensity 2.457181 quantized intensity 0 
+0 0.092826
+1 0.097442
+2 0.094561
+3 0.095173
+4 0.093612
+5 0.102092
+6 0.096947
+7 0.101768
+8 0.106340
+9 0.106543
+10 0.092446
+11 0.097656
+12 0.089892
+13 0.094864
+14 0.091291
+15 0.090382
+range sensor 0.100000
+obs[0] 0.092826
+obstacle type[3][6] 0
+reward[3][6] -1.000000
+obs[1] 0.097442
+obstacle type[5][5] 0
+reward[5][5] -1.000000
+obs[2] 0.094561
+obstacle type[5][3] 0
+reward[5][3] -1.000000
+obs[3] 0.095173
+obstacle type[1][3] 0
+reward[1][3] -1.000000
+obs[4] 0.093612
+obstacle type[3][1] 0
+reward[3][1] -1.000000
+obs[6] 0.096947
+obstacle type[1][3] 0
+reward[1][3] -1.000000
+Quadrant attractor 5
+x 0.000000 y 0.000000
+quantized destination 5 
+type[7][3] 2
+reward[7][3] 2.040000
+writting MDP FILE: /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+COMMAND: ../mdp_stalin/mdpnav -g 1 -e 0.0008 -f /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+Done.
+COMMAND CP: cp policy.txt /home/biorobotica/data/data_1/policy.txt
+Done.
+Reading Policy file: /home/biorobotica/data/data_1/policy.txt
+policy_table[1][1] Z
+policy_table[1][2] A
+policy_table[1][3] Z
+policy_table[1][4] N
+policy_table[1][5] Z
+policy_table[1][6] U
+policy_table[2][1] A
+policy_table[2][2] A
+policy_table[2][3] A
+policy_table[2][4] A
+policy_table[2][5] N
+policy_table[2][6] U
+policy_table[3][1] A
+policy_table[3][2] A
+policy_table[3][3] A
+policy_table[3][4] A
+policy_table[3][5] A
+policy_table[3][6] Z
+policy_table[4][1] A
+policy_table[4][2] E
+policy_table[4][3] A
+policy_table[4][4] E
+policy_table[4][5] A
+policy_table[4][6] A
+policy_table[5][1] A
+policy_table[5][2] A
+policy_table[5][3] Z
+policy_table[5][4] A
+policy_table[5][5] Z
+policy_table[5][6] N
+policy_table[6][1] E
+policy_table[6][2] E
+policy_table[6][3] E
+policy_table[6][4] E
+policy_table[6][5] E
+policy_table[6][6] X
+
+ ***** 1 State 3 3 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION U
+Executed action U
+Most Probable North-West
+movement destination: angle  2.356200 distance 0.040000
+movement: angle  2.325694 distance 0.037200
+after x:1.002601, y:1.023755,  rad:5.467294
+It keeps the angle
+after x:1.002601, y:1.023755,  rad:3.141599
+
+
+ ************************************************************
+distance destination 0.640825 threshold 0.100800
+7 Pose robot 1.002601 1.023755 3.141599 
+intensity 2.457181 angle light 3.945010 
+with noise intensity -2.170569 angle light 3.934648 
+light source angle 4.003025
+intensity 2.435127 quantized intensity 0 
+SM North-West 4 2
+
+ ***** 2 State 4 2 *****
+Possible ACTION E
+Possible Action East
+Most probable ACTION E
+Executed action E
+Most Probable Action East
+movement destination: angle  0.000000 distance 0.040000
+movement: angle  0.034749 distance 0.041151
+after x:0.961476, y:1.022325,  rad:3.176348
+It keeps the angle
+after x:0.961476, y:1.022325,  rad:3.141599
+
+
+ ************************************************************
+distance destination 0.669382 threshold 0.100800
+8 Pose robot 0.961476 1.022325 3.141599 
+intensity 2.435127 angle light 4.003025 
+with noise intensity -2.109296 angle light 3.996505 
+light source angle 3.957783
+intensity 2.231785 quantized intensity 0 
+
+ ***** 3 State 4 3 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION N
+Executed action N
+Most Probable Action North
+movement destination: angle  1.570800 distance 0.040000
+movement: angle  1.606822 distance 0.042756
+after x:0.963016, y:0.979597,  rad:4.748422
+It keeps the angle
+after x:0.963016, y:0.979597,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.700116 threshold 0.100800
+9 Pose robot 0.963016 0.979597 3.141600 
+intensity 2.231785 angle light 3.957783 
+with noise intensity -2.367889 angle light 3.895803 
+light source angle 4.001204
+intensity 2.040142 quantized intensity 0 
+
+ ***** 4 State 5 3 *****
+Possible ACTION Z
+Possible Action Output Z not defined used STOP
+Most probable ACTION N
+Executed action N
+Most Probable Action North
+movement destination: angle  1.570800 distance 0.040000
+movement: angle  1.584940 distance 0.043591
+after x:0.963633, y:0.936010,  rad:4.726540
+It keeps the angle
+after x:0.963633, y:0.936010,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.733304 threshold 0.100800
+10 Pose robot 0.963633 0.936010 3.141600 
+intensity 2.040142 angle light 4.001204 
+with noise intensity 1.316010 angle light 3.984932 
+light source angle 4.040649
+intensity 1.859651 quantized intensity 0 
+
+ ***** 5 State 6 3 *****
+Possible ACTION E
+Possible Action East
+Most probable ACTION S
+Executed action S
+Most Probable Action South
+movement destination: angle  -1.570800 distance 0.040000
+movement: angle  -1.560676 distance 0.040326
+after x:0.963224, y:0.976334,  rad:1.580924
+It keeps the angle
+after x:0.963224, y:0.976334,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.702456 threshold 0.100800
+11 Pose robot 0.963224 0.976334 3.141600 
+intensity 1.859651 angle light 4.040649 
+with noise intensity 4.284564 angle light 3.999012 
+light source angle 4.004461
+intensity 2.026573 quantized intensity 0 
+
+ ***** 6 State 5 3 *****
+Possible ACTION Z
+Possible Action Output Z not defined used STOP
+Most probable ACTION N
+Executed action N
+Most Probable Action North
+movement destination: angle  1.570800 distance 0.040000
+movement: angle  1.568836 distance 0.036611
+after x:0.963153, y:0.939723,  rad:4.710436
+It keeps the angle
+after x:0.963153, y:0.939723,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.730702 threshold 0.100800
+12 Pose robot 0.963153 0.939723 3.141600 
+intensity 2.026573 angle light 4.004461 
+with noise intensity -2.699435 angle light 3.978378 
+light source angle 4.036973
+intensity 1.872922 quantized intensity 0 
+0 0.105456
+1 0.103296
+2 0.104753
+3 0.094265
+4 0.089811
+5 0.118765
+6 0.107892
+7 0.097489
+8 0.112030
+9 0.106984
+10 0.102825
+11 0.097064
+12 0.089485
+13 0.108473
+14 0.080746
+15 0.099072
+range sensor 0.100000
+obs[3] 0.094265
+obstacle type[1][3] 0
+reward[1][3] -1.000000
+obs[4] 0.089811
+obstacle type[3][1] 0
+reward[3][1] -1.000000
+obs[7] 0.097489
+obstacle type[1][5] 0
+reward[1][5] -1.000000
+Quadrant attractor 5
+x 0.000000 y 0.000000
+quantized destination 5 
+type[7][5] 2
+reward[7][5] 2.040000
+writting MDP FILE: /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+COMMAND: ../mdp_stalin/mdpnav -g 1 -e 0.0008 -f /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+Done.
+COMMAND CP: cp policy.txt /home/biorobotica/data/data_1/policy.txt
+Done.
+Reading Policy file: /home/biorobotica/data/data_1/policy.txt
+policy_table[1][1] Z
+policy_table[1][2] A
+policy_table[1][3] Z
+policy_table[1][4] N
+policy_table[1][5] Z
+policy_table[1][6] U
+policy_table[2][1] A
+policy_table[2][2] A
+policy_table[2][3] A
+policy_table[2][4] A
+policy_table[2][5] N
+policy_table[2][6] U
+policy_table[3][1] A
+policy_table[3][2] A
+policy_table[3][3] A
+policy_table[3][4] A
+policy_table[3][5] A
+policy_table[3][6] Z
+policy_table[4][1] A
+policy_table[4][2] E
+policy_table[4][3] A
+policy_table[4][4] E
+policy_table[4][5] A
+policy_table[4][6] A
+policy_table[5][1] A
+policy_table[5][2] A
+policy_table[5][3] Z
+policy_table[5][4] A
+policy_table[5][5] Z
+policy_table[5][6] N
+policy_table[6][1] E
+policy_table[6][2] E
+policy_table[6][3] E
+policy_table[6][4] E
+policy_table[6][5] E
+policy_table[6][6] X
+
+ ***** 1 State 3 3 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION A
+Executed action A
+Most Probable Action North-East
+movement destination: angle  0.785400 distance 0.040000
+movement: angle  0.756593 distance 0.043750
+after x:0.931339, y:0.909691,  rad:3.898193
+It keeps the angle
+after x:0.931339, y:0.909691,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.774055 threshold 0.100800
+13 Pose robot 0.931339 0.909691 3.141600 
+intensity 1.872922 angle light 4.036973 
+with noise intensity 1.752690 angle light 4.002504 
+light source angle 4.029153
+intensity 1.669002 quantized intensity 0 
+
+ ***** 2 State 4 4 *****
+Possible ACTION E
+Possible Action East
+Most probable ACTION I
+Executed action I
+Most Probable Action South-East
+movement destination: angle  -0.785400 distance 0.040000
+movement: angle  -0.768321 distance 0.043979
+after x:0.899714, y:0.940253,  rad:2.373279
+It keeps the angle
+after x:0.899714, y:0.940253,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.771562 threshold 0.100800
+14 Pose robot 0.899714 0.940253 3.141600 
+intensity 1.669002 angle light 4.029153 
+with noise intensity -2.741477 angle light 4.015273 
+light source angle 3.972328
+intensity 1.679801 quantized intensity 0 
+
+ ***** 3 State 3 5 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION N
+Executed action N
+Most Probable Action North
+movement destination: angle  1.570800 distance 0.040000
+movement: angle  1.600544 distance 0.039818
+after x:0.900899, y:0.900452,  rad:4.742144
+It keeps the angle
+after x:0.900899, y:0.900452,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.800634 threshold 0.100800
+15 Pose robot 0.900899 0.900452 3.141600 
+intensity 1.679801 angle light 3.972328 
+with noise intensity -2.011079 angle light 3.927864 
+light source angle 4.006949
+intensity 1.560027 quantized intensity 0 
+
+ ***** 4 State 4 5 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION A
+Executed action A
+Most Probable Action North-East
+movement destination: angle  0.785400 distance 0.040000
+movement: angle  0.816517 distance 0.038520
+after x:0.874522, y:0.872380,  rad:3.958117
+It keeps the angle
+after x:0.874522, y:0.872380,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.839110 threshold 0.100800
+16 Pose robot 0.874522 0.872380 3.141600 
+intensity 1.560027 angle light 4.006949 
+with noise intensity 1.213024 angle light 3.963119 
+light source angle 4.004708
+intensity 1.420241 quantized intensity 0 
+
+ ***** 5 State 5 6 *****
+Possible ACTION N
+Possible Action North
+Most probable ACTION U
+Executed action U
+Most Probable North-West
+movement destination: angle  2.356200 distance 0.040000
+movement: angle  2.343804 distance 0.037491
+after x:0.900701, y:0.845544,  rad:5.485404
+It keeps the angle
+after x:0.900701, y:0.845544,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.843311 threshold 0.100800
+17 Pose robot 0.900701 0.845544 3.141600 
+intensity 1.420241 angle light 4.004708 
+with noise intensity -2.441015 angle light 4.059939 
+light source angle 4.048999
+intensity 1.406127 quantized intensity 0 
+SM North-West 6 5
+
+ ***** 6 State 6 5 *****
+Possible ACTION E
+Possible Action East
+Most probable ACTION E
+Executed action E
+Most Probable Action East
+movement destination: angle  0.000000 distance 0.040000
+movement: angle  -0.024393 distance 0.037668
+after x:0.863045, y:0.846462,  rad:3.117207
+It keeps the angle
+after x:0.863045, y:0.846462,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.866303 threshold 0.100800
+18 Pose robot 0.863045 0.846462 3.141600 
+intensity 1.406127 angle light 4.048999 
+with noise intensity 4.769500 angle light 4.077655 
+light source angle 4.014091
+intensity 1.332478 quantized intensity 0 
+0 0.088273
+1 0.091805
+2 0.115110
+3 0.121109
+4 0.102123
+5 0.088697
+6 0.101908
+7 0.090232
+8 0.099651
+9 0.101366
+10 0.096991
+11 0.115243
+12 0.100160
+13 0.102292
+14 0.113908
+15 0.114481
+range sensor 0.100000
+obs[0] 0.088273
+obstacle type[3][6] 0
+reward[3][6] -1.000000
+obs[1] 0.091805
+obstacle type[5][5] 0
+reward[5][5] -1.000000
+obs[5] 0.088697
+obstacle type[1][1] 0
+reward[1][1] -1.000000
+obs[7] 0.090232
+obstacle type[1][5] 0
+reward[1][5] -1.000000
+Quadrant attractor 5
+x 0.000000 y 0.000000
+quantized destination 5 
+type[7][5] 2
+reward[7][5] 2.040000
+writting MDP FILE: /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+COMMAND: ../mdp_stalin/mdpnav -g 1 -e 0.0008 -f /home/biorobotica/data/data_1/mdp_environment_grid.mdp
+Done.
+COMMAND CP: cp policy.txt /home/biorobotica/data/data_1/policy.txt
+Done.
+Reading Policy file: /home/biorobotica/data/data_1/policy.txt
+policy_table[1][1] Z
+policy_table[1][2] A
+policy_table[1][3] Z
+policy_table[1][4] N
+policy_table[1][5] Z
+policy_table[1][6] U
+policy_table[2][1] A
+policy_table[2][2] A
+policy_table[2][3] A
+policy_table[2][4] A
+policy_table[2][5] N
+policy_table[2][6] U
+policy_table[3][1] A
+policy_table[3][2] A
+policy_table[3][3] A
+policy_table[3][4] A
+policy_table[3][5] A
+policy_table[3][6] Z
+policy_table[4][1] A
+policy_table[4][2] E
+policy_table[4][3] A
+policy_table[4][4] E
+policy_table[4][5] A
+policy_table[4][6] A
+policy_table[5][1] A
+policy_table[5][2] A
+policy_table[5][3] Z
+policy_table[5][4] A
+policy_table[5][5] Z
+policy_table[5][6] N
+policy_table[6][1] E
+policy_table[6][2] E
+policy_table[6][3] E
+policy_table[6][4] E
+policy_table[6][5] E
+policy_table[6][6] X
+
+ ***** 1 State 3 3 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION A
+Executed action A
+Most Probable Action North-East
+movement destination: angle  0.785400 distance 0.040000
+movement: angle  0.796059 distance 0.043940
+after x:0.832308, y:0.815063,  rad:3.937659
+It keeps the angle
+after x:0.832308, y:0.815063,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.910121 threshold 0.100800
+19 Pose robot 0.832308 0.815063 3.141600 
+intensity 1.332478 angle light 4.014091 
+with noise intensity -3.381949 angle light 3.960658 
+light source angle 4.010404
+intensity 1.207263 quantized intensity 0 
+
+ ***** 2 State 4 4 *****
+Possible ACTION E
+Possible Action East
+Most probable ACTION E
+Executed action E
+Most Probable Action East
+movement destination: angle  0.000000 distance 0.040000
+movement: angle  0.031814 distance 0.040418
+after x:0.791910, y:0.813777,  rad:3.173414
+It keeps the angle
+after x:0.791910, y:0.813777,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.937669 threshold 0.100800
+20 Pose robot 0.791910 0.813777 3.141600 
+intensity 1.207263 angle light 4.010404 
+with noise intensity -2.508429 angle light 4.033229 
+light source angle 3.978387
+intensity 1.137367 quantized intensity 0 
+
+ ***** 3 State 4 5 *****
+Possible ACTION A
+Possible Action North-East
+Most probable ACTION A
+Executed action A
+Most Probable Action North-East
+movement destination: angle  0.785400 distance 0.040000
+movement: angle  0.774965 distance 0.037398
+after x:0.765192, y:0.787610,  rad:3.916564
+It keeps the angle
+after x:0.765192, y:0.787610,  rad:3.141600
+
+
+ ************************************************************
+distance destination 0.974998 threshold 0.100800
+21 Pose robot 0.765192 0.787610 3.141600 
+intensity 1.137367 angle light 3.978387 
+with noise intensity 0.646144 angle light 3.936957 
+light source angle 3.976017
+intensity 1.051943 quantized intensity 0 
+
+ ***** 4 State 5 6 *****
+Possible ACTION N
+Possible Action North
+Most probable ACTION N
+Executed action N
+Most Probable Action North
+movement destination: angle  1.570800 distance 0.040000
+movement: angle  1.584393 distance 0.038031
+after x:0.765709, y:0.749582,  rad:4.725992
+It keeps the angle
+after x:0.765709, y:0.749582,  rad:3.141600
+
+
+ ************************************************************
+distance destination 1.003161 threshold 0.100800
+22 Pose robot 0.765709 0.749582 3.141600 
+intensity 1.051943 angle light 3.976017 
+with noise intensity 5.803959 angle light 4.034414 
+light source angle 4.001861
+intensity 0.993708 quantized intensity 0 
+
+ ***** 5 State 6 6 *****
+Possible ACTION X
+Possible Action Terminal
+Most probable ACTION X
+Executed action X
+Most Probable Terminal
+movement destination: angle  0.000000 distance 0.000000
+movement: angle  0.007942 distance 0.002689
+after x:0.763021, y:0.749561,  rad:3.149541
+It keeps the angle
+after x:0.763021, y:0.749561,  rad:3.141600
+
+
+ ************************************************************
+distance destination 1.004933 threshold 0.10

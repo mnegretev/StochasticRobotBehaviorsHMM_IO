@@ -1,0 +1,14 @@
+CC = g++ 
+
+LIBS = -lm -lpthread
+
+OBJS= evaluate_sort.o 
+PRG_OBJS= evaluate_sort.cpp
+
+evaluate_sort: $(OBJS)
+	  $(CC)  -o $@ $(OBJS) $(LIBS) $(SOCKET_LIBS) $(OBJS_LASER)
+
+$(OBJS): $(PRG_OBJS)
+	$(CC) $(CFLAGS) -c $*.cpp 
+	
+	

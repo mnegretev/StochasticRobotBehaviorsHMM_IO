@@ -1,0 +1,2613 @@
+# GUI_behaviors_testing.py 
+'''
+@author: Jesus Savage, UNAM-FI, 10-2020
+'''
+
+import os
+import Tkinter as tk
+import tkFileDialog
+import tkMessageBox
+from Tkinter import *
+import math
+from random import randrange, uniform
+import time
+import os
+import numpy as np
+from initial_genetics_behaviors import *
+import time
+ 
+ 
+
+
+#---------------------------------------------------------------------------------------
+#	Global Variables
+
+use_gui = True
+gui = None
+gui_planner = None
+gui_example = None
+debug = False
+count = 0
+DIM_CANVAS_X = 400
+DIM_CANVAS_Y = 400
+dim_x = 10.0
+dim_y = 10.0
+radio_robot = .03
+pose_x = 4.0
+pose_y = 3.0
+pose_tetha = 0.0
+mouse_1_x = 0.0
+mouse_1_y = 0.0
+mouse_2_x = 0.0
+mouse_2_y = 0.0
+mouse_3_x = 0.0
+mouse_3_y = 0.0
+num_pol = 0
+polygons = []
+flg_mov = 1
+flg_sensor = 1
+delay = .05
+PATH = 'path'
+File_Name = 'file_name'
+File_Name_robot = 'file_name'
+angle_robot = 0.0
+sensor = "laser"
+num_sensors = 2
+flg_noise = 1
+start_angle = -0.1
+range_angle = 0.2
+flg_execute = 1
+robot_command = "../motion_planner/GoTo_State_Machine"
+#robot_command = "../hmm_robots/GoTo_State_Machine_HMM"
+flg_plt = 1
+vq = 0
+size_vq = 4
+pr_out = 0
+
+
+# Change to 1 new_generation to start from the begining
+new_generation = 1
+total_num_generations = 0
+#new_generation = 0  # Change to 0 to continue
+#total_num_generations = 250
+num_training = 0
+previous_num_generations = 10
+number_steps_total = 300
+
+
+
+
+
+#-------------------------------------------------------------------------------------------
+#	TK Definitions
+
+planner = tk.Tk()
+planner.wm_title('PLANNER')
+C = tk.Canvas(planner, bg="green", height=DIM_CANVAS_X, width=DIM_CANVAS_Y)
+
+
+class PLANNER(object):
+   
+
+    def __init__(self):
+
+	global C   
+	global DIM_CANVAS_X 
+	global DIM_CANVAS_Y
+	global dim_x
+	global dim_y
+	global x
+	global y
+	global radio_robot
+	global pose_x
+	global pose_y
+	global pose_tetha
+
+
+ 
+	def callback_mouse_1(event):
+		global mouse_1_x
+		global mouse_1_y
+		global angle_robot
+
+#HERE
+		#print "clicked 1 at", event.x, event.y
+		id = C.create_rectangle(event.x, event.y, event.x+1, event.y+1, fill= "black")
+		x = (dim_x * event.x) / DIM_CANVAS_X
+		y = (dim_y * (DIM_CANVAS_Y-event.y)) / DIM_CANVAS_Y
+		print "left button x ", x, " y ", y
+		mouse_1_x = x
+		mouse_1_y = y
+        	angle_robot = float(self.robot_angle.get())
+  		#angle_robot = 0 
+
+ 
+	def callback_mouse_2(event):
+		global mouse_2_x
+		global mouse_2_y
+
+		#print "clicked 2 at", event.x, event.y
+		id = C.create_rectangle(event.x, event.y, event.x+1, event.y+1, fill= "green", outline='yellow')
+		x = (dim_x * event.x) / DIM_CANVAS_X
+		y = (dim_y * (DIM_CANVAS_Y-event.y)) / DIM_CANVAS_Y
+		print "middle button x ", x, " y ", y
+		mouse_2_x = x
+		mouse_2_y = y
+
+    
+	def callback_mouse_3(event):
+		global mouse_3_x
+		global mouse_3_y
+		global flg_plt
+		global BEHAVIOR
+
+
+
+		#print "clicked 3 at", event.x, event.y
+		id = C.create_rectangle(event.x, event.y, event.x+1, event.y+1, fill= "red", outline='red')
+		x = (dim_x * event.x) / DIM_CANVAS_X
+		y = (dim_y * (DIM_CANVAS_Y-event.y)) / DIM_CANVAS_Y
+		print "right button x ", x, " y ", y
+		mouse_3_x = x
+		mouse_3_y = y
+
+		if flg_execute == 1:
+			if self.var_mov.get() == 0:
+                                C.update_idletasks()
+
+			flg_plt = 1
+
+			self.togglePlotExecute(0,BEHAVIOR)
+        
+			PATH = self.path.get()
+			#print 'Evaluate Robot PATH ',PATH
+        		File_Name = self.file.get()
+        		FILE = PATH + File_Name + '.raw'
+        		#print 'Evaluate Robot File_Name ',FILE
+
+                        File_Constants = PATH + 'Constants.txt'
+                        partial_evaluation = self.readResultFile(FILE,File_Constants,0)
+			#print 'Evaluation ',partial_evaluation
+			self.evaluation_ind.delete(0, END)
+			self.evaluation_ind.insert ( 0, str(partial_evaluation))
+
+
+	def initial(self):
+       		global PATH
+		global File_Name
+		global File_Name_robot
+       		global flg_mov
+       		global flg_sensor
+		global delay
+ 		global flg_plt
+		global new_generation
+		global flg_noise
+		global BEHAVIOR
+		global size_vq_ext
+		global bh
+
+
+
+		self.topLevelWindow = tk.Tk()
+        	self.topLevelWindow.wm_title('GUI_ROBOTS')
+        	#self.topLevelWindow.bind_all('<KeyPress-Return>', self.run)
+
+
+
+#---------------------------------------------- Buttons Fields --------------------------------------------------------------------------------------------
+
+
+                self.DemoButtonPath = tk.Button(self.topLevelWindow, height = 4, width = 20, text = 'Use Path DEMO', bg = 'green', activebackground = 'green', command = self.toggleDemoButtonPath)
+                self.TestButtonFSM = tk.Button(self.topLevelWindow, width = 20, text = 'Test FSM Human', bg = 'green', activebackground = 'green', command = self.toggleTestFSMBehaviors)
+                self.TestButtonFSMGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test FSM Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestFSMGenBehaviors)
+                self.TestButtonFSMSTGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test FSM Stochastic Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestFSMSTGenBehaviors)
+                self.TestButtonREACTIVEGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test Reactive Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestReactiveGenBehaviors)
+                self.TestButtonREACTIVESTGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test Reactive Stochastic Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestReactiveSTGenBehaviors)
+                self.TestButtonPOTENTIALSGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test Potentials Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestPotentialsGenBehaviors)
+                self.TestButtonHMMGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test HMM Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestHMMGenBehaviors)
+                self.TestButtonMDPGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test MDP Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestMDPGenBehaviors)
+                self.TestButtonNNGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test NN Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestNNGenBehaviors)
+                self.TestButtonNNSTGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test NN Stochastic Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestNNSTGenBehaviors)
+                self.TestButtonRNNGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test RNN Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestRNNGenBehaviors)
+                self.TestButtonRNNSTGEN = tk.Button(self.topLevelWindow, width = 20, text = 'Test RNN Stochastic Gen.', bg = 'green', activebackground = 'green', command = self.toggleTestRNNSTGenBehaviors)
+
+
+
+		# Plot Evaluate button
+                self.EvaluateButton = tk.Button(self.topLevelWindow, height = 4, width = 20, text = 'Genetic Algorithm', bg = 'green', activebackground = 'green', command = self.toggleEvaluateRobot)
+                self.countEvaluate = 0
+		# Plot Training button
+                self.TrainingButton = tk.Button(self.topLevelWindow, width = 20, text = 'Generate VQ / Use VQ ->', bg = 'green', activebackground = 'green', command = self.toggleTraining)
+                self.countEvaluate = 0
+		# Plot Robot button
+        	self.RobotButton = tk.Button(self.topLevelWindow, width = 20, text = 'Plot Robot Behavior', bg = 'green', activebackground = 'green', command = self.togglePlotRobot)
+		self.countRobot = 0
+		# Plot Sensor button
+        	self.ExecuteButton = tk.Button(self.topLevelWindow, width = 20, text = 'Execute Robot Command ', bg = 'green', activebackground = 'green', command = self.togglePlotExecute)
+		self.countExecute = 0
+		# Plot Map button
+        	self.MapButton = tk.Button(self.topLevelWindow, width = 20, text = 'Plot Map', bg = 'green', activebackground = 'green', command = self.togglePlotMap)
+		self.countMap = 0
+		# Plot Path button
+        	self.PathButton = tk.Button(self.topLevelWindow, width = 20, text = 'Plot Path', bg = 'green', activebackground = 'green', command = self.togglePlotPath)
+		self.countPath = 0
+      		# Path files entry 
+		self.label_path = tk.Label(self.topLevelWindow,text =  'Path')
+        	self.path = tk.Entry(self.topLevelWindow, width = 30, foreground='white',background='black')
+		#self.path.insert ( 0, '/home/biorobotica/data/data_15/' )
+		self.path.insert ( 0, INITIAL_PATH )
+		PATH = self.path.get()
+      		# World's File entry 
+		self.label_file = tk.Label(self.topLevelWindow,text =  'World')
+        	self.file = tk.Entry(self.topLevelWindow, width = 30, foreground='white',background='black')
+		#self.file.insert ( 0, 'room' )
+		#self.file.insert ( 0, 'random' )
+		self.file.insert ( 0, ENVIRONMENT )
+		File_Name = self.file.get()
+      		# Robot's File entry 
+		self.label_file_robot = tk.Label(self.topLevelWindow,text =  'Robot Behavior ')
+        	self.file_robot = tk.Entry(self.topLevelWindow, width = 30, foreground='white',background='black')
+		#self.file_robot.insert ( 0, 'room' )
+		#self.file_robot.insert ( 0, 'random' )
+		self.file_robot.insert ( 0, ENVIRONMENT)
+		File_Name_robot = self.file_robot.get()
+		# Check button movement
+		self.var_mov = IntVar()
+		def command_mov():
+			#print "Checkbutton variable is", self.var_mov.get()
+			if self.var_mov.get() == 0:
+				self.Movement.select()
+                		self.var_mov.set(1)
+			else:
+				self.Movement.deselect()
+                		self.var_mov.set(0)
+		self.Movement = tk.Checkbutton(self.topLevelWindow, text="Show robot movements", variable= self.var_mov,command=command_mov)
+		self.Movement.deselect()
+		self.var_mov.set(0)
+		#print 'flg_mov ',  self.var_mov.get()
+      		# Delay's plot robot entry 
+		self.label_delay = tk.Label(self.topLevelWindow,text =  'Delay plotting')
+        	self.delay = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.delay.insert ( 0, '0.04' )
+		delay = float(self.delay.get())
+
+		# Check button sensor
+                self.var_sensor = IntVar()
+                def command_sensor():
+                        if self.var_sensor.get() == 0:
+                                self.sensor.select()
+                                self.var_sensor.set(1)
+                        else:
+                                self.sensor.deselect()
+                                self.var_sensor.set(0)
+
+                self.sensor = tk.Checkbutton(self.topLevelWindow, text="Show sensors", variable= self.var_sensor,command=command_sensor)
+                self.sensor.deselect()
+                self.var_sensor.set(0)
+
+	        # Check button add_noise
+                self.add_noise = IntVar()
+                def command_add_noise():
+                        if self.add_noise.get() == 0:
+                                self.noise.select()
+                                self.add_noise.set(1)
+                        else:
+                                self.noise.deselect()
+                                self.add_noise.set(0)
+
+                self.noise = tk.Checkbutton(self.topLevelWindow, text="Add noise", variable= self.add_noise,command=command_add_noise)
+                self.noise.select()
+                self.add_noise.set(1)
+
+                # Check button start new generation
+                self.generation = IntVar()
+                def command_generation():
+                        if self.generation.get() == 0:
+                                #self.generation.select()
+                                self.generation.set(1)
+                        else:
+                                #self.generation.deselect()
+                                self.generation.set(0)
+
+                self.new_gen = tk.Checkbutton(self.topLevelWindow, text="New generation", variable= self.generation,command=command_generation)
+		if flg_set_first_new_generation == 1:
+                	self.generation.set(1)
+                	self.new_gen.select()
+		else:
+                	self.generation.set(0)
+                	self.new_gen.deselect()
+
+
+#---------------------------------------- Values' fields -----------------------------------------------------------------------------
+
+      		# Number of sensors 
+		self.label_num_sensors = tk.Label(self.topLevelWindow,text =  'Num. Sensors')
+        	self.num_sensors = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.num_sensors.insert ( 0, '16' )
+		num_sensors = self.num_sensors.get()
+		# Quantization 
+                self.label_vq = tk.Label(self.topLevelWindow,text =  'Size VQ')
+		self.size_vq = tk.Entry(self.topLevelWindow, width = 2, foreground='white',background='black')
+                self.size_vq.insert ( 0, size_vq_ext )
+                self.vq = tk.Entry(self.topLevelWindow, width = 2, foreground='white',background='black')
+                self.vq.insert ( 0, '0' )
+                vq = self.vq.get()
+      		# Origen angle sensor 
+		self.label_origen_angle = tk.Label(self.topLevelWindow,text =  'Origen angle sensor ')
+        	self.origen_angle = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.origen_angle.insert ( 0, '-2.3561' )
+		origen_angle = self.origen_angle.get()
+      		# Range angle sensor 
+		self.label_range_angle = tk.Label(self.topLevelWindow,text =  'Range angle sensor ')
+        	self.range_angle = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.range_angle.insert ( 0, '4.7122' )
+		range_angle = self.range_angle.get()
+      		# Robot's magnitude advance  
+		self.label_advance_robot = tk.Label(self.topLevelWindow,text =  "Robot's magnitude advance")
+        	self.advance_robot = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.advance_robot.insert(0,'0.040')
+		advance_robot = self.advance_robot.get()
+		 # Robot's maximum angle  
+                self.label_max_angle_robot = tk.Label(self.topLevelWindow,text =  "Robot's maximum turn angle")
+                self.max_angle_robot = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+                self.max_angle_robot.insert(0,'0.7854')
+                max_angle_robot = self.max_angle_robot.get()
+      		# Robot's radio  
+		self.label_radio_robot = tk.Label(self.topLevelWindow,text =  "Robot's radio")
+        	self.radio_robot = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.radio_robot.insert ( 0, '0.03' )
+		radio_robot = self.radio_robot.get()
+      		# Robot's pose x  
+		self.label_robot_posex = tk.Label(self.topLevelWindow,text =  "Robot's pose x")
+        	self.robot_posex = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.robot_posex.insert ( 0, '4.000' )
+		pose_x = self.robot_posex.get()
+      		# Robot's pose y  
+		self.label_robot_posey = tk.Label(self.topLevelWindow,text =  "Robot's pose y")
+        	self.robot_posey = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.robot_posey.insert ( 0, '5.000' )
+		pose_y = self.robot_posey.get()
+      		# Robot's angle  
+		self.label_robot_angle = tk.Label(self.topLevelWindow,text =  "Robot's angle")
+        	self.robot_angle = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.robot_angle.insert ( 0, '0.000' )
+		pose_tetha = self.robot_angle.get()
+      		# Robot's command  
+		self.label_robot_command = tk.Label(self.topLevelWindow,text =  "Robot's command")
+        	self.robot_command = tk.Entry(self.topLevelWindow, width = 40, foreground='white',background='black')
+		self.robot_command.insert ( 0,"../motion_planner/GoTo_State_Machine")
+		robot_command = self.robot_command.get()
+      		# Number of steps  
+		self.label_number_steps = tk.Label(self.topLevelWindow,text =  "Number of Steps")
+        	self.number_steps = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		self.number_steps.insert ( 0, str(number_steps_total) )
+		number_steps = self.number_steps.get()
+      		# Selection of behavior  
+		self.label_selection = tk.Label(self.topLevelWindow,text =  "Behavior Selection --------------------------->>>>")
+        	self.selection = tk.Entry(self.topLevelWindow, width = 8, foreground='green',background='yellow')
+		self.selection.insert ( 0, '3' )
+		selection = self.selection.get()
+      		# Largest value sensor  
+		self.label_largest = tk.Label(self.topLevelWindow,text =  "Largest value sensor")
+        	self.largest = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+		#self.largest.insert ( 0, '0.3' )
+		self.largest.insert ( 0, '0.1' )
+		largest = self.largest.get()
+		# Number of generations  
+                self.label_generations = tk.Label(self.topLevelWindow,text =  "Number of Generations")
+                self.generations = tk.Entry(self.topLevelWindow, width = 8, foreground='white',background='black')
+                self.generations.insert ( 0, '1' )
+                num_generations = self.generations.get()
+		# Stochastic Outputs
+                self.label_pr_out = tk.Label(self.topLevelWindow,text =  'Stochastic Outputs')
+		self.pr_out = tk.Entry(self.topLevelWindow, width = 2, foreground='white',background='black')
+                self.pr_out.insert ( 0, '0' )
+		# Individual number
+                self.label_number_individual = tk.Label(self.topLevelWindow,text =  'Processing Individual')
+                self.num_ind = tk.Entry(self.topLevelWindow, width = 2, foreground='white',background='black')
+                self.num_ind.insert ( 0, '0' )
+		# Evaluation Individual 
+                self.label_evaluation_individual = tk.Label(self.topLevelWindow,text =  'Evaluation Individual')
+                self.evaluation_ind = tk.Entry(self.topLevelWindow, width = 6, foreground='white',background='black')
+                self.evaluation_ind.insert ( 0, '0' )
+
+
+
+
+		# Add noise
+		flg_noise = self.add_noise.get()
+		#print "noise ",str(flg_noise)
+		new_generation = self.generation.get()
+
+	
+
+#--------------------------- G R I D S ------------------------------------------------------------- 
+
+
+		self.label_robot_command.grid({'row':0, 'column': 0})        
+		self.robot_command.grid({'row':0, 'column': 1})        
+        	#self.ExecuteButton.grid({'row':4, 'column': 0})
+		self.label_path.grid({'row':1, 'column': 0})        
+		self.path.grid({'row':1, 'column': 1})        
+		self.label_file.grid({'row':2, 'column': 0})        
+		self.file.grid({'row':2, 'column': 1})        
+		self.label_file_robot.grid({'row':3, 'column': 0})        
+		self.file_robot.grid({'row':3, 'column': 1})        
+		self.label_delay.grid({'row':0, 'column': 3})        
+		self.delay.grid({'row':0, 'column': 4})        
+        	self.MapButton.grid({'row':5, 'column': 0})
+        	self.RobotButton.grid({'row':6, 'column': 0})
+		self.EvaluateButton.grid({'row':8, 'column': 4})
+		self.TrainingButton.grid({'row':8, 'column': 5})
+		self.Movement.grid({'row':0, 'column': 2})
+		self.sensor.grid({'row':1, 'column': 2})
+		self.noise.grid({'row':2, 'column': 2})
+		self.new_gen.grid({'row':3, 'column': 2})
+		self.label_num_sensors.grid({'row':1, 'column': 3})        
+		self.num_sensors.grid({'row':1, 'column': 4})        
+		self.label_origen_angle.grid({'row':2, 'column': 3})        
+		self.origen_angle.grid({'row':2, 'column': 4})        
+		self.label_range_angle.grid({'row':3, 'column': 3})        
+		self.range_angle.grid({'row':3, 'column': 4})        
+		self.label_radio_robot.grid({'row':4, 'column': 3})        
+		self.radio_robot.grid({'row':4, 'column': 4})        
+		self.label_advance_robot.grid({'row':5, 'column': 3})        
+		self.advance_robot.grid({'row':5, 'column': 4})        
+		self.label_max_angle_robot.grid({'row':6, 'column': 3})        
+		self.max_angle_robot.grid({'row':6, 'column': 4})        
+		self.label_robot_posex.grid({'row':4, 'column': 1})        
+		self.robot_posex.grid({'row':4, 'column': 2})        
+		self.label_robot_posey.grid({'row':5, 'column': 1})        
+		self.robot_posey.grid({'row':5, 'column': 2})        
+		self.label_robot_angle.grid({'row':6, 'column': 1})        
+		self.robot_angle.grid({'row':6, 'column': 2})        
+		self.label_number_steps.grid({'row':7, 'column': 3})        
+		self.number_steps.grid({'row':7, 'column': 4})        
+		self.label_selection.grid({'row':7, 'column': 1})        
+		self.selection.grid({'row':7, 'column': 2})        
+		self.label_largest.grid({'row':8, 'column': 2})        
+		self.largest.grid({'row':8, 'column': 3})        
+		self.label_generations.grid({'row':8, 'column': 0})        
+		self.generations.grid({'row':8, 'column': 1})        
+		self.label_vq.grid({'row':7, 'column': 5})        
+		self.size_vq.grid({'row':7, 'column': 6})        
+		self.vq.grid({'row':8, 'column': 6})        
+		self.label_pr_out.grid({'row':6, 'column': 5})        
+		self.pr_out.grid({'row':6, 'column': 6})        
+		self.label_number_individual.grid({'row':5, 'column': 5})        
+		self.num_ind.grid({'row':5, 'column': 6})        
+		self.label_evaluation_individual.grid({'row':4, 'column': 5})        
+		self.evaluation_ind.grid({'row':4, 'column': 6})        
+
+		self.TestButtonFSM.grid({'row':0, 'column': 7})
+		self.TestButtonFSMGEN.grid({'row':1, 'column': 7})
+		self.TestButtonFSMSTGEN.grid({'row':2, 'column': 7})
+		self.TestButtonREACTIVEGEN.grid({'row':3, 'column': 7})
+		self.TestButtonREACTIVESTGEN.grid({'row':4, 'column': 7})
+		self.TestButtonPOTENTIALSGEN.grid({'row':5, 'column': 7})
+		self.TestButtonHMMGEN.grid({'row':6, 'column': 7})
+		self.TestButtonMDPGEN.grid({'row':7, 'column': 7})
+		self.TestButtonNNGEN.grid({'row':0, 'column': 8})
+		self.TestButtonNNSTGEN.grid({'row':1, 'column': 8})
+		self.TestButtonRNNGEN.grid({'row':2, 'column': 8})
+		self.TestButtonRNNSTGEN.grid({'row':3, 'column': 8})
+		self.DemoButtonPath.grid({'row':8, 'column': 8})
+    
+    		if num_behavior == 0:
+			self.ButtonPath(1)
+   
+#___________________________________________________________________________________________________ 
+
+
+
+
+    	#C.delete(polygon)
+    	C.bind("<Button-1>", callback_mouse_1)
+    	C.bind("<Button-2>", callback_mouse_2)
+    	C.bind("<Button-3>", callback_mouse_3)
+    	C.pack()
+    	initial(self)
+    	self.read_file_map(1)
+
+
+
+
+    def plot_test(self):
+	global C
+
+
+	id = C.create_rectangle(0, 0, DIM_CANVAS_X, DIM_CANVAS_Y, fill= "blue")
+    	coord = 10, 50, 40, 80
+    	arc = C.create_arc(coord, start=0, extent=150, fill="red")
+    	points = [150, 100, 200, 120, 240, 180, 210, 200, 150, 150, 100, 200]
+    	polygon = C.create_polygon(points, outline='black', fill='red', width=1)
+    	points = [1.50, 1.00, 2.00, 1.20, 2.40, 1.80, 2.10, 2.00, 1.50, 1.50, 1.00, 2.00]
+    	self.plot_polygon(6, points)
+    	oval = C.create_oval(300, 300, 380, 380, outline="black", fill="red", width=2)
+    	line = C.create_line(30, 300, 100, 280,  fill="red", arrow="last")
+    	self.plot_robot()
+
+
+    def plot_polygon(self,num, data):
+	global C
+
+	XY= data
+	#print "plot_polygon ",num
+	for i in range(0, num):
+		j=i*2 
+		
+		#print "data j ",j," x",data[j]," y ",data[j+1]
+		X = ( DIM_CANVAS_X * data[j] ) / dim_x
+		Y = DIM_CANVAS_Y - ( DIM_CANVAS_Y * data[j+1] ) / dim_y
+		XY[j]=X;
+		XY[j+1]=Y;
+		#print "j ",j," X",XY[j]," Y ",XY[j+1]
+
+	polygon = C.create_polygon(XY, outline='black', fill='red', width=1)
+	return polygon
+
+    def plot_line(self,x1,y1,x2,y2,color,flg):
+        global C
+
+        #print "plot_line "
+
+        #print "x1 ",x1," y1 ",y1
+        X1 = ( DIM_CANVAS_X * x1 ) / dim_x
+        Y1 = DIM_CANVAS_Y - ( DIM_CANVAS_Y * y1 ) / dim_y
+        #print "X1 ",X1," Y1 ",Y1
+
+        #print "x2 ",x2," y2 ",y2
+        X2 = ( DIM_CANVAS_X * x2 ) / dim_x
+        Y2 = DIM_CANVAS_Y - ( DIM_CANVAS_Y * y2 ) / dim_y
+        #print "X2 ",X2," Y2 ",Y2
+
+	if flg == 1:
+		line = C.create_line(X1,Y1,X2,Y2,fill=color, arrow="last")
+	else:
+		line = C.create_line(X1,Y1,X2,Y2,fill=color)
+		id = C.create_rectangle(X2,Y2,X2+1,Y2+1, fill= "white", outline="white")
+
+
+    def plot_oval(self,x,y):
+        global C
+	global radio_robot
+
+
+        CNT=5.0
+        #print "plot robot pose_tetha ",pose_tetha
+        X = ( DIM_CANVAS_X * x ) / dim_x
+        Y = DIM_CANVAS_Y - ( DIM_CANVAS_Y * y ) / dim_y
+        ROBOT_radio = ( DIM_CANVAS_X * radio_robot ) / dim_x
+        #X1 = X - ROBOT_radio/2
+        #Y1 = Y - ROBOT_radio/2
+        #X2 = X + ROBOT_radio/2
+        #Y2 = Y + ROBOT_radio/2
+        X1 = X - 1.5*ROBOT_radio
+        Y1 = Y - 1.5*ROBOT_radio
+        X2 = X + 1.5*ROBOT_radio
+        Y2 = Y + 1.5*ROBOT_radio
+        #print "X1 ", X1, " Y1 ", Y1
+        #print "X2 ", X2, " Y2 ", Y2
+        oval = C.create_oval(X1,Y1,X2,Y2, outline="black",fill="yellow", width=1)
+
+
+    def plot_robot(self):
+        global C
+	global pose_x
+	global pose_y
+	global radio_robot
+	global pose_tetha
+
+
+	CNT=5.0
+	#print "plot robot pose_tetha ",pose_tetha
+	X = ( DIM_CANVAS_X * pose_x ) / dim_x
+	Y = DIM_CANVAS_Y - ( DIM_CANVAS_Y * pose_y ) / dim_y
+	ROBOT_radio = ( DIM_CANVAS_X * radio_robot ) / dim_x
+	X1 = X - ROBOT_radio/2
+	Y1 = Y - ROBOT_radio/2
+	X2 = X + ROBOT_radio/2
+	Y2 = Y + ROBOT_radio/2
+	#print "X1 ", X1, " Y1 ", Y1
+	#print "X2 ", X2, " Y2 ", Y2
+	#oval = C.create_oval(X1,Y1,X2,Y2, outline="black",fill="red", width=1)
+	oval = C.create_oval(X1,Y1,X2,Y2, outline="black",fill="black", width=1)
+	#X1 = X 
+	#Y1 = Y
+	#Y2 = Y - CNT*ROBOT_radio*math.sin(pose_tetha)
+	#print "sen ", pose_tetha, " = ",math.sin(pose_tetha)
+	#line = C.create_line(X1,Y1,X2,Y2,fill="black", arrow="last")
+
+
+	x1 = pose_x
+        y1 = pose_y
+	angle_robot = pose_tetha
+        tetha = angle_robot + start_angle
+        x2 = x1 + (dim_x/25)*math.cos(angle_robot)
+        y2 = y1 + (dim_y/25)*math.sin(angle_robot)
+        self.plot_line(x1,y1,x2,y2,"black",1)
+
+
+
+	mouse_3_x = pose_x
+	mouse_3_y = pose_y
+
+
+
+    def read_file_map(self,flg):
+        global pose_x
+        global pose_y
+        global pose_tetha
+        global C
+        global num_pol
+        global polygons
+	global PATH
+	global dim_x 
+	global dim_y
+
+
+        id = C.create_rectangle(0, 0, DIM_CANVAS_X, DIM_CANVAS_Y, fill= "green")
+
+	PATH = self.path.get()
+	File_Name = self.file.get()
+
+	#print 'Path ',PATH 
+	#print 'File ',File_Name
+
+	FILE = PATH + File_Name + '.wrl'
+
+        file = open(FILE, 'r')
+
+        for line in file:
+                #print line,
+                words = line.split()
+                data = words
+                #print len(words)
+                #for i in range(0, len(words)):
+                        #print words[i]
+		if len(words) > 1:
+			if words[0] == ";(":
+				j=0
+			elif words[1] == "dimensions":
+				dim_x = float(words[3])
+				dim_y = float(words[4])
+				#print 'dim_x ',dim_x, 'dim_y ',dim_y
+
+
+                	elif words[1] == "polygon":
+                        	j=0
+                        	data = [0] * (len(words) - 5)
+                        	for i in range(4, len(words) -1):
+                                	#print words[i]
+                                	data[j] = float(words[i])
+                                	j=j+1
+
+                        	j=j+1
+                        	num = j / 2
+				if flg == 1:
+                        		polygons.append(self.plot_polygon(num,data))
+                        		num_pol = num_pol + 1
+				else:
+					self.plot_polygon(num,data)
+
+
+
+    def read_file(self,flg):
+	global pose_x
+	global pose_y
+	global pose_tetha
+	global C
+	global num_pol
+	global polygons
+	global flg_mov
+	global flg_sensor
+	global delay
+	global dim_x
+	global dim_y
+	global angle_robot
+	global radio_robot
+	global number_steps_total
+
+
+
+	PATH = self.path.get()
+        File_Name_robot = self.file_robot.get()
+        FILE = PATH + File_Name_robot + '.raw'
+        file = open(FILE, 'r')
+	
+	C.update_idletasks() # it updates the ide data
+	delay = float(self.delay.get())
+	flg_mov = self.var_mov.get()
+	flg_sensor = self.var_sensor.get()
+	number_steps = self.number_steps.get()
+        number_steps_total = float(number_steps)
+        num_steps = 1
+
+	for line in file:
+    		#print line,
+		words = line.split()
+		data = words
+		#print len(words)
+		#for i in range(0, len(words)):
+			#print words[i]
+		if len(words) > 1:
+		  if words[0] == ";(":
+                                j=0
+
+		  elif words[1] == "polygon":
+			j=0
+			data = [0] * (len(words) - 5)
+                        for i in range(4, len(words) -1):
+				#print words[i]
+				data[j] = float(words[i])
+				j=j+1 
+				
+			j=j+1 
+			num = j / 2
+			if flg == 1:
+                        	polygons.append(self.plot_polygon(num,data))
+                        	num_pol = num_pol + 1
+                        else:
+                        	self.plot_polygon(num,data)
+
+
+		  elif words[1] == "dimensions":
+                                dim_x = float(words[3])
+                                dim_y = float(words[4])
+                                #print 'dim_x ',dim_x, 'dim_y ',dim_y
+
+		  elif words[1] == "radio_robot":
+                                radio_robot = float(words[2])
+                                #print 'radio robot ',radio_robot
+
+    			
+		  elif words[1] == "delete":
+			for i in range(0,num_pol):
+				C.delete(polygons[i])
+
+		  elif words[1] == "destination":
+                        x = float(words[2])
+                        y = float(words[3])
+			self.plot_oval(x,y)
+
+
+		  elif words[1] == "robot":
+			pose_x = float(words[3])
+			pose_y = float(words[4])
+			pose_tetha = float(words[5])
+			angle_robot = pose_tetha
+			str_angle = ("%3.4f" % angle_robot).strip()
+			self.robot_angle.delete(0, END)
+        		self.robot_angle.insert(0,str_angle)
+			self.robot_posex.delete(0, END)
+			self.robot_posex.insert (0, words[3] )
+			self.robot_posey.delete(0, END)
+			self.robot_posey.insert (0, words[4] )
+			str_num_steps = ("%4d" % num_steps).strip()
+			self.number_steps.delete(0, END)
+        		self.number_steps.insert(0,str_num_steps)
+			num_steps = num_steps + 1
+
+			if flg_mov == 1:
+				id = C.create_rectangle(0, 0, DIM_CANVAS_X, DIM_CANVAS_Y, fill= "green")
+				self.read_file_map(0)
+
+			self.plot_robot()
+			if self.var_mov.get() == 0:
+				C.update_idletasks()
+			else:
+				if flg_sensor == 0:
+					C.update_idletasks()
+
+
+
+			if flg_mov == 1:
+				time.sleep(delay/2.0) # delays seconds
+
+		  elif words[1] == "sensor":
+		    if words[2] == "laser":
+		     if flg_sensor == 1:
+			if flg_mov == 1:
+				id = C.create_rectangle(0, 0, DIM_CANVAS_X, DIM_CANVAS_Y, fill= "green")
+				self.read_file_map(0)
+
+			self.plot_robot()
+
+			num = int(words[3])
+
+			range_angle = float(words[4])
+			start_angle = float(words[5])
+			if num == 1:
+				delta_angle = range_angle 
+			else:
+				delta_angle = range_angle / (num - 1)
+			#print "num ", num, "Range Measurments ", range_angle
+			#print "Start angle ", start_angle, " Delta Angle ", delta_angle
+
+			x1 = pose_x 
+       			y1 = pose_y
+			tetha = angle_robot + start_angle
+			x2 = x1 + (dim_x/10)*math.cos(angle_robot)
+                        y2 = y1 + (dim_y/10)*math.sin(angle_robot)
+                        #self.plot_line(x1,y1,x2,y2,"red",1)
+			#print "sensor pose tetha ",pose_tetha
+			#print "sensor angle_robot ",angle_robot
+			#print "Origen Tetha ", tetha
+			#print "sen ", tetha, " = ",math.sin(tetha)
+
+			data = [0] * (len(words) - 5)
+			j=0
+                        for i in range(6, len(words) -1):
+                                #print words[i]
+				#print "Tetha ", j," ",tetha
+                                data[j] = float(words[i])
+        			x2 = x1 + data[j]*math.cos(tetha)
+        			y2 = y1 + data[j]*math.sin(tetha)
+				self.plot_line(x1,y1,x2,y2,"blue",0)
+                                j=j+1
+				tetha = tetha + delta_angle
+				#print "sen ", tetha, " = ",math.sin(tetha)
+
+
+			C.update_idletasks()
+			if flg_mov == 1:
+				time.sleep(delay/2.0) # delays seconds
+
+	file.close()
+	self.number_steps.delete(0, END)
+       	self.number_steps.insert(0,number_steps)
+
+
+
+#------------------------------------------------------------------------------------------
+
+    def readResultFile(self,File_Results,File_Constants,num):
+
+	      global advance_robot;
+	      global number_steps_total
+	      global num_steps
+
+
+	      class Cnts:
+
+                def __init__(self):
+
+                        #print '***  Constants **** '
+
+			 #evaluation = Ct.K1*(number_steps_total - num_steps)*dif_o + Ct.K2*(number_steps_total - num_steps)*(dif_o_d-dif_d) + 
+			 #Ct.K3*dif_o_d/num_steps + Ct.K4*(number_steps_total - num_steps)/num_backwards + 
+			 #Ct.K5*(number_steps_total - num_steps)/num_turns + Ct.K6*(number_steps_total - num_steps)/num_stops +
+			 #Ct.K7*num_advance*(number_steps_total - num_steps)
+			
+		# dif_o= math.sqrt( math.pow( (xo -x),2)+math.pow( (yo -y),2))
+                # dif_d= math.sqrt(math.pow( (xd -x),2)+math.pow( (yd -y),2))
+                # dif_o_d= math.sqrt(math.pow( (xd -xo),2)+math.pow( (yd -yo),2))
+
+		# evaluation = Ct.K1*abs(number_steps_total - num_steps + 1)*dif_o + Ct.K2*(dif_o_d-dif_d)*(number_steps_total - num_steps 1) + Ct.K3*dif_o_d/num_steps
+
+		# evaluation = Ct.K1*abs((number_steps_total - num_steps + 1)*dif_o) + Ct.K2*abs((dif_o_d-dif_d)*(number_steps_total - num_steps + 1)) + Ct.K3*abs(dif_o_d/num_steps) + Ct.K4*(number_steps_total - num_steps+1)/num_backwards
+
+	      #evaluation = Ct.K1*abs((number_steps_total - num_steps + 1)*dif_o) + (Ct.K2/dif_d)*(number_steps_total - num_steps + 1) + Ct.K3*abs(dif_o_d/num_steps) + Ct.K4*(number_steps_total - num_steps+1)/num_backwards
+
+	      #evaluation = Ct.K1*abs((number_steps_total - num_steps + 1)*dif_o) + (Ct.K2*abs(number_steps_total - num_steps + 1))/dif_d + Ct.K3*abs(dif_o_d/num_steps) + Ct.K4*(number_steps_total - num_steps+1)/num_backwards + Ct.K8*sd
+
+                        #self.K1 = 1.0 #0.1
+                        #self.K2 = 10.0 #10.0  
+                        #self.K3 = 100.0 #0.0
+                        #self.K4 = 1.0 #0.1
+                        #self.K5 = 0.1 #0.1
+                        #self.K6 = 0.0 #1.0
+                        #self.K7 = 0.1 #.10
+			
+			self.K0 = 1.0
+                        self.K1 = 10.0 * self.K0 #0.1
+                        self.K2 = 2.0 * self.K0 #10.0  
+                        self.K3 = 0.0 #0.0
+                        self.K4 = 0.0 #0.1
+                        self.K5 = 0.0 #0.1
+                        self.K6 = 0.0 #1.0
+                        self.K7 = 0.0 #.10
+                        self.K8 = 11.0 * self.K0 #.10
+
+
+
+
+	      class Constants:
+
+		def __init__(self, File_Constants):
+
+			file_constants = open(File_Constants, 'r')
+              		#print '***  File_Constants **** ',File_Constants
+
+
+              		#evaluation = K1*(dif_o) + K2/(dif_d) + K3*dif_o_d/num_steps + 
+              		#             K4/num_backwards + K5/num_turns + 
+              		#             K6*num_steps_total/num_stops + K7*num_advance
+
+              		for line in file_constants:
+                        	#print line,
+                        	words = line.split()
+                        	#data = words
+                        	#print len(words)
+                        	#for i in range(0, len(words)):
+                                	#print words[i]
+
+			 	if len(words) > 1:
+                                	if words[0] == "#":
+                                        	xo = 0 
+                                	elif words[0] == "K1":
+                                        	self.K1 = float(words[1])
+						#print 'K1 ', str(self.K1)
+                                	elif words[0] == "K2":
+                                        	self.K2 = float(words[1])
+						#print 'K2 ',str(self.K2)
+                                	elif words[0] == "K3":
+                                        	self.K3 = float(words[1])
+						#print 'K3 ',str(self.K3)
+                                	elif words[0] == "K4":
+                                        	self.K4 = float(words[1])
+						#print 'K4 ',str(self.K4)
+                                	elif words[0] == "K5":
+                                        	self.K5 = float(words[1])
+						#print 'K5 ',str(self.K5)
+                                	elif words[0] == "K6":
+                                        	self.K6 = float(words[1])
+						#print 'K6 ',str(self.K6)
+                                	elif words[0] == "K7":
+                                        	self.K7 = float(words[1])
+						#print 'K7 ',str(self.K7)
+
+	      				#self.K1 = 1.0
+	      				#self.K2 = 60.0
+	      				#self.K3 = 1.0
+	      				#self.K4 = 30.0
+	      				#self.K5 = 0.0
+	      				#self.K6 = 10
+	      				#self.K7 = 10.0
+
+			file_constants.close()
+
+
+	      Ct = Cnts()
+
+	      #print 'num ',str(num)
+	      #if num == 0:
+	      	#Ct = Constants(File_Constants)
+	
+
+
+       	      file_results = open(File_Results, 'r')
+	      #print 'File_Results ',File_Results
+
+	      num_backwards = 1
+	      num_advance = 1
+	      num_turns = 1
+	      num_stops = 1
+	      previous_angle = 0.0
+	      previous_advance = 0.0
+	      previous_x = 0.0
+	      previous_y = 0.0
+	      THRESHOLD_MOVEMENT = 0.001
+	      num_steps_total = float(self.number_steps.get())
+
+	      threshold_noise = advance_robot/2
+              threshold_angle = max_angle_robot/2
+	      #print "threshold noise ",str(threshold_noise)
+	      #print "threshold angle ",str(threshold_angle)
+	      PATH = self.path.get()
+              #print 'Evaluate Robot PATH ',PATH
+              File_Name = self.file.get()
+
+	      xx=[]
+	      yy=[]
+
+
+	      for line in file_results:
+                	#print line,
+                	words = line.split()
+                	data = words
+                	#print len(words)
+                	#for i in range(0, len(words)):
+                        	#print words[i]
+			if len(words) > 1:
+                  		if words[1] == "origen":
+                                	xo = float(words[2])
+                                	yo = float(words[3])
+                                	zo = float(words[4])
+                                	#print 'xo ',xo, ' yo ',yo,' zo ',zo
+                  		elif words[1] == "robot":
+                                	x= float(words[3])
+					xx.append(x)
+                                	y= float(words[4])
+					yy.append(y)
+                                	tetha= float(words[5])
+              				#print 'robot x ',x, ' y ',y,' angle ',tetha
+				        difx = (x-previous_x)	
+				        dify = (y-previous_y)
+					mag = math.sqrt(pow(difx,2)+pow(dify,2))	
+					if mag < THRESHOLD_MOVEMENT:
+						num_stops=num_stops + 1
+					previous_x=x
+					previous_y=y
+					#print "Magnitude ", str(mag)," num_stops ",str(num_stops)
+
+						
+                  		elif words[1] == "destination":
+                                	xd= float(words[2])
+                                	yd= float(words[3])
+                                	#print 'xd ',xd, ' yd',yd
+                  		elif words[1] == "distance":
+                                	distance= float(words[2])
+                                	#print 'distance ',distance
+                  		elif words[1] == "num_steps":
+					num_steps= float(words[2])-1
+                                	#print 'num_steps ',num_steps
+                  		elif words[1] == "movement":
+                                	angle= float(words[2])
+                                	advance= float(words[3])
+                                	#print 'angle ',str(angle),' advance ',str(advance)
+					if(advance < -threshold_noise):
+						num_backwards=num_backwards + 1
+                                		#print ' advance ',str(advance)
+
+					if(abs(angle) >= threshold_angle and abs(previous_angle) >= threshold_angle):
+                                                num_turns=num_turns + 1
+
+                                        if(advance >= threshold_noise and previous_advance >= threshold_noise):
+                                                num_advance=num_advance + 1
+                                		#print ' advance ',str(advance),' prev. advance ',str(previous_advance)
+
+					#if(angle == 0.0 and advance == 0.0):
+						#num_stops=num_stops + 1
+
+					previous_angle = angle
+					previous_advance = advance		
+
+
+	      sdx = np.std(xx)
+	      sdy = np.std(yy)
+	      sd = sdy + sdx
+	      #print 'std ', str(sd)
+
+	
+              #print 'final position x ',x, ' y ',y,' angle ',tetha
+	      dif_o= math.sqrt( math.pow( (xo -x),2)+math.pow( (yo -y),2))
+	      dif_d= math.sqrt(math.pow( (xd -x),2)+math.pow( (yd -y),2))
+	      dif_o_d= math.sqrt(math.pow( (xd -xo),2)+math.pow( (yd -yo),2))
+
+	      command = "../Dijkstra/Dijkstra -x " + str(x) + " -y " + str(y) + " -v " + str(xd) + " -z " + str(yd) + " -p " + PATH + " -e " + File_Name + " > " + PATH + "rslt_" + BEHAVIOR + ".dat"
+              #print "Dijkstra command: ", command
+              status = os.system(command)
+
+	      #command = "tail rslt.dat"
+              #status = os.system(command)
+	      FILE = PATH + "rslt_" + BEHAVIOR + ".dat"
+	      if(os.path.isfile(FILE)):
+	      		file = open(FILE, 'r')
+	      		dummy = file.readline()
+              		distance_Dijkstra = float(file.readline())
+	      		#print 'dif_d ',str(dif_d), ' distance_Dijkstra ',str(distance_Dijkstra)
+	      		file.close()
+	      else:
+			distance_Dijkstra = 0
+			#print "File does not exists " + FILE
+	      dif_d = dif_d + distance_Dijkstra
+	      #print 'dif_d ',str(dif_d)
+	      ##print 'dif_o ',str(dif_o)
+			
+		
+
+
+
+	      #evaluation = Ct.K1*(number_steps_total - num_steps)*dif_o + Ct.K2*(dif_o_d-dif_d)*(number_steps_total - num_steps) + Ct.K3*dif_o_d/num_steps + Ct.K4*(number_steps_total - num_steps)/num_backwards + Ct.K5*(number_steps_total - num_steps)/num_turns + Ct.K6*(number_steps_total - num_steps)/num_stops + Ct.K7*num_advance*(number_steps_total - num_steps)
+
+
+	      evaluation = Ct.K1*abs((number_steps_total - num_steps + 1)*dif_o) + (Ct.K2*abs(number_steps_total - num_steps + 1))/dif_d + Ct.K3*abs(dif_o_d/num_steps) + Ct.K4*(number_steps_total - num_steps+1)/num_backwards + Ct.K8*sd
+	      #print 'number_steps_total ',str(number_steps_total)
+	      #print 'evaluation ',str(evaluation)
+
+
+#+ Ct.K3*dif_o_d + Ct.K4*(number_steps_total - num_steps)/num_backwards + Ct.K5*(number_steps_total - num_steps)/num_turns + Ct.K6*(number_steps_total - num_steps)/num_stops + Ct.K7*num_advance*(number_steps_total - num_steps)
+	      #evaluation = Ct.K1*(number_steps_total - num_steps)*dif_o + Ct.K2*(number_steps_total - num_steps)*(dif_o_d-dif_d) + Ct.K3*dif_o_d/num_steps + Ct.K4*(number_steps_total - num_steps)/num_backwards + Ct.K5*(number_steps_total - num_steps)/num_turns + Ct.K6*(number_steps_total - num_steps)/num_stops + Ct.K7*num_advance*(number_steps_total - num_steps)
+
+
+	      #print "dif_o ",str(dif_o)
+	      #print "dif_d ",str(dif_d)
+	      #print "dif_o_d ",str(dif_o_d)
+	      #evaluation = Ct.K1*dif_o/dif_o_d + Ct.K2/(dif_d*num_steps) + Ct.K3*dif_o_d/num_steps + Ct.K4/num_backwards + Ct.K5*num_steps/num_turns + Ct.K6*num_steps/num_stops + Ct.K7*num_advance/num_steps
+	      #evaluation = Ct.K1*(dif_o) + Ct.K2/(dif_d) + Ct.K3/num_steps + Ct.K4/num_backwards + Ct.K5/num_turns + Ct.K6*num_steps_total/num_stops + Ct.K7*num_advance
+	      #print 'dif_o ',str(dif_o),' dif_d ',str(dif_d),' dif_o_d ',str(dif_o_d),' num_steps ',num_steps
+	      #print 'Num. Backwards ',str(num_backwards),' Num. turns ',str(num_turns),' num_stops ',num_stops,' num_advance ',num_advance
+	      #print 'Evaluation ', evaluation
+
+
+	      file_results.close()
+
+	      return evaluation
+
+
+    def my_range(self,start, end, step):
+    	while start <= end:
+        	yield start
+        	start += step
+
+
+    def evaluate_worlds(self,File_Name_cpy,num_worlds,flg_save,flg_vq,BEHAVIOR):
+
+	     global mouse_1_x
+             global mouse_1_y
+             global mouse_3_x 
+             global mouse_3_y
+	     global flg_plt
+	     global num_training
+
+	     
+	     indi_evaluation = 0
+	     num_training = 0
+	     flg_out = 1
+
+             for j in range(1, num_worlds+1):
+
+                        # Reading file that contains random origens and destinations
+                        File_Name = File_Name_cpy + '_' + str(j)
+                        FILE = PATH + File_Name + '.ord'
+			#print "File points ",FILE
+
+                        file = open(FILE, 'r')
+                        num = int(file.readline())
+                        #print 'Num points ',str(num)
+                        evaluation = 0
+
+                        for i in range(0,num):
+                                # It reads the random origen and destinations
+                                ox = float(file.readline())
+                                oy = float(file.readline())
+                                dx = float(file.readline())
+                                dy = float(file.readline())
+#here random
+
+				rx=0
+				ry=0
+				#rx=uniform(-0.05,0.05)
+				#ry=uniform(-0.05,0.05)
+				r_tetha=uniform(0,3.1416)
+
+				ox=ox+rx
+				oy=oy+ry
+#here
+				angle_robot= r_tetha
+				#angle_robot=0
+
+                                #print str(i)
+                                #print str(i)," ox ",str(ox)," oy ",str(oy)
+                                #print "dx ",str(dx)," dy ",str(dy)
+                                mouse_1_x = ox
+                                mouse_1_y = oy
+                                mouse_3_x = dx
+                                mouse_3_y = dy
+                                #angle_robot = 0
+                                str_angle = ("%3.4f" % angle_robot).strip()
+                                self.robot_angle.delete(0, END)
+                                self.robot_angle.insert(0,str_angle)
+
+                                # It puts back the file names in the GUI
+                                self.file.delete(0, END)
+                                self.file.insert(0,File_Name)
+                                self.file_robot.delete(0, END)
+                                self.file_robot.insert(0,File_Name)
+
+                                # It test the robot
+                                flg_plt = 0
+                                self.togglePlotExecute(1,BEHAVIOR)
+
+                                File_Results = PATH + File_Name + '_' + BEHAVIOR + '.raw'
+                                #print 'Results Robot File_Name ',File_Results
+
+                                File_Constants = PATH + 'Constants.txt'
+
+                                partial_evaluation = self.readResultFile(File_Results,File_Constants,i)
+                                #print str(i),'Partial evaluation ',partial_evaluation
+                                evaluation = partial_evaluation + evaluation
+				if flg_save == 1:
+					#it collects the trainning files
+					num_training = num_training + 1
+                                	File_training = PATH + 'training_random' + '_' + str(num_training) + '.raw'
+					# It copies the last *.raw  and *wrl files of this evaluation
+          				command = "cp " + File_Results  + " " + File_training 
+          				#print "cp command: ", command
+          				status = os.system(command)
+
+				if flg_vq == 1:
+                                        #it collects the trainning files for VQ
+                                        #File_training = PATH + 'training_' + str(num_training) + '.dat'
+                                        File_training = PATH + 'images_training_laser_' + str(num_training) + '.raw'
+                                        File_Results = PATH + 'training.dat' 
+                                        # It copies the last training.dat 
+                                        command = "cp " + File_Results  + " " + File_training
+                                        status = os.system(command)
+                                        #print "Training cp command: ", command
+
+
+
+
+                        file.close()
+
+             		evaluation = evaluation / num
+                        indi_evaluation = indi_evaluation + evaluation
+
+
+             indi_evaluation = indi_evaluation / num_worlds
+             #print 'world evaluation ',indi_evaluation
+
+	     return indi_evaluation
+
+
+# Functions that handle the buttons
+    def toggleTraining(self):
+        global PATH
+        global File_Name
+        global mouse_1_x
+        global mouse_1_y
+        global mouse_3_x
+        global mouse_3_y
+        global angle_robot
+        global flg_plt
+        global advance_robot
+        global max_angle_robot
+        global largest
+        global new_generation
+        global total_num_generations
+        global num_training
+        global previous_num_generations
+
+
+        print 'Training VQ'
+
+        advance_robot = float(self.advance_robot.get())
+        max_angle_robot = float(self.max_angle_robot.get())
+        largest = float(self.largest.get())
+
+	PATH = self.path.get()
+        File_Name = self.file.get()
+        File_Name_cpy = File_Name
+
+
+	self.TrainingButton['bg'] = 'red'
+        self.TrainingButton['activebackground'] = 'red'
+        C.update_idletasks()
+
+
+	# Worlds variables
+        #num_worlds = 10
+        num_worlds = 20
+        #num_points_worlds = 10
+        num_points_worlds = 20
+        num_obstacles = 20
+        size_obstacles = 0.12
+        #flg_worlds = 1 # put this flag to 1 if in every generation new environments are created
+        flg_worlds = 1 # put this flag to 1 if in every generation new environments are created
+	PATH = self.path.get()
+	#File_Name = self.file.get()
+	File_Name = 'random_tr'
+        File_Name_cpy = File_Name
+
+        FILE = PATH + File_Name + '.ord'
+
+	# Noise Ranges
+        y = 0.05*max_angle_robot
+        x = 0.1*advance_robot
+        z = largest/100
+        zdst = largest/1000
+	intensity = 5.
+	#sdst_intensity = 1.0
+	theta = 2*3.1416/100
+
+
+	# It generates the noise probability file
+        #print 'Noise advance ',x,' angle ',y,' sensors ',z     
+        # Probability file for adding noise
+        file_name_prb = 'random_settings_advance_angle_sensors.dat'
+        FILE_PRB = PATH + file_name_prb
+        file_prb = open(FILE_PRB,'w')
+        # Uniform error for advance
+        #range_1 = 0.0
+        range_1 = -x
+        range_2 = x
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for rotation
+        #range_1 = 0.0
+        range_1 = -y
+        range_2 = y
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Gausian error for the laser sensor
+        range_1 = z # mean
+        range_2 = zdst # standar desviation
+        value = '1 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for the light intensity sensor
+        range_1 = - intensity 
+        range_2 = intensity 
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+	# Uniform error for light position
+        #range_1 = 0.0
+        range_1 = -theta
+        range_2 = theta
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+
+        file_prb.close()
+
+
+        #it generates new environments and new origen and destination points
+        if flg_worlds == 1:
+                        command = "../generate/generate -f " + File_Name + " -r 0.03 -m " + str(num_obstacles) + " -o " + str(size_obstacles) + " -dx 2.0 -dy 2.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds) + " > " + PATH + "generate.dat"
+                        #command = "../generate/generate -f " + File_Name + " -r 0.03 -m " + str(num_obstacles) + " -o " + str(size_obstacles) + " -dx 2.0 -dy 2.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds)
+
+                        print "Command generate: ", command
+                        status = os.system(command)
+
+
+	# It evaluates the human state machine
+        self.robot_command.delete(0, END)
+        self.robot_command.insert ( 0,"../motion_planner/GoTo_State_Machine")
+        self.selection.delete(0, END)
+        self.selection.insert ( 0, '3' )
+	pr_vq = self.vq.get()
+        self.vq.delete(0, END)
+        self.vq.insert ( 0, '0' )
+	num_centroids = self.size_vq.get()
+
+
+        C.update_idletasks()
+	indi_STATE_MACHINE_HUMAN=self.evaluate_worlds(File_Name_cpy,num_worlds,1,1,BEHAVIOR)
+
+	command = "../pattern_recognition/vq_vision/vq_vision -f laser -m " + str(num_centroids) + " -e 0.0001 -p " + PATH
+	print "Command VQ: ", command
+        status = os.system(command)
+
+	# It puts back the file names in the GUI
+        self.file.delete(0, END)
+        self.file.insert(0,File_Name)
+	self.file_robot.delete(0, END)
+        self.file_robot.insert(0,File_Name)
+        self.vq.delete(0, END)
+        self.vq.insert ( 0, pr_vq )
+
+
+	self.ExecuteButton['bg'] = 'green'
+        self.ExecuteButton['activebackground'] = 'green'
+	self.TrainingButton['bg'] = 'green'
+        self.TrainingButton['activebackground'] = 'green'
+        C.update_idletasks()
+ 
+
+# Functions that handle the buttons
+
+    def ButtonPath(self,option):
+                        global INITIAL_PATH
+                        global ORIGINAL_PATH
+			global PREVIOUS_BEHAVIOR
+			global PREVIOUS_BEST_BEHAVIOR 
+
+
+                        self.TestButtonFSM ['bg'] = 'red'
+                        self.TestButtonFSM ['activebackground'] = 'red'
+                        self.path.delete(0, END)
+			if option == 0:
+                        	self.path.insert ( 0, ORIGINAL_PATH )
+                        	self.DemoButtonPath ['bg'] = 'red'
+                        	self.DemoButtonPath ['activebackground'] = 'red'
+			else:
+                        	self.path.insert ( 0, INITIAL_PATH )
+			
+
+    def toggleDemoButtonPath(self):
+
+	self.ButtonPath(0)	
+
+
+
+    # Test behavior human FSM
+    def toggleTestFSMBehaviors(self):
+	global BEHAVIOR
+	global BEST_BEHAVIOR
+	global num_bh
+	global st_out
+	global flg_vq 
+
+        num_bh = 3
+        st_out = 0
+	flg_vq = 0
+
+	BEHAVIOR = "fsm_human"
+        BEST_BEHAVIOR = "state_machine.txt"
+
+	self.put_buttons_green()
+        self.TestButtonFSM ['bg'] = 'red'
+        self.TestButtonFSM ['activebackground'] = 'red'
+
+	self.toggleTestBehaviors()
+        C.update_idletasks()
+
+
+    # Test behavior FSM deterministic generated by a genetic algorithm
+    def toggleTestFSMGenBehaviors(self):
+	global BEHAVIOR
+        global BEST_BEHAVIOR
+	global num_bh
+	global st_out
+	global flg_vq 
+
+        num_bh = 4
+        st_out = 0
+	flg_vq = 1
+	BEHAVIOR = "fsm"
+        BEST_BEHAVIOR = "state_machine_mem.txt"
+
+	self.put_buttons_green()
+        self.TestButtonFSMGEN ['bg'] = 'red'
+        self.TestButtonFSMGEN ['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+ # Test behavior FSM stochastic generate by a genetic algorithm
+    def toggleTestFSMSTGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+
+        num_bh = 9
+        st_out = 1
+        flg_vq = 1
+        BEHAVIOR = "fsm_st"
+        BEST_BEHAVIOR = "state_machine_mem_stochastic.txt"
+
+        self.put_buttons_green()
+        self.TestButtonFSMSTGEN ['bg'] = 'red'
+        self.TestButtonFSMSTGEN ['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+
+    # Test behavior Reactive table generated by a genetic algorithm
+    def toggleTestReactiveGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+
+        num_bh = 8
+        st_out = 0
+        flg_vq = 1
+
+	BEHAVIOR = "reactive"
+        BEST_BEHAVIOR = "reactive_table_vq.txt"
+        self.put_buttons_green()
+        self.TestButtonREACTIVEGEN ['bg'] = 'red'
+        self.TestButtonREACTIVEGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+      # Test behavior Reactive Stochastic table generated by a genetic algorithm
+    def toggleTestReactiveSTGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+
+
+        num_bh = 8
+        st_out = 1
+        flg_vq = 1
+
+	BEHAVIOR = "reactive_stochastic"
+        BEST_BEHAVIOR = "stochastic_reactive_table_vq.prb"
+        self.put_buttons_green()
+        self.TestButtonREACTIVESTGEN ['bg'] = 'red'
+        self.TestButtonREACTIVESTGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+     # Test behavior Potentials generated by a genetic algorithm
+    def toggleTestPotentialsGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+
+
+        num_bh = 5
+        st_out = 0
+        flg_vq = 1
+
+	BEHAVIOR = "potentials"
+        BEST_BEHAVIOR = "pot_cnt.txt"
+        self.put_buttons_green()
+        self.TestButtonPOTENTIALSGEN ['bg'] = 'red'
+        self.TestButtonPOTENTIALSGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+   # Test behavior HMM generated by a genetic algorithm
+    def toggleTestHMMGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+
+
+        num_bh = 10
+        st_out = 0
+        flg_vq = 1
+
+        BEHAVIOR = "hmm"
+        BEST_BEHAVIOR = "hmm_destination_avoidance_fsm.prb"
+        self.put_buttons_green()
+        self.TestButtonHMMGEN ['bg'] = 'red'
+        self.TestButtonHMMGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+
+   # Test behavior MDP generated by a genetic algorithm
+    def toggleTestMDPGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+
+
+        num_bh = 12
+        st_out = 0
+        flg_vq = 1
+
+        BEHAVIOR = "mdp"
+        BEST_BEHAVIOR = "mdp_environment.mdp"
+        self.put_buttons_green()
+        self.TestButtonMDPGEN ['bg'] = 'red'
+        self.TestButtonMDPGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+
+
+    # Test behavior NN generated by a genetic algorithm
+    def toggleTestNNGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+	global nn_rec
+
+
+        num_bh = 11
+        st_out = 0
+        flg_vq = 1
+
+
+	BEHAVIOR = "nn"
+        BEST_BEHAVIOR = "nn.txt"
+        nn_rec = 0
+
+
+        self.put_buttons_green()
+        self.TestButtonNNGEN ['bg'] = 'red'
+        self.TestButtonNNGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+    # Test behavior NN Stochastic generated by a genetic algorithm
+    def toggleTestNNSTGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+        global nn_rec
+
+
+        num_bh = 11
+        st_out = 1
+        flg_vq = 1
+
+
+	BEHAVIOR = "nn_st"
+        BEST_BEHAVIOR = "nn_st.txt"
+        nn_rec = 0
+
+
+        self.put_buttons_green()
+        self.TestButtonNNSTGEN ['bg'] = 'red'
+        self.TestButtonNNSTGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+    # Test behavior RNN generated by a genetic algorithm
+    def toggleTestRNNGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+        global nn_rec
+
+
+        num_bh = 11
+        st_out = 0
+        flg_vq = 1
+
+
+	BEHAVIOR = "rnn"
+        BEST_BEHAVIOR = "rnn.txt"
+        nn_rec = 1
+
+
+        self.put_buttons_green()
+        self.TestButtonRNNGEN ['bg'] = 'red'
+        self.TestButtonRNNGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+    # Test behavior RNN generated by a genetic algorithm
+    def toggleTestRNNSTGenBehaviors(self):
+        global BEHAVIOR
+        global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+        global nn_rec
+
+
+        num_bh = 11
+        st_out = 1
+        flg_vq = 1
+
+
+        BEHAVIOR = "rnn_st"
+        BEST_BEHAVIOR = "rnn_st.txt"
+        nn_rec = 1
+
+
+        self.put_buttons_green()
+        self.TestButtonRNNSTGEN ['bg'] = 'red'
+        self.TestButtonRNNSTGEN['activebackground'] = 'red'
+        C.update_idletasks()
+
+        self.toggleTestBehaviors()
+
+
+
+
+
+    def put_buttons_green(self):
+	self.TestButtonFSM ['bg'] = 'green'
+        self.TestButtonFSM ['activebackground'] = 'green'
+	self.TestButtonFSMGEN ['bg'] = 'green'
+        self.TestButtonFSMGEN ['activebackground'] = 'green'
+	self.TestButtonFSMSTGEN ['bg'] = 'green'
+        self.TestButtonFSMSTGEN ['activebackground'] = 'green'
+        self.TestButtonREACTIVEGEN ['bg'] = 'green'
+        self.TestButtonREACTIVEGEN['activebackground'] = 'green'
+        self.TestButtonREACTIVESTGEN ['bg'] = 'green'
+        self.TestButtonREACTIVESTGEN['activebackground'] = 'green'
+        self.TestButtonPOTENTIALSGEN ['bg'] = 'green'
+        self.TestButtonPOTENTIALSGEN['activebackground'] = 'green'
+        self.TestButtonHMMGEN ['bg'] = 'green'
+        self.TestButtonHMMGEN['activebackground'] = 'green'
+        self.TestButtonMDPGEN ['bg'] = 'green'
+        self.TestButtonMDPGEN['activebackground'] = 'green'
+        self.TestButtonNNGEN ['bg'] = 'green'
+        self.TestButtonNNGEN['activebackground'] = 'green'
+        self.TestButtonNNSTGEN ['bg'] = 'green'
+        self.TestButtonNNSTGEN['activebackground'] = 'green'
+        self.TestButtonRNNGEN ['bg'] = 'green'
+        self.TestButtonRNNGEN['activebackground'] = 'green'
+        self.TestButtonRNNSTGEN ['bg'] = 'green'
+        self.TestButtonRNNSTGEN['activebackground'] = 'green'
+        self.DemoButtonPath ['bg'] = 'green'
+        self.DemoButtonPath['activebackground'] = 'green'
+
+
+
+
+    def toggleTestBehaviors(self):
+        global PATH
+        global File_Name
+        global mouse_1_x
+        global mouse_1_y
+        global mouse_3_x
+        global mouse_3_y
+        global angle_robot
+        global flg_plt
+        global advance_robot
+        global max_angle_robot
+        global largest
+        global new_generation
+        global total_num_generations
+        global num_training
+        global previous_num_generations
+	global BEHAVIOR
+	global BEST_BEHAVIOR
+        global num_bh
+        global st_out
+        global flg_vq
+
+
+
+        self.vq.delete(0, END)
+        self.vq.insert ( 0,str(flg_vq))
+        self.pr_out.delete(0, END)
+        self.pr_out.insert ( 0,str(st_out))
+        self.selection.delete(0, END)
+	self.selection.insert ( 0,str(num_bh) )
+
+	print "Selected Behavior", str(BEHAVIOR)
+        advance_robot = float(self.advance_robot.get())
+        max_angle_robot = float(self.max_angle_robot.get())
+        largest = float(self.largest.get())
+        num_generations = int(self.generations.get())
+        size_vq = int(self.size_vq.get())
+        pr_out = int(self.pr_out.get())
+        num_gen = num_generations
+        previous_num_generations = num_generations
+
+
+
+
+
+        PATH = self.path.get()
+        #print 'Evaluate Robot PATH ',PATH
+        File_Name = self.file.get()
+        File_Name_cpy = File_Name
+
+        # Probability file for adding noise
+        file_name_prb = 'random_settings_advance_angle_sensors.dat'
+        FILE_PRB = PATH + file_name_prb
+        FILE = PATH + File_Name + '.ord'
+
+
+
+        # Noise Ranges
+        y = 0.05*max_angle_robot
+        x = 0.1*advance_robot
+        z = largest/100
+        zdst = largest/1000
+        intensity = 5.
+        #sdst_intensity = 1.0
+        theta = 2*3.1416/100
+
+
+        # It generates the noise probability file
+        #print 'Noise advance ',x,' angle ',y,' sensors ',z     
+        # Probability file for adding noise
+        file_name_prb = 'random_settings_advance_angle_sensors.dat'
+        FILE_PRB = PATH + file_name_prb
+        file_prb = open(FILE_PRB,'w')
+        # Uniform error for advance
+        #range_1 = 0.0
+        range_1 = -x
+        range_2 = x
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for rotation
+        #range_1 = 0.0
+        range_1 = -y
+        range_2 = y
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Gausian error for the laser sensor
+        range_1 = z # mean
+        range_2 = zdst # standar desviation
+        value = '1 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for the light intensity sensor
+        range_1 = - intensity
+        range_2 = intensity
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for light position
+        #range_1 = 0.0
+        range_1 = -theta
+        range_2 = theta
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+
+        file_prb.close()
+
+
+
+
+
+    def toggleEvaluateRobot(self):
+        global PATH
+        global File_Name
+        global mouse_1_x
+        global mouse_1_y
+        global mouse_3_x
+        global mouse_3_y
+        global angle_robot
+	global flg_plt
+	global advance_robot
+        global max_angle_robot
+	global largest
+	global new_generation
+        global total_num_generations
+ 	global num_training
+	global previous_num_generations
+	global BEHAVIOR
+	global PREVIOUS_BEHAVIOR
+	global BEST_BEHAVIOR
+	global PREVIOUS_BEST_BEHAVIOR
+	global Previous_bh
+
+
+
+	if num_behavior == 0:
+		return
+
+	self.put_buttons_green()
+
+	BEHAVIOR = PREVIOUS_BEHAVIOR
+	BEST_BEHAVIOR = PREVIOUS_BEST_BEHAVIOR
+	num_bh = Previous_bh
+	#print "Previous Behavior ",PREVIOUS_BEHAVIOR
+	#print "Previous Best Behavior ",PREVIOUS_BEST_BEHAVIOR
+	#print "Previous bh ",str(Previous_bh)
+
+
+	advance_robot = float(self.advance_robot.get())
+        max_angle_robot = float(self.max_angle_robot.get())
+	largest = float(self.largest.get())
+	num_generations = int(self.generations.get())
+	size_vq = int(self.size_vq.get())
+	pr_out = int(self.pr_out.get())
+	num_gen = num_generations
+	previous_num_generations = num_generations
+
+
+        self.EvaluateButton['bg'] = 'red'
+        self.EvaluateButton['activebackground'] = 'red'
+        C.update_idletasks()
+
+	#here: comment this two lines if necessary
+	#self.path.delete(0, END)
+        #self.path.insert ( 0, INITIAL_PATH )
+
+	self.file.delete(0, END)
+	#self.file.insert ( 0, 'random' )
+	self.file.insert ( 0, ENVIRONMENT )
+
+	self.file_robot.delete(0, END)
+	#self.file_robot.insert ( 0, 'random' )
+	self.file_robot.insert ( 0, ENVIRONMENT )
+
+	self.selection.delete( 0, END)
+	self.selection.insert ( 0, num_bh )
+
+
+        PATH = self.path.get()
+        #print 'Evaluate Robot PATH ',PATH
+        File_Name = self.file.get()
+	File_Name_cpy = File_Name
+
+	# Probability file for adding noise
+	file_name_prb = 'random_settings_advance_angle_sensors.dat'
+	FILE_PRB = PATH + file_name_prb
+	FILE = PATH + File_Name + '.ord'
+
+
+
+	# Noise Ranges
+        y = 0.05*max_angle_robot
+        x = 0.1*advance_robot
+        z = largest/100
+        zdst = largest/1000
+        intensity = 5.
+        #sdst_intensity = 1.0
+        theta = 2*3.1416/100
+
+
+        # It generates the noise probability file
+        #print 'Noise advance ',x,' angle ',y,' sensors ',z     
+        # Probability file for adding noise
+        file_name_prb = 'random_settings_advance_angle_sensors.dat'
+        FILE_PRB = PATH + file_name_prb
+        file_prb = open(FILE_PRB,'w')
+        # Uniform error for advance
+        #range_1 = 0.0
+        range_1 = -x
+        range_2 = x
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for rotation
+        #range_1 = 0.0
+        range_1 = -y
+        range_2 = y
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Gausian error for the laser sensor
+        range_1 = z # mean
+        range_2 = zdst # standar desviation
+        value = '1 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for the light intensity sensor
+        range_1 = - intensity
+        range_2 = intensity
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+        # Uniform error for light position
+        #range_1 = 0.0
+        range_1 = -theta
+        range_2 = theta
+        value = '0 ' + str(range_1) + ' ' + str(range_2) + '\n'
+        file_prb.write(value)
+
+        file_prb.close()
+
+
+	if num_behavior == 1:
+	
+		# FSM stochastic outputs genetics' variables
+		#num_symbols = 2 ** size_vq
+		num_bits_symbols = int(math.log(size_vq)/math.log(2))
+		num_bits_inputs = num_bits_intensity + num_bits_symbols + num_bits_angle_light
+		num_memory_cells = 2 << (num_bits_states + num_bits_inputs-1)
+		#print "Num. Locationts ", str(num_memory_cells) 
+		num_bits_memory_cells = num_bits_states + num_outputs*num_bits_variables_fsm_st;
+		num_bits_individuals = num_memory_cells * num_bits_memory_cells;
+	
+	elif num_behavior == 2:
+
+		# FSM HMM genetics' variables
+		num_bits_symbols = int(math.log(size_vq)/math.log(2))
+                num_bits_inputs = num_bits_intensity + num_bits_symbols + num_bits_angle_light
+                num_symbols = 2 << (num_bits_inputs-1)
+        	num_variables= num_states_hmm * (1 + num_states_hmm + num_symbols + num_symbols*num_outputs) ;
+        	num_bits_individuals = num_bits_variables_hmm * num_variables;
+
+	
+	elif num_behavior == 3:
+
+		# FSM genetics' variables
+		#num_symbols = 2 ** size_vq
+        	num_bits_symbols = int(math.log(size_vq)/math.log(2))
+		num_bits_inputs = num_bits_intensity + num_bits_symbols + num_bits_angle_light
+        	num_bits_memory_cells = num_bits_states + num_bits_outputs;
+        	num_memory_cells = 2 << (num_bits_states + num_bits_inputs-1)
+        	#print "Num. Locationts ", str(num_memory_cells) 
+        	num_bits_individuals = num_memory_cells * num_bits_memory_cells;
+
+
+	elif num_behavior == 4:
+
+                # Reactive genetics' variables
+                #num_symbols = 2 ** size_vq
+                num_bits_symbols = int(math.log(size_vq)/math.log(2))
+                num_bits_inputs = num_bits_intensity + num_bits_symbols + num_bits_angle_light
+                num_bits_memory_cells = num_bits_outputs;
+                num_memory_cells = 2 << (num_bits_inputs-1)
+                #print "Num. Locationts ", str(num_memory_cells) 
+                num_bits_individuals = num_memory_cells * num_bits_memory_cells;
+
+        elif num_behavior == 5:
+
+        	#Reactive variables stochastic
+		#num_symbols = 2 ** size_vq
+                num_bits_symbols = int(math.log(size_vq)/math.log(2))
+		num_bits_inputs = num_bits_intensity + num_bits_symbols + num_bits_angle_light
+		num_memory_cells = 2 << (num_bits_inputs-1)
+        	num_bits_individuals = num_memory_cells * num_outputs * num_bits_variables_reactive_st
+
+	elif num_behavior == 6:
+		# NN genetics' variables
+		num_bits_variables_nn = 8
+        	num_bits_variables_nn_float = num_bits_variables_nn - 1
+		num_bits_individuals = num_bits_variables_nn*num_variables_nn
+		#print "num_bits_individuals NN " + str(num_bits_individuals)
+
+	elif num_behavior == 7:
+		# Potential field genetics' variables
+		num_bits_individuals = num_bits_variables_pot*num_variables_pot
+		print "num_bits_individuals Potentials " + str(num_bits_individuals)
+
+	elif num_behavior == 8:
+		# MDP genetics' variables
+		num_bits_individuals = num_bits_variables_mdp*num_variables_mdp
+		print "num_bits_individuals MDP " + str(num_bits_individuals)
+
+	
+
+	population_name = "avoid_" + BEHAVIOR
+
+
+	# It creates the files names for the genetic algorithm
+	FILE_fitness = PATH + 'fitness.dat'
+
+
+	# It creates the files names for the stochastic FSM were the average, best and word fitness are stored for generation
+	FILE_fitness_average = PATH + 'fitness_average_' + BEHAVIOR + '.dat'
+       	#print 'File_fitness_average ', FILE_fitness_average
+	FILE_fitness_worst = PATH + 'fitness_worst_' + BEHAVIOR + '.dat'
+       	#print 'File_fitness_worst ', FILE_fitness_worst
+	FILE_fitness_best = PATH + 'fitness_best_' + BEHAVIOR + '.dat'
+       	#print 'File_fitness ', FILE_fitness
+
+
+	FILE_num_generations = PATH + 'num_generations_' + BEHAVIOR + '.dat'
+       	#print 'File_num_generations ', FILE_num_generations
+
+	new_generation = self.generation.get()
+	#print "New generation ", new_generation
+	# It generates the first generation
+	#../genetics/genetics_general genera vasconcelos ../data/ 20 28980 avoid
+	if new_generation == 1:
+
+
+
+		# Step 0.- it creates the VQ
+		if new_trainning == 1:
+			self.toggleTraining()
+
+
+		# Step 1.- It generates the first population of the individuals
+		genetics_command = "../genetics/genetics_general genera vasconcelos "
+		command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_individuals) + " " + population_name + " > " + PATH + "genetics_general_" + BEHAVIOR + ".dat"
+        	print "First generation command genetics: ", command
+        	status = os.system(command)
+
+
+		new_generation = 0
+		self.generation.set(0)
+		self.new_gen.deselect()
+
+		C.update_idletasks()
+
+
+
+		# Behavior's Files
+		command = "rm " + FILE_fitness_average
+                #print "Command delete: ", command
+                status = os.system(command)
+                command = "rm " + FILE_fitness_worst
+                #print "Command delete: ", command
+                status = os.system(command)
+                command = "rm " + FILE_fitness_best
+                #print "Command delete: ", command
+          	status = os.system(command)
+
+
+		total_num_generations = 0
+	 
+		#here 
+		#it generates new environments and new origen and destination points
+		if flg_worlds == 1:
+          		command = "../generate/generate -f random -r 0.03 -m " + str(num_obstacles) + " -o " + str(size_obstacles) + " -dx 2.0 -dy 2.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds) + " > " + PATH + "generate.dat"
+          		#command = "../generate/generate -f random -r 0.03 -m " + str(num_obstacles) + " -o " + str(size_obstacles) + " -dx 2.0 -dy 2.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds)
+
+          		print "Command generate: ", command
+          		status = os.system(command)
+
+	else:
+	        file = open(FILE_num_generations,'r')
+		total_num_generations = int( file.readline())
+		file.close()
+
+	#print "total_num_generations ",str(total_num_generations), " num_generations+total_num_generations ",str(num_generations+total_num_generations)			
+	
+
+	for k in range(total_num_generations, num_generations+total_num_generations):
+
+	  print "\n*****************  Testing Generation ",str(k) + "  *********************************\n"
+	  print "Behavior " + BEHAVIOR
+
+	  fit_average = 0.0
+	  fit_worst = 1000000.0
+	  fit_best = 0.0
+
+
+  	  # It creates the FSM fitness file
+          FILE_fitness_behavior = PATH + 'fitness_' + BEHAVIOR +  '.dat'
+          file_fit_behavior = open(FILE_fitness_behavior,'w')
+          #print 'File_fitness_behavior ', FILE_fitness_behavior
+
+           
+#here transform
+	  # Step 2.- t transform the binary population file to a Behaviors population files
+	  if num_behavior == 1:
+	  	# transform_gen state_machine_stochastic path num_individuals num_bits_states num_bits_outputs num_bits_inputs num_bits_stochastic_variables population_file 
+	  	# ../genetics/transform_gen state_machine_stochastic ../test_data_14/ 100 4 3 8 8 avoid_fsm_st
+          	genetics_command = "../genetics/transform_gen " + transform_option + " " 
+          	command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_states) + " " + str(num_bits_outputs) + " " + str(num_bits_inputs) + " " + str(num_bits_variables_fsm_st) + " " + population_name + " > " + PATH + "transform_" + BEHAVIOR + ".dat"
+
+	  elif num_behavior == 2:
+		# It transform the binary population file to an HMM probability population files
+	        #../genetics/transform_gen state_machine_hmm ../data/ 20 10 14 32 5 avoid
+		genetics_command = "../genetics/transform_gen state_machine_hmm "
+		command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_variables_hmm) + " " + str(num_states_hmm) + " " + str(num_symbols) + " " + str(num_outputs) + " " + population_name + " > " + PATH + "transform_hmm.dat"
+
+
+	  elif num_behavior == 3:
+		# It transform the binary population file to a FSM population files
+          	# ../genetics/transform_gen state_machine ../data/ 20 4 3 5 3584 avoid_fsm
+          	genetics_command = "../genetics/transform_gen state_machine "
+          	command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_states) + " " + str(num_bits_outputs) + " " + str(num_bits_inputs) + " " + str(num_bits_individuals) + " " + population_name + " > " + PATH + "transform_fsm.dat"
+
+
+          elif num_behavior == 4:
+		# It transform the binary population file to a REACTIVE population files
+          	#transform_gen reactive ../test_data_10/ 100 3 5 avoid_reactive
+          	genetics_command = "../genetics/transform_gen reactive "
+          	command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_outputs) + " " + str(num_bits_inputs) + " " +  population_name + " > " + PATH + "transform_reactive.dat"
+
+	
+          elif num_behavior == 5:
+	  	# It transform the binary population file to a REACTIVE stochastic population files
+          	#transform_gen reactive_stochastic ../test_data_8/ 100 3 8 avoid_stochastic 8
+          	genetics_command = "../genetics/transform_gen reactive_stochastic "
+          	command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_outputs) + " " + str(num_bits_inputs) + " " +  population_name + " " + str(num_bits_variables_reactive_st) + " > " + PATH + "transform_reactive_stochastic.dat"
+
+
+          elif num_behavior == 6:
+		# It transform the binary population file to a NN population files
+          	# ..../genetics/transform_gen neural_nets /home/savage/observations/ 100 8 4 avoid_nn 2 4 0 3 14 5
+          	genetics_command = "../genetics/transform_gen neural_nets "
+		#print "layers ",layers
+
+
+          	command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_variables_nn) + " " + str(num_bits_variables_nn_float) + " " +  population_name + " " + str(num_layers) + " " + str(num_recurrent) + " " + str(num_inputs_delayed) + " " + str(num_inputs_sensors) + " " + layers + " " + str(num_outputs) + " > " + PATH + "transform_" + transform_option + ".dat"
+          	
+		#command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_variables_nn) + " " + str(num_bits_variables_nn_float) + " " +  population_name + " " + str(num_layers) + " " + str(num_recurrent) + " " + str(num_inputs_delayed) + " " + str(num_inputs_sensors) + " " + str(num_nn_layer[1]) + " " + str(num_outputs) + " > " + PATH + "transform_" + transform_option + ".dat"
+
+
+	  elif num_behavior == 7:
+                # It transform the binary population file to a Potential population files
+		# transform_gen potentials ../test_data_8/ 100 16 8 5 avoid
+                genetics_command = "../genetics/transform_gen potentials "
+                command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_variables_pot) + " " + str(num_bits_variables_pot_float) + " " + str(num_variables_pot) + " " + population_name  + " > " + PATH + "transform_potential.dat"
+
+
+	  elif num_behavior == 8:
+                # It transform the binary population file to a MDP population files
+		# transform_gen mdp path num_individuals num_bits_variables num_bits_fractions num_variables name_pop
+		# transform_gen mdp /home/savage/data/data_15/ 100 8 7 72 avoid
+                genetics_command = "../genetics/transform_gen mdp "
+                command = genetics_command + PATH + " " + str(num_individuals) + " " + str(num_bits_variables_mdp) + " " + str(num_bits_variables_mdp_float) + " " + str(num_variables_mdp) + " " + population_name  + " > " + PATH + "transform_mdp.dat"
+
+
+	  #print "Command transform: ", command
+          status = os.system(command)
+
+            
+
+          index_best = 1
+
+	  # Step 3.- It evaluates the individuals
+
+	  for l in range(0, num_individuals):
+	     #print "Individual ",str(l)
+
+	     # it evaluates the Behaviors
+             self.robot_command.delete(0, END)
+             self.robot_command.insert ( 0,"../motion_planner/GoTo_State_Machine")
+             self.selection.delete(0, END)
+             #self.selection.insert ( 0, '9' )
+             self.selection.insert ( 0, str(num_bh) )
+             self.vq.delete(0, END)
+             self.vq.insert ( 0, '1' )
+	     self.pr_out.delete(0, END)
+	     self.pr_out.insert ( 0, str(st_out) )
+             num_centroids = self.size_vq.get()
+	     self.num_ind.delete(0, END)
+	     self.num_ind.insert ( 0, str(l) )
+
+             C.update_idletasks()
+
+             # It copies the individual file to the file of the BEHAVIOR
+	     # cp avoid_99.dat state_machine_mem_stochastic.txt
+             command = "cp " + PATH + population_name + "_" + str(l) + ".dat " + PATH + BEST_BEHAVIOR
+             #print "cp command: ", command
+             status = os.system(command)
+             indi_evaluation=self.evaluate_worlds(File_Name_cpy,num_worlds,0,0,BEHAVIOR)
+             value = str(indi_evaluation) + '\n'
+             file_fit_behavior.write(value)
+             #print "Evaluation Gen. ",str(k)," ind. ",str(l)," = ",str(indi_evaluation)
+	     self.evaluation_ind.delete(0, END)
+             self.evaluation_ind.insert ( 0, str(indi_evaluation))
+
+             fit_average = fit_average + indi_evaluation
+             if(indi_evaluation > fit_best):
+                 fit_best = indi_evaluation
+                 index_best = l
+
+               	 # it saves the information of the best individual: environment, the run and the genoma
+		 for num_wrlds in range(1, num_worlds+1):
+		        if flg_save_worlds == 1:
+                 		command = "cp " + PATH + File_Name_cpy + "_" + str(num_wrlds) + '.wrl '  + PATH + "best_" +  BEHAVIOR + "_" + str(num_wrlds) + "_" + str(k) + ".wrl"
+                 		status = os.system(command)
+                 		#print "cp command best world: ", command
+
+                 	command = "cp " + PATH + File_Name_cpy + "_" + str(num_wrlds) + "_"+ BEHAVIOR + '.raw '  + PATH + "best_" +  BEHAVIOR + "_"  + str(num_wrlds) + "_" + str(k) + ".raw"
+                 	status = os.system(command)
+                 	#print "cp command best raw: ", command
+
+                 command = "cp " + PATH + BEST_BEHAVIOR +  " " + PATH + "best_" +  BEHAVIOR + "_" +  str(k) + ".txt"
+                 #print "cp command best behavior: ", command
+                 status = os.system(command)
+
+             if(indi_evaluation < fit_worst):
+                 fit_worst = indi_evaluation
+                 index_worst = l
+                 # it saves the information of the worst individual: environment, the run and the genoma
+		 if flg_save_worlds == 1:
+                 	command = "cp " + PATH + File_Name_cpy + "_" + str(num_worlds) + '.wrl '  + PATH + "worst_" + BEHAVIOR + "_" + str(k) + ".wrl"
+                 	print "cp command worst world: ", command
+                 	status = os.system(command)
+
+                 command = "cp " + PATH + File_Name_cpy + "_" + str(num_worlds) + "_"+ BEHAVIOR + '.raw '  + PATH + "worst_" + BEHAVIOR + "_" + str(k) + ".raw"
+                 #print "cp command worst raw: ", command
+                 status = os.system(command)
+                 command = "cp " + PATH + BEST_BEHAVIOR + " " + PATH + "worst_" +  BEHAVIOR + "_" + str(k) + ".txt"
+                 #print "cp command worst behavior: ", command
+                 status = os.system(command)
+
+
+
+	  file_fit_behavior.close()
+
+	  #print "\n++++++++++++++  RESULTS Generation ",str(k) + " +++++++++++++++++++++++++++++\n"
+
+          fit_average = fit_average / num_individuals
+          value = str(fit_average)
+          command = "echo " + value + " >> " + FILE_fitness_average
+          #print "Command average: ", command
+          status = os.system(command)
+          print "Average generation ",str(k)," ",str(fit_average)
+
+          value = str(fit_worst)
+          command = "echo " + value + " >> " + FILE_fitness_worst   
+          #print "Command worst: ", command
+          status = os.system(command)
+          print "Worst generation ",str(index_worst)," ",str(fit_worst)
+
+          value = str(fit_best)
+          command = "echo " + value + " >> " + FILE_fitness_best
+          #print "Command best: ", command
+          status = os.system(command)
+          print "Best generation ",str(index_best)," ",str(fit_best)
+
+
+
+
+	  print "\n+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n"
+
+	  #print "Behavior " + BEHAVIOR
+	
+	  # Step 4.- It generates the next generation
+
+	  # It copies the fitness file to a fitness file used by genetics_general
+	  command = "cp " + FILE_fitness_behavior  + " " + FILE_fitness
+          #print "cp fitness behavior  ", command
+          status = os.system(command)
+
+          #../genetics/genetics_general vasconcelos ../data/ 10 28980 avoid
+          genetics_command = "../genetics/genetics_general vasconcelos "
+          command = genetics_command + PATH + " " + str(num_individuals/2)+ " " + str(num_bits_individuals) + " " + population_name + " " + str(mutation_factor) + " " + str(cross_factor) + " " + str(num_best_factor) +  " > " + PATH + "genetics_command_" + BEHAVIOR + ".dat"
+          #print "Command genetics next generation: ", command
+          status = os.system(command)
+
+
+	  num_gen = num_gen - 1
+	  str_num_gen = ("%4d" % num_gen).strip()
+          self.generations.delete(0, END)
+          self.generations.insert(0,str_num_gen)
+	  C.update_idletasks()
+
+	  #it generates new environments and new origen and destination points
+	  #generate -f random -n 100 -r 0.03 -m 40 -o 0.06 -p ../data/ -dx 1.0 -dy 1.0 -nd 100
+	  if flg_worlds == 1:
+          	#command = "../generate/generate -f random -r 0.03 -m " + str(num_obstacles) + " -o 0.06 -dx 1.0 -dy 1.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds) + " > " + PATH + "generate.dat"
+
+          	#command = "../generate/generate -f random -r 0.03 -m " + str(num_obstacles) + " -o 0.16 -dx 2.0 -dy 2.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds) + " > " + PATH + "generate.dat"
+# here fix later the radio and file name (random)
+          	command = "../generate/generate -f random -r 0.03 -m " + str(num_obstacles) + " -o " + str(size_obstacles) + " -dx 2.0 -dy 2.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds) + " > " + PATH + "generate.dat"
+          	#command = "../generate/generate -f random -r 0.03 -m " + str(num_obstacles) + " -o " + str(size_obstacles) + " -dx 2.0 -dy 2.0 -nd " + str(num_points_worlds) + " -p " + PATH + " -n " + str(num_worlds)
+	  	#here
+          	print "Command generate new worlds: ", command
+          	status = os.system(command)
+
+	  # It copies the best individuals
+	  #command = "cp " + PATH + "best_" + BEHAVIOR + "_" + str(k) + ".txt " + PATH + "state_machine_mem_stochastic.txt"
+	  command = "cp " + PATH + "best_" + BEHAVIOR + "_" + str(k) + ".txt " + PATH + BEST_BEHAVIOR 
+	  print "Saving the best individual: ", command
+          status = os.system(command)
+
+          file = open(FILE_num_generations,'w')
+	  s = str(total_num_generations)
+	  file.write(s)
+	  file.close()
+
+        self.EvaluateButton['bg'] = 'green'
+        self.EvaluateButton['activebackground'] = 'green'
+        self.TrainingButton['bg'] = 'green'
+        self.TrainingButton['activebackground'] = 'green'
+	self.ExecuteButton['bg'] = 'green'
+        self.ExecuteButton['activebackground'] = 'green'
+
+	# It puts back the file names in the GUI
+        self.file.delete(0, END)
+        self.file.insert(0,File_Name_cpy)
+        self.file_robot.delete(0, END)
+        self.file_robot.insert(0,File_Name_cpy)
+	total_num_generations=k+1
+	str_num_gen = ("%4d" % previous_num_generations).strip()
+        self.generations.delete(0, END)
+        self.generations.insert(0,str_num_gen)
+
+
+        file = open(FILE_num_generations,'w')
+	s = str(total_num_generations)
+	file.write(s)
+	file.close()
+
+
+
+	C.update_idletasks()
+
+
+
+    def togglePlotRobot(self):
+	global pose_x
+	global pose_y
+	global pose_tetha
+	global PATH
+        global File_Name
+        global File_Name_robot
+	global flg_mov
+	global flg_sensor
+	global delay
+
+ 
+ 
+	self.RobotButton['bg'] = 'red'
+       	self.RobotButton['activebackground'] = 'red'
+
+
+	# uniform gives you a floating-point value
+	#pose_x = uniform(0, dim_x)
+	#pose_y = uniform(0, dim_y)
+	#pose_tetha = uniform(0, 2*3.1416)
+	#self.plot_robot()
+
+        C.update_idletasks()
+
+	PATH = self.path.get()
+        #print 'Plot Robot PATH ',PATH
+
+        File_Name = self.file.get()
+        #print 'Plot Robot File_Name ',File_Name
+
+        File_Name_robot = self.file_robot.get()
+        #print 'Plot Robot File_Name_robot ',File_Name_robot
+
+	flg_mov = self.var_mov.get()
+	#print 'Plot Robot flg_mov ',flg_mov
+
+	flg_sensor = self.var_sensor.get()
+	#print 'Plot Robot flg_sensor ',flg_sensor
+
+	delay = float(self.delay.get())
+	#print 'Plot Robot delay ',delay
+
+	self.read_file_map(0)
+	self.read_file(1)
+
+    	self.RobotButton['bg'] = 'green'
+       	self.RobotButton['activebackground'] = 'green'
+
+
+
+    def togglePlotMap(self):
+	global PATH
+	global File_Name
+ 
+ 
+       	self.MapButton['bg'] = 'red'
+       	self.MapButton['activebackground'] = 'red'
+	
+	C.update_idletasks()
+
+	PATH = self.path.get()
+        #print 'Plot Map PATH ',PATH
+
+        File_Name = self.file.get()
+        #print 'Plot Map File_Name ',File_Name
+
+	flg_mov = self.var_mov.get()
+        #print 'Plot Robot flg_mov',flg_mov
+
+	flg_sensor = self.var_sensor.get()
+	#print 'Plot Robot flg_sensor ',flg_sensor
+
+	self.read_file_map(0)
+
+      	self.MapButton['bg'] = 'green'
+       	self.MapButton['activebackground'] = 'green'
+
+        str_angle = "0.00000"
+        self.robot_angle.delete(0, END)
+        self.robot_angle.insert(0,str_angle)
+
+
+
+
+
+    def togglePlotExecute(self,flg_output,BEHAVIOR):
+       
+	global mouse_1_x
+        global mouse_1_y
+	global mouse_3_x
+        global mouse_3_y
+	global angle_robot
+	global sensor
+	global num_sensors 
+	global flg_noise
+	global start_angle 
+	global range_angle
+	global flg_execute
+	global pose_x
+	global pose_y
+	global radio_robot
+	global advance_robot
+	global max_angle_robot
+	global robot_command
+	global flg_plt
+
+
+	flg_execute = 1 
+
+       	self.ExecuteButton['bg'] = 'red'
+       	self.ExecuteButton['activebackground'] = 'red'
+
+	C.update_idletasks()
+
+        flg_noise = self.add_noise.get()
+	num_sensors = self.num_sensors.get()
+        origen_angle = self.origen_angle.get()
+        range_angle = self.range_angle.get()
+        angle_robot = float(self.robot_angle.get())
+        radio_robot = float(self.radio_robot.get())
+        advance_robot = float(self.advance_robot.get())
+        max_angle_robot = float(self.max_angle_robot.get())
+	flg_sensor = self.var_sensor.get()
+        number_steps = self.number_steps.get()
+	selection = self.selection.get()
+	largest = self.largest.get()
+	PATH = self.path.get()
+        #print 'Plot Robot PATH ',PATH
+        File_Name = self.file.get()
+        #print 'Plot Robot File_Name ',File_Name
+        File_Name_robot = self.file_robot.get()
+        #print 'Plot Robot File_Name_robot ',File_Name_robot
+	#print 'selection ' + str(selection)
+	# here
+	vq = self.vq.get()
+	size_vq = self.size_vq.get()
+	pr_out = self.pr_out.get()
+
+	if flg_output == 1:
+		File_Output = File_Name + '_' + BEHAVIOR
+	else:
+		File_Output = File_Name
+
+	#print "Behavior " + BEHAVIOR + " flg_out " + str(flg_output)
+
+	if selection == str(6):
+		 # It evaluates the robot using the MDP behavior
+		robot_command = "../mdp_navigation/GoTo_MDP -e empty -advance 0.040000 -MaxAngle 0.785400 -noise 0 -r 0.04 -steps 300 -t 0.0000 -r 6.280000 -n 9 -largest 0.090000 "
+		origin = " -x " + str(mouse_1_x) + " -y " + str(mouse_1_y) + " -a " + str(angle_robot)
+		#origin = " -x " + str(mouse_1_x) + " -y " + str(mouse_1_y) + " -a 0.0 " 
+		destination = " -v " + str(mouse_3_x) + " -z " + str(mouse_3_y)
+		command = robot_command + origin + destination + " -e " + File_Name + " -p " + PATH  + " -steps " + number_steps + " -noise " + str(flg_noise) + " -vq " + str(vq) + " -size_vq " + str(size_vq) + " -pr_out " + str(pr_out) + " -out_file " + File_Output + " > test.dat" 
+		#command = robot_command + origin + destination + " -e " + File_Name + " -p " + PATH  + " -steps " + number_steps + " -noise " + str(flg_noise) + " -vq " + str(vq) + " -size_vq " + str(size_vq) + " -pr_out " + str(pr_out)
+		#print "MDP Command: ", command
+	else:
+		robot_command = self.robot_command.get()
+		origin = " -x " + str(mouse_1_x) + " -y " + str(mouse_1_y) + " -a " + str(angle_robot)
+		destination = " -v " + str(mouse_3_x) + " -z " + str(mouse_3_y)
+		rest = " -s " + sensor + " -n " + num_sensors + " -t " + origen_angle + " -r " + range_angle + " -radio " + str(radio_robot) + " -advance " + str(advance_robot) + " -MaxAngle " + str(max_angle_robot) + " -steps " + number_steps + " -selection " + selection + " -largest " + largest + " -p " + PATH + " -e " + File_Name + " -noise " + str(flg_noise) + " -vq " + str(vq) + " -size_vq " + str(size_vq) + " -pr_out " + str(pr_out) + " -nn_rec " + str(nn_rec)  
+		command = robot_command + origin + destination + rest + " -out_file " + File_Output +  " > " + PATH + "test_" + BEHAVIOR + ".dat"
+
+	#print "Command before robot: ", command
+	status = os.system(command)
+	#if selection == str(12):
+		#time.sleep(.300)
+	#print "Command robot: ", command
+
+	if flg_plt == 1:
+		C.update_idletasks()
+
+        	flg_mov = self.var_mov.get()
+        	#print 'Plot Robot flg_mov ',flg_mov
+
+        	flg_sensor = self.var_sensor.get()
+        	#print 'Plot Robot flg_sensor ',flg_sensor
+
+        	delay = float(self.delay.get())
+        	#print 'Plot Robot delay ',delay
+
+        	self.read_file_map(0)
+        	self.read_file(1)
+
+
+      		self.ExecuteButton['bg'] = 'green'
+       		self.ExecuteButton['activebackground'] = 'green'
+
+	mouse_1_x = pose_x
+	mouse_1_y = pose_y
+
+
+
+    def togglePlotPath(self):
+       	global num_pol
+	global polygons
+ 
+       	if self.countPath == 1:
+       		self.PathButton['bg'] = 'green'
+       		self.PathButton['activebackground'] = 'green'
+       	else:
+       		self.PathButton['bg'] = 'red'
+       		self.PathButton['activebackground'] = 'red'
+		self.countPath = 0
+
+	#print 'PlotPath num_pol ' + str(num_pol)
+
+	for i in range(0,num_pol):
+		C.delete(polygons[i])
+
+
+
+
+    def togglePlotTest(self):
+	self.plot_test()
+        
+
+#-----------------------------------------------------
+#  MAIN
+
+
+if __name__ == '__main__':
+    gui_planner = PLANNER()
+
+    tk.mainloop()
+

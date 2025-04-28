@@ -1,0 +1,5 @@
+python fsm_viz.py best_fsm_75.txt best_fsm_75.dot
+
+dot best_fsm_75.dot -Tpdf > best_fsm_75.pdf
+
+

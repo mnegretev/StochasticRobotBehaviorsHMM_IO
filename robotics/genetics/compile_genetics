@@ -1,0 +1,4 @@
+touch genetics_general.cpp
+touch transform_gen.cpp
+make genetics_general
+make transform_gen

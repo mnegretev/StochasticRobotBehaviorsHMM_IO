@@ -1,0 +1,588 @@
+/********************************************************************************
+*                                                                            	*
+*  GoTo_State_Machine.cpp 		                              	     	*
+*  ===================                                                       	*
+*                                                                            	*
+*  Description: 							     	*
+*  It controls the movement of a robot using state machines.		     	*
+*  It uses a real robot or a simulated one.				     	*
+*									     	*
+*  Compile:								     	*
+*	make -f Makefile_GoTo_State_Machine				     	*
+*									     	*
+*                               J. Savage                                    	*
+*                                                                        	*
+*                               FI-UNAM 2015                                 	*
+*                               FI-UNAM 2020                                 	*
+********************************************************************************/
+
+//Constants
+//#define DEBUG 1 // Uncomment this line to see debuging data
+#define TRAINING 1
+#define VQ 1
+#define CENTROID_FILE "vq_images_laser"
+#define NUM_BITS_INPUTS 10
+#define NUM_BITS_OUTPUTS 3 // bits to decode 8 outputs: STOP, BACKWARD, FORWARD, TURN_LEFT, TURN_RIGHT, etc
+#define NUM_BITS_INTENSITY 2
+#define NUM_INTENSITY 4 // 2 ** NUM_BITS_INTENSITY
+#define NUM_BITS_DEST_ANGLE 3
+#define NUM_DEST_ANGLE 8 // 2 ** NUM_BITS_DEST_ANGLE
+#define NUM_MAX_MEMORY 65535 // 2 >> 16
+#define FLG_VQ_SRT 1 // it uses a sorted VQ
+
+
+// System include files
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+#include <pthread.h>
+#include <time.h>
+#include <sys/time.h>
+#include <unistd.h>
+
+// Robotics include files
+#include "../utilities/constants.h"
+#include "../utilities/structures.h"
+#include "../simulator/simulation.h"
+#include "../vq/vq.h"
+#include "../utilities/utilities.h"
+#include "../utilities/random.h"
+#include "../utilities/inputs.h"
+#include "../state_machines/state_machine_avoidance.h"
+#include "../state_machines/state_machine_destination.h"
+#include "../state_machines/state_machine_avoidance_destination.h"
+#include "../state_machines/state_machine_avoidance_destination_new.h"
+#include "../potentials/potentials.h"
+#include "../reactive_navigation/reactive_navigation.h"
+#include "../state_machines/state_machine_engine.h"
+#include "../hmm_robots/state_machine_hmm.h"
+#include "../state_machine_nn/state_machine_nn.h"
+#include "../mdp_stalin/mdpnav_function.h"
+#include "../mdp_navigation/Goto_MDP_gen.h"
+
+
+
+//Global variables
+float K_GOAL=CNT_GOAL*MAG_ADVANCE;
+float K_INTENSITY = 1.00*K_GOAL;
+
+
+
+// it moves the robot from the origen to the destination using state machines
+int go_to(Inputs inputs)
+{
+ char file_obs[250];
+ char file_sensors[250];
+ char world_file[250];
+ float theta=0;
+ int j;
+ int i=0,k;
+ FILE *fpw;
+ FILE *fp_sensors;
+ Raw observations;
+ int num_obs=1;
+ float distance1;
+ coord coord_robot;
+ coord coord_dest;
+ int flg;
+ int debug=0;
+ float xmv,ymv,thetamv;
+ int quantized_obs;
+ int quantized_attraction;
+ int quantized_intensity;
+ float intensity = 1.0;
+ AdvanceAngle mov_vector;
+ int next_state;
+ int next_state_avoidance=0, next_state_destination=0, next_state_avoidance_destination=0;
+ int next_state_fsm_engine=1;
+ int state=0;
+ AdvanceAngle DistTheta;
+ AdvanceAngle mov_vector_avoidance;
+ AdvanceAngle mov_vector_destination;
+ AdvanceAngle mov_vector_avoidance_destination;
+ AdvanceAngle mov_vector_fsm_engine;
+ AdvanceAngle mov_vector_potential_fields;
+ int selection = 3;
+ int pr_out = 0;
+ float largest_value;
+ int flg_noise=1;
+ float noise_advance,noise_angle;
+ int label_quantize_outputs=1;
+ int flg_result;
+ float angle_light;
+ int training = TRAINING;
+ int flg_vq = VQ;
+ int size_vq = 4;
+ int num_bits_vq = 2;
+ char file_hmm[250];
+ int flg_omnidirectional = 1;
+ int flg_mdp_angle=0;
+ float angle_mdp;
+ int dummy;
+
+
+
+// it reads the environment file
+ sprintf(world_file,"%s%s.wrl",inputs.path,inputs.environment);
+ // read_environment in simulator/simulation.h
+ read_environment(world_file,debug);
+
+ // it opens the observation's sensor file to be plot by the graphical interface
+ sprintf(file_obs,"%s%s.raw",inputs.path,inputs.output_file);
+ #ifdef DEBUG
+ printf("\nobservations file: %s\n",file_obs);
+ #endif
+ if((fpw=fopen(file_obs,"w")) == NULL){
+	printf("File %s can not be open\n",file_obs);
+       	return(0);
+ }	
+
+
+ // it opens the sensor file to be used by the VQ
+ if(training == 1){
+ 	sprintf(file_sensors,"%straining.dat",inputs.path);
+ #ifdef DEBUG
+ 	printf("\ntraining file: %s\n",file_sensors);
+ #endif
+ 	if((fp_sensors=fopen(file_sensors,"w")) == NULL){
+        	printf("File %s can not be open\n",file_sensors);
+        	return(0);
+ 	}
+
+ 	//fprintf(fp_sensors,"%d\n",inputs.num_sensors + 2);
+
+ }
+
+
+ strcpy(file_hmm,"hmm_destination_avoidance_fsm");
+
+
+ fprintf(fpw,"( radio_robot %f )\n",inputs.radio_robot);
+#ifdef DEBUG
+ printf("\n Radio robot %f \n",inputs.radio_robot);
+#endif
+ coord_robot.xc=inputs.xo;
+ coord_robot.yc=inputs.yo;
+ coord_robot.anglec=inputs.angle_robot;
+ fprintf(fpw,"( origen %f %f %f )\n",inputs.xo,inputs.yo,inputs.angle_robot);
+#ifdef DEBUG
+ printf("( origen %f %f %f )\n",inputs.xo,inputs.yo,inputs.angle_robot);
+#endif
+
+ 
+ selection=inputs.selection; 
+ pr_out=inputs.pr_out; 
+ largest_value=inputs.largest_value;
+ flg_noise=inputs.noise;
+ flg_vq = inputs.vq;
+ size_vq = inputs.size_vq;
+ num_bits_vq = log2(size_vq);
+#ifdef DEBUG
+ printf("Num.bits.vq %d\n",num_bits_vq);
+#endif
+
+
+ //K_GOAL=CNT_GOAL*largest_value;
+ //K_GOAL=1.7*CNT_GOAL*inputs.Mag_Advance;
+ K_GOAL=4.2*CNT_GOAL*inputs.Mag_Advance;
+ K_INTENSITY = 1.00*K_GOAL;
+
+
+
+ // it moves the robot to the final destination
+ flg=0;
+ coord_dest.xc=inputs.xd;
+ coord_dest.yc=inputs.yd;
+ fprintf(fpw,"( destination %f %f )\n",inputs.xd,inputs.yd);
+#ifdef DEBUG
+ printf("( destination %f %f )\n",inputs.xd,inputs.yd);
+#endif
+	
+ while(flg == 0){
+
+#ifdef DEBUG
+	printf("\n\n ************************************************************\n");
+#endif
+
+        distance1=distance(coord_robot,coord_dest);
+	// it checks if the robot reached its destination
+	if( distance1 < K_GOAL){
+#ifdef DEBUG
+		printf(" reached distance destination %f\n",distance1);
+#endif
+                flg= 1;
+        }
+#ifdef DEBUG
+        printf("distance destination %f threshold %f\n",distance1,K_GOAL);
+#endif
+
+        // it saves the robot's position
+	fprintf(fpw,"( robot Justina %f %f %f )\n",coord_robot.xc,coord_robot.yc,coord_robot.anglec);
+#ifdef DEBUG
+	printf("%d Pose robot %f %f %f \n",num_obs,coord_robot.xc,coord_robot.yc,coord_robot.anglec);
+#endif
+
+	// it gets laser range data from the simulator or the real robot, this function is in ../simulator/simulation.h
+        get_sensor_values(coord_robot,inputs.theta_sensor,inputs.range_sensor,&observations,inputs.num_sensors,largest_value);
+	//for(i=0;i<inputs.num_sensors;i++){
+       		 //printf("range observations.sensors[%d] %f\n",i,observations.sensors[i]);
+   	//}
+
+	// it gets the intensity a angle of a light source from the simulator or the real robot, this function is in ../utilities/utilities.h
+	get_intensity_angle(coord_robot,coord_dest,&intensity,&angle_light);
+
+
+        if(flg_noise==1) {
+#ifdef DEBUG
+ 		printf("intensity %f angle light %f \n",intensity,angle_light);
+#endif
+		// it adds noise to the sensors, function in ../utilities/random.h
+		add_noise_obs(&observations,&intensity,&angle_light,inputs.num_sensors,inputs.path);
+#ifdef DEBUG
+ 		printf("with noise intensity %f angle light %f \n",intensity,angle_light);
+#endif
+	}
+
+	//for(j=0;j<inputs.num_sensors;j++){
+        	//printf("noised range sensors[%d] %f\n",j,observations.sensors[j]);
+ 	//}
+
+
+	// It quantizes the inputs in file ~/robotics/utilities/utilities.h
+	quantized_obs=quantize_inputs(observations,inputs.num_sensors,flg_vq,size_vq,inputs.path);
+	//printf("quantized inputs %d\n",quantized_obs);
+        // it saves the vq sensor data to be plot by Python/TK; function in /home/biorobotica/robotics/utilities/utilities.h
+	if(flg_vq == 1) write_vq_obs_sensor(fpw,quantized_obs,inputs.sensor,inputs.num_sensors,inputs.theta_sensor,inputs.range_sensor,size_vq,inputs.path);
+
+	// It quantizes the destination in file ~/robotics/utilities/utilities.h
+	//quantized_attraction=quantize_destination(coord_robot,coord_dest,angle_light,flg_vq);
+	quantized_attraction=quantize_destination(angle_light,flg_vq);
+#ifdef DEBUG
+	printf("angle_light %f quantized destination %d \n",angle_light,quantized_attraction);
+#endif
+
+	// It quantizes the intensity of the destination in file ~/robotics/utilities/utilities.h
+ 	//quantized_intensity = quantize_intensity(coord_robot,coord_dest,intensity,flg_vq);
+ 	quantized_intensity = quantize_intensity(intensity,flg_vq);
+#ifdef DEBUG
+ 	printf("intensity %f quantized intensity %d \n",intensity,quantized_intensity);
+#endif
+	
+
+        // it saves the sensor data to be plot by Python/TK; function in /home/biorobotica/robotics/utilities/utilities.h
+        write_obs_sensor(fpw,observations,inputs.sensor,inputs.num_sensors,inputs.theta_sensor,inputs.range_sensor);
+	fprintf(fpw,"( sensor destination %d )\n",quantized_attraction);
+	fprintf(fpw,"( sensor light %d )\n",quantized_intensity);
+
+
+	if(training == 1){
+
+		// it saves the sensor data to be used by the VQ; function in /home/biorobotica/robotics/utilities/utilities.h
+        	write_sensor_data(fp_sensors,intensity,angle_light,inputs.num_sensors,observations);
+
+	}
+
+
+	if(selection == 1){
+		// It calculates the robot's movement using an state machine that only avoids obstacles
+		state=next_state_avoidance;
+		mov_vector_avoidance = state_machine_avoidance(quantized_obs, state, 
+						&next_state_avoidance,inputs.Mag_Advance,inputs.max_angle);
+		//printf("movement avoidance: angle  %f distance %f\n",mov_vector.angle,mov_vector.distance);
+
+		DistTheta.angle=mov_vector_avoidance.angle;
+ 		DistTheta.distance=mov_vector_avoidance.distance;
+	}
+
+	else if(selection == 2){
+		// It calculates the robot's movement using an state machine that only goes to a light source
+		state=next_state_destination;
+		mov_vector_destination = state_machine_destination(quantized_attraction, quantized_intensity, 
+						state, &next_state_destination,inputs.Mag_Advance,inputs.max_angle);
+		//printf("movement destination: angle  %f distance %f\n",mov_vector_destination.angle,
+										//mov_vector_destination.distance);
+	
+
+		DistTheta.angle=mov_vector_destination.angle;
+ 		DistTheta.distance=mov_vector_destination.distance;
+
+	}
+
+	else if(selection == 3){
+		// It calculates the robot's movement using an state machine that avoids obstacles and goes to a light source
+		state=next_state_avoidance_destination;
+		// state_machine_avoidance_destination in ../state_machines/state_machine_avoidance_destination.h
+		mov_vector_avoidance_destination = state_machine_avoidance_destination(quantized_obs, quantized_attraction, 
+			quantized_intensity, state, &next_state_avoidance_destination,inputs.Mag_Advance,inputs.max_angle);
+		//printf("movement avoidance destination: angle  %f distance %f\n",mov_vector_avoidance_destination.angle,
+			//mov_vector_avoidance_destination.distance);
+
+		DistTheta.angle=mov_vector_avoidance_destination.angle;
+ 		DistTheta.distance=mov_vector_avoidance_destination.distance;
+	}
+
+	else if(selection == 4){
+		// It calculates the robot's movement using an state machine generated by an genetic algorithm
+		state=next_state_fsm_engine;
+		// state_machine_engine in ../state_machines/state_machine_engine.h
+		mov_vector_fsm_engine = state_machine_engine(quantized_obs, quantized_attraction, 
+			quantized_intensity, state, &next_state_fsm_engine,inputs.Mag_Advance,inputs.max_angle,inputs.path,num_bits_vq);
+	
+		//printf("movement fsm_engine: angle  %f distance %f\n",mov_vector_fsm_engine.angle,
+										//mov_vector_fsm_engine.distance);
+		DistTheta.angle=mov_vector_fsm_engine.angle;
+ 		DistTheta.distance=mov_vector_fsm_engine.distance;
+	}
+
+	else if(selection == 5){
+                // It calculates the robot's movement using potential fields
+                // potential_fields function is in the following file: ../potentials/potentials.h
+		mov_vector_potential_fields=potential_fields(inputs,quantized_attraction,intensity, observations);
+
+    		//printf("movement potential fields: angle  %f distance %f\n",mov_vector_potential_fields.angle, 
+			//		mov_vector_potential_fields.distance);
+
+		if(label_quantize_outputs == 1){
+			// quantize_output is in the following file: ~/robotics/utilities/utilities.h	
+			mov_vector_potential_fields = quantize_output(mov_vector_potential_fields.distance, 
+						mov_vector_potential_fields.angle,inputs.Mag_Advance,inputs.max_angle);
+
+			//printf("quantized movement destination: angle  %f distance %f\n",mov_vector_potential_fields.angle,
+                         //                                                       	mov_vector_potential_fields.distance);
+		}
+
+                DistTheta.angle=mov_vector_potential_fields.angle;
+                DistTheta.distance=mov_vector_potential_fields.distance;
+        }
+
+	else if(selection == 7){
+                // It calculates the robot's movement using machine learning techniques that avoids obstacles and goes to a light source
+                state=next_state_avoidance_destination;
+                // state_machine_avoidance_destination in ../state_machines/state_machine_avoidance_destination.h
+                mov_vector_avoidance_destination = state_machine_avoidance_destination_new(quantized_obs, quantized_attraction,
+                        quantized_intensity, state, &next_state_avoidance_destination,inputs.Mag_Advance,inputs.max_angle);
+                //printf("movement avoidance destination: angle  %f distance %f\n",mov_vector_avoidance_destination.angle,
+                        //mov_vector_avoidance_destination.distance);
+
+                DistTheta.angle=mov_vector_avoidance_destination.angle;
+                DistTheta.distance=mov_vector_avoidance_destination.distance;
+        }
+
+
+	else if(selection == 8){
+                // It calculates the robot's movement using a reactive behavior that avoids obstacles and goes to a light source
+		// reactive_control function in ../reactive_navigation/reactive_navigation.h
+		mov_vector_fsm_engine = reactive_control(quantized_obs, quantized_attraction,
+                        quantized_intensity, inputs.Mag_Advance,inputs.max_angle,inputs.path,pr_out,flg_vq,num_bits_vq);
+#ifdef DEBUG
+		printf("movement fsm_engine: angle  %f distance %f\n",mov_vector_fsm_engine.angle,
+                                                                                mov_vector_fsm_engine.distance);
+#endif
+
+		DistTheta.angle=mov_vector_fsm_engine.angle;
+        	DistTheta.distance=mov_vector_fsm_engine.distance;
+
+
+        }
+	else if(selection == 9){
+        // It calculates the robot's movement using an state machine generated by an genetic algorithm with stochastic outputs
+                state=next_state_fsm_engine;
+                // state_machine_engine in ../state_machines/state_machine_engine.h
+                mov_vector_fsm_engine = state_machine_engine_stochastic(quantized_obs, quantized_attraction,
+                        quantized_intensity, state, &next_state_fsm_engine,inputs.Mag_Advance,inputs.max_angle,inputs.path,num_bits_vq);
+
+                //printf("movement fsm_engine: angle  %f distance %f\n",mov_vector_fsm_engine.angle,
+                                                                                //mov_vector_fsm_engine.distance);
+                DistTheta.angle=mov_vector_fsm_engine.angle;
+                DistTheta.distance=mov_vector_fsm_engine.distance;
+        }
+
+        else if(selection == 10){
+        // It calculates the robot's movement using an HMMs state machine generated by an genetic algorithm with stochastic outputs
+                state=next_state_fsm_engine;
+
+		// state_machine_destination_hmm in file /hmm_robots/state_machine_hmm.h
+		mov_vector_fsm_engine = state_machine_destination_hmm(quantized_attraction, quantized_intensity, 
+				quantized_obs, state, &next_state_fsm_engine,inputs.Mag_Advance,
+                                inputs.max_angle, file_hmm, inputs.path, flg_noise,selection,num_bits_vq);
+#ifdef DEBUG
+        	printf("movement destination: angle  %f distance %f\n",mov_vector_destination.angle,mov_vector_destination.distance);
+#endif
+
+                //printf("movement fsm_engine: angle  %f distance %f\n",mov_vector_fsm_engine.angle,
+                                                                                //mov_vector_fsm_engine.distance);
+                DistTheta.angle=mov_vector_fsm_engine.angle;
+                DistTheta.distance=mov_vector_fsm_engine.distance;
+        }
+
+
+	else if(selection == 11){
+
+		// It calculates the robot's movement using a recurrent neural network using quantized inputs
+        	// Function in ../state_machine_nn/state_machine_nn.h
+	        mov_vector_destination = state_machine_destination_nn_vq(quantized_attraction, quantized_intensity, quantized_obs,
+                        inputs.Mag_Advance, inputs.max_angle, inputs.path, flg_noise, size_vq, num_bits_vq,pr_out,inputs.nn_rec);
+
+		// It calculates the robot's movement using a recurrent neural network using un-quantized inputs
+	        //mov_vector_destination = state_machine_destination_nn(angle_light, intensity, observations,
+                        //inputs.Mag_Advance, inputs.max_angle, inputs.path, flg_noise, size_vq, num_bits_vq,inputs.num_sensors,pr_out,inputs.nn_rec);
+
+		DistTheta.angle=mov_vector_destination.angle;
+                DistTheta.distance=mov_vector_destination.distance;
+
+
+	}
+
+	else if(selection == 12){
+
+	    if(flg_mdp_angle == 1){
+
+		// It robot first rotates to the light source       
+		angle_mdp = inverse_quantize_destination(quantized_attraction);
+#ifdef DEBUG
+                printf("The robot rotates to the angle of the light source %f\n",angle_mdp);
+#endif
+                DistTheta.distance=0.0;
+                DistTheta.angle = angle_mdp;
+                mvrobot(DistTheta,&coord_robot);
+
+ 		flg_omnidirectional = 1;
+		flg_mdp_angle = 0;
+
+	    }
+	    
+            // It calculates the robot's movement using an MDP behavior
+            // Function in ../mdp_navigation/Goto_MDP_gen.h
+	    //mov_vector_destination = go_to_mdp_gen(inputs,num_obs,quantized_attraction,quantized_intensity,observations);
+	    mov_vector_destination = go_to_mdp_gen_stalin(inputs,num_obs,quantized_attraction,quantized_intensity,observations);
+
+            DistTheta.angle=mov_vector_destination.angle;
+            DistTheta.distance=mov_vector_destination.distance;
+	   
+       	}
+
+
+	else if(selection == 13){
+                // It calculates the robot's movement using an state machine with the structure input/state generated by an genetic algorithm
+                state=next_state_fsm_engine;
+                // state_machine_engine_input_state in ../state_machines/state_machine_engine.h
+                mov_vector_fsm_engine = state_machine_engine_input_state(quantized_obs, quantized_attraction,
+                        quantized_intensity, state, &next_state_fsm_engine,inputs.Mag_Advance,inputs.max_angle,inputs.path,num_bits_vq);
+
+                //printf("movement fsm_engine: angle  %f distance %f\n",mov_vector_fsm_engine.angle,
+                                                                                //mov_vector_fsm_engine.distance);
+                DistTheta.angle=mov_vector_fsm_engine.angle;
+                DistTheta.distance=mov_vector_fsm_engine.distance;
+        }
+
+
+	else {
+		printf("\n Incorrect selection\n\n");
+		exit(1);
+
+	}
+
+	if(flg_noise==1){
+		// it adds noise to the movement 
+        	get_random_advance_angle(&noise_advance,&noise_angle,inputs.path);
+		//printf("angle %f\n",DistTheta.angle);
+		DistTheta.angle = DistTheta.angle + noise_angle;
+		//printf("angle + noise %f\n",DistTheta.angle);
+		//printf("distance %f\n",DistTheta.distance);
+		DistTheta.distance = DistTheta.distance + noise_advance;
+		//printf("distance + noise %f\n",DistTheta.distance);
+ 	}
+#ifdef DEBUG
+        printf("movement: angle  %f distance %f\n",DistTheta.angle,DistTheta.distance);
+#endif
+        // it saves the robot's actions
+        fprintf(fpw,"( movement %f %f )\n",DistTheta.angle,DistTheta.distance);
+
+	// It moves the robot to the desire angle and distance, function in ../utilities/utilities.h"
+	flg_result=mvrobot(DistTheta,&coord_robot);
+
+	if(selection == 12)	
+	  if(flg_result==0){
+                if(flg_omnidirectional == 1){
+                        if((num_obs % NUM_POLICY)==0){
+#ifdef DEBUG
+                                printf("It changes the angle\n");
+#endif
+				// It robot first rotates to the light source       
+				// it gets the intensity a angle of a light source
+        			get_intensity_angle(coord_robot,coord_dest,&intensity,&angle_light);
+				quantized_attraction=quantize_destination(angle_light,flg_vq);
+		                angle_mdp = inverse_quantize_destination(quantized_attraction);
+#ifdef DEBUG
+                		printf("The robot rotates to the angle of the light source %f\n",angle_mdp);
+#endif
+                		DistTheta.distance=0.0;
+                		DistTheta.angle = angle_mdp;
+                		mvrobot(DistTheta,&coord_robot);
+			}
+                        else{
+                        	// It recovers the original angle       
+#ifdef DEBUG
+                        	printf("It keeps the angle\n");
+#endif
+                        	DistTheta.distance=0.0;
+                        	DistTheta.angle = -DistTheta.angle;
+                        	mvrobot(DistTheta,&coord_robot);
+			}
+                }
+                else{
+                        if((num_obs % NUM_POLICY)==0){
+#ifdef DEBUG
+                                printf("It changes the angle\n");
+#endif
+				dummy=1;
+			}
+                        else{
+                                // It recovers the original angle       
+#ifdef DEBUG
+                                printf("It keeps the angle\n");
+#endif
+                                DistTheta.distance=0.0;
+                                DistTheta.angle = -DistTheta.angle;
+                                mvrobot(DistTheta,&coord_robot);
+                        }
+                }
+       	}
+		
+
+        num_obs++;
+        if(num_obs > inputs.number_steps) flg=1;
+
+ }
+
+ fprintf(fpw,"( distance %f )\n",distance1);
+ fprintf(fpw,"( num_steps %d )\n",num_obs);
+ fclose(fpw);
+ fclose(fp_sensors);
+
+ return(num_obs);
+}
+
+
+
+
+// Main program
+int main(int argc, char *argv[])
+{
+
+ Inputs inputs;
+ int num_steps;
+
+
+ // it gets line inputs, function in ../utilities/inputs.h 
+ get_inputs(argc,argv,&inputs);
+
+ //it sends the robot to the asked position
+ num_steps=go_to(inputs);
+
+ return 0;
+
+}
+
+

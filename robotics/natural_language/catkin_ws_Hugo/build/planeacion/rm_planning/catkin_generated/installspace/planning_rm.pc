@@ -1,0 +1,8 @@
+prefix=/home/biorobotica/catkin_ws/install
+
+Name: planning_rm
+Description: Description of planning_rm
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/biorobotica/catkin_ws/install/lib 
+Requires: roscpp

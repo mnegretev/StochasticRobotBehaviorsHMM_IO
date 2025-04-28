@@ -1,0 +1,8 @@
+prefix=/home/biorobotica/catkin_ws/devel
+
+Name: svg_ros
+Description: Description of svg_ros
+Version: 0.0.0
+Cflags: -I/home/biorobotica/catkin_ws/devel/include
+Libs: -L/home/biorobotica/catkin_ws/devel/lib 
+Requires: message_runtime

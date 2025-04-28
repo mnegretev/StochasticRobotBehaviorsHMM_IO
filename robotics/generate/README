@@ -1,0 +1,17 @@
+                                                                           
+generate.cpp                                                              
+======================                                                    
+                                                                            
+Description:                                                             
+  It generates random environments with obstacles and random origens      
+  and destinations.                                                        
+                                                                            
+Compilation: make                                                              
+                                                                            
+Usage:                                                                     
+
+Sintax: generate -f file -n number_worlds -r robot's_radio -m number obstacles -o obstacles_radio  -p path -dx Dim_env_X  -dy Dim_env_y  -nd num_destinations 
+
+example: 
+generate -f random -n 1 -r 0.05 -m 30 -o 0.1 -p ../data/ -dx 2.0 -dy 2.0 -nd 5
+

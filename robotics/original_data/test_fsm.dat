@@ -1,0 +1,2 @@
+../motion_planner/GoTo_State_Machine -x 0.802485 -y 0.171466 -a 4.053200 -v 0.120000 -z 0.167500 -s laser -n 16 -t -2.356100 -r 4.712200 -p ../original_data/ -e random -advance 0.040000 -MaxAngle 0.785400 -selection 4 -largest 0.100000 -noise 1 -omni 1 -vq 1 -size_vq 8 -pr_out 0 -out_file random -nn_rec 0 
+File ../original_data/vq_images_laser_8.dat_srt can not be open

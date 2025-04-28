@@ -1,0 +1,24 @@
+;********************************************************
+;*							*
+;*    natural_language_understanding_test.clp		*
+;*							*
+;*							*
+;* Test:						*
+;*  clips -f natural_language_understanding_tst.clp	*
+;*							*
+;*							*
+;*			6/28/05				*
+;*			5/1/21				*
+;*							*	
+;********************************************************
+
+(load deftemplates.clp)
+(load initial_state.clp)
+(load planner.clp)
+
+
+(reset)
+(watch rules)
+(watch facts)
+(assert (atrans (actor robot)(obj milk)(to Father)))
+(run 1) ; to debug keep typing (run 1)

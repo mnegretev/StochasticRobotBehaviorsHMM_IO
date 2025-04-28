@@ -1,0 +1,355 @@
+
+/*****************************************************************************
+*                                                                            *
+*  generate.cpp 	       	                                     	     *
+*  ======================                                                    *
+*                                                                            *
+*  Description: 							     *
+*  It generates the random environments with obstacles.	             	     *
+*  									     *
+* Compile: make 		                                             *
+* 							     		     *
+*  Usage:								     * 
+* generate -f file -n number_worlds -r robot's_radio (dm) -m number obstacles*
+*     -o obstacles_radio (dm) -p path -dx DimX -dy Dimy -rx posex -ry posey  *
+*    									     *
+*    									     *
+* generate -f random -n 10 -r 1 -m 20 -o 2 -p /home/savage/observations	     *
+* 		-dx 50 -dy 50 -rx 10 -ry 25 				     *
+*                               	 	                             *
+*                               J. Savage                                    *
+*                               	 	                             *
+*                               FI-UNAM Oct-2013                             *
+*                               	 	                             *
+*****************************************************************************/
+
+// Include files
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+#include <sys/time.h>
+#include <unistd.h>
+
+//#include "/home/savage/tcltk/tk8.4.5/ROC2/defines_ROC2.h"
+
+#define PI 3.1415926535f
+
+// it gets the magnitude of two vectors
+float magnitude(float x1,float y1,float x2,float y2){
+
+ float dif;
+
+ dif= (x2-x1)*(x2-x1) + (y2-y1)*(y2-y1);
+ dif= sqrt(dif);
+
+ return(dif);
+
+}
+
+ //IT GENERATES RANDOM NUMBERS
+float generaR(float LMin,float LMax){
+float n;
+int BIG= 0x7FFFFFFF;
+
+  n=LMin+ ((float) random()/(float) BIG ) *(LMax-LMin);
+  return n;
+}
+
+
+void init_file(FILE *fp,char *name,float dimx,float dimy,int num)
+{
+
+ fprintf(fp,";******************************************************************************\n");
+ fprintf(fp,";* File: %s_%d.wrl				     			      *\n",name,num);
+ fprintf(fp,";* Purpose: Definition of the forbidden and allowed areas in the Robot's      *\n");
+ fprintf(fp,";*          world. These areas are derivated from the objects in the	      *\n");
+ fprintf(fp,";*	    world.				      			      *\n");
+ fprintf(fp,";******************************************************************************\n");
+ fprintf(fp," \n");
+ fprintf(fp,"( limit_area %s 0.00  0.00  0.00 %f %f %f %f 0.00 )\n",name,dimy,dimx,dimy,dimx);
+ fprintf(fp,"( dimensions %s %f %f)\n",name,dimx,dimy);
+ fprintf(fp," \n");
+
+ fprintf(fp,"( polygon object %s external_wall_1 1.00 1.00 1.00 %f 2.00 %f 2.00 1.00 )\n",name,dimy-2,dimy-2);
+
+ fprintf(fp,"( polygon object %s external_wall_2 1.00 %f 1.00 %f %f %f %f %f )\n",name,dimy-2,dimy-1,dimx-2,dimy-1,dimx-2,dimy-2);
+
+ fprintf(fp,"( polygon object %s external_wall_3 %f 1.00 %f %f %f %f %f 1.00 )\n",name,dimx-2,dimx-2,dimy-1,dimx-1,dimy-1,dimx-1);
+
+ fprintf(fp,"( polygon object %s external_wall_4 1.00 1.00 1.00 2.00 %f 2.00 %f 1.00 )\n",name,dimx-1,dimx-1);
+
+
+}
+
+
+
+// it generates the worlds
+void generate_env(char *environment,int num_env,float radio_robot,int num_obstacles,float radio_obstacle,char *path,
+	float dimx, float dimy, float pose_x, float pose_y, float dest_x, float dest_y)
+{
+
+ int i,j,k,l,m;
+ char world[600];
+ char file[600];
+ FILE *fp;
+ float x,y,tetha,delta_tetha;
+ int n;
+ float nf;
+ float xc,yc;
+ float Xg,Yg;
+ float hyp;
+ float margin;
+ float XC[100],YC[100];
+ float value,value_d;
+ float margin_obs;
+ int flag;
+ int num_rej;
+
+
+ margin= radio_robot*2 + radio_obstacle;
+ margin_obs= radio_robot*2 + 2*radio_obstacle;
+ sprintf(world,"%s%s",path,environment);
+
+ for(i=1; i <= num_env;i++){
+
+	sprintf(file,"%s_%d.wrl",world,i);
+	fp=fopen(file,"w");
+	if(fp==0){
+        	printf("\n File %s can not be created\n",file);
+        	exit(0);
+   	}
+	
+      	printf("Environment %s \n",file);
+	init_file(fp,environment,dimx,dimy,i);
+	l=1;
+
+ 	// it generates a Uniform random variable between 3 and 10
+	nf=generaR(3.0,10.0);
+	n=int(nf);
+ 	delta_tetha= 2*PI / n;
+	printf("n %d delta_tetha %f\n",n,delta_tetha);
+
+	tetha= delta_tetha;
+	xc=generaR(margin,dimx-margin);
+	yc=generaR(margin,dimy-margin);
+	hyp= generaR(.1,radio_obstacle);
+	x= (hyp * cos(tetha)) + xc;
+	y= (hyp * sin(tetha)) + yc;
+	Xg= x;
+	Yg= y;
+	XC[l]=Xg;
+	YC[l]=Yg;
+
+	printf("Polygon 1 point 1 X %f Y %f\n",Xg,Yg);
+	fprintf(fp,"( polygon object %s obs_1 %f %f ",environment,Xg,Yg);
+
+	for(j=1; j < num_obstacles; j++){
+
+		for(k=2; k <= n ; k++){
+
+			tetha= tetha + delta_tetha;
+			hyp= generaR(.1,radio_obstacle);
+               		x= (hyp * cos(tetha)) + xc;
+               		y= (hyp * sin(tetha)) + yc;
+               		Xg= x;
+               		Yg= y;
+                	
+			printf("Polygon %d point %d X %f Y %f\n",j,k,Xg,Yg);
+			fprintf(fp,"%f %f ",Xg,Yg);
+		}
+		fprintf(fp,")\n");
+
+		flag=1;
+		num_rej=1;
+
+		while(flag == 1){
+	 	
+			// it generates a Uniform random variable between 3 and 10
+ 			nf=generaR(3.0,10.0);
+			n=int(nf);
+ 			delta_tetha= 2*PI / n;
+			//printf("n %d delta_tetha %f\n",n,delta_tetha);
+
+			tetha= delta_tetha;
+			xc=generaR(margin,dimx-margin);
+			yc=generaR(margin,dimy-margin);
+			hyp= generaR(.1,radio_obstacle);
+			x= (hyp * cos(tetha)) + xc;
+			y= (hyp * sin(tetha)) + yc;
+			Xg= x;
+			Yg= y;
+
+			value = magnitude(Xg,Yg,pose_x,pose_y);
+			value_d = magnitude(Xg,Yg,dest_x,dest_y);
+
+			if((value < margin_obs) || (value_d < margin_obs)){
+				flag=1;
+				printf("Rejected origen/destination %d x %f y %f distance %f\n",num_rej,Xg,Yg,value);
+			}
+			else
+			for(m=1;m <= l;m++){
+				value = magnitude(Xg,Yg,XC[m],YC[m]);
+
+				if(value < margin_obs){
+					flag=1;
+					printf("Rejected %d x %f y %f distance %f\n",num_rej,Xg,Yg,value);
+					num_rej++;
+					break;
+				}
+				else flag=0;
+			
+			}
+		
+			if(num_rej > 50)flag=0;
+	
+
+		}
+
+		if(num_rej > 50){
+				printf("To many rejections %d\n",num_rej);
+				fclose(fp);
+				j=num_obstacles;
+		}
+		else{
+			l++;
+			printf("Polygon %d point 1 X %f Y %f\n",l,Xg,Yg);
+			fprintf(fp,"( polygon object %s obs_%d %f %f ",environment,l,Xg,Yg);
+			XC[l]=Xg;
+			YC[l]=Yg;
+		}
+	}
+
+	// finish last point
+	if(num_rej < 50){
+		for(k=2; k <= n ; k++){
+
+                        tetha= tetha + delta_tetha;
+                        hyp= generaR(.1,radio_obstacle);
+                        x= (hyp * cos(tetha)) + xc;
+                        y= (hyp * sin(tetha)) + yc;
+                        Xg= x;
+                        Yg= y;
+
+                        printf("Polygon %d point %d X %f Y %f\n",j,k,Xg,Yg);
+                        fprintf(fp,"%f %f ",Xg,Yg);
+        	}
+        	fprintf(fp,")\n");
+
+
+		fclose(fp);
+	}
+ }
+
+}
+
+
+
+
+/* it gets line inputs */
+int get_inputs(int argc, char **argv, char *environment,int *num_env, float *radio_robot, int *num_obstacles, float *radio_obstacles, 
+			char *path, float *dimx, float *dimy, float *posex, float *posey)
+{
+
+ int i;
+                                                                                
+ /* It sets default values */
+ strcpy(environment,"random");
+ *num_env=10;
+ *radio_robot=1.0;
+ *num_obstacles=20;
+ *radio_obstacles=2.0;
+ strcpy(path,"/home/savage/observations/");
+ *dimx=50.0;
+ *dimy=50.0;
+ *posex=5.0;
+ *posey=10.0;
+
+
+ 
+
+  /* reads input parameters */
+  if (argc>1) {
+        for(i=1;i<argc;i++){
+          if (!strcmp(argv[i],"-h")){
+                                                                                
+                printf("Sintax: generate -f file -n number_worlds -r robot's_radio (dm) -m number obstacles -o obstacles_radio (dm) -p path -dx DimX (dm) -dy Dimy (dm) -rx posex -ry posey\n");
+                printf("example: generate -f random -n 10 -r 1 -m 20 -o 2 -p /home/savage/observations/ -dx 50 -dy 50 -rx 10 -ry 25 \n\n");
+                exit(1);
+          }
+          else if (!strcmp(argv[i],"-f")){
+                strcpy(environment,argv[i+1]);
+          }
+	  else if (!strcmp(argv[i],"-n")){
+	        *num_env=atoi(argv[i+1]);
+          }
+          else if (!strcmp(argv[i],"-dx")){
+	        *dimx=atof(argv[i+1]);
+	  }
+          else if (!strcmp(argv[i],"-dy")){
+	        *dimy=atof(argv[i+1]);
+	  }
+          else if (!strcmp(argv[i],"-ry")){
+	        *posey=atof(argv[i+1]);
+	  }
+          else if (!strcmp(argv[i],"-rx")){
+	        *posex=atof(argv[i+1]);
+	  }
+          else if (!strcmp(argv[i],"-r")){
+	        *radio_robot=atof(argv[i+1]);
+	  }
+	  else if (!strcmp(argv[i],"-m")){
+	        *num_obstacles=atoi(argv[i+1]);
+          }
+          else if (!strcmp(argv[i],"-o")){
+	        *radio_obstacles=atof(argv[i+1]);
+	  }
+          else if (!strcmp(argv[i],"-p")){
+                strcpy(path,argv[i+1]);
+	  }
+       
+    }
+  }
+  else{
+                                                                                
+      printf("\nIt will use default values:\n");
+  }
+                                                                                
+  printf("generate -f %s -n %d -r %f -m %d -o %f -p %s -dx %f -dy %f -rx %f -ry %f \n",
+	environment,*num_env,*radio_robot,*num_obstacles,*radio_obstacles,path,*dimx,*dimy,*posex, *posey);
+ 
+  return(0);
+                                                                                
+}
+ 
+
+
+
+// Main program
+int main(int argc, char *argv[])
+{
+
+ int num_env,num_obstacles;
+ float radio_robot,radio_obstacle;
+ char environment[300];
+ char path[300];
+ float dimx,dimy,posex,posey;
+
+
+ 
+ /* it gets line inputs */
+ get_inputs(argc,argv,environment,&num_env,&radio_robot,&num_obstacles,&radio_obstacle,path,&dimx,&dimy,&posex,&posey);
+
+ // Initializes the random generator
+ srandom((int)time((time_t *)NULL));
+
+ // it generates the random environments
+ generate_env(environment,num_env,radio_robot,num_obstacles,radio_obstacle,path,dimx,dimy,posex,posey,30,40);
+
+
+ return 0;
+
+}
+
+

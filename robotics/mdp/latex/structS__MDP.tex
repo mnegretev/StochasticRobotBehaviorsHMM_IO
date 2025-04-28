@@ -1,0 +1,56 @@
+\hypertarget{structS__MDP}{}\section{S\+\_\+\+M\+DP Struct Reference}
+\label{structS__MDP}\index{S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}}
+
+
+A Markov Decision Process.  
+
+
+
+
+{\ttfamily \#include $<$mdp.\+h$>$}
+
+
+
+Collaboration diagram for S\+\_\+\+M\+DP\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{structS__MDP__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{structS__MDP_af679a2da7c40a40f980830cc2cbf6b77}{s}
+\item 
+int \hyperlink{structS__MDP_a512f18c9bed22b8a7e14be6e721499ec}{a}
+\item 
+double \hyperlink{structS__MDP_a973affe2889f433250f47b659609f100}{gamma}
+\item 
+\hyperlink{structLLST}{L\+L\+ST} $\ast$$\ast$$\ast$ \hyperlink{structS__MDP_abe58c0d8bf2759da0306273d7837f7a8}{succs}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A Markov Decision Process. 
+
+Sparse state structure containing all parameters, infinite horizon expected rewards and optimal policy. 
+
+\subsection{Member Data Documentation}
+\index{S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}!a@{a}}
+\index{a@{a}!S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}}
+\subsubsection[{\texorpdfstring{a}{a}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+\_\+\+M\+D\+P\+::a}\hypertarget{structS__MDP_a512f18c9bed22b8a7e14be6e721499ec}{}\label{structS__MDP_a512f18c9bed22b8a7e14be6e721499ec}
+number of actions \index{S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}!gamma@{gamma}}
+\index{gamma@{gamma}!S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}}
+\subsubsection[{\texorpdfstring{gamma}{gamma}}]{\setlength{\rightskip}{0pt plus 5cm}double S\+\_\+\+M\+D\+P\+::gamma}\hypertarget{structS__MDP_a973affe2889f433250f47b659609f100}{}\label{structS__MDP_a973affe2889f433250f47b659609f100}
+discount factor \index{S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}!s@{s}}
+\index{s@{s}!S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}}
+\subsubsection[{\texorpdfstring{s}{s}}]{\setlength{\rightskip}{0pt plus 5cm}int S\+\_\+\+M\+D\+P\+::s}\hypertarget{structS__MDP_af679a2da7c40a40f980830cc2cbf6b77}{}\label{structS__MDP_af679a2da7c40a40f980830cc2cbf6b77}
+number of states \index{S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}!succs@{succs}}
+\index{succs@{succs}!S\+\_\+\+M\+DP@{S\+\_\+\+M\+DP}}
+\subsubsection[{\texorpdfstring{succs}{succs}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+L\+ST}$\ast$$\ast$$\ast$ S\+\_\+\+M\+D\+P\+::succs}\hypertarget{structS__MDP_abe58c0d8bf2759da0306273d7837f7a8}{}\label{structS__MDP_abe58c0d8bf2759da0306273d7837f7a8}
+array of array of list of successor states. \mbox{[}s\mbox{]}\mbox{[}a\mbox{]} 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{mdp_8h}{mdp.\+h}\end{DoxyCompactItemize}

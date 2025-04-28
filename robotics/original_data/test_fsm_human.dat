@@ -1,0 +1,121 @@
+../motion_planner/GoTo_State_Machine -x 0.607500 -y 0.245000 -a 0.872600 -v 0.850000 -z 0.332500 -s laser -n 16 -t -2.356100 -r 4.712200 -p ../original_data/ -e random -advance 0.040000 -MaxAngle 0.785400 -selection 3 -largest 0.100000 -noise 1 -omni 1 -vq 0 -size_vq 256 -pr_out 0 -out_file random -nn_rec 0 
+World environment ../original_data/random.wrl 
+
+observations file: ../original_data/random.raw
+
+training file: ../original_data/training.dat
+
+ Radio robot 0.030000 
+( origen 0.607500 0.245000 0.872600 )
+Num.bits.vq 8
+( destination 0.850000 0.332500 )
+
+
+ ************************************************************
+distance destination 0.257803 threshold 0.100800
+1 Pose robot 0.607500 0.245000 0.872600 
+light source angle 5.756871
+intensity 15.046077 angle light 5.756871 
+Random settings file ../original_data/random_settings_advance_angle_sensors.dat
+Intensity lmin -5.000000 lmax 5.000000
+Angle Light lmin -0.062832 lmax 0.062832
+with noise intensity 19.875690 angle light 5.750931 
+angle_light 5.750931 quantized destination 2 
+intensity 19.875690 quantized intensity 0 
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+Random settings file ../original_data/random_settings_advance_angle_sensors.dat
+movement: angle  0.028513 distance 0.038085
+after x:0.631141, y:0.274859,  rad:0.901113
+
+
+ ************************************************************
+distance destination 0.226322 threshold 0.100800
+2 Pose robot 0.631141 0.274859 0.901113 
+light source angle 5.639593
+intensity 19.522917 angle light 5.639593 
+with noise intensity 24.469761 angle light 5.581192 
+angle_light 5.581192 quantized destination 2 
+intensity 24.469761 quantized intensity 0 
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 1 FORWARD
+movement: angle  -0.022802 distance 0.043766
+after x:0.659083, y:0.308544,  rad:0.878312
+
+
+ ************************************************************
+distance destination 0.192414 threshold 0.100800
+3 Pose robot 0.659083 0.308544 0.878312 
+light source angle 5.529699
+intensity 27.010111 angle light 5.529699 
+with noise intensity 22.608324 angle light 5.558365 
+angle_light 5.558365 quantized destination 2 
+intensity 22.608324 quantized intensity 0 
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 13 FORWARD
+movement: angle  -0.023689 distance 0.039071
+after x:0.684733, y:0.338016,  rad:0.854622
+
+
+ ************************************************************
+distance destination 0.165359 threshold 0.100800
+4 Pose robot 0.684733 0.338016 0.854622 
+light source angle 5.395197
+intensity 36.571781 angle light 5.395197 
+with noise intensity 35.415825 angle light 5.429850 
+angle_light 5.429850 quantized destination 2 
+intensity 35.415825 quantized intensity 0 
+ obs intensity 0 obstacles 0 dest 2
+RIGHT
+Present State: 5 TURN RIGTH
+movement: angle  -0.771412 distance -0.001365
+after x:0.683373, y:0.337903,  rad:0.083211
+
+
+ ************************************************************
+distance destination 0.166715 threshold 0.100800
+5 Pose robot 0.683373 0.337903 0.083211 
+light source angle 6.167562
+intensity 35.979240 angle light 6.167562 
+with noise intensity 40.595695 angle light 6.187846 
+angle_light 6.187846 quantized destination 2 
+intensity 40.595695 quantized intensity 0 
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 0 FORWARD
+movement: angle  0.008015 distance 0.043266
+after x:0.726459, y:0.341844,  rad:0.091225
+
+
+ ************************************************************
+distance destination 0.123893 threshold 0.100800
+6 Pose robot 0.726459 0.341844 0.091225 
+light source angle 6.116466
+intensity 65.148300 angle light 6.116466 
+with noise intensity 65.923759 angle light 6.058340 
+angle_light 6.058340 quantized destination 2 
+intensity 65.923759 quantized intensity 0 
+ obs intensity 0 obstacles 0 dest 2
+FORWARD
+Present State: 1 FORWARD
+movement: angle  -0.031918 distance 0.038162
+after x:0.764554, y:0.344106,  rad:0.059307
+
+
+ ************************************************************
+ reached distance destination 0.086231
+distance destination 0.086231 threshold 0.100800
+7 Pose robot 0.764554 0.344106 0.059307 
+light source angle 6.088872
+intensity 134.486038 angle light 6.088872 
+with noise intensity 132.095825 angle light 6.031592 
+angle_light 6.031592 quantized destination 2 
+intensity 132.095825 quantized intensity 1 
+ obs intensity 1 obstacles 0 dest 2
+FORWARD
+Present State: 13 FORWARD
+movement: angle  -0.004713 distance 0.039890
+after x:0.804385, y:0.346283,  rad:0.054594

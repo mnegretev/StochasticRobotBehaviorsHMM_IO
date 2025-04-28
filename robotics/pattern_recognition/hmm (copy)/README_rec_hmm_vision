@@ -1,0 +1,20 @@
+recognize_vision -f vision_objects -s images_test_nxt_2 -m 64 -p /home/savage/observations/cmucam/training_hsi/ -q all -n 9
+
+ *** Vision centroid /home/savage/observations/cmucam/training_hsi/vq_images_all_64.dat
+Objects FILE: /home/savage/observations/cmucam/training_hsi/vision_objects.txt
+objects hub
+objects top
+objects nxt
+objects floor
+HMM FILE: /home/savage/observations/cmucam/training_hsi/hub_64.prb
+HMM FILE: /home/savage/observations/cmucam/training_hsi/top_64.prb
+HMM FILE: /home/savage/observations/cmucam/training_hsi/nxt_64.prb
+HMM FILE: /home/savage/observations/cmucam/training_hsi/floor_64.prb
+/home/savage/observations/cmucam/training_hsi/images_test_nxt_2.raw num. vectors 280 size vectors 3
+object hub distance 5.268590e-53
+object top distance 1.326026e-53
+object nxt distance 2.355772e-48
+object floor distance 4.587918e-53
+
+
+ ****** Winner object nxt 2.355772e-48 ***** 

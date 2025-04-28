@@ -1,0 +1,24 @@
+To see the results of the evolved state machine usin the gui interface
+and Octave, for instance to see invidual 1098:
+
+Human programed
+1. HMM_HUMAN: fitness_hmm_human, hmm_1098
+2. FSM_HUMAN: fitness_state_machine_human, fsm_1098
+
+Trained
+3. HMM_VITERBI: fitness_hmm_viterbi, hmm_viterbi_1098
+
+Evolved
+4. FSM_GENETIC: fitness_best_fsm, best_fsm_1098
+5. FSM_NN_GEMETIC: fitness_best_nn, best_nn_1098
+6. HMM_GENETIC: FITNESS_BEST, best_1098
+
+
+Directory original_data has a set of files necessary to include in the data directory.
+
+File Constants.dat contains constants that can be modified to change the 
+fitness function.
+
+The file random_settings_advance_angle_sensors.dat contains the settings for
+noise generation.
+

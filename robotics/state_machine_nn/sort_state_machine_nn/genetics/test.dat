@@ -1,0 +1,14 @@
+GoTo_State_Machine -x 0.062500 -y 0.925000 -a 0.000000 -v 0.117500 -z 0.087500 -s laser -n 2 -t -0.200000 -r 0.400000 -p ../data/ -e random -advance 0.040000 -MaxAngle 0.785400 -selection 3 -largest 0.300000 -noise 1
+World environment ../data/random.wrl 
+
+observations file: ../data/random.raw
+
+ Radio robot 0.030000 
+( origen 0.062500 0.925000 0.000000 )
+( destination 0.117500 0.087500 )
+
+
+ ************************************************************
+distance destination 0.839304 threshold 0.060000
+1 Pose robot 0.062500 0.925000 0.000000 
+File ../data/random_settings_advance_angle_sensors.dat can not be open

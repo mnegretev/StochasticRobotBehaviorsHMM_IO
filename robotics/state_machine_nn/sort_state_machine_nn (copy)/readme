@@ -1,0 +1,79 @@
+File format of the input data, input_file.dat:
+6
+5
+4
+2 4 1 5 9
+7 1 3 8 6
+0 2 8 3 1
+1 8 2 5 3
+3 1 2 9 7
+9 1 2 4 3
+
+
+File format of the neural net file, rnn_fsm.txt:
+
+Num.layers
+num.recurrent
+Num.inputs_delayed
+num inputs sensors in layer[0] 
+num_neurons_layer[1] 
+  .
+  .
+  .
+num_neurons_layer[num.layers] (outputs) 
+weights
+....
+
+The total number of inputs neurons in layer 0 are:
+	Num.Neurons_inputs+num.recurrent+delayed_inputs*inputs
+
+The total number of outputs neurons in the last layer are:
+	num_neurons_layer[num.layers] + num.recurrent
+	
+Example:
+
+2
+4
+0
+3
+10
+5
+-0.617188
+0.078125
+-0.421875
+...
+
+
+
+	Num.layers 2 (1 input, 1 hidden and 1 output)
+	num.recurrent 4 (states) 
+	Num.inputs_delayed 0
+	num.inputs 3, num_neurons_layer[0] 7 
+	num_neurons_layer[1] 10
+	num_neurons_layer[2] 9 (5 outputs, total number of neurons 5+4=9)
+	layer 0 w[0][0] -0.617188
+	layer 0 w[0][1] 0.078125
+
+
+
+
+* To generate populations for the first time use genetics_general:
+../genetics_general genera vasconcelos path num_individuals num_bits_individuals population_file
+example: 
+   num_bits_individuals = 
+	NUM_BITS_WEIGHTS*((num_neurons_layer[0]+1)*num_neurons_layer[1] + (num_neurons_layer[1] + 1)*num_neurons_layer[2]) 
+
+	NUM_BITS_WEIGHTS = 8
+
+  num_bits_individuals = 8*(8*10 + 11*9)=1432
+  num_individuals = 100
+../genetics/genetics_general genera vasconcelos /home/savage/observations/ 100 1432 avoid
+
+
+* To evolve a new generation
+
+../genetics/genetics_general fitness vasconcelos/standard path num_individuals num_bits_individuals population_file
+../genetics/genetics_general vasconcelos /home/savage/observations/ 100 1432 avoid
+
+
+

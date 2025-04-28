@@ -1,0 +1,351 @@
+\hypertarget{dstruct_8h}{}\section{dstruct.\+h File Reference}
+\label{dstruct_8h}\index{dstruct.\+h@{dstruct.\+h}}
+
+
+Data Structures Library.  
+
+
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dstruct_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structlink__ll}{link\+\_\+ll}
+\begin{DoxyCompactList}\small\item\em Doubly Linked List \hyperlink{structlink__ll}{link\+\_\+ll}. \end{DoxyCompactList}\item 
+struct \hyperlink{structLLST}{L\+L\+ST}
+\begin{DoxyCompactList}\small\item\em Doubly Linked List. \end{DoxyCompactList}\item 
+struct \hyperlink{structBitArray}{Bit\+Array}
+\begin{DoxyCompactList}\small\item\em Array of bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{dstruct_8h_add7ca25b1538cd6db9c19ea9e444a96a}{byteofbit}(x)~(x$>$$>$3)\hypertarget{dstruct_8h_add7ca25b1538cd6db9c19ea9e444a96a}{}\label{dstruct_8h_add7ca25b1538cd6db9c19ea9e444a96a}
+
+\begin{DoxyCompactList}\small\item\em the byte a bit is located in a \hyperlink{structBitArray}{Bit\+Array} \end{DoxyCompactList}\item 
+\#define \hyperlink{dstruct_8h_a8f125afce5fad94fc490c02893578911}{bitinbyte}(x)~(x\%8)\hypertarget{dstruct_8h_a8f125afce5fad94fc490c02893578911}{}\label{dstruct_8h_a8f125afce5fad94fc490c02893578911}
+
+\begin{DoxyCompactList}\small\item\em the bit location in a byte \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{structlink__ll}{link\+\_\+ll} {\bfseries link\+\_\+ll}\hypertarget{dstruct_8h_a727df6abefdea08cd30b46632842703d}{}\label{dstruct_8h_a727df6abefdea08cd30b46632842703d}
+
+\item 
+typedef struct \hyperlink{structLLST}{L\+L\+ST} \hyperlink{dstruct_8h_a99945238aaff3e71cf52d581c850b7ed}{L\+L\+ST}\hypertarget{dstruct_8h_a99945238aaff3e71cf52d581c850b7ed}{}\label{dstruct_8h_a99945238aaff3e71cf52d581c850b7ed}
+
+\begin{DoxyCompactList}\small\item\em Doubly Linked List. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{structBitArray}{Bit\+Array} \hyperlink{dstruct_8h_aaa293270fd2c22825408f86d810aafb3}{Bit\+Array}\hypertarget{dstruct_8h_aaa293270fd2c22825408f86d810aafb3}{}\label{dstruct_8h_aaa293270fd2c22825408f86d810aafb3}
+
+\begin{DoxyCompactList}\small\item\em Array of bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structlink__ll}{link\+\_\+ll} $\ast$ \hyperlink{dstruct_8h_ad0c3db380f4f51cba85896c50494b9aa}{new\+\_\+link\+\_\+ll} (void $\ast$data, \hyperlink{structlink__ll}{link\+\_\+ll} $\ast$previous, \hyperlink{structlink__ll}{link\+\_\+ll} $\ast$next)
+\begin{DoxyCompactList}\small\item\em creates the new \hyperlink{structlink__ll}{link\+\_\+ll} with the provided parameters \end{DoxyCompactList}\item 
+void \hyperlink{dstruct_8h_a8d6b02f94753ab2fb7efa5ee5b3c0e36}{append} (\hyperlink{structLLST}{L\+L\+ST} $\ast$list, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em appends an elemento to the link\+\_\+lled list \end{DoxyCompactList}\item 
+void \hyperlink{dstruct_8h_a12a28ff00e85a0e73366c4c0628b83d0}{join} (\hyperlink{structLLST}{L\+L\+ST} $\ast$a, \hyperlink{structLLST}{L\+L\+ST} $\ast$b)
+\begin{DoxyCompactList}\small\item\em concatenates the second list in the first deleting the memory of the second \end{DoxyCompactList}\item 
+\hyperlink{structLLST}{L\+L\+ST} $\ast$ \hyperlink{dstruct_8h_a867d5f07126b1c5e69a61d3e876c95e6}{copy} (\hyperlink{structLLST}{L\+L\+ST} $\ast$list)
+\begin{DoxyCompactList}\small\item\em creates a shallow copy of the provided list \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{dstruct_8h_a128ec82d7f984252abce87076664ffa5}{head} (\hyperlink{structLLST}{L\+L\+ST} $\ast$list)
+\begin{DoxyCompactList}\small\item\em extracts the first element of the list (head) \end{DoxyCompactList}\item 
+\hyperlink{structLLST}{L\+L\+ST} $\ast$ \hyperlink{dstruct_8h_a9997013daaafbf38572178d5a051dbc4}{empty} ()
+\begin{DoxyCompactList}\small\item\em empty list \end{DoxyCompactList}\item 
+\hyperlink{structLLST}{L\+L\+ST} $\ast$ \hyperlink{dstruct_8h_a3270d6a90fe0e32c69d4794980a57b94}{concat} (\hyperlink{structLLST}{L\+L\+ST} $\ast$a, \hyperlink{structLLST}{L\+L\+ST} $\ast$b)
+\begin{DoxyCompactList}\small\item\em creates a new list with the concatenation of a and b \end{DoxyCompactList}\item 
+void \hyperlink{dstruct_8h_a9eab307b1cc708a1f6cad34a968aa2ff}{free\+\_\+\+L\+L\+ST} (\hyperlink{structLLST}{L\+L\+ST} $\ast$list)
+\begin{DoxyCompactList}\small\item\em releses the memory of the list and its elements but not of the contents of the list \end{DoxyCompactList}\item 
+void \hyperlink{dstruct_8h_a423c3f14ff7c6ff26e1504faf52a413c}{free\+\_\+data\+\_\+\+L\+L\+ST} (\hyperlink{structLLST}{L\+L\+ST} $\ast$list)
+\begin{DoxyCompactList}\small\item\em releases the memory of all data allocated in the elements of the list \end{DoxyCompactList}\item 
+\hyperlink{structBitArray}{Bit\+Array} $\ast$ \hyperlink{dstruct_8h_a41a59de89889d77d52bed8d3713fc01e}{new\+\_\+\+Bit\+Array} (unsigned long long n)
+\begin{DoxyCompactList}\small\item\em creates a new Array of bits of the given size the array will be initialized with ceros \end{DoxyCompactList}\item 
+void \hyperlink{dstruct_8h_a774886f9daf8a36ce5aeb5e48eac8a0e}{set\+\_\+bit} (\hyperlink{structBitArray}{Bit\+Array} $\ast$array, unsigned char bit, unsigned long long pos)
+\begin{DoxyCompactList}\small\item\em sets the bit at location pos \end{DoxyCompactList}\item 
+unsigned char \hyperlink{dstruct_8h_ace45d8a0941ab058bc981b2da13d1114}{get\+\_\+bit} (\hyperlink{structBitArray}{Bit\+Array} $\ast$array, unsigned long long pos)
+\begin{DoxyCompactList}\small\item\em extracts the bit at the given position in the \hyperlink{structBitArray}{Bit\+Array} \end{DoxyCompactList}\item 
+void \hyperlink{dstruct_8h_a4911e40684950681e490f7152314e6cb}{print\+\_\+\+Bit\+Array} (\hyperlink{structBitArray}{Bit\+Array} $\ast$array)
+\begin{DoxyCompactList}\small\item\em prints the contents of the bit array \end{DoxyCompactList}\item 
+void \hyperlink{dstruct_8h_aa7441c7d258fbb6ce31f2f89d85ccc5c}{free\+\_\+\+Bit\+Array} (\hyperlink{structBitArray}{Bit\+Array} $\ast$array)
+\begin{DoxyCompactList}\small\item\em releases the memory used by the array \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Data Structures Library. 
+
+\begin{DoxyAuthor}{Author}
+Stalin Muñoz Gutiérrez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+3 March 2019 Basic Data Structures Library Header File 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\index{dstruct.\+h@{dstruct.\+h}!append@{append}}
+\index{append@{append}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{append(\+L\+L\+S\+T $\ast$list, void $\ast$data)}{append(LLST *list, void *data)}}]{\setlength{\rightskip}{0pt plus 5cm}void append (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+L\+ST} $\ast$}]{list, }
+\item[{void $\ast$}]{data}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a8d6b02f94753ab2fb7efa5ee5b3c0e36}{}\label{dstruct_8h_a8d6b02f94753ab2fb7efa5ee5b3c0e36}
+
+
+appends an elemento to the link\+\_\+lled list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the link\+\_\+lled list \\
+\hline
+{\em data} & the element to append \\
+\hline
+\end{DoxyParams}
+\index{dstruct.\+h@{dstruct.\+h}!concat@{concat}}
+\index{concat@{concat}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{concat(\+L\+L\+S\+T $\ast$a, L\+L\+S\+T $\ast$b)}{concat(LLST *a, LLST *b)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+L\+ST}$\ast$ concat (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+L\+ST} $\ast$}]{a, }
+\item[{{\bf L\+L\+ST} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a3270d6a90fe0e32c69d4794980a57b94}{}\label{dstruct_8h_a3270d6a90fe0e32c69d4794980a57b94}
+
+
+creates a new list with the concatenation of a and b 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & first list \\
+\hline
+{\em b} & second list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a new list with the concatenation of the arguments 
+\end{DoxyReturn}
+\index{dstruct.\+h@{dstruct.\+h}!copy@{copy}}
+\index{copy@{copy}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{copy(\+L\+L\+S\+T $\ast$list)}{copy(LLST *list)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+L\+ST}$\ast$ copy (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+L\+ST} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a867d5f07126b1c5e69a61d3e876c95e6}{}\label{dstruct_8h_a867d5f07126b1c5e69a61d3e876c95e6}
+
+
+creates a shallow copy of the provided list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the list to copy \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the copy 
+\end{DoxyReturn}
+\index{dstruct.\+h@{dstruct.\+h}!empty@{empty}}
+\index{empty@{empty}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{empty()}{empty()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+L\+ST}$\ast$ empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a9997013daaafbf38572178d5a051dbc4}{}\label{dstruct_8h_a9997013daaafbf38572178d5a051dbc4}
+
+
+empty list 
+
+\begin{DoxyReturn}{Returns}
+a list with cero elements 
+\end{DoxyReturn}
+\index{dstruct.\+h@{dstruct.\+h}!free\+\_\+\+Bit\+Array@{free\+\_\+\+Bit\+Array}}
+\index{free\+\_\+\+Bit\+Array@{free\+\_\+\+Bit\+Array}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{free\+\_\+\+Bit\+Array(\+Bit\+Array $\ast$array)}{free_BitArray(BitArray *array)}}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+\+Bit\+Array (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Array} $\ast$}]{array}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_aa7441c7d258fbb6ce31f2f89d85ccc5c}{}\label{dstruct_8h_aa7441c7d258fbb6ce31f2f89d85ccc5c}
+
+
+releases the memory used by the array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the array to release \\
+\hline
+\end{DoxyParams}
+\index{dstruct.\+h@{dstruct.\+h}!free\+\_\+data\+\_\+\+L\+L\+ST@{free\+\_\+data\+\_\+\+L\+L\+ST}}
+\index{free\+\_\+data\+\_\+\+L\+L\+ST@{free\+\_\+data\+\_\+\+L\+L\+ST}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{free\+\_\+data\+\_\+\+L\+L\+S\+T(\+L\+L\+S\+T $\ast$list)}{free_data_LLST(LLST *list)}}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+data\+\_\+\+L\+L\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+L\+ST} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a423c3f14ff7c6ff26e1504faf52a413c}{}\label{dstruct_8h_a423c3f14ff7c6ff26e1504faf52a413c}
+
+
+releases the memory of all data allocated in the elements of the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the list containing the data \\
+\hline
+\end{DoxyParams}
+\index{dstruct.\+h@{dstruct.\+h}!free\+\_\+\+L\+L\+ST@{free\+\_\+\+L\+L\+ST}}
+\index{free\+\_\+\+L\+L\+ST@{free\+\_\+\+L\+L\+ST}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{free\+\_\+\+L\+L\+S\+T(\+L\+L\+S\+T $\ast$list)}{free_LLST(LLST *list)}}]{\setlength{\rightskip}{0pt plus 5cm}void free\+\_\+\+L\+L\+ST (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+L\+ST} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a9eab307b1cc708a1f6cad34a968aa2ff}{}\label{dstruct_8h_a9eab307b1cc708a1f6cad34a968aa2ff}
+
+
+releses the memory of the list and its elements but not of the contents of the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & the list to release \\
+\hline
+\end{DoxyParams}
+\index{dstruct.\+h@{dstruct.\+h}!get\+\_\+bit@{get\+\_\+bit}}
+\index{get\+\_\+bit@{get\+\_\+bit}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{get\+\_\+bit(\+Bit\+Array $\ast$array, unsigned long long pos)}{get_bit(BitArray *array, unsigned long long pos)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char get\+\_\+bit (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Array} $\ast$}]{array, }
+\item[{unsigned long long}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_ace45d8a0941ab058bc981b2da13d1114}{}\label{dstruct_8h_ace45d8a0941ab058bc981b2da13d1114}
+
+
+extracts the bit at the given position in the \hyperlink{structBitArray}{Bit\+Array} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the \hyperlink{structBitArray}{Bit\+Array} \\
+\hline
+{\em pos} & the location of the bit in the array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the bit at the location 
+\end{DoxyReturn}
+\index{dstruct.\+h@{dstruct.\+h}!head@{head}}
+\index{head@{head}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{head(\+L\+L\+S\+T $\ast$list)}{head(LLST *list)}}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ head (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+L\+ST} $\ast$}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a128ec82d7f984252abce87076664ffa5}{}\label{dstruct_8h_a128ec82d7f984252abce87076664ffa5}
+
+
+extracts the first element of the list (head) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & list \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the pointer to the data, 
+\end{DoxyReturn}
+\index{dstruct.\+h@{dstruct.\+h}!join@{join}}
+\index{join@{join}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{join(\+L\+L\+S\+T $\ast$a, L\+L\+S\+T $\ast$b)}{join(LLST *a, LLST *b)}}]{\setlength{\rightskip}{0pt plus 5cm}void join (
+\begin{DoxyParamCaption}
+\item[{{\bf L\+L\+ST} $\ast$}]{a, }
+\item[{{\bf L\+L\+ST} $\ast$}]{b}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a12a28ff00e85a0e73366c4c0628b83d0}{}\label{dstruct_8h_a12a28ff00e85a0e73366c4c0628b83d0}
+
+
+concatenates the second list in the first deleting the memory of the second 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & the first list \\
+\hline
+{\em b} & the second list \\
+\hline
+\end{DoxyParams}
+\index{dstruct.\+h@{dstruct.\+h}!new\+\_\+\+Bit\+Array@{new\+\_\+\+Bit\+Array}}
+\index{new\+\_\+\+Bit\+Array@{new\+\_\+\+Bit\+Array}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{new\+\_\+\+Bit\+Array(unsigned long long n)}{new_BitArray(unsigned long long n)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Bit\+Array}$\ast$ new\+\_\+\+Bit\+Array (
+\begin{DoxyParamCaption}
+\item[{unsigned long long}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a41a59de89889d77d52bed8d3713fc01e}{}\label{dstruct_8h_a41a59de89889d77d52bed8d3713fc01e}
+
+
+creates a new Array of bits of the given size the array will be initialized with ceros 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the size of the array to allocate \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the array 
+\end{DoxyReturn}
+\index{dstruct.\+h@{dstruct.\+h}!new\+\_\+link\+\_\+ll@{new\+\_\+link\+\_\+ll}}
+\index{new\+\_\+link\+\_\+ll@{new\+\_\+link\+\_\+ll}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{new\+\_\+link\+\_\+ll(void $\ast$data, link\+\_\+ll $\ast$previous, link\+\_\+ll $\ast$next)}{new_link_ll(void *data, link_ll *previous, link_ll *next)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf link\+\_\+ll}$\ast$ new\+\_\+link\+\_\+ll (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{data, }
+\item[{{\bf link\+\_\+ll} $\ast$}]{previous, }
+\item[{{\bf link\+\_\+ll} $\ast$}]{next}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_ad0c3db380f4f51cba85896c50494b9aa}{}\label{dstruct_8h_ad0c3db380f4f51cba85896c50494b9aa}
+
+
+creates the new \hyperlink{structlink__ll}{link\+\_\+ll} with the provided parameters 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & datum to store in the \hyperlink{structlink__ll}{link\+\_\+ll} \\
+\hline
+{\em previous} & previous \hyperlink{structlink__ll}{link\+\_\+ll} in the data structure \\
+\hline
+{\em next} & next \hyperlink{structlink__ll}{link\+\_\+ll} in the data structure \\
+\hline
+\end{DoxyParams}
+\index{dstruct.\+h@{dstruct.\+h}!print\+\_\+\+Bit\+Array@{print\+\_\+\+Bit\+Array}}
+\index{print\+\_\+\+Bit\+Array@{print\+\_\+\+Bit\+Array}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{print\+\_\+\+Bit\+Array(\+Bit\+Array $\ast$array)}{print_BitArray(BitArray *array)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+\+Bit\+Array (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Array} $\ast$}]{array}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a4911e40684950681e490f7152314e6cb}{}\label{dstruct_8h_a4911e40684950681e490f7152314e6cb}
+
+
+prints the contents of the bit array 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the array of bits to print \\
+\hline
+\end{DoxyParams}
+\index{dstruct.\+h@{dstruct.\+h}!set\+\_\+bit@{set\+\_\+bit}}
+\index{set\+\_\+bit@{set\+\_\+bit}!dstruct.\+h@{dstruct.\+h}}
+\subsubsection[{\texorpdfstring{set\+\_\+bit(\+Bit\+Array $\ast$array, unsigned char bit, unsigned long long pos)}{set_bit(BitArray *array, unsigned char bit, unsigned long long pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+bit (
+\begin{DoxyParamCaption}
+\item[{{\bf Bit\+Array} $\ast$}]{array, }
+\item[{unsigned char}]{bit, }
+\item[{unsigned long long}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{dstruct_8h_a774886f9daf8a36ce5aeb5e48eac8a0e}{}\label{dstruct_8h_a774886f9daf8a36ce5aeb5e48eac8a0e}
+
+
+sets the bit at location pos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array} & the \hyperlink{structBitArray}{Bit\+Array} \\
+\hline
+{\em bit} & the bit to set \\
+\hline
+{\em pos} & the location of the bit in the array \\
+\hline
+\end{DoxyParams}

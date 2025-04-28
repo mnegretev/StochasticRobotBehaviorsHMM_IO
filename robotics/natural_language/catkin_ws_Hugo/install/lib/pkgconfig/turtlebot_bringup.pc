@@ -1,0 +1,8 @@
+prefix=/home/diego/catkin_ws/install
+
+Name: turtlebot_bringup
+Description: Description of turtlebot_bringup
+Version: 2.3.12
+Cflags: 
+Libs: -L/home/diego/catkin_ws/install/lib 
+Requires: 

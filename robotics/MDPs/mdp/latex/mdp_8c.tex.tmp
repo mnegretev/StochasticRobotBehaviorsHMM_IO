@@ -1,0 +1,236 @@
+\hypertarget{mdp_8c}{}\section{mdp.\+c File Reference}
+\label{mdp_8c}\index{mdp.\+c@{mdp.\+c}}
+
+
+Simple \hyperlink{structMDP}{M\+DP} library.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$time.\+h$>$}\\*
+{\ttfamily \#include $<$float.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}mdp.\+h\char`\"{}}\\*
+Include dependency graph for mdp.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structMDP}{M\+DP} $\ast$ \hyperlink{mdp_8c_a22c6426ddba7afdee5abb7ea99d2b17c}{allocate\+\_\+\+M\+DP} (int s, int a, float gamma)
+\begin{DoxyCompactList}\small\item\em Allocates memory for an \hyperlink{structMDP}{M\+DP}. \end{DoxyCompactList}\item 
+void \hyperlink{mdp_8c_a42a1eb1c8ff10a00c6fc6313bee4f814}{release\+\_\+\+M\+DP} (\hyperlink{structMDP}{M\+DP} $\ast$mdp)
+\begin{DoxyCompactList}\small\item\em Releases memory for an \hyperlink{structMDP}{M\+DP}. \end{DoxyCompactList}\item 
+void \hyperlink{mdp_8c_af6d9fcae98bb545520e7244d7020dcdc}{print\+\_\+\+M\+DP} (\hyperlink{structMDP}{M\+DP} $\ast$mdp)
+\begin{DoxyCompactList}\small\item\em Prints the \hyperlink{structMDP}{M\+DP} parameters. \end{DoxyCompactList}\item 
+void \hyperlink{mdp_8c_a1e47a27033a991971ea6779a58585a69}{random\+\_\+\+M\+DP} (\hyperlink{structMDP}{M\+DP} $\ast$mdp)
+\begin{DoxyCompactList}\small\item\em Set random probabilities for the state transitions. \end{DoxyCompactList}\item 
+void \hyperlink{mdp_8c_a9bf38ae4a3175bc1874ba518585fbf55}{v\+\_\+iteration\+\_\+compute} (\hyperlink{structMDP}{M\+DP} $\ast$mdp, float epsilon)
+\begin{DoxyCompactList}\small\item\em Compute v$\ast$(s) using value iteration. \end{DoxyCompactList}\item 
+float \hyperlink{mdp_8c_a1657efbb6ac6751151b54828cda44baa}{best\+\_\+expected\+\_\+u} (\hyperlink{structMDP}{M\+DP} $\ast$mdp, int s)
+\begin{DoxyCompactList}\small\item\em Computes the best expected utility value for the state s. \end{DoxyCompactList}\item 
+int \hyperlink{mdp_8c_a66fa752860782c0eda6d1c6a30af4028}{best\+\_\+expected\+\_\+action} (\hyperlink{structMDP}{M\+DP} $\ast$mdp, int s)
+\begin{DoxyCompactList}\small\item\em Computes the action for the best expected utility value for the state s. \end{DoxyCompactList}\item 
+float \hyperlink{mdp_8c_a58f24d49e4244f9735f1230e9498b1e1}{expected\+\_\+u} (\hyperlink{structMDP}{M\+DP} $\ast$mdp, int s, int a)
+\begin{DoxyCompactList}\small\item\em Computes the expected utility value for the state s when taking action a. \end{DoxyCompactList}\item 
+float \hyperlink{mdp_8c_add0c2c2ef77a3536f92911511c213674}{error} (\hyperlink{structMDP}{M\+DP} $\ast$mdp, float $\ast$v)
+\begin{DoxyCompactList}\small\item\em Computes the maximum error between the values of the \hyperlink{structMDP}{M\+DP} and the given vector v. \end{DoxyCompactList}\item 
+void \hyperlink{mdp_8c_a51e90fe5febf5a94747885f4c4f01e1c}{compute\+\_\+optimal\+\_\+policy} (\hyperlink{structMDP}{M\+DP} $\ast$mdp)
+\begin{DoxyCompactList}\small\item\em Computes the optimal policy for the given \hyperlink{structMDP}{M\+DP}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple \hyperlink{structMDP}{M\+DP} library. 
+
+\begin{DoxyAuthor}{Author}
+Stalin Muñoz Gutiérrez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+27 may 2018 Simple Markov Decision Process library implementation 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\index{mdp.\+c@{mdp.\+c}!allocate\+\_\+\+M\+DP@{allocate\+\_\+\+M\+DP}}
+\index{allocate\+\_\+\+M\+DP@{allocate\+\_\+\+M\+DP}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{allocate\+\_\+\+M\+D\+P(int s, int a, float gamma)}{allocate_MDP(int s, int a, float gamma)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf M\+DP}$\ast$ allocate\+\_\+\+M\+DP (
+\begin{DoxyParamCaption}
+\item[{int}]{s, }
+\item[{int}]{a, }
+\item[{float}]{gamma}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a22c6426ddba7afdee5abb7ea99d2b17c}{}\label{mdp_8c_a22c6426ddba7afdee5abb7ea99d2b17c}
+
+
+Allocates memory for an \hyperlink{structMDP}{M\+DP}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the number of states \\
+\hline
+{\em a} & the number of actions \\
+\hline
+{\em gamma} & the discount factor for future rewards \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!best\+\_\+expected\+\_\+action@{best\+\_\+expected\+\_\+action}}
+\index{best\+\_\+expected\+\_\+action@{best\+\_\+expected\+\_\+action}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{best\+\_\+expected\+\_\+action(\+M\+D\+P $\ast$mdp, int s)}{best_expected_action(MDP *mdp, int s)}}]{\setlength{\rightskip}{0pt plus 5cm}int best\+\_\+expected\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp, }
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a66fa752860782c0eda6d1c6a30af4028}{}\label{mdp_8c_a66fa752860782c0eda6d1c6a30af4028}
+
+
+Computes the action for the best expected utility value for the state s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} \\
+\hline
+{\em s} & the state for the computation \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!best\+\_\+expected\+\_\+u@{best\+\_\+expected\+\_\+u}}
+\index{best\+\_\+expected\+\_\+u@{best\+\_\+expected\+\_\+u}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{best\+\_\+expected\+\_\+u(\+M\+D\+P $\ast$mdp, int s)}{best_expected_u(MDP *mdp, int s)}}]{\setlength{\rightskip}{0pt plus 5cm}float best\+\_\+expected\+\_\+u (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp, }
+\item[{int}]{s}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a1657efbb6ac6751151b54828cda44baa}{}\label{mdp_8c_a1657efbb6ac6751151b54828cda44baa}
+
+
+Computes the best expected utility value for the state s. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} \\
+\hline
+{\em s} & the state for the computation \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!compute\+\_\+optimal\+\_\+policy@{compute\+\_\+optimal\+\_\+policy}}
+\index{compute\+\_\+optimal\+\_\+policy@{compute\+\_\+optimal\+\_\+policy}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{compute\+\_\+optimal\+\_\+policy(\+M\+D\+P $\ast$mdp)}{compute_optimal_policy(MDP *mdp)}}]{\setlength{\rightskip}{0pt plus 5cm}void compute\+\_\+optimal\+\_\+policy (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a51e90fe5febf5a94747885f4c4f01e1c}{}\label{mdp_8c_a51e90fe5febf5a94747885f4c4f01e1c}
+
+
+Computes the optimal policy for the given \hyperlink{structMDP}{M\+DP}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!error@{error}}
+\index{error@{error}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{error(\+M\+D\+P $\ast$mdp, float $\ast$v)}{error(MDP *mdp, float *v)}}]{\setlength{\rightskip}{0pt plus 5cm}float error (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp, }
+\item[{float $\ast$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_add0c2c2ef77a3536f92911511c213674}{}\label{mdp_8c_add0c2c2ef77a3536f92911511c213674}
+
+
+Computes the maximum error between the values of the \hyperlink{structMDP}{M\+DP} and the given vector v. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} \\
+\hline
+{\em v} & the vector of values for the computation \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!expected\+\_\+u@{expected\+\_\+u}}
+\index{expected\+\_\+u@{expected\+\_\+u}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{expected\+\_\+u(\+M\+D\+P $\ast$mdp, int s, int a)}{expected_u(MDP *mdp, int s, int a)}}]{\setlength{\rightskip}{0pt plus 5cm}float expected\+\_\+u (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp, }
+\item[{int}]{s, }
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a58f24d49e4244f9735f1230e9498b1e1}{}\label{mdp_8c_a58f24d49e4244f9735f1230e9498b1e1}
+
+
+Computes the expected utility value for the state s when taking action a. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} \\
+\hline
+{\em s} & the state for the computation \\
+\hline
+{\em a} & the action to take \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!print\+\_\+\+M\+DP@{print\+\_\+\+M\+DP}}
+\index{print\+\_\+\+M\+DP@{print\+\_\+\+M\+DP}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+\+M\+D\+P(\+M\+D\+P $\ast$mdp)}{print_MDP(MDP *mdp)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+\+M\+DP (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_af6d9fcae98bb545520e7244d7020dcdc}{}\label{mdp_8c_af6d9fcae98bb545520e7244d7020dcdc}
+
+
+Prints the \hyperlink{structMDP}{M\+DP} parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} to print \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!random\+\_\+\+M\+DP@{random\+\_\+\+M\+DP}}
+\index{random\+\_\+\+M\+DP@{random\+\_\+\+M\+DP}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{random\+\_\+\+M\+D\+P(\+M\+D\+P $\ast$mdp)}{random_MDP(MDP *mdp)}}]{\setlength{\rightskip}{0pt plus 5cm}void random\+\_\+\+M\+DP (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a1e47a27033a991971ea6779a58585a69}{}\label{mdp_8c_a1e47a27033a991971ea6779a58585a69}
+
+
+Set random probabilities for the state transitions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!release\+\_\+\+M\+DP@{release\+\_\+\+M\+DP}}
+\index{release\+\_\+\+M\+DP@{release\+\_\+\+M\+DP}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{release\+\_\+\+M\+D\+P(\+M\+D\+P $\ast$mdp)}{release_MDP(MDP *mdp)}}]{\setlength{\rightskip}{0pt plus 5cm}void release\+\_\+\+M\+DP (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a42a1eb1c8ff10a00c6fc6313bee4f814}{}\label{mdp_8c_a42a1eb1c8ff10a00c6fc6313bee4f814}
+
+
+Releases memory for an \hyperlink{structMDP}{M\+DP}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em the} & \hyperlink{structMDP}{M\+DP} to release \\
+\hline
+\end{DoxyParams}
+\index{mdp.\+c@{mdp.\+c}!v\+\_\+iteration\+\_\+compute@{v\+\_\+iteration\+\_\+compute}}
+\index{v\+\_\+iteration\+\_\+compute@{v\+\_\+iteration\+\_\+compute}!mdp.\+c@{mdp.\+c}}
+\subsubsection[{\texorpdfstring{v\+\_\+iteration\+\_\+compute(\+M\+D\+P $\ast$mdp, float epsilon)}{v_iteration_compute(MDP *mdp, float epsilon)}}]{\setlength{\rightskip}{0pt plus 5cm}void v\+\_\+iteration\+\_\+compute (
+\begin{DoxyParamCaption}
+\item[{{\bf M\+DP} $\ast$}]{mdp, }
+\item[{float}]{epsilon}
+\end{DoxyParamCaption}
+)}\hypertarget{mdp_8c_a9bf38ae4a3175bc1874ba518585fbf55}{}\label{mdp_8c_a9bf38ae4a3175bc1874ba518585fbf55}
+
+
+Compute v$\ast$(s) using value iteration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mdp} & the \hyperlink{structMDP}{M\+DP} \\
+\hline
+{\em epsilon} & the maximum allowed error for the computation of v(s) \\
+\hline
+\end{DoxyParams}

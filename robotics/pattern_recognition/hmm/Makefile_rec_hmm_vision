@@ -1,0 +1,18 @@
+CC = g++ 
+
+LIBS = -lm
+
+PRG_OBJS= rec_hmm_vision.cpp 
+
+OBJS= rec_hmm_vision.o
+
+rec_hmm_vision: $(OBJS)
+	  $(CC)  -o $@ $(OBJS) $(LIBS)
+
+$(OBJS): $(PRG_OBJS)
+	$(CC) $(CFLAGS) -c $*.cpp 
+	
+	
+	
+	
+	

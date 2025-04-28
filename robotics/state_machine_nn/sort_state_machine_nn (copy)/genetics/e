@@ -1,0 +1,462 @@
+x =
+
+ Columns 1 through 17:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 18 through 34:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 35 through 51:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 52 through 68:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 69 through 85:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 86 through 102:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 103 through 119:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 120 through 136:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 137 through 153:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 154 through 170:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 171 through 187:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 188 through 204:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 205 through 221:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 222 through 238:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 239 through 255:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 256 through 272:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 273 through 289:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 290 through 306:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 307 through 323:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 324 through 340:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 341 through 357:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 358 through 374:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 375 through 391:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 392 through 408:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 409 through 425:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 426 through 442:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 443 through 459:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 460 through 476:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 477 through 493:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 494 through 510:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 511 through 527:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 528 through 544:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 545 through 561:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 562 through 578:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 579 through 595:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 596 through 612:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 613 through 629:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 630 through 646:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 647 through 663:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 664 through 680:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 681 through 697:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 698 through 714:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 715 through 731:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 732 through 748:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 749 through 765:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 766 through 782:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 783 through 799:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 800 through 816:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 817 through 833:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 834 through 850:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 851 through 867:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 868 through 884:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 885 through 901:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 902 through 918:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 919 through 935:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 936 through 952:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 953 through 969:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 970 through 986:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 987 through 1003:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1004 through 1020:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1021 through 1037:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1038 through 1054:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1055 through 1071:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1072 through 1088:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1089 through 1105:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1106 through 1122:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1123 through 1139:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1140 through 1156:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1157 through 1173:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1174 through 1190:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1191 through 1207:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1208 through 1224:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1225 through 1241:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1242 through 1258:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1259 through 1275:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1276 through 1292:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1293 through 1309:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1310 through 1326:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1327 through 1343:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1344 through 1360:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1361 through 1377:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1378 through 1394:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1395 through 1411:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1412 through 1428:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1429 through 1445:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1446 through 1462:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1463 through 1479:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1480 through 1496:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1497 through 1513:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1514 through 1530:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1531 through 1547:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1548 through 1564:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1565 through 1581:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1582 through 1598:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1599 through 1615:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1616 through 1632:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1633 through 1649:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1650 through 1666:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1667 through 1683:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1684 through 1700:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1701 through 1717:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1718 through 1734:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1735 through 1751:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1752 through 1768:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1769 through 1785:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1786 through 1802:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1803 through 1819:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1820 through 1836:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1837 through 1853:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1854 through 1870:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1871 through 1887:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1888 through 1904:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1905 through 1921:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1922 through 1938:
+
+   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0   0
+
+ Columns 1939 through 1950:
+
+   0   0   0   0   0   0   0   0   0   0   0   0
+

@@ -1,0 +1,11 @@
+Compile:
+	$ make
+
+Execute:
+	$ ./polygon_expansion -f input_file -o output_file -r expansion_ratio
+Output files:
+	Expanded polygons: output_file_exp.wrl  
+	Topologic map: output_file.top
+
+Example:
+	$ ./polygon_expansion -f filesWRL/random_1.wrl -o topological_maps/random_11 -r .01

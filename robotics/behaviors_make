@@ -1,0 +1,35 @@
+echo cd motion_planner
+cd motion_planner
+echo chmod 777 compile_motion_planner
+chmod 777 compile_motion_planner
+echo compile_motion_planner
+./compile_motion_planner
+
+echo cd ..
+cd ..
+echo cd genetics
+cd genetics
+echo chmod 777 compile_genetics
+chmod 777 compile_genetics
+echo compile_genetics
+./compile_genetics
+
+echo cd ..
+cd ..
+echo cd pattern_recognition/vq_vision
+cd pattern_recognition/vq_vision
+echo chmod 777 compile_vq
+echo compile_vq
+./compile_vq
+
+echo cd ../..
+cd ../..
+echo cd Dijkstra
+cd Dijkstra
+echo chmod 777 compile_Dijkstra
+chmod 777 compile_Dijkstra
+chmod 777 ./compile_Dijkstra
+./compile_Dijkstra
+
+echo cd ..
+cd ..

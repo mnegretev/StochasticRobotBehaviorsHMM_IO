@@ -1,0 +1,2 @@
+planeacion/planner:planeacion/planner_msgs:planeacion/rm_planning:svg_ros
+-DCATKIN_DEVEL_PREFIX=/home/biorobotica/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/biorobotica/catkin_ws/install -G Unix Makefiles

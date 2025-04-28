@@ -1,0 +1,89 @@
+\hypertarget{mdpnav_8c}{}\section{mdpnav.\+c File Reference}
+\label{mdpnav_8c}\index{mdpnav.\+c@{mdpnav.\+c}}
+
+
+Map Navigation with M\+D\+Ps.  
+
+
+{\ttfamily \#include \char`\"{}mdpnav.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}mdp.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Include dependency graph for mdpnav.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{mdpnav_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{mdpnav_8c_a2ce00cd6fdd1971fedd752da4dad1855}{report\+\_\+file} (\hyperlink{structmap}{map} $\ast$m, char $\ast$output\+\_\+file)
+\begin{DoxyCompactList}\small\item\em writes the result to a file \end{DoxyCompactList}\item 
+void \hyperlink{mdpnav_8c_a1016b889f9a188d71fe8dae4f83be7fb}{parse\+\_\+params} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]}, \hyperlink{structnav__spec}{nav\+\_\+spec} $\ast$p)
+\begin{DoxyCompactList}\small\item\em parses command line arguments \end{DoxyCompactList}\item 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})\hypertarget{mdpnav_8c_a0ddf1224851353fc92bfbff6f499fa97}{}\label{mdpnav_8c_a0ddf1224851353fc92bfbff6f499fa97}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Map Navigation with M\+D\+Ps. 
+
+\begin{DoxyAuthor}{Author}
+Stalin Muñoz Gutiérrez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+3 March 2019 Basic Map Navigation with Markov Decision Processes 
+\end{DoxyDate}
+
+
+\subsection{Function Documentation}
+\index{mdpnav.\+c@{mdpnav.\+c}!parse\+\_\+params@{parse\+\_\+params}}
+\index{parse\+\_\+params@{parse\+\_\+params}!mdpnav.\+c@{mdpnav.\+c}}
+\subsubsection[{\texorpdfstring{parse\+\_\+params(int argc, char $\ast$argv[], nav\+\_\+spec $\ast$p)}{parse_params(int argc, char *argv[], nav_spec *p)}}]{\setlength{\rightskip}{0pt plus 5cm}void parse\+\_\+params (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}, }
+\item[{{\bf nav\+\_\+spec} $\ast$}]{p}
+\end{DoxyParamCaption}
+)}\hypertarget{mdpnav_8c_a1016b889f9a188d71fe8dae4f83be7fb}{}\label{mdpnav_8c_a1016b889f9a188d71fe8dae4f83be7fb}
+
+
+parses command line arguments 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argc} & number of command line arguments \\
+\hline
+{\em argv} & command line arguments \\
+\hline
+{\em p} & pointer to the parameter simulation structure \\
+\hline
+\end{DoxyParams}
+\index{mdpnav.\+c@{mdpnav.\+c}!report\+\_\+file@{report\+\_\+file}}
+\index{report\+\_\+file@{report\+\_\+file}!mdpnav.\+c@{mdpnav.\+c}}
+\subsubsection[{\texorpdfstring{report\+\_\+file(map $\ast$m, char $\ast$output\+\_\+file)}{report_file(map *m, char *output_file)}}]{\setlength{\rightskip}{0pt plus 5cm}void report\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{{\bf map} $\ast$}]{m, }
+\item[{char $\ast$}]{output\+\_\+file}
+\end{DoxyParamCaption}
+)}\hypertarget{mdpnav_8c_a2ce00cd6fdd1971fedd752da4dad1855}{}\label{mdpnav_8c_a2ce00cd6fdd1971fedd752da4dad1855}
+
+
+writes the result to a file 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & the map of cells \\
+\hline
+{\em output\+\_\+file} & name of the output file \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the output is writen to the file 
+\end{DoxyReturn}

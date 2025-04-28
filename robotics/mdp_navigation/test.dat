@@ -1,0 +1,16 @@
+GoTo_State_Machine -x 0.710000 -y 0.165000 -a 0.000000 -v 1.100000 -z 0.200000 -s laser -n 2 -t -0.200000 -r 0.400000 -p ../test_data_1/ -e random -advance 0.040000 -MaxAngle 0.785400 -selection 6 -largest 0.300000 -noise 1
+World environment ../test_data_1/random.wrl 
+
+observations file: ../test_data_1/random.raw
+
+ Radio robot 0.030000 
+( origen 0.710000 0.165000 0.000000 )
+( destination 1.100000 0.200000 )
+
+
+ ************************************************************
+1 Pose robot 0.710000 0.165000 0.000000 
+Random settings file ../test_data_1/random_settings_advance_angle_sensors.dat
+
+ Incorrect selection
+

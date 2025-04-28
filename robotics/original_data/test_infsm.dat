@@ -1,0 +1,1 @@
+../motion_planner/GoTo_State_Machine -x 1.068144 -y 1.108110 -a 1.311800 -v 0.665000 -z 1.765000 -s laser -n 16 -t -2.356100 -r 4.712200 -p ../original_data/ -e random_2 -advance 0.040000 -MaxAngle 0.785400 -selection 13 -largest 0.100000 -noise 1 -omni 1 -vq 0 -size_vq 16 -pr_out 0 -out_file random_2 -nn_rec 0 

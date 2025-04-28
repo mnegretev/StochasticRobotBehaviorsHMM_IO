@@ -1,0 +1,19 @@
+Compilation: make -f Makefile_probabilistic_state_machine
+g++   -c probabilistic_state_machine.cpp 
+g++   -o probabilistic_state_machine probabilistic_state_machine.o  -lm
+
+usage: probabilistic_state_machine -h
+
+Examples:
+probabilistic_state_machine -p hmm_simulation/test_data/ -f state_machine -o example 
+
+probabilistic_state_machine -p hmm_simulation/test_data/ -f state_machine_2 -o example_2 -e evaluation_state_machine
+
+probabilistic_state_machine -p hmm_simulation/test_data/ -f state_machine -o sim_state_machine -e test_evaluation
+
+state_machine.prb has the modified HMM probabilistic see the file README_FORMAT_PROBABILITY_FILES for the description.
+
+
+test_evaluation.obs has the inputs of the probabilistic state machine in the second raw. This file was generated
+with an HMM. See README file in the hmm_simulation directory.
+
