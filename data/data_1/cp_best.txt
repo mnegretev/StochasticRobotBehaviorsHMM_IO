@@ -1,0 +1,4 @@
+ cp hmm_best_303.prb ../test_data_2/hmm_best.prb
+ cp best_fsm_303.txt ../test_data_2/state_machine_mem.txt
+ cp avoid_viterbi_new.prb ../test_data_2/hmm_viterbi.prb
+ cp best_nn_303.txt ../test_data_2/best_nn.txt

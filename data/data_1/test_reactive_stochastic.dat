@@ -1,0 +1,1 @@
+../motion_planner/GoTo_State_Machine -x 0.526858 -y 0.579297 -a 4.461900 -v 1.420000 -z 1.440000 -s laser -n 16 -t -2.356100 -r 4.712200 -p /home/biorobotica/data/original_data/ -e random_1 -advance 0.040000 -MaxAngle 0.785400 -selection 8 -largest 0.100000 -noise 1 -omni 1 -vq 1 -size_vq 8 -pr_out 1 -out_file random_1 -nn_rec 0 

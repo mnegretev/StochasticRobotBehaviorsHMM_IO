@@ -1,0 +1,70 @@
+Generate  offspring using the Vasconcelos algorithm 
+PATH ../../data/data_1/ 
+num_individuals 5 num_bits_individuals 8784
+Mutation 0.600000
+Cross 0.900000 
+Num_best factor 0.800000 num_best 4 
+
+
+Read population ../../data/data_1/avoid_nn.dat
+0 fitness 585.176941
+1 fitness 511.104614
+2 fitness 503.389709
+3 fitness 501.927856
+4 fitness 494.466125
+5 fitness 456.945099
+6 fitness 452.400391
+7 fitness 438.460724
+8 fitness 139.262482
+9 fitness 22.527763
+It leaves the same individual 0
+It leaves the same individual 1
+It leaves the same individual 2
+It leaves the same individual 3
+It leaves the same individual 4
+
+Generating individuals 5 6
+0 it selects the individuals 0 4
+it crosses individuals 0 4
+it cross bits from 4907 to 5900 of individuals 6 to 5
+it cross bits from 4824 to 6399 of individuals 5 to 6
+
+Generating individuals 7 8
+1 it selects the individuals 1 3
+it crosses individuals 1 3
+it cross bits from 3481 to 3649 of individuals 8 to 7
+it cross bits from 7274 to 8784 of individuals 7 to 8
+Mut. individual 7 m_mut 0.600000 num 0.520894 
+mutation individual 7 num.mut 0 bit 789
+mutation individual 7 num.mut 1 bit 138
+mutation individual 7 num.mut 2 bit 8678
+mutation individual 7 num.mut 3 bit 2235
+mutation individual 7 num.mut 4 bit 5129
+mutation individual 7 num.mut 5 bit 6595
+mutation individual 7 num.mut 6 bit 8769
+mutation individual 7 num.mut 7 bit 8642
+mutation individual 7 num.mut 8 bit 8015
+mutation individual 7 num.mut 9 bit 5212
+mutation individual 7 num.mut 10 bit 8252
+mutation individual 7 num.mut 11 bit 5984
+mutation individual 7 num.mut 12 bit 2745
+mutation individual 7 num.mut 13 bit 457
+mutation individual 7 num.mut 14 bit 1351
+mutation individual 7 num.mut 15 bit 8044
+mutation individual 7 num.mut 16 bit 1126
+mutation individual 7 num.mut 17 bit 8416
+mutation individual 7 num.mut 18 bit 4169
+mutation individual 7 num.mut 19 bit 4439
+mutation individual 7 num.mut 20 bit 4457
+mutation individual 7 num.mut 21 bit 640
+mutation individual 7 num.mut 22 bit 2495
+mutation individual 7 num.mut 23 bit 2606
+
+Generating individuals 9 10
+2 it selects the individuals 2 2
+it crosses individuals 2 2
+it cross bits from 3169 to 4780 of individuals 10 to 9
+it cross bits from 5169 to 7490 of individuals 9 to 10
+Old population ../../data/data_1/old_avoid_nn.dat
+New population ../../data/data_1/avoid_nn.dat
+Fitness file ../../data/data_1/fitness_generation.dat

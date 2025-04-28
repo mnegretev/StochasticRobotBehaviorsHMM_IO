@@ -1,0 +1,2 @@
+../Dijkstra/Dijkstra -x 0.629132 -y 1.598260 -a 0.000000 -v 0.345000 -z 1.880000 -s laser -n 2 -t -0.200000 -r 0.400000 -p ../../data/data_1/ -e random_2 -advance 0.040000 -MaxAngle 0.392699 -selection 1 -largest 0.000000 -noise 1 -omni 1 -vq 0 -size_vq 4 -pr_out 0
+0.554566

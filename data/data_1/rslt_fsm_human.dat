@@ -1,0 +1,2 @@
+../Dijkstra/Dijkstra -x 0.683889 -y 0.073416 -a 0.000000 -v 0.760000 -z 0.110000 -s laser -n 2 -t -0.200000 -r 0.400000 -p /home/biorobotica/data/original_data/ -e random -advance 0.040000 -MaxAngle 0.392699 -selection 1 -largest 0.000000 -noise 1 -omni 1 -vq 0 -size_vq 4 -pr_out 0
+0.000000
